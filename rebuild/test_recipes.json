@@ -1,0 +1,3625 @@
+{
+ "about": "Expected outputs computed by executing the model JavaScript embedded in the live Taste Check page (tools/oracle.js).",
+ "model_version": "2.8.3",
+ "source_page": "https://tools.mendocinofoodconsulting.com/taste-check/",
+ "block_sha256": {
+  "HFP_DB": "9b99e0962e1e8ce2e24dcd5ed4bb2d85e0c8b9f8024fb3f9346b36e46bf04558",
+  "HFP_MODEL": "235a5d8db335befeb42578812c6363994d4f3321513310212dc46e2e63f2d61c",
+  "HFP_PASTE": "ef7c0ec86136639a10ad61dea9ab14735d1a2b7fe6113e460dc72b169c1beee7",
+  "helpers": "9f63101394fef850ad5e064aa6ed6dfacd488765df0c8eaa846f93fbe0d66ca5"
+ },
+ "derived_constants": {
+  "score_reference": {
+   "bitter": 10,
+   "umami": 29.608646474769145,
+   "salt": 10.13400728263813,
+   "sweet": 10.77441650083195,
+   "kokumi": 100,
+   "sour": 149.59657262512513
+  },
+  "miranda_fit_S50_mM_and_hill": [
+   29.4,
+   0.9
+  ]
+ },
+ "tolerances": {
+  "raw": "abs(got - expected) <= max(1e-6, 1e-6 * abs(expected))",
+  "score": "abs(got - expected) <= 0.05 (1-10 scale)",
+  "pH": "abs(got - expected) <= 1e-4",
+  "intermediate": "abs(got - expected) <= max(1e-6, 1e-6 * abs(expected)); informative, for debugging",
+  "note_keys": "set of keys should match exactly (conditions in REBUILD.md section 11); note wording is not tested",
+  "missing_estimated": "exact match (data-gap flags, REBUILD.md section 11.2); 'estimated' field lists are sorted",
+  "null": "sourness is null (not a number) when the acidity model is switched off"
+ },
+ "recipes": [
+  {
+   "id": "G01",
+   "name": "canned tomato",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 200,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 100,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 8.1921348101235,
+     "saltiness_intensity": 4.370133565865298,
+     "sweetness_intensity": 0.8614275353780647,
+     "sourness_intensity": 96.03052884907733,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.4901244085554355,
+     "saltiness": 4.881110502078582,
+     "sweetness": 1.719560805710819,
+     "sourness": 6.7773700591890345,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 4.100698992458149,
+    "intermediate": {
+     "total_mass_g": 300,
+     "total_water_g": 278.8,
+     "salt_pct_water": 0.3150678260869565,
+     "sucrose_eq_pct": 2.1963942242579386,
+     "umami_eq_msg_pct": 1.9297067904704122,
+     "sour_stimulus_mM": 32.337867981152996,
+     "citric_equiv_mM": 32.25174163945857,
+     "umami_remaining": 0.5473940216273119,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G02",
+   "name": "canned tomato + salt",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 800,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Salt",
+     "amount": 1,
+     "unit": "tsp"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 9.114137069879702,
+     "saltiness_intensity": 7.813080137197594,
+     "sweetness_intensity": 1.4453654138505834,
+     "sourness_intensity": 100.46694260012144,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.7703810675309457,
+     "saltiness": 7.938787320120508,
+     "sweetness": 2.207331155580519,
+     "sourness": 7.044272723192255,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 4.099811560839841,
+    "intermediate": {
+     "total_mass_g": 805.916,
+     "total_water_g": 715.205916,
+     "salt_pct_water": 1.2031927596640233,
+     "sucrose_eq_pct": 3.2704066789957347,
+     "umami_eq_msg_pct": 4.553571736124331,
+     "sour_stimulus_mM": 48.11430385574877,
+     "citric_equiv_mM": 47.91254723104592,
+     "umami_remaining": 0.5031500767540883,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap",
+     "sour_top"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G03",
+   "name": "soy + tomato",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 200,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sauce, Soy",
+     "amount": 15,
+     "unit": "mL"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 100,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 9.2182302605679,
+     "saltiness_intensity": 7.591227052783802,
+     "sweetness_intensity": 0.8053327520121766,
+     "sourness_intensity": 94.8938668105889,
+     "kokumi_intensity_pct": 0.09883706793973933,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.8020217815700725,
+     "saltiness": 7.741759855659841,
+     "sweetness": 1.6727041568840346,
+     "sourness": 6.708986417994052,
+     "kokumi": 1.0088953361145765,
+     "bitterness": 1
+    },
+    "pH": 4.224781839602134,
+    "intermediate": {
+     "total_mass_g": 318.243,
+     "total_water_g": 291.789016,
+     "salt_pct_water": 1.0966424277100804,
+     "sucrose_eq_pct": 2.0855248983797834,
+     "umami_eq_msg_pct": 2.928735459882193,
+     "sour_stimulus_mM": 30.190859695575654,
+     "citric_equiv_mM": 30.118167287076552,
+     "umami_remaining": 0.5586010495794704,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G04",
+   "name": "garlic cooked",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Garlic",
+     "amount": 10,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 300,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "cook_min": 30,
+    "cook_temp_c": 85
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 2.879190979388244,
+     "kokumi_intensity_pct": 60.05808952423064,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1,
+     "sourness": 1.1732173295134845,
+     "kokumi": 6.405228057180757,
+     "bitterness": 1
+    },
+    "pH": 5.801739443232011,
+    "intermediate": {
+     "total_mass_g": 310,
+     "total_water_g": 305.858,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 0.03225806451612904,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.42018258214869575,
+     "citric_equiv_mM": 0.5346328274153438,
+     "umami_remaining": 0.9786824182895063,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G05",
+   "name": "reduced sauce",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 800,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Salt",
+     "amount": 5,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Garlic",
+     "amount": 12,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Onion",
+     "amount": 100,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "water_loss_g": 200,
+    "cook_min": 45,
+    "cook_temp_c": 95
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 12.59263569520815,
+     "saltiness_intensity": 10.082660229372157,
+     "sweetness_intensity": 1.9679687410453925,
+     "sourness_intensity": 99.17834966729521,
+     "kokumi_intensity_pct": 68.97695749448302,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 4.827723815522946,
+     "saltiness": 9.954398742125884,
+     "sweetness": 2.64386801531581,
+     "sourness": 6.966748644986948,
+     "kokumi": 7.207926174503472,
+     "bitterness": 1
+    },
+    "pH": 4.16550326930491,
+    "intermediate": {
+     "total_mass_g": 717,
+     "total_water_g": 611.3346,
+     "salt_pct_water": 1.2267899436056031,
+     "sucrose_eq_pct": 4.146769226147692,
+     "umami_eq_msg_pct": 5.832548766308707,
+     "sour_stimulus_mM": 55.701489675339424,
+     "citric_equiv_mM": 55.43288139079198,
+     "umami_remaining": 0.5160609966496198,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "cook_range",
+     "salt_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G06",
+   "name": "mushroom broth",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Mushroom, Button",
+     "amount": 200,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Salt",
+     "amount": 4,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "cook_min": 20,
+    "cook_temp_c": 90
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 8.935323353258116,
+     "saltiness_intensity": 5.979350936594595,
+     "sweetness_intensity": 0.07875365569144338,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 1.0332591667595874,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.716027909207223,
+     "saltiness": 6.310254564504538,
+     "sweetness": 1.0657838780567153,
+     "sourness": 1,
+     "kokumi": 1.0929933250083628,
+     "bitterness": 1
+    },
+    "pH": 6.350249699477827,
+    "intermediate": {
+     "total_mass_g": 704,
+     "total_water_g": 687.804,
+     "salt_pct_water": 0.5725041106719367,
+     "sucrose_eq_pct": 0.22748850001980972,
+     "umami_eq_msg_pct": 0.36892133588670656,
+     "sour_stimulus_mM": 0.0006254711620030821,
+     "citric_equiv_mM": 0.002300250040189293,
+     "umami_remaining": 0.9999391265284024,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "cook_range",
+     "cooked_nuc"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G07",
+   "name": "dashi",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Seaweed, Kombu",
+     "amount": 10,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Bonito Flakes",
+     "amount": 10,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 11.11385350430916,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 4.3782253985847674,
+     "saltiness": 1,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 5.7622491013910455,
+    "intermediate": {
+     "total_mass_g": 520,
+     "total_water_g": 502.768,
+     "salt_pct_water": 0.041142541806020075,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0.6842630644258947,
+     "sour_stimulus_mM": 0.07217736163804735,
+     "citric_equiv_mM": 0.13869968317634704,
+     "umami_remaining": 0.9955423287602329,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "ph_default"
+    ],
+    "missing": [
+     {
+      "name": "Seaweed, Kombu",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G08",
+   "name": "lemonade",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Lemon",
+     "amount": 150,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sucrose",
+     "amount": 100,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 750,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 6.415958488866667,
+     "sourness_intensity": 82.64351206858554,
+     "kokumi_intensity_pct": 1.1363745085802195,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 6.359327476837498,
+     "sourness": 5.97198295098071,
+     "kokumi": 1.1022737057722198,
+     "bitterness": 1
+    },
+    "pH": 2.484542413437002,
+    "intermediate": {
+     "total_mass_g": 1000,
+     "total_water_g": 883.53,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 10.292300164220187,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 39.91281697786668,
+     "citric_equiv_mM": 39.775250551610256,
+     "umami_remaining": 0.6726652809228816,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G09",
+   "name": "vinaigrette",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Vinegar, Red Wine",
+     "amount": 2,
+     "unit": "tbsp"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 100,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Salt",
+     "amount": 1,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Honey",
+     "amount": 1,
+     "unit": "tsp"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 6.385375897778,
+     "sweetness_intensity": 1.3257908483225338,
+     "sourness_intensity": 134.05340137614886,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 6.6708448570447025,
+     "sweetness": 2.107449079398542,
+     "sourness": 9.064894744672166,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 2.9963591142429813,
+    "intermediate": {
+     "total_mass_g": 137.85175,
+     "total_water_g": 129.414067735,
+     "salt_pct_water": 0.7303254881604457,
+     "sucrose_eq_pct": 3.0602265263682358,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 211.73433478269874,
+     "citric_equiv_mM": 209.90278414381743,
+     "umami_remaining": 0.2043219481284335,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap",
+     "sour_top",
+     "sour_umami_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Vinegar, Red Wine",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G10",
+   "name": "chicken broth + chicken",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Broth, Chicken",
+     "amount": 500,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Chicken",
+     "amount": 100,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 18.479196979094123,
+     "saltiness_intensity": 6.904766687552172,
+     "sweetness_intensity": 0.13923059706102936,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 3.018526162606897,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 6.617033961804694,
+     "saltiness": 7.132115209196122,
+     "sweetness": 1.1163009962954846,
+     "sourness": 1,
+     "kokumi": 1.2716673546346207,
+     "bitterness": 1
+    },
+    "pH": 5.885640727131712,
+    "intermediate": {
+     "total_mass_g": 600,
+     "total_water_g": 562.9,
+     "salt_pct_water": 0.8046086956521739,
+     "sucrose_eq_pct": 0.35833333333333334,
+     "umami_eq_msg_pct": 4.818301295817639,
+     "sour_stimulus_mM": 0.06152258689760539,
+     "citric_equiv_mM": 0.12369422505191952,
+     "umami_remaining": 0.9962836368558395,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap"
+    ],
+    "missing": [],
+    "estimated": [
+     {
+      "name": "Chicken",
+      "fields": [
+       "ph"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G11",
+   "name": "parmesan water",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Cheese, Parmigiano Regianno",
+     "amount": 30,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 200,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 8.722418489425975,
+     "saltiness_intensity": 3.3129752230014002,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.6513122263703828,
+     "saltiness": 3.9422494157958177,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 5.250391793806411,
+    "intermediate": {
+     "total_mass_g": 230,
+     "total_water_g": 208.748,
+     "salt_pct_water": 0.21310162570888463,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0.3520025795264095,
+     "sour_stimulus_mM": 0.0050992075999042276,
+     "citric_equiv_mM": 0.01871998073033152,
+     "umami_remaining": 0.999587844790958,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [
+     {
+      "name": "Cheese, Parmigiano Regianno",
+      "fields": [
+       "nucleotides",
+       "organic acids"
+      ]
+     }
+    ],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G12",
+   "name": "yogurt dressing",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Yogurt, Plain (Whole Milk)",
+     "amount": 150,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Lemon",
+     "amount": 15,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Salt",
+     "amount": 2,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Garlic",
+     "amount": 5,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 9.743611644420078,
+     "sweetness_intensity": 0.5113294471776867,
+     "sourness_intensity": 113.70461486421453,
+     "kokumi_intensity_pct": 57.92941310910265,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 9.653290090882212,
+     "sweetness": 1.4271196518385787,
+     "sourness": 7.840674995558407,
+     "kokumi": 6.2136471798192385,
+     "bitterness": 1
+    },
+    "pH": 3.9247456648107955,
+    "intermediate": {
+     "total_mass_g": 172,
+     "total_water_g": 148.12800000000001,
+     "salt_pct_water": 1.2664018907987866,
+     "sucrose_eq_pct": 1.470502338470514,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 63.72327559214667,
+     "citric_equiv_mM": 63.37811560875619,
+     "umami_remaining": 0.3722491816769833,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap",
+     "sour_top",
+     "sour_umami_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Yogurt, Plain (Whole Milk)",
+      "fields": [
+       "glutamate"
+      ]
+     },
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G13",
+   "name": "KCl",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Potassium Chloride",
+     "amount": 3,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 300,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 6.131258774764674,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 4.340551934689748
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 6.445163737687487,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 4.906496741220773
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 303,
+     "total_water_g": 300,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.000099009900990099,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999881261103244,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "k_extrap"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G14",
+   "name": "miso soup (tofu left out: not in the database)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Miso",
+     "amount": 40,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 400,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 4.3016946196249375,
+     "saltiness_intensity": 6.981678814129511,
+     "sweetness_intensity": 0.2275672333724351,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 2.3075657345436387,
+     "saltiness": 7.200420778739374,
+     "sweetness": 1.1900896535969043,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 6.000484544860107,
+    "intermediate": {
+     "total_mass_g": 440,
+     "total_water_g": 416.6,
+     "salt_pct_water": 0.861585770750988,
+     "sucrose_eq_pct": 0.5146703621591127,
+     "umami_eq_msg_pct": 0.10534930123326257,
+     "sour_stimulus_mM": 0.0009457624003881477,
+     "citric_equiv_mM": 0.003672346092955213,
+     "umami_remaining": 0.9999144677044011,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "ph_default",
+     "salt_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Miso",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G15",
+   "name": "bo kho (Nov 15, 2026)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Beef",
+     "amount": 1000,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Ginger",
+     "amount": 40,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Garlic",
+     "amount": 20,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Onion",
+     "amount": 350,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Paste, Tomato",
+     "amount": 66,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Butter, Salted",
+     "amount": 35,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Wine, Generic",
+     "amount": 60,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Carrot",
+     "amount": 250,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Broth, Beef",
+     "amount": 946,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sauce, Fish",
+     "amount": 58,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 318,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sugar",
+     "amount": 37,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "water_loss_g": 300,
+    "cook_min": 120,
+    "cook_temp_c": 95
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 21.59045576749019,
+     "saltiness_intensity": 8.505165774607084,
+     "sweetness_intensity": 1.1860695728172879,
+     "sourness_intensity": 47.98686615265192,
+     "kokumi_intensity_pct": 59.33740050570799,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 7.562748556337942,
+     "saltiness": 8.553427764217753,
+     "sweetness": 1.9907382134829619,
+     "sourness": 3.886976538266837,
+     "kokumi": 6.340366045513719,
+     "bitterness": 1
+    },
+    "pH": 5.394913339458228,
+    "intermediate": {
+     "total_mass_g": 2880,
+     "total_water_g": 2275.6921,
+     "salt_pct_water": 0.8112070163043479,
+     "sucrose_eq_pct": 2.4017327252609952,
+     "umami_eq_msg_pct": 6.784624644499927,
+     "sour_stimulus_mM": 4.188319395598899,
+     "citric_equiv_mM": 4.292948089397405,
+     "umami_remaining": 0.8870702939905191,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "cook_range",
+     "ph_default",
+     "salt_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Sauce, Fish",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Beef",
+      "fields": [
+       "ph"
+      ]
+     },
+     {
+      "name": "Wine, Generic",
+      "fields": [
+       "acids",
+       "ph",
+       "sugars"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G16",
+   "name": "kitchen test A: 8 g/L salt",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Salt",
+     "amount": 8,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 1000,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 6.610147456695751,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 6.870464215294575,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 1008,
+     "total_water_g": 1000.008,
+     "salt_pct_water": 0.7936385921325052,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009920714285714285,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999881048236606,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "salt_extrap"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G17",
+   "name": "kitchen test B: 6 g/L salt",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Salt",
+     "amount": 6,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 1000,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 5.837739820091214,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 6.184489897775519,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 1006,
+     "total_water_g": 1000.006,
+     "salt_pct_water": 0.5964123018411273,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.0000994041749502982,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999880835638618,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G18",
+   "name": "kitchen test C: 6 g/L salt + 2 g/L MSG",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Salt",
+     "amount": 6,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Monosodium Glutamate",
+     "amount": 2,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 1000,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 9.493825056218157,
+     "saltiness_intensity": 6.332934209994942,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.885793025992405,
+     "saltiness": 6.624271455537865,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7.000000000000037,
+    "intermediate": {
+     "total_mass_g": 1008,
+     "total_water_g": 1000.006,
+     "salt_pct_water": 0.6637618426501035,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0.4339987256134755,
+     "sour_stimulus_mM": 0.00009920694444443593,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999881048450714,
+     "synergy_pH_factor": 0.7674999999999826
+    },
+    "note_keys": [
+     "salt_extrap"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G19",
+   "name": "polyol syrup (v.2.6.3)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Erythritol",
+     "amount": 40,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Xylitol",
+     "amount": 30,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sorbitol",
+     "amount": 20,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Mannitol",
+     "amount": 10,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 400,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 20.259119013995324,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 500,
+     "total_water_g": 400.31,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 16.25338,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.000080062,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999971039578088,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G20",
+   "name": "erythritol lemonade (v.2.6.3)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Erythritol",
+     "amount": 60,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Lemon",
+     "amount": 60,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 4.204715079160737,
+     "sourness_intensity": 76.4193549125164,
+     "kokumi_intensity_pct": 0.6035770983924191,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 4.512249197859077,
+     "sourness": 5.597526414834013,
+     "kokumi": 1.0543219388553178,
+     "bitterness": 1
+    },
+    "pH": 2.553842835867912,
+    "intermediate": {
+     "total_mass_g": 620,
+     "total_water_g": 553.508,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 7.4360001059485095,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 26.37544335420627,
+     "citric_equiv_mM": 26.325783544669,
+     "umami_remaining": 0.7239131624097147,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G21",
+   "name": "stevia lemonade, Reb A 97% (v.2.7.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Lemon",
+     "amount": 60,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Stevia Extract (Reb A 97%)",
+     "amount": 0.2,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 7.584960598187886,
+     "sourness_intensity": 74.25189326153348,
+     "kokumi_intensity_pct": 0.6989571421111035,
+     "bitterness_intensity": 1.7536537442755942
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 7.335809032296077,
+     "sourness": 5.467128007193155,
+     "kokumi": 1.0629061427899993,
+     "bitterness": 2.5782883698480346
+    },
+    "pH": 2.553810263025479,
+    "intermediate": {
+     "total_mass_g": 560.2,
+     "total_water_g": 553.398,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 11.706557433154577,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 29.190617294008963,
+     "citric_equiv_mM": 29.124052316443816,
+     "umami_remaining": 0.740474244372819,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "his"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G22",
+   "name": "monk fruit tea, mogroside V 50% (v.2.7.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Monk Fruit Extract (Mogroside V 50%)",
+     "amount": 0.35,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 10.744208824453752,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 9.974767163736171,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 500.35,
+     "total_water_g": 500.0175,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 9.978426488515355,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009993354651743778,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999955311022117,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "his"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G23",
+   "name": "diet soda: sucralose + acesulfame K (v.2.7.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Water",
+     "amount": 355,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sucralose",
+     "amount": 0.06,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Acesulfame Potassium",
+     "amount": 0.06,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 11.309549077705778,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0.44867870337891846
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1.4038108330410266
+    },
+    "pH": 6.999636661636414,
+    "intermediate": {
+     "total_mass_g": 355.12,
+     "total_water_g": 355.0009,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 10.379907525413326,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00010005013072699071,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999955824626875,
+     "synergy_pH_factor": 0.7676689523390676
+    },
+    "note_keys": [
+     "his",
+     "ph_default"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G24",
+   "name": "coffee: erythritol + stevia Reb A 60% (v.2.7.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Water",
+     "amount": 240,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Erythritol",
+     "amount": 8,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Stevia Extract (Reb A 60%)",
+     "amount": 0.03,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 6.358049740138723,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 6.31095560087454,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 248.03,
+     "total_water_g": 240.01749999999998,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 6.664881494270313,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009676954400677335,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999948239254637,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "his"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G25",
+   "name": "sucralose above tested range (v.2.7.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Water",
+     "amount": 100,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sucralose",
+     "amount": 1,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 18.25208138482551,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 101,
+     "total_water_g": 100.01,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 15,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009901980198019803,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999963069304922,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "his",
+     "his_high"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G26",
+   "name": "keto syrup: allulose + maltitol (v.2.7.1)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Allulose",
+     "amount": 30,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Maltitol",
+     "amount": 20,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 100,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 38.68491865721232,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 150,
+     "total_water_g": 100.25,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 26.732333333333333,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00006683333333333332,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999980878094782,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G27",
+   "name": "creamy dip: cream cheese + mayo + Dijon (v.2.7.1)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Cheese, Cream",
+     "amount": 225,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Mayonnaise",
+     "amount": 60,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Mustard, Dijon",
+     "amount": 15,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Lemon",
+     "amount": 10,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 7.7014216459426965,
+     "sweetness_intensity": 0.3318811411308084,
+     "sourness_intensity": 97.52428798368325,
+     "kokumi_intensity_pct": 0.1225014157370617,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 7.8396235447978135,
+     "sweetness": 1.277224318360687,
+     "sourness": 6.86723730665026,
+     "kokumi": 1.0110251274163355,
+     "bitterness": 1
+    },
+    "pH": 4.489963074935451,
+    "intermediate": {
+     "total_mass_g": 310,
+     "total_water_g": 152.84099999999998,
+     "salt_pct_water": 1.1865860869565217,
+     "sucrose_eq_pct": 1.0545497701802096,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 29.075302729036434,
+     "citric_equiv_mM": 29.009439470125862,
+     "umami_remaining": 0.5325713690400281,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "ph_default",
+     "salt_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Cheese, Cream",
+      "fields": [
+       "glutamate",
+       "organic acids"
+      ]
+     },
+     {
+      "name": "Mustard, Dijon",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Mayonnaise",
+      "fields": [
+       "ph"
+      ]
+     },
+     {
+      "name": "Mustard, Dijon",
+      "fields": [
+       "acids"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G28",
+   "name": "hoisin glaze (v.2.7.1)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Sauce, Hoisin",
+     "amount": 60,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sauce, Soy",
+     "amount": 15,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 60,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Garlic",
+     "amount": 6,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 9.00572877566671,
+     "saltiness_intensity": 13.400852417559102,
+     "sweetness_intensity": 10.27497180476314,
+     "sourness_intensity": 8.860267134028865,
+     "kokumi_intensity_pct": 70.17692449002182,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.737428711915895,
+     "saltiness": 10,
+     "sweetness": 9.582807824045766,
+     "sourness": 1.5330496735783292,
+     "kokumi": 7.3159232041019635,
+     "bitterness": 1
+    },
+    "pH": 4.545511329603411,
+    "intermediate": {
+     "total_mass_g": 141,
+     "total_water_g": 100.73279999999998,
+     "salt_pct_water": 3.231986086956522,
+     "sucrose_eq_pct": 11.670459161588623,
+     "umami_eq_msg_pct": 0.23137860471530067,
+     "sour_stimulus_mM": 1.7385810662217724,
+     "citric_equiv_mM": 1.8648793851739853,
+     "umami_remaining": 0.9730354118475758,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Sauce, Hoisin",
+      "fields": [
+       "glutamate",
+       "organic acids"
+      ]
+     },
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Sauce, Hoisin",
+      "fields": [
+       "sugars"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G29",
+   "name": "salsa + hot sauce + yellow mustard (v.2.7.1)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Salsa (Jarred)",
+     "amount": 200,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sauce, Hot (Tabasco)",
+     "amount": 5,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Mustard, Yellow (Prepared)",
+     "amount": 10,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 8.698728176505156,
+     "sweetness_intensity": 1.1543113988201237,
+     "sourness_intensity": 87.1614266375862,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 8.7253303066668,
+     "sweetness": 1.9642102278651414,
+     "sourness": 6.243788851393277,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 3.270114271269941,
+    "intermediate": {
+     "total_mass_g": 215,
+     "total_water_g": 191.7305,
+     "salt_pct_water": 1.7183959959555106,
+     "sucrose_eq_pct": 2.75095053323121,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 24.1120952325333,
+     "citric_equiv_mM": 24.075796662659045,
+     "umami_remaining": 0.6323461607371069,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Salsa (Jarred)",
+      "fields": [
+       "glutamate",
+       "organic acids"
+      ]
+     },
+     {
+      "name": "Sauce, Hot (Tabasco)",
+      "fields": [
+       "glutamate",
+       "organic acids"
+      ]
+     },
+     {
+      "name": "Mustard, Yellow (Prepared)",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Salsa (Jarred)",
+      "fields": [
+       "ph"
+      ]
+     },
+     {
+      "name": "Sauce, Hot (Tabasco)",
+      "fields": [
+       "ph"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G30",
+   "name": "50/50 salt + KCl blend (v.2.7.2)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Salt",
+     "amount": 5,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Potassium Chloride",
+     "amount": 5,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 1000,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 6.0480128916853335,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0.8661650883960516
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 6.371233166412131,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1.7795485795564465
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 1010,
+     "total_water_g": 1000.005,
+     "salt_pct_water": 0.4950418941024538,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009901039603960396,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999881260568925,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "bitter_kcl_low"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G31",
+   "name": "lemonade by volume, 1 cup sugar (v.2.7.2)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Lemon",
+     "amount": 0.75,
+     "unit": "cup"
+    },
+    {
+     "ingredient": "Sugar",
+     "amount": 1,
+     "unit": "cup"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 4,
+     "unit": "cup"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 11.446611200028759,
+     "sourness_intensity": 65.34060770264325,
+     "kokumi_intensity_pct": 0.5289576514447912,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 4.931008973029254,
+     "kokumi": 1.0476061886300312,
+     "bitterness": 1
+    },
+    "pH": 2.5571128759670403,
+    "intermediate": {
+     "total_mass_g": 1257.357555,
+     "total_water_g": 1045.318049779,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 16.066041869227433,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 24.10591718841016,
+     "citric_equiv_mM": 24.069654958478715,
+     "umami_remaining": 0.8012186587467045,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G32",
+   "name": "black coffee (v.2.8.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Coffee, Brewed",
+     "amount": 240,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 2.415476378847708
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 3.1739287409629373
+    },
+    "pH": 5.999963995295543,
+    "intermediate": {
+     "total_mass_g": 240,
+     "total_water_g": 238.53599999999997,
+     "salt_pct_water": 0.005081739130434781,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.0009939824015976555,
+     "citric_equiv_mM": 0.003875453734147015,
+     "umami_remaining": 0.9999053572995303,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "bitter_scope",
+     "ph_default"
+    ],
+    "missing": [],
+    "estimated": [
+     {
+      "name": "Coffee, Brewed",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G33",
+   "name": "coffee with sugar (v.2.8.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Coffee, Brewed",
+     "amount": 240,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Sugar",
+     "amount": 8,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 2.4717680547105245,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 2.169913637246315
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 3.06469765584772,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 2.9529222735216836
+    },
+    "pH": 5.999964113353629,
+    "intermediate": {
+     "total_mass_g": 248,
+     "total_water_g": 238.54079999999996,
+     "salt_pct_water": 0.0049178120617110795,
+     "sucrose_eq_pct": 3.2238709677419357,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.0009619375481104157,
+     "citric_equiv_mM": 0.0037405757595783753,
+     "umami_remaining": 0.999941242930681,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "bitter_scope",
+     "ph_default"
+    ],
+    "missing": [],
+    "estimated": [
+     {
+      "name": "Coffee, Brewed",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G34",
+   "name": "1.5% KCl in water (v.2.8.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Potassium Chloride",
+     "amount": 15,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 1000,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 7.144920588781125,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 5.699393444405408
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 7.345395607638655,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 6.1294540999648675
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 1015,
+     "total_water_g": 1000,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009852216748768472,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999881787655523,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "k_extrap"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G35",
+   "name": "dark chocolate + cocoa drink (v.2.8.0)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Chocolate, Dark (70-85%)",
+     "amount": 30,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Cocoa Powder (Unsweetened)",
+     "amount": 10,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Milk, Cow",
+     "amount": 240,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0.7285900913434327,
+     "sweetness_intensity": 3.187756710625007,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0.12830000625947433,
+     "bitterness_intensity": 7.514166342075597
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1.6470600068864236,
+     "sweetness": 3.6627716121248675,
+     "sourness": 1,
+     "kokumi": 1.0115470005633527,
+     "bitterness": 7.762749707868037
+    },
+    "pH": 6.373432884182714,
+    "intermediate": {
+     "total_mass_g": 280,
+     "total_water_g": 212.151,
+     "salt_pct_water": 0.09011012422360248,
+     "sucrose_eq_pct": 3.9192380327081726,
+     "umami_eq_msg_pct": 0.019477976074602187,
+     "sour_stimulus_mM": 0.00032066692536320354,
+     "citric_equiv_mM": 0.0009552574371006831,
+     "umami_remaining": 0.9999810026806831,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "bitter_scope",
+     "bitter_tb",
+     "ph_default"
+    ],
+    "missing": [
+     {
+      "name": "Chocolate, Dark (70-85%)",
+      "fields": [
+       "glutamate"
+      ]
+     },
+     {
+      "name": "Cocoa Powder (Unsweetened)",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Cocoa Powder (Unsweetened)",
+      "fields": [
+       "sugars"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G36",
+   "name": "stevia Reb A 97% in water, 1.5 g/L (v.2.8.2)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Water",
+     "amount": 1000,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Stevia Extract (Reb A 97%)",
+     "amount": 1.5,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 18.25208138482551,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 4.42310119430984
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 4.980791074878857
+    },
+    "pH": 7,
+    "intermediate": {
+     "total_mass_g": 1001.5,
+     "total_water_g": 1000.075,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 15,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009985771342985521,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999962788165838,
+     "synergy_pH_factor": 0.7675000000000001
+    },
+    "note_keys": [
+     "his",
+     "his_high"
+    ],
+    "missing": [],
+    "estimated": []
+   }
+  },
+  {
+   "id": "G37",
+   "name": "chocolate milk, whole (v.2.8.2)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Milk, Chocolate (Whole)",
+     "amount": 240,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 2.1498096814002174,
+     "sweetness_intensity": 10.129156508309416,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 2.909243460457147,
+     "sweetness": 9.461006548962128,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 5.999959916903913,
+    "intermediate": {
+     "total_mass_g": 240,
+     "total_water_g": 197.52,
+     "salt_pct_water": 0.15245217391304347,
+     "sucrose_eq_pct": 9.540000000000001,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.0008230759620760297,
+     "citric_equiv_mM": 0.0031515582787225785,
+     "umami_remaining": 0.9999697876721566,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "bitter_scope",
+     "bitter_tb",
+     "ph_default"
+    ],
+    "missing": [
+     {
+      "name": "Milk, Chocolate (Whole)",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Milk, Chocolate (Whole)",
+      "fields": [
+       "sugars"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "G38",
+   "name": "milk chocolate + water, 1:4 (v.2.8.2)",
+   "origin": "project golden recipe",
+   "recipe": [
+    {
+     "ingredient": "Chocolate, Milk",
+     "amount": 20,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 80,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 11.19064979802471,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 1.1413820273877446
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 2.02724382464897
+    },
+    "pH": 6.000282799909581,
+    "intermediate": {
+     "total_mass_g": 100,
+     "total_water_g": 80.3,
+     "salt_pct_water": 0.04014573913043479,
+     "sucrose_eq_pct": 10.3,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.000802477280011033,
+     "citric_equiv_mM": 0.0030635449614476937,
+     "umami_remaining": 0.9999711554919014,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "bitter_scope",
+     "bitter_tb",
+     "ph_default"
+    ],
+    "missing": [
+     {
+      "name": "Chocolate, Milk",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Chocolate, Milk",
+      "fields": [
+       "sugars"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "X01",
+   "name": "MSG + I+G (synergy cap reached)",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Monosodium Glutamate",
+     "amount": 1,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Ajitide I+G",
+     "amount": 0.1,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 22.182960820086667,
+     "saltiness_intensity": 0.48110814417339043,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 7.7428495102235715,
+     "saltiness": 1.4272715794253226,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 6.3358711947038575,
+    "intermediate": {
+     "total_mass_g": 501.1,
+     "total_water_g": 500.0001,
+     "salt_pct_water": 0.07476322351695833,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 13.814407281314146,
+     "sour_stimulus_mM": 0.00046044153570835335,
+     "citric_equiv_mM": 0.0015769779358526179,
+     "umami_remaining": 0.9999526495748841,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "ph_default"
+    ],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "synergy cap 16x, glutamate threshold drop"
+  },
+  {
+   "id": "X02",
+   "name": "I+G alone in water (nucleotide-alone term)",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Ajitide I+G",
+     "amount": 0.25,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 6.772473820457954,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.058596783073544,
+     "saltiness": 1,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 6.001442255582363,
+    "intermediate": {
+     "total_mass_g": 500.25,
+     "total_water_g": 500.00025,
+     "salt_pct_water": 0.014609047650088,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0.2066666666666667,
+     "sour_stimulus_mM": 0.0009961869967828377,
+     "citric_equiv_mM": 0.0038847186993517732,
+     "umami_remaining": 0.9999051684175705,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "ph_default"
+    ],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "NUC_ALONE background glutamate"
+  },
+  {
+   "id": "X03",
+   "name": "MSG alone, near threshold",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Monosodium Glutamate",
+     "amount": 0.05,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 6.9999999999999964,
+    "intermediate": {
+     "total_mass_g": 500.05,
+     "total_water_g": 500,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 0,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00009999000099990083,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999880203779824,
+     "synergy_pH_factor": 0.7675000000000016
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "umami threshold and log curve near zero"
+  },
+  {
+   "id": "X04",
+   "name": "Garlic, raw, 25% cut loss (API option)",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Garlic",
+     "amount": 15,
+     "unit": "g",
+     "cys_loss_on_cut": 0.25
+    },
+    {
+     "ingredient": "Water",
+     "amount": 300,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 11.555241978516563,
+     "kokumi_intensity_pct": 64.28406310186664,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1,
+     "sourness": 1.695184227697891,
+     "kokumi": 6.7855656791679975,
+     "bitterness": 1
+    },
+    "pH": 5.801152886006676,
+    "intermediate": {
+     "total_mass_g": 315,
+     "total_water_g": 308.787,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 0.047619047619047616,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.6199658464024442,
+     "citric_equiv_mM": 0.7418794875465464,
+     "umami_remaining": 0.9700620066672139,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   },
+   "covers": "per-item cys_loss_on_cut"
+  },
+  {
+   "id": "X05",
+   "name": "Garlic added late: per-item cook_min 0",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Garlic",
+     "amount": 15,
+     "unit": "g",
+     "cook_min": 0
+    },
+    {
+     "ingredient": "Onion",
+     "amount": 100,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 300,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "cook_min": 60,
+    "cook_temp_c": 93.33333333333333
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0.3291558060005439,
+     "sourness_intensity": 26.853427578338664,
+     "kokumi_intensity_pct": 85.65696159239813,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1.2749478130696128,
+     "sourness": 2.615550703896655,
+     "kokumi": 8.709126543315833,
+     "bitterness": 1
+    },
+    "pH": 5.6139492743389106,
+    "intermediate": {
+     "total_mass_g": 415,
+     "total_water_g": 397.887,
+     "salt_pct_water": 0.0040102881089575685,
+     "sucrose_eq_pct": 0.8206276290081131,
+     "umami_eq_msg_pct": 0.015323715851648283,
+     "sour_stimulus_mM": 1.3333689087542655,
+     "citric_equiv_mM": 1.461187839051611,
+     "umami_remaining": 0.9466498707020293,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "cook_range"
+    ],
+    "missing": [
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   },
+   "covers": "per-item cook override; cook temp outside 60-89 C note"
+  },
+  {
+   "id": "X06",
+   "name": "Mushrooms cooked below nuclease temperature",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Mushroom, Button",
+     "amount": 200,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "cook_min": 20,
+    "cook_temp_c": 60
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0.07933897488233076,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 1.041777396531707,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1.0662728022334984,
+     "sourness": 1,
+     "kokumi": 1.0937599656878536,
+     "bitterness": 1
+    },
+    "pH": 6.35026514169822,
+    "intermediate": {
+     "total_mass_g": 700,
+     "total_water_g": 687.8,
+     "salt_pct_water": 0.004355776397515528,
+     "sucrose_eq_pct": 0.22878843430563722,
+     "umami_eq_msg_pct": 0.027254323193288736,
+     "sour_stimulus_mM": 0.0006290204032604426,
+     "citric_equiv_mM": 0.0023156802571129217,
+     "umami_remaining": 0.9999388244368151,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "cooked nucleotides NOT applied below 65 C"
+  },
+  {
+   "id": "X07",
+   "name": "Page example: Tomato sauce (page settings 45 min, 200 F, 10% cooked down)",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 800,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Onion",
+     "amount": 0.5,
+     "unit": "cup"
+    },
+    {
+     "ingredient": "Garlic",
+     "amount": 12,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Oil or fat",
+     "amount": 2,
+     "unit": "tbsp"
+    },
+    {
+     "ingredient": "Salt",
+     "amount": 0.5,
+     "unit": "tsp"
+    },
+    {
+     "ingredient": "Sugar",
+     "amount": 1,
+     "unit": "tsp"
+    }
+   ],
+   "opt": {
+    "cook_min": 45,
+    "cook_temp_c": 93.33333333333333,
+    "water_loss_g": 89.4010335
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 11.887641767147278,
+     "saltiness_intensity": 8.394110151001252,
+     "sweetness_intensity": 1.8784917372902086,
+     "sourness_intensity": 97.24966710546396,
+     "kokumi_intensity_pct": 51.753939418361206,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 4.61343015107075,
+     "saltiness": 8.45479939494819,
+     "sweetness": 2.5691267953402805,
+     "sourness": 6.850715618615554,
+     "kokumi": 5.657854547652509,
+     "bitterness": 1
+    },
+    "pH": 4.148347500555202,
+    "intermediate": {
+     "total_mass_g": 804.6093014999999,
+     "total_water_g": 675.310564545,
+     "salt_pct_water": 0.8387669669793203,
+     "sucrose_eq_pct": 4.000963173913124,
+     "umami_eq_msg_pct": 4.816429520283879,
+     "sour_stimulus_mM": 49.256693339700426,
+     "citric_equiv_mM": 49.04529403751951,
+     "umami_remaining": 0.5353035233538371,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "cook_range",
+     "salt_extrap"
+    ],
+    "missing": [
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   },
+   "covers": "page example; helper row; volume units; water loss = 10% of total mass",
+   "page_note": "water_loss_g = 10% of total mass, as the page does"
+  },
+  {
+   "id": "X08",
+   "name": "Imperial mass units: oz, lb, kg",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 1,
+     "unit": "lb"
+    },
+    {
+     "ingredient": "Cheese, Parmigiano Regianno",
+     "amount": 1,
+     "unit": "oz"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 0.25,
+     "unit": "kg"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 8.969962941175188,
+     "saltiness_intensity": 4.701545762753767,
+     "sweetness_intensity": 0.7833967638333256,
+     "sourness_intensity": 94.54984392174275,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.726557140643699,
+     "saltiness": 5.175437286025766,
+     "sweetness": 1.6543807614969699,
+     "sourness": 6.688289379650973,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 4.313761693620018,
+    "intermediate": {
+     "total_mass_g": 731.94,
+     "total_water_g": 663.77632,
+     "salt_pct_water": 0.3561563259283548,
+     "sucrose_eq_pct": 2.041688778139927,
+     "umami_eq_msg_pct": 2.5316732481492146,
+     "sour_stimulus_mM": 29.522830340844806,
+     "citric_equiv_mM": 29.454238505306492,
+     "umami_remaining": 0.5619787957199428,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [
+     {
+      "name": "Cheese, Parmigiano Regianno",
+      "fields": [
+       "nucleotides",
+       "organic acids"
+      ]
+     }
+    ],
+    "estimated": []
+   },
+   "covers": "oz/lb/kg conversion"
+  },
+  {
+   "id": "X09",
+   "name": "Cocoa in water above theobromine solubility",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Cocoa Powder (Unsweetened)",
+     "amount": 20,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 200,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0.0494619963978715,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 8.62672163945353
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1.0413162019072189,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 8.764049475508177
+    },
+    "pH": 6.000330593797223,
+    "intermediate": {
+     "total_mass_g": 220,
+     "total_water_g": 200.6,
+     "salt_pct_water": 0.004850750988142293,
+     "sucrose_eq_pct": 0.1590909090909091,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.0009111243513757299,
+     "citric_equiv_mM": 0.003525900704084116,
+     "umami_remaining": 0.999913964257092,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "bitter_scope",
+     "bitter_tb",
+     "ph_default"
+    ],
+    "missing": [
+     {
+      "name": "Cocoa Powder (Unsweetened)",
+      "fields": [
+       "glutamate"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Cocoa Powder (Unsweetened)",
+      "fields": [
+       "sugars"
+      ]
+     }
+    ]
+   },
+   "covers": "theobromine cap 0.1153 g/100 g food"
+  },
+  {
+   "id": "X10",
+   "name": "Acesulfame K above bitterness range",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Acesulfame Potassium",
+     "amount": 2,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 1000,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 18.25208138482551,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 4.226168647889544
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 10,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 4.803551783100589
+    },
+    "pH": 6.99570059785221,
+    "intermediate": {
+     "total_mass_g": 1002,
+     "total_water_g": 1000.01,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 15,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.00010079431170729525,
+     "citric_equiv_mM": 8.673617379884035e-16,
+     "umami_remaining": 0.9999962474194016,
+     "synergy_pH_factor": 0.7694992219987224
+    },
+    "note_keys": [
+     "bitter_acek_extrap",
+     "his",
+     "his_high",
+     "ph_default"
+    ],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "ace-K bitterness extrapolation; HIS sweetness"
+  },
+  {
+   "id": "X11",
+   "name": "Acidity model off (API option)",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 200,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 100,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "acidity": false
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 14.96570018388151,
+     "saltiness_intensity": 4.370133565865298,
+     "sweetness_intensity": 1.5018174310506425,
+     "sourness_intensity": null,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 5.549052985914439,
+     "saltiness": 4.881110502078582,
+     "sweetness": 2.2544862061358137,
+     "sourness": null,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": null,
+    "intermediate": {
+     "total_mass_g": 300,
+     "total_water_g": 278.8,
+     "salt_pct_water": 0.3150678260869565,
+     "sucrose_eq_pct": 2.1963942242579386,
+     "umami_eq_msg_pct": 1.9297067904704122,
+     "sour_stimulus_mM": 0,
+     "citric_equiv_mM": 0,
+     "umami_remaining": 1,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "acidity=false: no pH, sourness null"
+  },
+  {
+   "id": "X12",
+   "name": "All potassium counted (API option k_source=total)",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Tomato (Canned)",
+     "amount": 400,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Salt",
+     "amount": 2,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 100,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "k_source": "total"
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 8.731393114772331,
+     "saltiness_intensity": 7.119026132263034,
+     "sweetness_intensity": 1.0861768517324688,
+     "sourness_intensity": 98.3570573348699,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 3.6540402007202415,
+     "saltiness": 7.322398771129361,
+     "sweetness": 1.9072966192496266,
+     "sourness": 6.91733821490744,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 4.100255748451529,
+    "intermediate": {
+     "total_mass_g": 502,
+     "total_water_g": 457.60200000000003,
+     "salt_pct_water": 0.7749753403776196,
+     "sucrose_eq_pct": 2.625172379591162,
+     "umami_eq_msg_pct": 3.05828560527651,
+     "sour_stimulus_mM": 38.636234966939575,
+     "citric_equiv_mM": 38.50784129063939,
+     "umami_remaining": 0.5242695745001594,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "salt_extrap"
+    ],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "k_source=total"
+  },
+  {
+   "id": "X13",
+   "name": "Boundary: mushrooms cooked at exactly 65 C",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Mushroom, Button",
+     "amount": 200,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 500,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "cook_min": 20,
+    "cook_temp_c": 65
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 6.422526683869775,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0.07933897356910727,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 1.041777396531707,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 2.9522250098154363,
+     "saltiness": 1,
+     "sweetness": 1.066272801136547,
+     "sourness": 1,
+     "kokumi": 1.0937599656878536,
+     "bitterness": 1
+    },
+    "pH": 6.3502496974314955,
+    "intermediate": {
+     "total_mass_g": 700,
+     "total_water_g": 687.8,
+     "salt_pct_water": 0.004355776397515528,
+     "sucrose_eq_pct": 0.22878843430563722,
+     "umami_eq_msg_pct": 0.186450131282675,
+     "sour_stimulus_mM": 0.0006290427348772225,
+     "citric_equiv_mM": 0.0023157773267014,
+     "umami_remaining": 0.9999388224822571,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [
+     "cooked_nuc"
+    ],
+    "missing": [],
+    "estimated": []
+   },
+   "covers": "cooked nucleotides apply at T >= 65 (inclusive); no cook_range note inside 60-89"
+  },
+  {
+   "id": "X14",
+   "name": "Boundary: garlic cooked at exactly 89 C",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Garlic",
+     "amount": 15,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 300,
+     "unit": "g"
+    }
+   ],
+   "opt": {
+    "cook_min": 30,
+    "cook_temp_c": 89
+   },
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0,
+     "sourness_intensity": 11.555241978516563,
+     "kokumi_intensity_pct": 72.1714878902519,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1,
+     "sourness": 1.695184227697891,
+     "kokumi": 7.495433910122671,
+     "bitterness": 1
+    },
+    "pH": 5.801152886006676,
+    "intermediate": {
+     "total_mass_g": 315,
+     "total_water_g": 308.787,
+     "salt_pct_water": 0,
+     "sucrose_eq_pct": 0.047619047619047616,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.6199658464024442,
+     "citric_equiv_mM": 0.7418794875465464,
+     "umami_remaining": 0.9700620066672139,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [
+     {
+      "name": "Garlic",
+      "fields": [
+       "nucleotides"
+      ]
+     }
+    ],
+    "estimated": []
+   },
+   "covers": "cook_range note does not fire at the inclusive 89 C limit"
+  },
+  {
+   "id": "X15",
+   "name": "Boundary: ingredient at exactly 1% of recipe mass",
+   "origin": "added for the rebuild package",
+   "recipe": [
+    {
+     "ingredient": "Sauce, Hoisin",
+     "amount": 1,
+     "unit": "g"
+    },
+    {
+     "ingredient": "Water",
+     "amount": 99,
+     "unit": "g"
+    }
+   ],
+   "opt": {},
+   "expected": {
+    "raw": {
+     "umami_intensity": 0,
+     "saltiness_intensity": 0,
+     "sweetness_intensity": 0.09752332449459172,
+     "sourness_intensity": 0,
+     "kokumi_intensity_pct": 0,
+     "bitterness_intensity": 0
+    },
+    "score": {
+     "umami": 1,
+     "saltiness": 1,
+     "sweetness": 1.0814624086959654,
+     "sourness": 1,
+     "kokumi": 1,
+     "bitterness": 1
+    },
+    "pH": 4.193312558896897,
+    "intermediate": {
+     "total_mass_g": 100,
+     "total_water_g": 99.4423,
+     "salt_pct_water": 0.04103504347826086,
+     "sucrose_eq_pct": 0.2726,
+     "umami_eq_msg_pct": 0,
+     "sour_stimulus_mM": 0.0637174815176599,
+     "citric_equiv_mM": 0.12683527345274792,
+     "umami_remaining": 0.9961285857728911,
+     "synergy_pH_factor": 1
+    },
+    "note_keys": [],
+    "missing": [
+     {
+      "name": "Sauce, Hoisin",
+      "fields": [
+       "glutamate",
+       "organic acids"
+      ]
+     }
+    ],
+    "estimated": [
+     {
+      "name": "Sauce, Hoisin",
+      "fields": [
+       "sugars"
+      ]
+     }
+    ]
+   },
+   "covers": "data-gap flags at share >= 0.01 (missing glutamate and organic acids; estimated tier-3 sugars)"
+  }
+ ],
+ "paste_cases": [
+  {
+   "id": "P01",
+   "name": "Page placeholder recipe",
+   "text": "1 (28 ounce) can crushed tomatoes\n3 cloves garlic, minced\n1/2 medium onion, diced\n1 tsp kosher salt\n2 tbsp olive oil",
+   "expected": [
+    {
+     "line": "1 (28 ounce) can crushed tomatoes",
+     "status": "ok",
+     "item": [
+      "Tomato (Canned)",
+      793.8,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "3 cloves garlic, minced",
+     "status": "ok",
+     "item": [
+      "Garlic",
+      9,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "1/2 medium onion, diced",
+     "status": "ok",
+     "item": [
+      "Onion",
+      55,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "1 tsp kosher salt",
+     "status": "ok",
+     "item": [
+      "Kosher Salt",
+      1,
+      "tsp"
+     ],
+     "note": ""
+    },
+    {
+     "line": "2 tbsp olive oil",
+     "status": "ok",
+     "item": [
+      "Oil or fat",
+      2,
+      "tbsp"
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "P02",
+   "name": "Mixed lines: skips, refusals, cans, ranges",
+   "text": "Ingredients:\n2 tbsp soy sauce\n1-2 cups chopped onion\nsalt to taste\n1 (14.5 oz) can diced tomatoes\n2 cups cooked rice\n1 cup ice cream\n3 cloves garlic\n1 can chicken broth\n½ lb ground beef (or ground turkey)",
+   "expected": [
+    {
+     "line": "2 tbsp soy sauce",
+     "status": "ok",
+     "item": [
+      "Sauce, Soy",
+      2,
+      "tbsp"
+     ],
+     "note": ""
+    },
+    {
+     "line": "1-2 cups chopped onion",
+     "status": "ok",
+     "item": [
+      "Onion",
+      1.5,
+      "cup"
+     ],
+     "note": ""
+    },
+    {
+     "line": "salt to taste",
+     "status": "skip",
+     "item": null,
+     "note": "no amount (\"to taste\")"
+    },
+    {
+     "line": "1 (14.5 oz) can diced tomatoes",
+     "status": "ok",
+     "item": [
+      "Tomato (Canned)",
+      411.1,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "2 cups cooked rice",
+     "status": "skip",
+     "item": null,
+     "note": "barely affects these tastes"
+    },
+    {
+     "line": "1 cup ice cream",
+     "status": "none",
+     "item": null,
+     "note": "ice cream isn't in the database yet"
+    },
+    {
+     "line": "3 cloves garlic",
+     "status": "ok",
+     "item": [
+      "Garlic",
+      9,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "1 can chicken broth",
+     "status": "ok",
+     "item": [
+      "Broth, Chicken",
+      411.1,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "½ lb ground beef (or ground turkey)",
+     "status": "ok",
+     "item": [
+      "Hamburger Meat",
+      226.8,
+      "g"
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "P03",
+   "name": "Sweeteners and salted/unsalted variants",
+   "text": "1/2 cup Splenda\n2 tsp stevia\n1 tbsp honey\n½ cup unsalted peanut butter\n1 scoop pure stevia\n1 oz potato chips\n2 shots espresso\n1 inch ginger",
+   "expected": [
+    {
+     "line": "1/2 cup Splenda",
+     "status": "none",
+     "item": null,
+     "note": "tabletop blend bulked with dextrose or maltodextrin; the label doesn't give the sweetener share, so enter the pure sweetener in grams"
+    },
+    {
+     "line": "2 tsp stevia",
+     "status": "approx",
+     "item": [
+      "Stevia Extract (Reb A 97%)",
+      2,
+      "tsp"
+     ],
+     "note": "read as pure stevia extract; tabletop stevia blends are mostly erythritol or dextrose"
+    },
+    {
+     "line": "1 tbsp honey",
+     "status": "ok",
+     "item": [
+      "Honey",
+      1,
+      "tbsp"
+     ],
+     "note": ""
+    },
+    {
+     "line": "½ cup unsalted peanut butter",
+     "status": "ok",
+     "item": [
+      "Peanut Butter, Unsalted",
+      0.5,
+      "cup"
+     ],
+     "note": ""
+    },
+    {
+     "line": "1 scoop pure stevia",
+     "status": "ok",
+     "item": [
+      "Stevia Extract (Reb A 97%)",
+      0.025,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "1 oz potato chips",
+     "status": "ok",
+     "item": [
+      "Potato Chips, Salted",
+      28.4,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "2 shots espresso",
+     "status": "ok",
+     "item": [
+      "Espresso",
+      59.2,
+      "g"
+     ],
+     "note": ""
+    },
+    {
+     "line": "1 inch ginger",
+     "status": "none",
+     "item": null,
+     "note": "piece size in inches can't be weighed; enter it in grams"
+    }
+   ]
+  }
+ ]
+}

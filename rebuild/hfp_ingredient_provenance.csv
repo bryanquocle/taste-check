@@ -1,0 +1,695 @@
+ingredient,field,tier,basis_or_source,record
+Abalone,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Abalone' (6.1-6.5), midpoint",raw-data pH Source column
+Acesulfame Potassium,density,2,"Hommel E950 spec bulk 1.10-1.30 g/mL, low end (loose); pharma monograph bulk 1.04, tapped 1.28 [value 1.1]",Data Quality sheet
+Allulose,density,2,CJ CheilJedang US11653684 Table 4: crystalline allulose poured bulk 67.3 g/100 mL (DIN ISO 697); labels use the sugar convention 4 g/tsp [value 0.67],Data Quality sheet
+Apple,acids,2,"Malic acid derived: original 2790 mg/100 g treated as dry weight, x dry matter 15.3% = 427 mg/100 g fresh",Data Quality sheet
+Apple,organic acids,,"Malic corrected 2790 -> 427 mg/100 g (Sept 25, 2026, Bryan approved): 2790 read as a dry-weight value x dry matter 15.3% (water 84.7%). Typical fresh apple malic is ~300-700 mg/100 g.",raw-data Organic Acid Source column
+Apple,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Apples, eating' (3.3-4.0), midpoint",raw-data pH Source column
+Artichoke,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Artichokes' (5.5-6.0), midpoint",raw-data pH Source column
+Asparagus (Canned),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Asparagus, canned' (5.0-6.0), midpoint",raw-data pH Source column
+Asparagus (Fresh),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Asparagus' (6.0-6.7), midpoint",raw-data pH Source column
+"Asparagus, White",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Asparagus' (6.0-6.7), midpoint",raw-data pH Source column
+Aspartame,density,2,"Powder grade spec 0.15-0.30 g/mL (Hommel EP/USP spec), midpoint; fine granular grade 0.45-0.65 [value 0.25]",Data Quality sheet
+Avocado,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Avocados' (6.27-6.58), midpoint",raw-data pH Source column
+Bacon,glutamate,2,"One retail Japanese bacon without added MSG, free Glu 0.03 g/100 g by ninhydrin, no hydrolysis (Kobayashi et al. 2019, Heliyon 5:e01169, PMC6351430, Table 1B, Bacon No. 2) [value 30]",Data Quality sheet
+Bacon,organic acids,,Composition: USDA FDC SR Legacy 168277,raw-data Organic Acid Source column
+Bamboo Shoots,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Bamboo Shoots' (5.1-6.2), midpoint",raw-data pH Source column
+Basil,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Basil,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+"Beans, Baked (Canned)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Beans Boston style' (5.05-5.42), midpoint",raw-data pH Source column
+"Beans, Black (Canned)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Beans, Black' 5.78-6.02, midpoint",raw-data pH Source column
+"Beans, Black (Canned)",sugars,3,"USDA SR 175188 total sugars 0.23 g, not split; entered as sucrose [value 230]",Data Quality sheet
+"Beans, Fava",ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3],Data Quality sheet
+"Beans, Fava",ph_ref,,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56),raw-data pH Source column
+"Beans, Kidney (Canned)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Beans, Kidney' 5.40-6.00, midpoint",raw-data pH Source column
+"Beans, Pinto (Canned)",ph,3,FDA generic 'Beans' range 5.60-6.50 [value 6.0],Data Quality sheet
+"Beans, Pinto (Canned)",ph_ref,,Category estimate: FDA/USDA generic 'Beans' 5.60-6.50,raw-data pH Source column
+"Beans, Soy",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Beans Soy' (6.0-6.6), midpoint",raw-data pH Source column
+Beef,acids,2,"Organic acids review (Foods, 'Recent Progress in the Study of Taste Characteristics and th",Data Quality sheet
+Beef,organic acids,,"Organic acids review (Foods, 'Recent Progress in the Study of Taste Characteristics and the Nutrition and Health Properties of Organic Acids in Foods'), ref [13]: fresh pork before stewing, lactic 3490 mg/kg (sibling of pork (post-mortem muscle lactate))",raw-data Organic Acid Source column
+Beef,ph,3,Default: typical post-rigor muscle pH 5.4-5.8 (not in FDA list),Data Quality sheet
+Beef,ph_ref,,Default: typical post-rigor muscle pH 5.4-5.8 (not in FDA list),raw-data pH Source column
+Beer,acids,2,"Weak source: means of 10 Korean market beers, several below the paper's LOQ (Moon et al. 2018, Table 1)",Data Quality sheet
+Beer,organic acids,,"Moon, Hwang, Choi, Bang & Shibamoto 2018, Scholarly J Food Nutr 1(4) (doi:10.32474/SJFN.2018.01.000119), Table 1: means of 10 market beers (HPLC); weak source, several values below its own LOQ; mg/L / 10 / density",raw-data Organic Acid Source column
+Beer,ph,2,"One premium lager (Wang et al. 2025, Sci Rep, Table 1) [value 4.31]",Data Quality sheet
+Beer,ph_ref,,"Wang C. et al. 2025, Sci Rep 15:10204, Table 1: premium lager pH 4.31",raw-data pH Source column
+Beer,sugars,1,"USDA FDC SR Legacy 168746 (beer, regular, all): glucose, maltose, sucrose, fructose, lactose, galactose measured 0 g/100 g (existing zeros confirmed)",Data Quality sheet
+Beets,glutamate,2,"Fresh beet juice 445-455 mg/L (Choinska et al. 2022, Sci Rep, PMC9681880, Table 3); juice, not root [value 45]",Data Quality sheet
+Beets,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Beets' (5.3-6.6), midpoint",raw-data pH Source column
+Bitter Melon,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97],Data Quality sheet
+Bitter Melon,ph_ref,,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41),raw-data pH Source column
+Boar,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]",Data Quality sheet
+Boar,ph_ref,,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken",raw-data pH Source column
+Bonito Flakes,acids,2,"Derived: lactate = K x (640/210), ratio from dried bonito dashi stock per 100 g (lactate 6",Data Quality sheet
+Bonito Flakes,organic acids,,"Derived: lactate = K x (640/210), ratio from dried bonito dashi stock per 100 g (lactate 640 mg, K 210 mg; Delay et al. 2019, Physiol Behav 199:127), assuming proportional extraction",raw-data Organic Acid Source column
+Bonito Flakes,ph,2,"Proxy: dried bonito dashi stock pH 5.7-5.8 (Delay et al. 2019, Physiol Behav 199:127)",Data Quality sheet
+Bonito Flakes,ph_ref,,"Proxy: dried bonito dashi stock pH 5.7-5.8 (Delay et al. 2019, Physiol Behav 199:127)",raw-data pH Source column
+Bouillon,glutamate,2,"Copied from Beef Stock Cube (6827 mg/100 g); most commercial bouillon cubes and granules contain MSG. Was 4 mg/100 g (source unknown, implausible)",Data Quality sheet
+Bread,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Bread, white' (5.0-6.2), midpoint",raw-data pH Source column
+Broccoli,glutamate,2,"41.15 mmol/kg dry weight x 147.13 x (1 - 0.893 moisture, assumed) (Lee, Finley & Harnly 2005, J Agric Food Chem 53:9105, Table 3); source has a units inconsistency, tentative [value 65]",Data Quality sheet
+Broccoli,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Broccoli, cooked' (6.3-6.52), midpoint",raw-data pH Source column
+"Broth, Beef",ph,2,"Proxy: FDA/USDA 'Soup Chicken Broth' (5.8-5.8), midpoint; meat broth proxy; no beef broth entry",Data Quality sheet
+"Broth, Beef",ph_ref,,"Proxy: FDA/USDA 'Soup Chicken Broth' (5.8-5.8), midpoint; meat broth proxy; no beef broth entry",raw-data pH Source column
+"Broth, Chicken",glutamate,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [value 26.9]",Data Quality sheet
+"Broth, Chicken",gmp,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [IMP 12.2, GMP 0.73]",Data Quality sheet
+"Broth, Chicken",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Soup Chicken Broth' (5.8-5.8), midpoint",raw-data pH Source column
+"Broth, Chicken (Low Sodium)",glutamate,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [value 26.9]",Data Quality sheet
+"Broth, Chicken (Low Sodium)",gmp,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [IMP 12.2, GMP 0.73]",Data Quality sheet
+"Broth, Chicken (Low Sodium)",organic acids,,"Composition: USDA FDC SR Legacy 171609 (chicken broth, low sodium, canned); glutamate and glutathione copied from Broth, Chicken (tier 2)",raw-data Organic Acid Source column
+"Broth, Chicken (Low Sodium)",ph,2,"Copied from Broth, Chicken (FDA 'Soup Chicken Broth')",Data Quality sheet
+"Broth, Chicken (Low Sodium)",ph_ref,,"Copied from Broth, Chicken (FDA/USDA 'Soup Chicken Broth', 5.8)",raw-data pH Source column
+"Broth, Turkey",glutamate,2,"Sibling: home-style chicken broth (Takakura et al. 2014, Food Sci Technol Res 20:109, Table 1); no turkey broth measurement found; replaces an unsourced 418 (Bryan, Nov 21 2026) [value 26.9]",Data Quality sheet
+"Broth, Turkey",gmp,2,"Sibling: chicken broth (Takakura 2014) [IMP 12.2, GMP 0.73]",Data Quality sheet
+"Broth, Turkey",ph,2,"Proxy: FDA/USDA 'Soup Chicken Broth' (5.8-5.8), midpoint; poultry broth proxy",Data Quality sheet
+"Broth, Turkey",ph_ref,,"Proxy: FDA/USDA 'Soup Chicken Broth' (5.8-5.8), midpoint; poultry broth proxy",raw-data pH Source column
+"Broth, Vegetable",organic acids,,Composition: USDA FDC SR Legacy 171583,raw-data Organic Acid Source column
+Brussel Sprouts,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Brussels sprout' (6.0-6.3), midpoint",raw-data pH Source column
+Burdock Root,ph,3,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9) [value 5.95],Data Quality sheet
+Burdock Root,ph_ref,,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9),raw-data pH Source column
+"Butter, Salted",glutamate,2,"Sweet-cream butter, mean of 3 products (Lei et al. 2025, Food Chem X 32:103334, PMC12719179, Table 1; unit printed as mg/100 mg, read as mg/100 g) [value 1.06]",Data Quality sheet
+"Butter, Salted",organic acids,,Composition: USDA FDC SR Legacy 173410,raw-data Organic Acid Source column
+Buttermilk (Cultured),organic acids,,Gebreselassie et al. 2016 (Int J Dairy Technol): lactic acid 7050 ug/g in naturally fermented buttermilk (HPLC); product differs from US cultured buttermilk,raw-data Organic Acid Source column
+Buttermilk (Cultured),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Buttermilk' (4.41-4.83), midpoint",raw-data pH Source column
+Buttermilk (Cultured),sugars,2,USDA FDC 167697 gives total sugars only (5.3 g/100 g); assigned to lactose (fermented dairy),Data Quality sheet
+Cabbage,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cabbage' (5.2-6.8), midpoint",raw-data pH Source column
+Cabbage (Chinese),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cabbage' (5.2-6.8), midpoint",raw-data pH Source column
+Capers,organic acids,,Composition: USDA FDC SR Legacy 172238,raw-data Organic Acid Source column
+Capers,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Capers' (6.0-6.0), midpoint",raw-data pH Source column
+Carrot,acids,1,"Conversa et al. 2022 Table 5 root flesh means: malic 277, succinic 9.3, oxalic 10.9, citric 1.2 mg/100 g FW; no tartaric reported in carrot",Data Quality sheet
+Carrot,organic acids,,"Conversa et al. 2022, Foods 11:45 (doi:10.3390/foods11010045, PMC8750513), Table 5: root flesh, mean of 3 genotypes (n = 9 each), mg/100 g FW, HPLC; tartaric, fumaric, quinic, malonic not measured (blank). Replaces Priecina & Karklina 2015",raw-data Organic Acid Source column
+Carrot,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Carrots' (5.88-6.4), midpoint",raw-data pH Source column
+Cauliflower,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cauliflower' (5.6-5.6), midpoint",raw-data pH Source column
+Caviar,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Caviar, American' (5.7-6.0), midpoint",raw-data pH Source column
+"Caviar, Red",ph,2,"Proxy: FDA/USDA 'Caviar, American' (5.7-6.0), midpoint; red caviar (salmon roe) proxied by American caviar",Data Quality sheet
+"Caviar, Red",ph_ref,,"Proxy: FDA/USDA 'Caviar, American' (5.7-6.0), midpoint; red caviar (salmon roe) proxied by American caviar",raw-data pH Source column
+Celery,organic acids,,"Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1) | Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1); n.d. = 0",raw-data Organic Acid Source column
+Celery,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Celery' (5.7-6.0), midpoint",raw-data pH Source column
+"Cheese, American (Processed)",ph,2,"FDA 'Cheese, American, mild' may not be processed cheese [value 4.98]",Data Quality sheet
+"Cheese, American (Processed)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, American, mild' 4.98 (processed cheese is usually higher)",raw-data pH Source column
+"Cheese, Cabrales",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54],Data Quality sheet
+"Cheese, Cabrales",ph_ref,,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44),raw-data pH Source column
+"Cheese, Camembert",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Camembert' (7.44-7.44), midpoint",raw-data pH Source column
+"Cheese, Cheddar (Aged One Year)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Cheddar' (5.9-5.9), midpoint",raw-data pH Source column
+"Cheese, Cheddar (Aged Three Years)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Cheddar' (5.9-5.9), midpoint",raw-data pH Source column
+"Cheese, Cottage",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Cottage' (4.75-5.02), midpoint",raw-data pH Source column
+"Cheese, Cream",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Cream, Philadelphia' (4.10-4.79), midpoint",raw-data pH Source column
+"Cheese, Emmental",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54],Data Quality sheet
+"Cheese, Emmental",ph_ref,,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44),raw-data pH Source column
+"Cheese, Feta",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54],Data Quality sheet
+"Cheese, Feta",ph_ref,,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44),raw-data pH Source column
+"Cheese, Gouda",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54],Data Quality sheet
+"Cheese, Gouda",ph_ref,,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44),raw-data pH Source column
+"Cheese, Kashkaval",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54],Data Quality sheet
+"Cheese, Kashkaval",ph_ref,,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44),raw-data pH Source column
+"Cheese, Manchego",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54],Data Quality sheet
+"Cheese, Manchego",ph_ref,,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44),raw-data pH Source column
+"Cheese, Monterey Jack",density,2,Shredded: USDA SR 170844 1 cup shredded = 113 g [value 0.478],Data Quality sheet
+"Cheese, Monterey Jack",ph,3,FDA Cheddar 5.90 as sibling [value 5.9],Data Quality sheet
+"Cheese, Monterey Jack",ph_ref,,"Category estimate: FDA/USDA 'Cheese, Cheddar' 5.90 as sibling",raw-data pH Source column
+"Cheese, Monterey Jack",sugars,2,USDA SR 170844 total sugars entered as lactose [value 500],Data Quality sheet
+"Cheese, Mozzarella",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54],Data Quality sheet
+"Cheese, Mozzarella",ph_ref,,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44),raw-data pH Source column
+"Cheese, Parmigiano Regianno",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Parmesan' (5.2-5.3), midpoint",raw-data pH Source column
+"Cheese, Parmigiano Regianno (Aged Four Years)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Parmesan' (5.2-5.3), midpoint",raw-data pH Source column
+"Cheese, Parmigiano Regianno (Aged Two Years)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Parmesan' (5.2-5.3), midpoint",raw-data pH Source column
+"Cheese, Provolone",ph,3,FDA Cheddar 5.90 as sibling [value 5.9],Data Quality sheet
+"Cheese, Provolone",ph_ref,,"Category estimate: FDA/USDA 'Cheese, Cheddar' 5.90 as sibling",raw-data pH Source column
+"Cheese, Provolone",sugars,2,USDA SR 170850 total sugars entered as lactose [value 560],Data Quality sheet
+"Cheese, Ricotta (Whole Milk)",ph,2,"Italian whey ricotta, not US whole-milk ricotta [value 6.4]",Data Quality sheet
+"Cheese, Ricotta (Whole Milk)",ph_ref,,"Montone et al. 2017 Ital J Food Saf (doi:10.4081/ijfs.2017.6316), buffalo PDO ricotta pH 6.2-6.7",raw-data pH Source column
+"Cheese, Ricotta (Whole Milk)",sugars,2,USDA SR 170851 total sugars entered as lactose [value 270],Data Quality sheet
+"Cheese, Roquefort",glutamate,2,"Sibling: Cabrales long-ripened blue cheese, Glu above 1,500 mg/100 g in most samples (Foods 2025 14:2366, PMC12248881); lower bound used [value 1500]",Data Quality sheet
+"Cheese, Roquefort",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cheese, Roquefort' (5.1-5.98), midpoint",raw-data pH Source column
+Chicken,acids,2,"Organic acids review (Foods, 'Recent Progress in the Study of Taste Characteristics and th",Data Quality sheet
+Chicken,organic acids,,"Organic acids review (Foods, 'Recent Progress in the Study of Taste Characteristics and the Nutrition and Health Properties of Organic Acids in Foods'), ref [13]: fresh pork before stewing, lactic 3490 mg/kg (sibling of pork (post-mortem muscle lactate))",raw-data Organic Acid Source column
+Chicken,ph,3,Default: typical post-rigor poultry breast pH 5.7-6.0 (not in FDA list),Data Quality sheet
+Chicken,ph_ref,,Default: typical post-rigor poultry breast pH 5.7-6.0 (not in FDA list),raw-data pH Source column
+Chicken Soup,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Soup Chicken Broth' (5.8-5.8), midpoint",raw-data pH Source column
+"Chicken, Barbecued",ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.9]",Data Quality sheet
+"Chicken, Barbecued",ph_ref,,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken",raw-data pH Source column
+Chickpeas (Canned),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Peas, Chick, Garbanzo' 6.48-6.80, midpoint",raw-data pH Source column
+Chickpeas (Canned),sugars,3,"USDA SR 173800 total sugars 4.01 g, not split; entered as sucrose [value 4010]",Data Quality sheet
+Chili Pepper,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Peppers' (4.65-5.45), midpoint",raw-data pH Source column
+Chive,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Chives' (5.2-6.31), midpoint",raw-data pH Source column
+"Chocolate, Dark (45-59%)",composition,1,"USDA FDC SR Legacy 170271 (Chocolate, dark, 45-59% cacao solids): water, Na, K, protein, sucrose 46.25 g, lactose 1.65 g, caffeine 43, theobromine 493 (v.2.8.2); glutamate/nucleotides/acids/pH blank",Data Quality sheet
+"Chocolate, Dark (70-85%)",theobromine,1,"USDA FDC SR Legacy 170273, nutrient 1058 theobromine [value 802] (v.2.8.2 bitterness)",Data Quality sheet
+"Chocolate, Milk",composition,1,"USDA FDC SR Legacy 167587 (Candies, milk chocolate): water, Na, K, protein, caffeine 20, theobromine 205 (v.2.8.2); glutamate/nucleotides/acids/pH blank",Data Quality sheet
+"Chocolate, Milk",sugars,3,"USDA SR 167587 total sugars 51.5 g, not split (sucrose + lactose); entered as sucrose [value 51500]",Data Quality sheet
+Chrysanthemum Greens,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97],Data Quality sheet
+Chrysanthemum Greens,ph_ref,,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41),raw-data pH Source column
+Clam,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Clams' (6.0-7.1), midpoint",raw-data pH Source column
+Cocoa Powder (Unsweetened),sugars,3,"USDA SR 169593 total sugars 1.75 g, not split; entered as sucrose [value 1750]",Data Quality sheet
+Cocoa Powder (Unsweetened),theobromine,1,"USDA FDC SR Legacy 169593, nutrient 1058 theobromine [value 2057] (v.2.8.2 bitterness)",Data Quality sheet
+Coconut Milk,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Coconut milk' (6.1-7.0), midpoint",raw-data pH Source column
+"Coffee, Brewed",glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]",Data Quality sheet
+"Coffee, Brewed",theobromine,1,"USDA FDC SR Legacy 171890, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)",Data Quality sheet
+"Coffee, Instant (Powder)",theobromine,1,"USDA FDC SR Legacy 171893, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)",Data Quality sheet
+Cola,glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]",Data Quality sheet
+Cola,theobromine,1,"USDA FDC SR Legacy 174852, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)",Data Quality sheet
+Coriander,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Coriander,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Corn (Canned),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Corn, canned' (5.9-6.5), midpoint",raw-data pH Source column
+Corn (Fresh),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Corn' (5.9-7.3), midpoint",raw-data pH Source column
+"Crab, Alaska King",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Crab meat' (6.5-7.0), midpoint",raw-data pH Source column
+"Crab, Blue",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Crab meat' (6.5-7.0), midpoint",raw-data pH Source column
+"Crab, Snow",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Crab meat' (6.5-7.0), midpoint",raw-data pH Source column
+Cucumber,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cucumbers' (5.12-5.78), midpoint",raw-data pH Source column
+Cumin,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Cumin,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Daikon,ph,3,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9) [value 5.95],Data Quality sheet
+Daikon,ph_ref,,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9),raw-data pH Source column
+Deer,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]",Data Quality sheet
+Deer,ph_ref,,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken",raw-data pH Source column
+Dill,organic acids,,"Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1) | Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1); n.d. = 0",raw-data Organic Acid Source column
+Dill,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Dill,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Doenjang,ph_ref,,"Lee HY et al. 2024 Food Chem X 21:101101 (PMC10805635), commercial doenjang pH 5.14-5.64",raw-data pH Source column
+Doenjang,sugars,3,"Label total sugars 8 g (FDC branded 2067532), not split; entered as sucrose [value 8000]",Data Quality sheet
+Edamame,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3],Data Quality sheet
+Edamame,ph_ref,,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56),raw-data pH Source column
+Egg White,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Egg White' (7.96-7.96), midpoint",raw-data pH Source column
+Egg Yolk,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Egg Yolk' (6.1-6.1), midpoint",raw-data pH Source column
+Eggplant,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Eggplant' (5.5-6.5), midpoint",raw-data pH Source column
+Eggs,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Eggs, new-laid, whole' (6.58-6.58), midpoint",raw-data pH Source column
+Espresso,glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]",Data Quality sheet
+Espresso,theobromine,1,"USDA FDC SR Legacy 171891, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)",Data Quality sheet
+"Fish, Anchovy (Canned)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Anchovy (Canned)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Anchovy (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Anchovy (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Anchovy (Fresh)",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]",Data Quality sheet
+"Fish, Anchovy (Fresh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Anchovies' (6.5-6.5), midpoint",raw-data pH Source column
+"Fish, Angler",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]",Data Quality sheet
+"Fish, Angler",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Angler",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Black Scraper",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]",Data Quality sheet
+"Fish, Black Scraper",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Black Scraper",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Bonito",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Bonito",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Butter",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Butter",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Cod",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Codfish, boiled' (5.3-6.1), midpoint",raw-data pH Source column
+"Fish, Eel",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]",Data Quality sheet
+"Fish, Eel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Eel",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Fatty Tuna",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Fatty Tuna",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Flounder",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]",Data Quality sheet
+"Fish, Flounder",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Flounder, boiled' (6.1-6.9), midpoint",raw-data pH Source column
+"Fish, Flying (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Flying (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Flying (Dried, Grilled)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Flying (Dried, Grilled)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Flying (Fresh)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Flying (Fresh)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Fugu",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Fugu",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Horse Mackerel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Horse Mackerel",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Mackerel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Mackerel",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Rock",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]",Data Quality sheet
+"Fish, Rock",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Rock",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Salmon (Canned)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Salmon, Red Alaska, canned' (6.07-6.16), midpoint",raw-data pH Source column
+"Fish, Salmon (Fresh)",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]",Data Quality sheet
+"Fish, Salmon (Fresh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Salmon, fresh, boiled' (5.85-6.5), midpoint",raw-data pH Source column
+"Fish, Sardine (Canned)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Sardine, Portuguese, in olive oil' (5.42-5.93), midpoint",raw-data pH Source column
+"Fish, Sardine (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Sardine (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Sardine (Fresh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Sardines' (5.7-6.6), midpoint",raw-data pH Source column
+"Fish, Seabream (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Seabream (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Seabream (Fresh)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Seabream (Fresh)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Spanish Mackerel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Spanish Mackerel",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Tuna (Dried)",acids,2,"Derived: lactate = K x (640/210), ratio from dried bonito dashi stock per 100 g (lactate 6",Data Quality sheet
+"Fish, Tuna (Dried)",organic acids,,"Derived: lactate = K x (640/210), ratio from dried bonito dashi stock per 100 g (lactate 640 mg, K 210 mg; Delay et al. 2019), assuming proportional extraction; entry treated as katsuobushi-style",raw-data Organic Acid Source column
+"Fish, Tuna (Dried)",ph,2,"Proxy: dried bonito dashi stock pH 5.7-5.8 (Delay et al. 2019, Physiol Behav 199:127); ent",Data Quality sheet
+"Fish, Tuna (Dried)",ph_ref,,"Proxy: dried bonito dashi stock pH 5.7-5.8 (Delay et al. 2019, Physiol Behav 199:127); entry treated as katsuobushi-style (Bryan, Sept 2026)",raw-data pH Source column
+"Fish, Tuna (Fresh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tuna Fish, canned' (5.9-6.2), midpoint",raw-data pH Source column
+"Fish, Whitebait (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Whitebait (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Fish, Yellowtail",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
+"Fish, Yellowtail",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+Garlic,organic acids,,"Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1) | Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1); n.d. = 0",raw-data Organic Acid Source column
+Garlic,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Garlic' (5.8-5.8), midpoint",raw-data pH Source column
+Ginger,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Ginger' (5.6-5.9), midpoint",raw-data pH Source column
+Gochujang,glutamate,2,"Yang, Lee & Choi 2018 Table 3: lab-made gochujang 58-80 mg/100 g (mean of 5); retail paste with added MSG is likely higher [value 68]",Data Quality sheet
+Gochujang,ph,2,Lab-made gochujang (Yang 2018) [value 4.6],Data Quality sheet
+Gochujang,ph_ref,,"Yang, Lee & Choi 2018 J Food Sci Technol 55:792 (lab-made, day 90) pH 4.52-4.68",raw-data pH Source column
+Gochujang,sugars,3,"Ahn, Kim & Shin 1997 sugar split (glucose 8.6-29.4%, maltose 5.3-16.5%, fructose 0.3-3.4%, sucrose n.d.) scaled to the Sempio label total 25.2 g",Data Quality sheet
+Grape,acids,1,"Wang et al. 2025 Table 2: tartaric 3.95, malic 5.21, citric 0.11 g/kg FW (14 cultivar-years); Chinese cultivars, not Thompson Seedless",Data Quality sheet
+Grape,glutamate,2,"Grape must, not whole berry: Tempranillo control must 44.86 (2022) and 30.75 (2023) mg/L free Glu (Garde-Cerdan et al. 2026, J Sci Food Agric 106:7380, PMC13442748, Tables 6-7), mean 37.8 mg/L; replaces an unsourced 184 [value 3.8]",Data Quality sheet
+Grape,organic acids,,"Wang S.L. et al. 2025, Food Chem X (doi:10.1016/j.fochx.2025.103157, PMC12554047), Table 2: mean of 7 white table-grape cultivars x 2 years, g/kg FW (HPLC)",raw-data Organic Acid Source column
+Grape,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Grapes, Seedless' (2.9-3.82), midpoint",raw-data pH Source column
+Grapefruit,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Grapefruit' (3.0-3.75), midpoint",raw-data pH Source column
+Green Onion,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Green Onion,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Green Pea,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3],Data Quality sheet
+Green Pea,ph_ref,,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56),raw-data pH Source column
+Green Pepper,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Peppers, green' (5.2-5.93), midpoint",raw-data pH Source column
+Green Tea,aspartate,1,"Standard Sencha dry leaf, Unno 2025 Table 2 (1.79 mg/g). Was blank",Data Quality sheet
+"Ham, Dry-Cured",glutamate,2,"340 mg/100 g kept (unsourced) but inside measured free-Glu ranges for dry-cured hams as eaten, 166-739 (Garcia-Gonzalez 2013 Molecules 18:3927 Table 1; Munoz-Rosique 2022 Foods 11:812 Table 3) [value 340]",Data Quality sheet
+"Ham, Dry-Cured",sodium,1,"USDA FDC FNDDS 2705879 (Ham, prosciutto; food code 22311450): water 55.93 g, protein 27.8 g, Na 2695 mg, K 510 mg; was water 18 / protein 35.7 / Na 2110 / K 679 (unsourced; 18% water made the water phase above NaCl saturation)",Data Quality sheet
+Hamburger Meat,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]",Data Quality sheet
+Hamburger Meat,ph_ref,,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken",raw-data pH Source column
+Honey,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Honey' (3.7-4.2), midpoint",raw-data pH Source column
+"Juice, Apple",acids,1,"USDA FDC Foundation 2003590: malic acid 360 mg/100 g, citric/oxalic/quinic 0 (was blank)",Data Quality sheet
+"Juice, Apple",organic acids,,"USDA FDC Foundation 2003590 (apple juice from concentrate, shelf stable): malic 360 mg/100 g; citric, oxalic, quinic 0",raw-data Organic Acid Source column
+"Juice, Apple",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Apples Juice' (3.35-4.0), midpoint",raw-data pH Source column
+"Juice, Cranberry (Unsweetened)",organic acids,,"J AOAC Int 61:1490 (HPLC, 27 single-strength cranberry juices): quinic 1.32%, malic 0.92%, citric 1.08%",raw-data Organic Acid Source column
+"Juice, Cranberry (Unsweetened)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cranberry Juice, canned' (2.3-2.52), midpoint",raw-data pH Source column
+"Juice, Cranberry (Unsweetened)",sugars,3,USDA FDC 168117 gives total sugars only (12.1 g/100 g); split 50:50 glucose/fructose (category estimate for fruit),Data Quality sheet
+"Juice, Grapefruit",organic acids,,Penniston et al. 2008 (J Endourol 22:567): ready-to-consume grapefruit juice 25 g/L citric acid; / density,raw-data Organic Acid Source column
+"Juice, Grapefruit",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Grapefruit Juice, canned' (2.9-3.25), midpoint",raw-data pH Source column
+"Juice, Lime",organic acids,,Penniston et al. 2008 (J Endourol 22:567): fresh-squeezed lime juice 46 g/L citric acid; / density 1.023,raw-data Organic Acid Source column
+"Juice, Lime",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Lime Juice' (2.0-2.35), midpoint",raw-data pH Source column
+"Juice, Orange",organic acids,,"Kelebek et al. 2009 (Microchem J, cv. Kozan, HPLC): orange juice citric 12.66, malic 1.06 g/L; / density",raw-data Organic Acid Source column
+"Juice, Orange",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Orange Juice, California' (3.3-4.19), midpoint",raw-data pH Source column
+"Juice, Peach",ph,2,"Proxy: FDA/USDA 'Peaches' (3.3-4.05), midpoint; juice proxied by the fruit",Data Quality sheet
+"Juice, Peach",ph_ref,,"Proxy: FDA/USDA 'Peaches' (3.3-4.05), midpoint; juice proxied by the fruit",raw-data pH Source column
+"Juice, Pomegranate",organic acids,,"Melgarejo et al. 2000 (Eur Food Res Technol): Spanish pomegranate cultivars, averages citric 0.282, malic 0.139 g/100 g",raw-data Organic Acid Source column
+"Juice, Pomegranate",ph,2,fruit pH applied to juice,Data Quality sheet
+"Juice, Pomegranate",ph_ref,,"Proxy: FDA/USDA 'Pomegranate' (2.93-3.2), midpoint; fruit value applied to juice",raw-data pH Source column
+"Juice, Tomato",acids,2,Derived: whole red tomato x dry-matter ratio 1.05,Data Quality sheet
+"Juice, Tomato",amp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 0.651 (190/292); keeps the fresh-tomato Glu:nucleotide ratio",Data Quality sheet
+"Juice, Tomato",gmp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 0.651 (190/292); keeps the fresh-tomato Glu:nucleotide ratio",Data Quality sheet
+"Juice, Tomato",organic acids,,Derived: whole red tomato x dry-matter ratio 1.05,raw-data Organic Acid Source column
+"Juice, Tomato",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes, Juice' (4.1-4.6), midpoint",raw-data pH Source column
+Kale,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97],Data Quality sheet
+Kale,ph_ref,,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41),raw-data pH Source column
+Kefir (Plain),acids,2,fermented-milk range applied (Alm 1982),Data Quality sheet
+Kefir (Plain),organic acids,,Sibling of yogurt: total lactic acid in fermented milks 0.6-1.2% (Alm 1982); midpoint 0.9%,raw-data Organic Acid Source column
+Kefir (Plain),ph,2,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)",Data Quality sheet
+Kefir (Plain),ph_ref,,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)",raw-data pH Source column
+Ketchup,acids,2,"8 Czech ketchups (Divis et al. 2018, Table 3); 4 of 8 exceed the Czech 2.2% acidity cap, so acetic may be high",Data Quality sheet
+Ketchup,glutamate,2,"German tomato ketchup, enzymatic assay (Wechjakwen et al. 2025, J Nutr Assoc Thailand 60:80); weak source (its MSG value is implausible), placeholder [value 226]",Data Quality sheet
+Ketchup,organic acids,,"Divis, Smilek, Porizka & Stursa 2018, Potravinarstvo 12:233 (doi:10.5219/898), Table 3: means of 8 Czech ketchups (ion chromatography), acetic 24.7 mg/g, citric 5.1 mg/g",raw-data Organic Acid Source column
+Ketchup,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Ketchup' (3.89-3.92), midpoint",raw-data pH Source column
+Kosher Salt,density,3,"Brand not given: midpoint of Diamond Crystal 0.568 and Morton 0.974 g/mL (label serving sizes, 1/4 tsp = 0.7 g and 1.2 g) [value 0.771]; was 1.2 (table-salt density)",Data Quality sheet
+Lamb,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]",Data Quality sheet
+Lamb,ph_ref,,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken",raw-data pH Source column
+Leek,organic acids,,"Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1) | Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1); n.d. = 0",raw-data Organic Acid Source column
+Leek,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Leeks' (5.5-6.17), midpoint",raw-data pH Source column
+Lemon,organic acids,,Penniston et al. 2008 (J Endourol 22:567): lemon juice ~48 g/L citric acid; ~4.7 g/100 g,raw-data Organic Acid Source column
+Lemon,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Lemon Juice' (2.0-2.6), midpoint",raw-data pH Source column
+Lentils,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Lentils, cooked' (6.3-6.83), midpoint",raw-data pH Source column
+Lettuce,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Lettuce' (5.8-6.15), midpoint",raw-data pH Source column
+"Lettuce, Butterhead",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Lettuce, Boston' (5.89-6.05), midpoint",raw-data pH Source column
+"Lettuce, Romaine",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Lettuce' (5.8-6.15), midpoint",raw-data pH Source column
+Lobster,ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48],Data Quality sheet
+Lobster,ph_ref,,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75),raw-data pH Source column
+Lotus Root,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Lotus Root' (6.9-6.9), midpoint",raw-data pH Source column
+Maltitol,density,2,Roquette SweetPearl P200 crystalline maltitol bulk 0.81 / tapped 0.96 g/mL [value 0.81],Data Quality sheet
+Mandarin,acids,2,juice concentrations applied to whole fruit,Data Quality sheet
+Mandarin,organic acids,,"Karadeniz 2004 (Turk J Agric For 28): authentic tangerine juice averages citric 9.22, malic 5.29 g/L, applied to the fruit",raw-data Organic Acid Source column
+Mandarin,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tangerine' (3.32-4.48), midpoint",raw-data pH Source column
+Mannitol,density,2,Roquette Pearlitol 160C crystalline mannitol bulk 0.64 / tapped 0.69 g/mL [value 0.64],Data Quality sheet
+Maple Syrup,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Maple syrup' (5.15-5.15), midpoint",raw-data pH Source column
+Mayonnaise,acids,2,"Industry use level 0.31-0.32% acetic acid (Smittle 1977), not measured for one product",Data Quality sheet
+Mayonnaise,glutamate,2,"One Malaysian product, from the abstract only (Khairunnisak et al. 2009, Food Addit Contam A 26:419) [value 28]",Data Quality sheet
+Mayonnaise,organic acids,,Smittle 1977 J Food Prot 40(6): US producers use 0.31-0.32% acetic acid,raw-data Organic Acid Source column
+Mayonnaise,ph,3,Category estimate (tier 3): commercial mayonnaise/dressings pH 3.21-3.94 (Erickson 1995) [value 3.8],Data Quality sheet
+Mayonnaise,ph_ref,,"Category estimate: Erickson 1995 J Food Prot 58:1059, commercial mayonnaise/dressings pH 3.21-3.94",raw-data pH Source column
+"Milk, Chocolate (Whole)",composition,1,"USDA FDC SR Legacy 170879 (Milk, chocolate, fluid, commercial, whole): water, Na, K, protein, caffeine 1, theobromine 23; density 250 g/cup = 1.057 g/mL (v.2.8.2); glutamate/nucleotides/acids/pH blank",Data Quality sheet
+"Milk, Chocolate (Whole)",sugars,3,"USDA SR 170879 total sugars 9.54 g, not split (lactose + added sucrose); entered as sucrose [value 9540]",Data Quality sheet
+"Milk, Cow",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Milk, cow' (6.4-6.8), midpoint",raw-data pH Source column
+Mint,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Mint,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Molasses,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Molasses' (4.9-5.4), midpoint",raw-data pH Source column
+Monk Fruit Extract (Mogroside V 25%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026",Data Quality sheet
+Monk Fruit Extract (Mogroside V 40%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026",Data Quality sheet
+Monk Fruit Extract (Mogroside V 50%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026",Data Quality sheet
+Monk Fruit Extract (Mogroside V 55%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026",Data Quality sheet
+Monosodium Glutamate,ph,3,Default: MSG solution ~pH 7,Data Quality sheet
+Monosodium Glutamate,ph_ref,,Default: MSG solution ~pH 7,raw-data pH Source column
+Mugwort,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Mugwort,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Mushroom (Canned),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Mushrooms, cooked' (6.0-6.22), midpoint",raw-data pH Source column
+"Mushroom, Button",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Mushrooms' (6.0-6.7), midpoint",raw-data pH Source column
+"Mushroom, Champignon",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Mushrooms' (6.0-6.7), midpoint",raw-data pH Source column
+"Mushroom, Enoki",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Mushrooms' (6.0-6.7), midpoint",raw-data pH Source column
+"Mushroom, King Trumpet",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35],Data Quality sheet
+"Mushroom, King Trumpet",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35),raw-data pH Source column
+"Mushroom, Morel (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35],Data Quality sheet
+"Mushroom, Morel (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35),raw-data pH Source column
+"Mushroom, Oyster (Dried)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Oyster mushroom' (5.0-6.0), midpoint",raw-data pH Source column
+"Mushroom, Porcini (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35],Data Quality sheet
+"Mushroom, Porcini (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35),raw-data pH Source column
+"Mushroom, Shiitake (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35],Data Quality sheet
+"Mushroom, Shiitake (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35),raw-data pH Source column
+"Mushroom, Shiitake (Fresh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Mushrooms' (6.0-6.7), midpoint",raw-data pH Source column
+"Mushroom, White Beech",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Mushrooms' (6.0-6.7), midpoint",raw-data pH Source column
+Mussel,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Mussels' (6.0-6.85), midpoint",raw-data pH Source column
+Mustard Greens,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97],Data Quality sheet
+Mustard Greens,ph_ref,,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41),raw-data pH Source column
+"Mustard, Dijon",acids,3,"Spec range midpoint (USDA A-A-20036 Type III, 2.10-3.50% as acetic) [value 2800]",Data Quality sheet
+"Mustard, Dijon",organic acids,,"USDA purchase spec A-A-20036 Type III Dijon: titratable acidity 2.10-3.50% as acetic, midpoint",raw-data Organic Acid Source column
+"Mustard, Dijon",sugars,2,"Sibling: USDA SR 172234 yellow mustard (water, K, protein and sugars too); sodium from Dijon labels",Data Quality sheet
+"Mustard, Yellow (Prepared)",acids,2,"Manufacturer spec range midpoint (Woeber, 2.8-3.5% as acetic)",Data Quality sheet
+"Mustard, Yellow (Prepared)",organic acids,,"Woeber spec acidity 2.8-3.5% as acetic, midpoint",raw-data Organic Acid Source column
+"Mustard, Yellow (Prepared)",ph,2,"Manufacturer spec range midpoint (Woeber, pH 3.3-3.6)",Data Quality sheet
+"Mustard, Yellow (Prepared)",ph_ref,,"Woeber Salad Style Mustard product spec pH 3.3-3.6, midpoint (FDA list 'Mustard' 3.55-6.00)",raw-data pH Source column
+Nectarine,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Nectarines' (3.92-4.18), midpoint",raw-data pH Source column
+Octopus,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Octopus' (6.0-6.5), midpoint",raw-data pH Source column
+Okra,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97],Data Quality sheet
+Okra,ph_ref,,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41),raw-data pH Source column
+"Olives, Black",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Olives, black' (6.0-7.0), midpoint",raw-data pH Source column
+"Olives, Green",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Olives, green, fermented' (3.6-4.6), midpoint",raw-data pH Source column
+Onion,acids,2,"Rodriguez Galdon et al. 2008 (6 cultivars): citric and malic from the abstract, minor acids via a review; basis assumed fresh weight",Data Quality sheet
+Onion,organic acids,,"Rodriguez Galdon et al. 2008, J Agric Food Chem 56:6512 (doi:10.1021/jf800282h): mean of 6 onion cultivars; citric 48.5, malic 43.6 mg/100 g from the abstract; tartaric 188, oxalic 113, fumaric 2.4 mg/kg as quoted from it by the Foods 2022 organic-acids review (11:3408); malonic/succinic/quinic not reported (blank). Replaces Priecina & Karklina 2015",raw-data Organic Acid Source column
+Onion,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Onions, yellow' (5.32-5.6), midpoint",raw-data pH Source column
+"Onion, Welsh",ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+"Onion, Welsh",ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+"Oyster, European",ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48],Data Quality sheet
+"Oyster, European",ph_ref,,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75),raw-data pH Source column
+"Oyster, Generic",ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48],Data Quality sheet
+"Oyster, Generic",ph_ref,,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75),raw-data pH Source column
+"Oyster, Pacific",ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48],Data Quality sheet
+"Oyster, Pacific",ph_ref,,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75),raw-data pH Source column
+Paprika,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Paprika,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Parsley,organic acids,,"Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1) | Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1); n.d. = 0",raw-data Organic Acid Source column
+Parsley,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Parsley' (5.7-6.0), midpoint",raw-data pH Source column
+"Paste, Shrimp",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Shrimp Paste' (5.0-6.77), midpoint",raw-data pH Source column
+"Paste, Tomato",acids,2,Derived: whole red tomato x dry-matter ratio 4.82,Data Quality sheet
+"Paste, Tomato",amp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 2.620 (765/292); keeps the fresh-tomato Glu:nucleotide ratio",Data Quality sheet
+"Paste, Tomato",gmp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 2.620 (765/292); keeps the fresh-tomato Glu:nucleotide ratio",Data Quality sheet
+"Paste, Tomato",organic acids,,Derived: whole red tomato x dry-matter ratio 4.82,raw-data Organic Acid Source column
+"Paste, Tomato",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes, Paste' (3.5-4.7), midpoint",raw-data pH Source column
+Peach,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Peaches' (3.3-4.05), midpoint",raw-data pH Source column
+"Peanut Butter, Salted",glutamate,2,"Sibling: Peanut Butter, Unsalted (unsalted version of the same food)",Data Quality sheet
+"Peanut Butter, Salted",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Peanut Butter' (6.28-6.28), midpoint",raw-data pH Source column
+"Peanut Butter, Salted",sodium,1,"USDA FDC SR Legacy 174266 (peanut butter, smooth style, with salt) (Na, K, water, protein, sugars, vitamin C); taste compounds (glutamate, glutathione), density and pH copied from Peanut Butter, Unsalted",Data Quality sheet
+"Peanut Butter, Unsalted",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Peanut Butter' (6.28-6.28), midpoint",raw-data pH Source column
+"Peanut Butter, Unsalted",sodium,1,"Renamed from 'Peanut Butter' (Nov 24, 2026): values are USDA FDC SR Legacy 172470 (smooth, without salt)",Data Quality sheet
+Peanuts,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3],Data Quality sheet
+Peanuts,ph_ref,,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56),raw-data pH Source column
+Perilla,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75],Data Quality sheet
+Perilla,ph_ref,,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85),raw-data pH Source column
+Persimmon,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Persimmons' (4.42-4.7), midpoint",raw-data pH Source column
+"Pickles, Dill",glutamate,2,"Fermented whole dill pickles, tissue (Moore, DuVivier & Johanningsmeier 2022, J Food Sci 87:599, Table 1); fresh-pack (acidified) pickles measured 0.72 [value 3.32]",Data Quality sheet
+"Pickles, Dill",organic acids,,"USDA-ARS: commercial fresh-pack dill pickles, equilibrated brine 0.57% acetic acid",raw-data Organic Acid Source column
+"Pickles, Dill",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Cucumbers, Dill pickles' (3.2-3.7), midpoint",raw-data pH Source column
+Plum,organic acids,,"Front Nutr 2021 (Prunus salicina): per 100 g pulp malic 0.81 g, citric 0.01 g",raw-data Organic Acid Source column
+Plum,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Plums, Red' (3.6-4.3), midpoint",raw-data pH Source column
+Pomegranate,organic acids,,"Melgarejo et al. 2000 (Eur Food Res Technol): Spanish pomegranate cultivars, averages citric 0.282, malic 0.139 g/100 g (juice-sac values)",raw-data Organic Acid Source column
+Pomegranate,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Pomegranate' (2.93-3.2), midpoint",raw-data pH Source column
+Pomegranate,sugars,2,USDA FDC 169134 total sugars 13.67 g/100 g split by the pomegranate-juice glucose:fructose ratio,Data Quality sheet
+Pork,organic acids,,"Organic acids review (Foods, 'Recent Progress in the Study of Taste Characteristics and the Nutrition and Health Properties of Organic Acids in Foods'), ref [13]: fresh pork before stewing, lactic 3490 mg/kg (published)",raw-data Organic Acid Source column
+Pork,ph,3,Default: typical post-rigor muscle pH 5.4-5.8 (not in FDA list),Data Quality sheet
+Pork,ph_ref,,Default: typical post-rigor muscle pH 5.4-5.8 (not in FDA list),raw-data pH Source column
+"Pork, Iberian",ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]",Data Quality sheet
+"Pork, Iberian",ph_ref,,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken",raw-data pH Source column
+Potato,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Potatoes' (5.4-5.9), midpoint",raw-data pH Source column
+"Potato Chips, Salted",glutamate,2,"Sibling: Potato Chips, Unsalted (unsalted version of the same food)",Data Quality sheet
+"Potato Chips, Salted",sodium,1,"USDA FDC SR Legacy 169677 (potato chips, plain, salted) (Na, K, water, protein, sugars, vitamin C); taste compounds (glutamate, glutathione), density and pH copied from Potato Chips, Unsalted",Data Quality sheet
+"Potato Chips, Unsalted",sodium,1,"Renamed from 'Potato Chips' (Nov 24, 2026): values are USDA FDC SR Legacy 170649 (plain, unsalted)",Data Quality sheet
+Prawn,ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48],Data Quality sheet
+Prawn,ph_ref,,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75),raw-data pH Source column
+Prunes (Dried),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Prunes, dried, stewed' (3.63-3.92), midpoint",raw-data pH Source column
+Prunes (Fresh),ph,2,"Proxy: FDA/USDA 'Plums, Blue' (2.8-3.4), midpoint; fresh prune plums are blue European plums",Data Quality sheet
+Prunes (Fresh),ph_ref,,"Proxy: FDA/USDA 'Plums, Blue' (2.8-3.4), midpoint; fresh prune plums are blue European plums",raw-data pH Source column
+Radish,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Radishes, red' (5.85-6.05), midpoint",raw-data pH Source column
+Rhubarb,organic acids,,"Rheum rhabarbarum stalks, fresh weight: malic 670-687, citric 441-534, oxalic 256-377 mg/100 g (midpoints)",raw-data Organic Acid Source column
+Rhubarb,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Rhubarb' (3.1-3.4), midpoint",raw-data pH Source column
+Rhubarb,sugars,3,USDA FDC 167758 gives total sugars only (1.1 g/100 g); split 50:50 glucose/fructose (category estimate for fruit),Data Quality sheet
+Rice,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Rice White' (6.0-6.7), midpoint",raw-data pH Source column
+Salmon Roe,ph,2,"Proxy: FDA/USDA 'Caviar, American' (5.7-6.0), midpoint; salmon roe proxied by American caviar",Data Quality sheet
+Salmon Roe,ph_ref,,"Proxy: FDA/USDA 'Caviar, American' (5.7-6.0), midpoint; salmon roe proxied by American caviar",raw-data pH Source column
+Salsa (Jarred),ph,3,Category estimate (tier 3): median pH of 12 FDA-referenced Condiments (range 2.9-6.0) [value 3.17],Data Quality sheet
+Salsa (Jarred),ph_ref,,Category estimate (tier 3): median pH of 12 FDA-referenced Condiments (range 2.9-6.0) [value 3.17],raw-data pH Source column
+"Sauce, Chili",glutamate,2,"German chili ketchup, not true chili sauce (Wechjakwen et al. 2025); weak source, placeholder [value 250]",Data Quality sheet
+"Sauce, Chili",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Chili Sauce, acidified' (2.77-3.7), midpoint",raw-data pH Source column
+"Sauce, Fish",organic acids,,"Park et al. 2001 (J Food Compos Anal 14:113), Table 3 overall mean (n = 59), mg/100 mL / density 1.22: pyroglutamate 409, lactate 401, acetate 287, succinate 66, formate 14, citrate 9, malate 2",raw-data Organic Acid Source column
+"Sauce, Fish",ph_ref,,"Park et al. 2001 (J Food Compos Anal 14:113), Table 1 mean of 61 fish sauces (SE and E Asia), pH 5.70 +/- 0.50; replaces FDA 4.93-5.02 for consistency with acid data",raw-data pH Source column
+"Sauce, Hoisin",ph,2,One US foodservice product spec (pH target 3.85),Data Quality sheet
+"Sauce, Hoisin",ph_ref,,"US foodservice hoisin product spec (2024), pH target 3.85",raw-data pH Source column
+"Sauce, Hoisin",sugars,3,Category estimate (tier 3): USDA SR 172886 total sugars 27.26 g/100 g entered as sucrose (sugars not split) [value 27260],Data Quality sheet
+"Sauce, Hot (Tabasco)",ph,3,Category estimate (tier 3): median pH of 12 FDA-referenced Condiments (range 2.9-6.0) [value 3.17],Data Quality sheet
+"Sauce, Hot (Tabasco)",ph_ref,,Category estimate (tier 3): median pH of 12 FDA-referenced Condiments (range 2.9-6.0) [value 3.17],raw-data pH Source column
+"Sauce, Soy",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Soy Sauce' (4.4-5.4), midpoint",raw-data pH Source column
+"Sauce, Tomato",acids,2,Derived: whole red tomato x dry-matter ratio 1.58,Data Quality sheet
+"Sauce, Tomato",amp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 1.507 (440/292); keeps the fresh-tomato Glu:nucleotide ratio",Data Quality sheet
+"Sauce, Tomato",gmp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 1.507 (440/292); keeps the fresh-tomato Glu:nucleotide ratio",Data Quality sheet
+"Sauce, Tomato",organic acids,,Derived: whole red tomato x dry-matter ratio 1.58,raw-data Organic Acid Source column
+"Sauce, Tomato",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes, Puree' (4.3-4.47), midpoint",raw-data pH Source column
+"Sauce, Tomato (Canned)",organic acids,,"Sibling: Sauce, Tomato (no-salt version); Derived: whole red tomato x dry-matter ratio 1.58 | Composition: USDA FDC SR Legacy 170054",raw-data Organic Acid Source column
+"Sauce, Tomato (Canned)",ph_ref,,"Sibling: Sauce, Tomato (no-salt version); FDA/USDA Approximate pH of Foods: 'Tomatoes, Puree' (4.3-4.47), midpoint",raw-data pH Source column
+"Sauce, Tomato (Canned)",umami+acids+pH,2,"Copied from Sauce, Tomato (same product without added salt); composition and sodium from USDA FDC 170054",Data Quality sheet
+"Sauce, Worcestershire",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Worcestershire sauce' (3.63-4.0), midpoint",raw-data pH Source column
+Sauerkraut,acids,2,total acid 1.5% split 2:1 lactic:acetic,Data Quality sheet
+Sauerkraut,organic acids,,"USDA-ARS (Fermented and Acidified Vegetables, ch. 51): commercial sauerkraut 1-2% lactic + acetic; 1.5% split 2:1 as in fully fermented kraut (1.8-2.3% lactic, ~1% acetic)",raw-data Organic Acid Source column
+Sauerkraut,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Sauerkraut' (3.3-3.6), midpoint",raw-data pH Source column
+"Sausage, Italian (Pork)",organic acids,,Composition: USDA FDC SR Legacy 171631,raw-data Organic Acid Source column
+Scallop (Dried),ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48],Data Quality sheet
+Scallop (Dried),ph_ref,,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75),raw-data pH Source column
+Scallop (Fresh),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Scallop' (6.0-6.0), midpoint",raw-data pH Source column
+Sea Urchin,ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48],Data Quality sheet
+Sea Urchin,ph_ref,,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75),raw-data pH Source column
+Shallot,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Onions, red' (5.3-5.8), midpoint",raw-data pH Source column
+Shrimp,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Shrimp' (6.5-7.0), midpoint",raw-data pH Source column
+Snap Pea,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3],Data Quality sheet
+Snap Pea,ph_ref,,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56),raw-data pH Source column
+"Soup, Cheese (Condensed)",ph,2,Sibling: condensed broccoli cheese soup [value 5.6],Data Quality sheet
+"Soup, Cheese (Condensed)",ph_ref,,"Category estimate: FDA/USDA 'Soup Broccoli Cheese, condensed' (5.60; upper bound blank in source)",raw-data pH Source column
+"Soup, Cheese (Condensed)",sugars,3,"USDA total sugars 3.73 g, not split; entered as lactose (cheese and milk solids) [value 3730]",Data Quality sheet
+"Soup, Chicken Noodle (Condensed)",ph,2,Sibling: canned chicken broth [value 5.8],Data Quality sheet
+"Soup, Chicken Noodle (Condensed)",ph_ref,,Category estimate: FDA/USDA 'Soup Chicken Broth' 5.80,raw-data pH Source column
+"Soup, Cream of Celery (Condensed)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Soup Cream of Celery, condensed' (6.20; upper bound blank in source)",raw-data pH Source column
+"Soup, Cream of Celery (Condensed)",sugars,3,"USDA total sugars 1.35 g, not split; entered as sucrose [value 1350]",Data Quality sheet
+"Soup, Cream of Chicken (Condensed)",ph,3,Sibling: condensed cream of mushroom [value 6.1],Data Quality sheet
+"Soup, Cream of Chicken (Condensed)",ph_ref,,"Category estimate: FDA/USDA 'Soup Cream of Mushroom, condensed' 6.00-6.20 (no cream of chicken entry)",raw-data pH Source column
+"Soup, Cream of Chicken (Condensed)",sugars,3,"USDA total sugars 0.54 g, not split; entered as sucrose [value 540]",Data Quality sheet
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",density,3,Sibling: regular condensed cream of chicken 126 g per 1/2 cup [value 1.065],Data Quality sheet
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",ph,3,Sibling: condensed cream of mushroom [value 6.1],Data Quality sheet
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",ph_ref,,"Category estimate: FDA/USDA 'Soup Cream of Mushroom, condensed' 6.00-6.20 (no cream of chicken entry)",raw-data pH Source column
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",sugars,3,"USDA total sugars 0.39 g, not split; entered as sucrose [value 390]",Data Quality sheet
+"Soup, Cream of Mushroom (Condensed)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Soup Cream of Mushroom, condensed' (6.00-6.20), midpoint",raw-data pH Source column
+"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",density,3,Sibling: regular condensed cream of mushroom 126 g per 1/2 cup [value 1.065],Data Quality sheet
+"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Soup Cream of Mushroom, condensed' (6.00-6.20), midpoint",raw-data pH Source column
+"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",sugars,3,"USDA total sugars 2.13 g, not split; entered as sucrose [value 2130]",Data Quality sheet
+"Soup, Cream of Potato (Condensed)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Soup Cream of Potato, condensed' (5.80; upper bound blank in source)",raw-data pH Source column
+"Soup, Cream of Potato (Condensed)",sugars,3,"USDA total sugars 1.44 g, not split; entered as sucrose [value 1440]",Data Quality sheet
+"Soup, Tomato (Condensed)",density,3,USDA's portion (148 g per cup) is implausible for a condensed soup; sibling cream soups 126 g per 1/2 cup used [value 1.065],Data Quality sheet
+"Soup, Tomato (Condensed)",ph,2,Sibling: canned cream of tomato soup [value 4.62],Data Quality sheet
+"Soup, Tomato (Condensed)",ph_ref,,"Category estimate: FDA/USDA 'Soup Cream of Tomato, canned' 4.62",raw-data pH Source column
+"Soup, Tomato (Condensed)",sugars,3,"USDA total sugars 8.23 g, not split (brands sweeten with HFCS or sugar); entered as sucrose [value 8230]",Data Quality sheet
+"Soup, Tomato (Condensed, Reduced Sodium)",density,3,Sibling cream soups 126 g per 1/2 cup [value 1.065],Data Quality sheet
+"Soup, Tomato (Condensed, Reduced Sodium)",ph,2,Sibling: canned cream of tomato soup [value 4.62],Data Quality sheet
+"Soup, Tomato (Condensed, Reduced Sodium)",ph_ref,,"Category estimate: FDA/USDA 'Soup Cream of Tomato, canned' 4.62",raw-data pH Source column
+"Soup, Tomato (Condensed, Reduced Sodium)",sugars,3,"USDA total sugars 8.11 g, not split; entered as sucrose [value 8110]",Data Quality sheet
+Sour Cream,acids,2,titratable acidity expressed as lactic acid,Data Quality sheet
+Sour Cream,organic acids,,Typical titratable acidity 0.6% as lactic acid (21 CFR 131.160 minimum 0.5%); TA expressed as lactic,raw-data Organic Acid Source column
+Sour Cream,ph,2,"process endpoint pH 4.0-4.6, not a measured product value",Data Quality sheet
+Sour Cream,ph_ref,,Process endpoint: sour cream fermented to pH 4.0-4.6 (midpoint),raw-data pH Source column
+Spinach,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Spinach' (5.5-6.8), midpoint",raw-data pH Source column
+Spirulina (Dried),aspartate,2,"Free aspartate, Nawrocka 2017 Table 4 (dry mass). Was 4980 (total)",Data Quality sheet
+Spirulina (Dried),glutamate,2,"Free glutamate, Nawrocka 2017 Mar Drugs 15:237 Table 4 (dry mass, one sample, harsh extraction); Al-Dhabi 2016 reports not detected. Was 8400 (USDA total glutamic acid)",Data Quality sheet
+Squid (Fresh),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Squid' (6.0-6.5), midpoint",raw-data pH Source column
+Stevia Extract (Reb A 50%),density,3,"No grade-specific data; Reb A 98% spec value used (Pyure, bulk 0.35 g/mL) [value 0.35]",Data Quality sheet
+Stevia Extract (Reb A 60%),density,3,"No grade-specific data; Reb A 98% spec value used (Pyure, bulk 0.35 g/mL) [value 0.35]",Data Quality sheet
+Stevia Extract (Reb A 80%),density,3,"No grade-specific data; Reb A 98% spec value used (Pyure, bulk 0.35 g/mL) [value 0.35]",Data Quality sheet
+Stevia Extract (Reb A 97%),density,2,"Pyure Reb A 98% spec sheet, bulk 0.35 g/mL (labels 0.29-0.46) [value 0.35]",Data Quality sheet
+Strawberry,organic acids,,"Plants 2021, 10:1654 (10 cultivars, HPLC): citric 522-711 mg/100 g FW; midpoint",raw-data Organic Acid Source column
+Strawberry,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Strawberries' (3.0-3.9), midpoint",raw-data pH Source column
+Sucralose,density,3,Micronized powder ~0.30-0.35 g/mL (Tate & Lyle patent WO2004112506); granulated forms 0.6-0.8 [value 0.33],Data Quality sheet
+Sugar Cane Molasses,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Molasses' (4.9-5.4), midpoint",raw-data pH Source column
+Sultana,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Raisins, seedless' (3.8-4.1), midpoint",raw-data pH Source column
+Sultana,sugars,1,"USDA FDC Foundation 2758979 (raisins, golden, seedless): glucose 32.2 g, fructose 36.4 g, sucrose/lactose/maltose 0 per 100 g; was blank",Data Quality sheet
+Sweet Potato,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Sweet Potatoes' (5.3-5.6), midpoint",raw-data pH Source column
+Tahini,sugars,3,"USDA FDC 170189 total sugars 0.49 g, not split; entered as sucrose [value 490]",Data Quality sheet
+Tamarind (Pulp),acids,2,secondary-summary range midpoint; primary source not verified,Data Quality sheet
+Tamarind (Pulp),organic acids,,"Sour tamarind pulp tartaric acid 8.4-12.4% (Pakistan; secondary summary, overall range 8-18%); midpoint 10.4%",raw-data Organic Acid Source column
+Tamarind (Pulp),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tamarind' (3.0-3.0), midpoint",raw-data pH Source column
+Tamarind (Pulp),sugars,3,USDA FDC 167763 gives total sugars only (38.8 g/100 g); split 50:50 glucose/fructose (category estimate for fruit),Data Quality sheet
+"Tea, Black (Brewed)",glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]",Data Quality sheet
+"Tea, Black (Brewed)",theobromine,1,"USDA FDC SR Legacy 173227, nutrient 1058 theobromine [value 2] (v.2.8.2 bitterness)",Data Quality sheet
+"Tea, Green (Brewed)",glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]",Data Quality sheet
+"Tea, Green (Brewed)",theobromine,1,"USDA FDC SR Legacy 171917, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)",Data Quality sheet
+"Tofu, Firm",glutamate,2,"Han, Rombouts & Nout 2004 J Food Compos Anal (doi:10.1016/j.jfca.2003.09.012) Table 1: 0.09 mg/g dry matter x 17.1% dry matter [value 1.5]",Data Quality sheet
+"Tofu, Firm",ph_ref,,FDA/USDA Approximate pH of Foods: 'Tofu' 7.20,raw-data pH Source column
+"Tofu, Firm",sugars,3,"USDA FDC 172448 total sugars 0.60 g, not split; entered as sucrose [value 600]",Data Quality sheet
+"Tofu, Silken",glutamate,2,"Han, Rombouts & Nout 2004 (dry-matter value x 12.6% dry matter) [value 1.1]",Data Quality sheet
+"Tofu, Silken",ph,2,FDA generic 'Tofu' 7.20 applied to silken [value 7.2],Data Quality sheet
+"Tofu, Silken",ph_ref,,Category estimate: FDA/USDA 'Tofu' 7.20 (silken made with GDL is likely lower),raw-data pH Source column
+"Tofu, Silken",sugars,3,"USDA FDC 172461 total sugars 1.27 g, not split; entered as sucrose [value 1270]",Data Quality sheet
+Tomato (Canned),acids,2,Derived: whole red tomato x dry-matter ratio 1.93,Data Quality sheet
+Tomato (Canned),amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+Tomato (Canned),gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+Tomato (Canned),organic acids,,Derived: whole red tomato x dry-matter ratio 1.93,raw-data Organic Acid Source column
+Tomato (Canned),ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes, canned' (3.5-4.7), midpoint",raw-data pH Source column
+"Tomato, Beefsteak (Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Beefsteak (Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Beefsteak (Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Beefsteak (Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Beefsteak (Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Beefsteak (Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Conchita, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Conchita, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Conchita, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Conchita, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Conchita, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Conchita, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Dulce Supersweet, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Dulce Supersweet, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Dulce Supersweet, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Dulce Supersweet, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Dulce Supersweet, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Dulce Supersweet, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Generic)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Generic)",amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+"Tomato, Cherry (Generic)",gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+"Tomato, Cherry (Generic)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Generic)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Piccolo, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Piccolo, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Piccolo, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Piccolo, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Piccolo, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Piccolo, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Santa Pomodorino, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Santa Pomodorino, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Santa Pomodorino, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Santa Pomodorino, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Santa Pomodorino, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Santa Pomodorino, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Sungold, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Sungold, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Sungold, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Sungold, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Sungold, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Sungold, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Tiger, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Tiger, Flesh)",glutamate,2,"Mean flesh value across 13 cherry/salad varieties, 1.26 g/kg (Oruna-Concha et al. 2007, J Agric Food Chem 55:5776, abstract); not Tiger-specific [value 126]",Data Quality sheet
+"Tomato, Cherry (Tiger, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Tiger, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Cherry (Tiger, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Cherry (Tiger, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Cherry (Tiger, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Plum (Celine, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Plum (Celine, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Plum (Celine, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Plum (Celine, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Plum (Celine, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Plum (Celine, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Plum (Flavorino, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Plum (Flavorino, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Plum (Flavorino, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Plum (Flavorino, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Plum (Flavorino, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Plum (Flavorino, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Plum (Vine Ripened, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Plum (Vine Ripened, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Plum (Vine Ripened, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Plum (Vine Ripened, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Plum (Vine Ripened, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Plum (Vine Ripened, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Red (Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Red (Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Red (Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Red (Fresh, Whole)",amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+"Tomato, Red (Fresh, Whole)",glutamate,2,"Derived: 0.7 x flesh 126 + 0.3 x pulp 456 (Oruna-Concha et al. 2007 means), same 70:30 split as this entry's nucleotides [value 225]",Data Quality sheet
+"Tomato, Red (Fresh, Whole)",gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+"Tomato, Red (Fresh, Whole)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (published)",raw-data Organic Acid Source column
+"Tomato, Red (Fresh, Whole)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Red (Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Red (Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Red (Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Carousel, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Carousel, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Carousel, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Carousel, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Carousel, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Carousel, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Elegance, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Elegance, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Elegance, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Elegance, Italian, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Elegance, Italian, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Elegance, Italian, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Elegance, Italian, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Elegance, Italian, Pulp)",glutamate,2,"Mean pulp value across 13 varieties, 4.56 g/kg (Oruna-Concha et al. 2007, abstract); not Elegance-specific [value 456]",Data Quality sheet
+"Tomato, Salad (Elegance, Italian, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Elegance, Italian, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Elegance, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Elegance, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Elegance, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Generic, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Generic, Flesh)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Generic, Flesh)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Salad (Generic, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Salad (Generic, Pulp)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Salad (Generic, Pulp)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+"Tomato, Yellow (Fresh, Whole)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS",Data Quality sheet
+"Tomato, Yellow (Fresh, Whole)",amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+"Tomato, Yellow (Fresh, Whole)",gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+"Tomato, Yellow (Fresh, Whole)",organic acids,,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS Determination of Citric and Malic Acids in Fruits and Vegetables', doi:10.1365/s10337-010-1611-0) (sibling of Tomato, Red (Fresh, Whole))",raw-data Organic Acid Source column
+"Tomato, Yellow (Fresh, Whole)",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Tomatoes' (4.3-4.9), midpoint",raw-data pH Source column
+Treacle,ph,2,"Proxy: FDA/USDA 'Molasses' (4.9-5.4), midpoint; black treacle is a cane molasses product",Data Quality sheet
+Treacle,ph_ref,,"Proxy: FDA/USDA 'Molasses' (4.9-5.4), midpoint; black treacle is a cane molasses product",raw-data pH Source column
+Truffle,gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log),Data Quality sheet
+Truffle,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Truffle' (5.3-6.5), midpoint",raw-data pH Source column
+"Truffle, Black",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Truffle' (5.3-6.5), midpoint",raw-data pH Source column
+"Vinegar, Apple Cider",organic acids,,Typical label acidity 5% (FDA CPG 525.825 minimum 4 g/100 mL); per 100 g / density 1.01,raw-data Organic Acid Source column
+"Vinegar, Apple Cider",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Vinegar, cider' (3.1-3.1), midpoint",raw-data pH Source column
+"Vinegar, Balsamic",organic acids,,"EU PGI Aceto Balsamico di Modena: min 6% total acidity (as acetic), g/100 mL; / density 1.34 g/mL",raw-data Organic Acid Source column
+"Vinegar, Balsamic",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Vinegar' (2.4-3.4), midpoint",raw-data pH Source column
+"Vinegar, Distilled White",organic acids,,Typical label acidity 5% (FDA CPG 525.825 minimum 4 g/100 mL); per 100 g / density 1.006,raw-data Organic Acid Source column
+"Vinegar, Distilled White",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Vinegar' (2.4-3.4), midpoint",raw-data pH Source column
+"Vinegar, Malt",organic acids,,"Typical malt vinegar 5% acetic, g/100 mL (FDA CPG 525.825 minimum 4%); / density 1.05 g/mL",raw-data Organic Acid Source column
+"Vinegar, Malt",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Vinegar' (2.4-3.4), midpoint",raw-data pH Source column
+"Vinegar, Red Wine",organic acids,,Typical label acidity 5-7% (midpoint 6%); per 100 g / density 1.01,raw-data Organic Acid Source column
+"Vinegar, Red Wine",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Vinegar' (2.4-3.4), midpoint",raw-data pH Source column
+"Vinegar, Rice",organic acids,,"Typical rice vinegar ~4.3% acetic, g/100 mL (FDA CPG 525.825 minimum 4%); / density 0.989 g/mL",raw-data Organic Acid Source column
+"Vinegar, Rice",ph_ref,,"FDA/USDA Approximate pH of Foods: 'Vinegar' (2.4-3.4), midpoint",raw-data pH Source column
+Walnut,glutamate,1,"Mapelli 2001 Tree Physiology 21:1299-1302, value supplied by Bryan (Nov 13, 2026). Was 658 (Skurray and Pucar 1988)",Data Quality sheet
+Water,ph_ref,,Neutral water,raw-data pH Source column
+Watermelon,aspartate,2,Fresh juice value used for flesh: Corleto 2019 Table 3 (64.18 ug/mL). Was 30,Data Quality sheet
+Watermelon,glutamate,2,Fresh juice value used for flesh: Corleto 2019 J Food Drug Anal 27:717 Table 3 (10.92 ug/mL). Was 375 (above USDA total of 63; source unknown),Data Quality sheet
+Watermelon,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Watermelon' (5.18-5.6), midpoint",raw-data pH Source column
+"Wine, Champagne",acids,2,"Sibling: English traditional-method sparkling wines after 12 months on lees (Marangon 2023), not Champagne",Data Quality sheet
+"Wine, Champagne",organic acids,,"Sparkling: Marangon et al. 2023, Foods 12:1995 (doi:10.3390/foods12101995, PMC10217371), Table 2: 13 traditional-method English sparkling wines (3 base wines), mean of base-wine range midpoints; g/L / density",raw-data Organic Acid Source column
+"Wine, Champagne",ph,2,Marangon et al. 2023 Table 2: mean pH of 13 English sparkling wines (3.14-3.29) [value 3.22],Data Quality sheet
+"Wine, Champagne",ph_ref,,Marangon et al. 2023 Table 2: mean pH of 13 English sparkling wines (3.14-3.29),raw-data pH Source column
+"Wine, Champagne",sugars,2,"Sibling: Marangon et al. 2023 Table 2 range midpoints, glucose 0.10-0.27, fructose 0.35-1.7 g/L; dosage (added sugar) not included",Data Quality sheet
+"Wine, Claret",acids,2,"Sibling: dry red wine means (Heras-Roger 2025, 205 wines; succinic Tasev 2016, 10 wines); not Claret-specific",Data Quality sheet
+"Wine, Claret",organic acids,,"Red wine: Heras-Roger et al. 2025, Beverages 11:102 (doi:10.3390/beverages11040102), Table 1: 205 bottled red wines, means (tartaric, malic, lactic, acetic, citric); succinic from Tasev, Stefova & Ivanova-Petropulos 2016, Maced J Chem Chem Eng 35:225 (doi:10.20450/mjcce.2016.1073), Table 5: mean of 10 commercial reds (HPLC); g/L / density",raw-data Organic Acid Source column
+"Wine, Claret",ph,2,Sibling: mean pH of 205 dry red wines (Heras-Roger et al. 2025) [value 3.73],Data Quality sheet
+"Wine, Claret",ph_ref,,Heras-Roger et al. 2025 Table 1: mean pH of 205 red wines,raw-data pH Source column
+"Wine, Claret",potassium,2,"Sibling: USDA FDC SR Legacy 173190 (wine, table, red); was 0 [value 127]",Data Quality sheet
+"Wine, Claret",sodium,2,"Sibling: USDA FDC SR Legacy 173190 (wine, table, red); USDA Claret entry (173194) has no minerals; was 0 [value 4]",Data Quality sheet
+"Wine, Claret",sugars,3,"USDA FDC SR Legacy 173190 (wine, table, red) total sugars 0.62 g/100 g, glucose:fructose split from USDA SR 171908 rose wine (1.7:2.1 g)",Data Quality sheet
+"Wine, Generic",acids,3,Category estimate: average of dry red (Heras-Roger 2025) and dry white (Han 2022) wine acids,Data Quality sheet
+"Wine, Generic",organic acids,,"Average of the red set (Heras-Roger et al. 2025, Beverages 11:102 (doi:10.3390/beverages11040102), Table 1: 205 bottled red wines, means; succinic Tasev, Stefova & Ivanova-Petropulos 2016, Maced J Chem Chem Eng 35:225 (doi:10.20450/mjcce.2016.1073), Table 5: mean of 10 commercial reds (HPLC)) and the white set (Han et al. 2022, Foods 11:603 (doi:10.3390/foods11040603, PMC8871119), Table 3: medians of 12 commercial white wines; succinic Ivanova-Petropulos, Petruseva & Mitrev 2020, Food Anal Methods 13:1078 (doi:10.1007/s12161-020-01724-4), Table 5: mean of 6 Chardonnays (HPLC)); g/L / density",raw-data Organic Acid Source column
+"Wine, Generic",ph,3,"Category estimate: mean of red (3.73, Heras-Roger 2025) and white (3.15, Prenesti 2012) wine pH [value 3.44]",Data Quality sheet
+"Wine, Generic",ph_ref,,"Category estimate: mean of red (3.73, Heras-Roger 2025) and white (3.15, Prenesti 2012) wine pH",raw-data pH Source column
+"Wine, Generic",sugars,3,"USDA FDC SR Legacy 173185 (wine, table, all) total sugars 0.79 g/100 g, glucose:fructose split from USDA SR 171908 rose wine (1.7:2.1 g)",Data Quality sheet
+"Wine, Moselle",acids,2,Sibling: medians of 12 commercial white wines (Han 2022; 2 are Rieslings); succinic from 6 Chardonnays (Ivanova-Petropulos 2020),Data Quality sheet
+"Wine, Moselle",organic acids,,"White wine: Han et al. 2022, Foods 11:603 (doi:10.3390/foods11040603, PMC8871119), Table 3: medians of 12 commercial white wines (tartaric, malic, lactic D+L, acetic, citric); succinic from Ivanova-Petropulos, Petruseva & Mitrev 2020, Food Anal Methods 13:1078 (doi:10.1007/s12161-020-01724-4), Table 5: mean of 6 Chardonnays (HPLC); g/L / density",raw-data Organic Acid Source column
+"Wine, Moselle",ph,2,Prenesti et al. 2012 Table 5: Riesling R07 (Moselle = Mosel Riesling) [value 3.16],Data Quality sheet
+"Wine, Moselle",ph_ref,,Prenesti et al. 2012 Table 5: Riesling R07 (Moselle = Mosel Riesling),raw-data pH Source column
+"Wine, Moselle",sugars,2,"Sibling: Han et al. 2022 Table 3 medians of 12 white wines, glucose 0.90 / fructose 2.19 / glycerol 5.58 g/L (per 100 g = g/L x 100 / density)",Data Quality sheet
+"Wine, Riesling",acids,2,Sibling: medians of 12 commercial white wines (Han 2022; 2 are Rieslings); succinic from 6 Chardonnays (Ivanova-Petropulos 2020),Data Quality sheet
+"Wine, Riesling",organic acids,,"White wine: Han et al. 2022, Foods 11:603 (doi:10.3390/foods11040603, PMC8871119), Table 3: medians of 12 commercial white wines (tartaric, malic, lactic D+L, acetic, citric); succinic from Ivanova-Petropulos, Petruseva & Mitrev 2020, Food Anal Methods 13:1078 (doi:10.1007/s12161-020-01724-4), Table 5: mean of 6 Chardonnays (HPLC); g/L / density",raw-data Organic Acid Source column
+"Wine, Riesling",ph,2,Prenesti et al. 2012 Table 5: Riesling R07 [value 3.16],Data Quality sheet
+"Wine, Riesling",ph_ref,,Prenesti et al. 2012 Table 5: Riesling R07,raw-data pH Source column
+"Wine, Riesling",sugars,2,"Sibling: Han et al. 2022 Table 3 medians of 12 white wines, glucose 0.90 / fructose 2.19 / glycerol 5.58 g/L (per 100 g = g/L x 100 / density)",Data Quality sheet
+Xylitol,density,2,Four pure-xylitol labels 4 g/tsp = 0.812 (USDA FDC Branded); may copy the sugar serving convention [value 0.81],Data Quality sheet
+Yam,ph,3,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9) [value 5.95],Data Quality sheet
+Yam,ph_ref,,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9),raw-data pH Source column
+"Yogurt, Greek (Plain, Whole Milk)",acids,2,lactic derived from plain yogurt by water-phase concentration,Data Quality sheet
+"Yogurt, Greek (Plain, Whole Milk)",density,2,"sibling: Yogurt, Plain (Whole Milk) 1.036 g/mL",Data Quality sheet
+"Yogurt, Greek (Plain, Whole Milk)",organic acids,,Derived: plain yogurt lactic 0.9% (Alm 1982) at equal concentration in the water phase (straining removes whey of the same composition): 900 x 81.3/87.9,raw-data Organic Acid Source column
+"Yogurt, Greek (Plain, Whole Milk)",ph,2,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)",Data Quality sheet
+"Yogurt, Greek (Plain, Whole Milk)",ph_ref,,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)",raw-data pH Source column
+"Yogurt, Greek (Plain, Whole Milk)",sugars,2,USDA FDC 171304 gives total sugars only (4.0 g/100 g); assigned to lactose (fermented dairy),Data Quality sheet
+"Yogurt, Plain (Whole Milk)",organic acids,,Alm 1982 (J Dairy Sci 65:515): total lactic acid in fermented milks 0.6-1.2%; midpoint 0.9%,raw-data Organic Acid Source column
+"Yogurt, Plain (Whole Milk)",ph,2,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)",Data Quality sheet
+"Yogurt, Plain (Whole Milk)",ph_ref,,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)",raw-data pH Source column
+"Yogurt, Plain (Whole Milk)",sugars,2,USDA FDC 171284 gives total sugars only (4.66 g/100 g); assigned to lactose (fermented dairy),Data Quality sheet
+Zucchini,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97],Data Quality sheet
+Zucchini,ph_ref,,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41),raw-data pH Source column

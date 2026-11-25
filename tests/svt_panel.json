@@ -1,0 +1,4096 @@
+{
+ "id": "svt_mars",
+ "citation": "Mars M., de Graaf C., Teo P.S., van Langeveld A. (2020). Taste, Fat and Texture Database - taste values Dutch Foods (SVT), v004. DANS, doi:10.17026/dans-xst-ughm. CC-BY-SA-4.0.",
+ "panel": "15 trained panellists (12 F / 3 M), modified Spectrum method, 0-100 line scale anchored with sucrose/NaCl/citric acid/caffeine/MSG solutions and reference foods; triplicate ratings averaged (Teo et al. 2018 Food Qual Pref 65:49).",
+ "mapping": "validation/svt_mars/svt_hfp_map.csv (exact/close only; built by scripts/svt_mapping.py)",
+ "assumptions": "Single HFP ingredient per food (100 g) or the 2-ingredient prep stated by SVT. Cooked foods: cook_min at 95 C (affects cooked nucleotides and cysteine sulfoxides only; no water loss or leaching modelled). Fridge-served: 5.5 C (sweetness only). Solid foods: the model computes water-phase concentrations.",
+ "samples": [
+  {
+   "code": "411",
+   "label": "Mineral water Spa (non-sparkling)",
+   "product": "Spa blauw",
+   "group": "(non) alcoholic beverages",
+   "quality": "exact",
+   "items": [
+    [
+     "Water",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 1.0,
+    "sourness": 1.0,
+    "bitterness": 4.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Still mineral water (Spa blauw, very low mineral) = water"
+  },
+  {
+   "code": "1885",
+   "label": "Water average",
+   "product": "Tap water; area: Wageningen",
+   "group": "(non) alcoholic beverages",
+   "quality": "exact",
+   "items": [
+    [
+     "Water",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 1.0,
+    "sourness": 1.0,
+    "bitterness": 2.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Tap water"
+  },
+  {
+   "code": "395",
+   "label": "Soft drink cola with caffeine",
+   "product": "Coca cola regular",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Cola",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 56.0,
+    "sourness": 20.0,
+    "bitterness": 7.0,
+    "umami": 0.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Regular Coca-Cola; HFP Cola is USDA (HFCS sugars); EU recipe uses sucrose; phosphoric acid not in DB"
+  },
+  {
+   "code": "395200",
+   "label": "Soft drink, Coca-Cola, Regular",
+   "product": "Coca cola regular",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Cola",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 41.0,
+    "sourness": 23.0,
+    "bitterness": 5.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "As 395, fridge-served"
+  },
+  {
+   "code": "410",
+   "label": "Juice orange pasteurized",
+   "product": "Appelsientje sinaasappelsap",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Juice, Orange",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 28.0,
+    "sourness": 41.0,
+    "bitterness": 8.0,
+    "umami": 1.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Pasteurised orange juice"
+  },
+  {
+   "code": "410200",
+   "label": "Juice orange, Appelsientje, Sinaasappel",
+   "product": "Juice orange, Appelsientje, Sinaasappel",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Juice, Orange",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 32.0,
+    "sourness": 42.0,
+    "bitterness": 2.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Pasteurised orange juice, fridge-served"
+  },
+  {
+   "code": "1932",
+   "label": "Juice orange with pulp",
+   "product": "Appelsientje Sinaasappel met extra vruchtvlees",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Juice, Orange",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 21.0,
+    "sourness": 50.0,
+    "bitterness": 5.0,
+    "umami": 0.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Orange juice with extra pulp"
+  },
+  {
+   "code": "2755",
+   "label": "Juice orange freshly squeezed",
+   "product": "AH vers sinaasappelspap",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Juice, Orange",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 31.0,
+    "sourness": 61.0,
+    "bitterness": 11.0,
+    "umami": 0.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Freshly squeezed orange juice"
+  },
+  {
+   "code": "383",
+   "label": "Juice apple",
+   "product": "Appelsientje Goudappel",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Juice, Apple",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 46.0,
+    "sourness": 46.0,
+    "bitterness": 3.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Apple juice (Goudappel); HFP apple juice has no organic-acid data"
+  },
+  {
+   "code": "383200",
+   "label": "Juice apple, Appelsientje, Goudappel",
+   "product": "Juice apple, Appelsientje, Goudappel",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Juice, Apple",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 35.0,
+    "sourness": 44.0,
+    "bitterness": 2.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "As 383, fridge-served"
+  },
+  {
+   "code": "21212135",
+   "label": "Juice grapefruit",
+   "product": "AH Grapefruitsap",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Juice, Grapefruit",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "bitterness": 57.0
+   },
+   "n_panellists": {
+    "bitterness": 15.0
+   },
+   "note": "Reference food, rated for bitterness only (naringin; not modelled) -> no scorable taste"
+  },
+  {
+   "code": "644",
+   "label": "Coffee prepared",
+   "product": "Plain coffee, machine, average intensity",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Coffee, Brewed",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 2.0,
+    "sourness": 9.0,
+    "bitterness": 63.0,
+    "umami": 1.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Machine coffee, average intensity; brew strength unknown"
+  },
+  {
+   "code": "644200",
+   "label": "Coffee, black, machine",
+   "product": "Coffee, black, machine",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Coffee, Brewed",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 3.0,
+    "sourness": 5.0,
+    "bitterness": 54.0,
+    "umami": 0.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Black machine coffee; brew strength unknown"
+  },
+  {
+   "code": "377644",
+   "label": "Sugar granulated, with coffee",
+   "product": "AH basic suikerklontjes, with coffee, machine, average intensity",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Coffee, Brewed",
+     125
+    ],
+    [
+     "Sugar",
+     4
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 25.0,
+    "sourness": 5.0,
+    "bitterness": 43.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "1 cup machine coffee + 1 sugar cube; cup 125 mL (SVT creamer rows) and cube 4 g assumed"
+  },
+  {
+   "code": "645",
+   "label": "Tea prepared",
+   "product": "Plain; Pickwick, tea, black",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Tea, Black (Brewed)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 5.0,
+    "bitterness": 20.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Black tea, 200 mL water, bag 2 min (USDA brewed tea strength assumed)"
+  },
+  {
+   "code": "377645",
+   "label": "Sugar granulated, with tea",
+   "product": "AH basic suikerklontjes, with tea, machine, average intensity",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Tea, Black (Brewed)",
+     125
+    ],
+    [
+     "Sugar",
+     4
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 20.0,
+    "sourness": 4.0,
+    "bitterness": 16.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "1 cup machine tea + 1 sugar cube; cup 125 mL and cube 4 g assumed"
+  },
+  {
+   "code": "39010",
+   "label": "Beer pilsner",
+   "product": "Bavaria Premium; 5% alc",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Beer",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 8.0,
+    "sourness": 10.0,
+    "bitterness": 66.0,
+    "umami": 1.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Pilsner 5% (Bavaria); HFP Beer has no sugar/acid data; hop bitterness not modelled"
+  },
+  {
+   "code": "39020",
+   "label": "Beer pilsner",
+   "product": "Bavaria Premium; 5% alc",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Beer",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 17.0,
+    "bitterness": 55.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 13.0,
+    "sourness": 13.0,
+    "bitterness": 13.0,
+    "umami": 13.0,
+    "saltiness": 13.0
+   },
+   "note": "As 39010, fridge-served"
+  },
+  {
+   "code": "69900",
+   "label": "Beer, Heineken, Lager Beer, 5%",
+   "product": "Beer, Heineken, Lager Beer, 5%",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Beer",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 15.0,
+    "bitterness": 59.0,
+    "umami": 0.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Heineken lager 5%, fridge-served"
+  },
+  {
+   "code": "422",
+   "label": "Wine red",
+   "product": "Famille Castel (Fr); Merlot 2013; red wine, 12.5% alcohol",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Wine, Claret",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 8.0,
+    "sourness": 46.0,
+    "bitterness": 38.0,
+    "umami": 2.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Red Merlot (Bordeaux-style); HFP wine rows have no sugar/acid data"
+  },
+  {
+   "code": "69400",
+   "label": "Wine red, AH Merlot, 13%",
+   "product": "Wine red, AH Merlot, 13%",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Wine, Claret",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 43.0,
+    "bitterness": 35.0,
+    "umami": 2.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Red Merlot 13%"
+  },
+  {
+   "code": "42301",
+   "label": "Wine white dry",
+   "product": "Famille Castel (Fr); Chardonnay 2013; 11.5% alcohol",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Wine, Generic",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 13.0,
+    "sourness": 47.0,
+    "bitterness": 34.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Dry white Chardonnay; HFP generic wine, no sugar/acid data"
+  },
+  {
+   "code": "42320",
+   "label": "Wine white dry",
+   "product": "Famille Castel (Fr); Chardonnay 2013; 11.5% alcohol",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Wine, Generic",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 45.0,
+    "bitterness": 21.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 13.0,
+    "sourness": 13.0,
+    "bitterness": 13.0,
+    "umami": 13.0,
+    "saltiness": 13.0
+   },
+   "note": "As 42301, fridge-served"
+  },
+  {
+   "code": "69100",
+   "label": "Wine white, AH Chardonnay, 13.5%",
+   "product": "Wine white, AH Chardonnay, 13.5%",
+   "group": "(non) alcoholic beverages",
+   "quality": "close",
+   "items": [
+    [
+     "Wine, Generic",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 10.0,
+    "sourness": 39.0,
+    "bitterness": 31.0,
+    "umami": 1.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Dry white Chardonnay 13.5%, fridge-served"
+  },
+  {
+   "code": "147",
+   "label": "Apple without skin average",
+   "product": "Albert Heijn; elstar",
+   "group": "Fruit",
+   "quality": "close",
+   "items": [
+    [
+     "Apple",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 20.0,
+    "sourness": 38.0,
+    "bitterness": 2.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Elstar apple without skin (variety)"
+  },
+  {
+   "code": "875",
+   "label": "Apple with skin average",
+   "product": "Albert Heijn; elstar",
+   "group": "Fruit",
+   "quality": "close",
+   "items": [
+    [
+     "Apple",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 22.0,
+    "sourness": 40.0,
+    "bitterness": 1.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Elstar apple with skin (variety)"
+  },
+  {
+   "code": "148",
+   "label": "Strawberries",
+   "product": "AH aardbeien",
+   "group": "Fruit",
+   "quality": "exact",
+   "items": [
+    [
+     "Strawberry",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 18.0,
+    "sourness": 34.0,
+    "bitterness": 1.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Fresh strawberries"
+  },
+  {
+   "code": "165",
+   "label": "Manderins",
+   "product": "Albert Heijn; manderine, normal small size",
+   "group": "Fruit",
+   "quality": "exact",
+   "items": [
+    [
+     "Mandarin",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 26.0,
+    "sourness": 31.0,
+    "bitterness": 3.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Fresh mandarins"
+  },
+  {
+   "code": "16010",
+   "label": "Grapes with skin average",
+   "product": "Albert Heijn; Green grapes",
+   "group": "Fruit",
+   "quality": "close",
+   "items": [
+    [
+     "Grape",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 30.0,
+    "sourness": 25.0,
+    "bitterness": 2.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Green grapes with skin"
+  },
+  {
+   "code": "16020",
+   "label": "Grapes with skin average",
+   "product": "Albert Heijn; Red grapes",
+   "group": "Fruit",
+   "quality": "close",
+   "items": [
+    [
+     "Grape",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 33.0,
+    "sourness": 22.0,
+    "bitterness": 2.0,
+    "umami": 0.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Red grapes with skin"
+  },
+  {
+   "code": "33",
+   "label": "Raisins dried",
+   "product": "AH Rozijnen (bruin)",
+   "group": "Fruit",
+   "quality": "close",
+   "items": [
+    [
+     "Sultana",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 51.0,
+    "sourness": 11.0,
+    "bitterness": 0.0,
+    "umami": 1.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Brown raisins vs sultanas (both dried grapes); low water: solid-matrix flag"
+  },
+  {
+   "code": "137",
+   "label": "Olives tinned/glass",
+   "product": "Carbonell Zwarte olijven zonder pit",
+   "group": "Fruit",
+   "quality": "close",
+   "items": [
+    [
+     "Olives, Black",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 6.0,
+    "bitterness": 4.0,
+    "umami": 18.0,
+    "saltiness": 31.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Pitted black olives in brine (tin/glass)"
+  },
+  {
+   "code": "21212134",
+   "label": "Juice lemon",
+   "product": "AH basic citroensap",
+   "group": "Fruit",
+   "quality": "close",
+   "items": [
+    [
+     "Lemon",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sourness": 97.0
+   },
+   "n_panellists": {
+    "sourness": 15.0
+   },
+   "note": "Bottled lemon juice (reference, sourness only); HFP Lemon is the fruit"
+  },
+  {
+   "code": "16",
+   "label": "Kale curly boiled",
+   "product": "AH Boerenkool gesneden",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Kale",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 25,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 3.0,
+    "sourness": 1.0,
+    "bitterness": 7.0,
+    "umami": 2.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Curly kale boiled 25 min"
+  },
+  {
+   "code": "20",
+   "label": "Mushrooms boiled",
+   "product": "AH Champignons fijn",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Mushroom, Button",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 7,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 3.0,
+    "bitterness": 2.0,
+    "umami": 18.0,
+    "saltiness": 5.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "White button mushrooms boiled 7 min (cooked nucleotides applied)"
+  },
+  {
+   "code": "27",
+   "label": "Cucumber wo skin raw",
+   "product": "Komkommer zonder schil",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Cucumber",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 2.0,
+    "bitterness": 2.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Cucumber without skin, raw"
+  },
+  {
+   "code": "273910",
+   "label": "Cucumber w skin raw",
+   "product": "Komkommer met schil",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Cucumber",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 4.0,
+    "bitterness": 4.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Cucumber with skin, raw"
+  },
+  {
+   "code": "273920",
+   "label": "Cucumber raw",
+   "product": "Komkommer , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Cucumber",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 6.0,
+    "bitterness": 3.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Cucumber raw"
+  },
+  {
+   "code": "273930",
+   "label": "Cucumber pureed",
+   "product": "Komkommer , Bakker Barendrecht, koud geblenderd",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Cucumber",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 8.0,
+    "bitterness": 2.0,
+    "umami": 2.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Cucumber cold-blended (puree = same water phase)"
+  },
+  {
+   "code": "273940",
+   "label": "Cucumber juice",
+   "product": "Komkommer , Bakker Barendrecht, koud geperst",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Cucumber",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 6.0,
+    "bitterness": 2.0,
+    "umami": 4.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Cucumber cold-pressed juice (juice = water phase)"
+  },
+  {
+   "code": "32",
+   "label": "Sweet pepper green boiled",
+   "product": "Groene paprika groenteboer",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Green Pepper",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 5,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 5.0,
+    "bitterness": 19.0,
+    "umami": 4.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Green sweet pepper boiled 5 min (cooked nucleotides applied)"
+  },
+  {
+   "code": "46",
+   "label": "Lettuce head raw",
+   "product": "AH Botersla",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Lettuce, Butterhead",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 3.0,
+    "bitterness": 9.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Butterhead lettuce raw"
+  },
+  {
+   "code": "139910",
+   "label": "Lettuce iceberg raw",
+   "product": "AH Ijsbergsla",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Lettuce",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 9.0,
+    "sourness": 2.0,
+    "bitterness": 3.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Iceberg lettuce raw; HFP generic Lettuce"
+  },
+  {
+   "code": "139920",
+   "label": "Lettuce raw",
+   "product": "Ijsbergsla , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Lettuce",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 10.0,
+    "sourness": 5.0,
+    "bitterness": 3.0,
+    "umami": 2.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Iceberg lettuce raw; HFP generic Lettuce"
+  },
+  {
+   "code": "139930",
+   "label": "Lettuce juice",
+   "product": "Ijsbergsla , Bakker Barendrecht, koud geperst",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Lettuce",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 5.0,
+    "bitterness": 4.0,
+    "umami": 6.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Iceberg cold-pressed juice"
+  },
+  {
+   "code": "139940",
+   "label": "Lettuce pureed",
+   "product": "Ijsbergsla , Bakker Barendrecht, koud geblenderd",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Lettuce",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 5.0,
+    "bitterness": 4.0,
+    "umami": 4.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Iceberg cold-blended"
+  },
+  {
+   "code": "54",
+   "label": "Cabbage oxheart boiled",
+   "product": "AH Spitskool gesneden",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Cabbage",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 3.0,
+    "sourness": 3.0,
+    "bitterness": 6.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Pointed (oxheart) cabbage boiled 10 min; HFP Cabbage (white)"
+  },
+  {
+   "code": "55",
+   "label": "Brussel sprouts boiled",
+   "product": "AH Geschoonde spruitjes",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Brussel Sprouts",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 12,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 8.0,
+    "sourness": 2.0,
+    "bitterness": 19.0,
+    "umami": 9.0,
+    "saltiness": 5.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Brussels sprouts boiled 12 min"
+  },
+  {
+   "code": "71",
+   "label": "Carrots raw average",
+   "product": "AH Parijze worteltjes",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Carrot",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 15.0,
+    "sourness": 4.0,
+    "bitterness": 2.0,
+    "umami": 2.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Carrots raw"
+  },
+  {
+   "code": "72",
+   "label": "Carrots boiled average",
+   "product": "AH Parijze worteltjes",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Carrot",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 14,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 15.0,
+    "sourness": 2.0,
+    "bitterness": 1.0,
+    "umami": 3.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Carrots boiled 14 min"
+  },
+  {
+   "code": "27261",
+   "label": "Carrots raw",
+   "product": "Bospeen , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Carrot",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 16.0,
+    "sourness": 2.0,
+    "bitterness": 2.0,
+    "umami": 3.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Bunch carrots raw"
+  },
+  {
+   "code": "27263",
+   "label": "Carrot juice",
+   "product": "Bospeen, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Carrot",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 30.0,
+    "sourness": 1.0,
+    "bitterness": 2.0,
+    "umami": 10.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Carrot juice (cold-pressed)"
+  },
+  {
+   "code": "27271",
+   "label": "Carrots boiled",
+   "product": "Bospeen , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Carrot",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 20.0,
+    "sourness": 1.0,
+    "bitterness": 1.0,
+    "umami": 5.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Carrots boiled (time not stated, 10 min assumed)"
+  },
+  {
+   "code": "27272",
+   "label": "Carrots pureed",
+   "product": "Bospeen, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Carrot",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 23.0,
+    "sourness": 1.0,
+    "bitterness": 1.0,
+    "umami": 6.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Carrot puree (assumed boiled then blended)"
+  },
+  {
+   "code": "74",
+   "label": "Cabbage sauerkraut cooked",
+   "product": "AH Zuurkool naturel",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Sauerkraut",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 5,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 70.0,
+    "bitterness": 4.0,
+    "umami": 2.0,
+    "saltiness": 17.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Sauerkraut heated (microwave 5 min)"
+  },
+  {
+   "code": "146",
+   "label": "Spinach frozen boiled",
+   "product": "AH Spinazie",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Spinach",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 7,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 4.0,
+    "bitterness": 8.0,
+    "umami": 3.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Frozen spinach heated 7 min"
+  },
+  {
+   "code": "953",
+   "label": "Peas frozen boiled",
+   "product": "AH BASIC Tuinerwten",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Green Pea",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 5,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 15.0,
+    "sourness": 2.0,
+    "bitterness": 1.0,
+    "umami": 5.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Frozen peas boiled 5 min"
+  },
+  {
+   "code": "14100",
+   "label": "Cauliflower raw",
+   "product": "Bloemkool , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Cauliflower",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 8.0,
+    "sourness": 4.0,
+    "bitterness": 4.0,
+    "umami": 3.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Cauliflower raw"
+  },
+  {
+   "code": "14200",
+   "label": "Cauliflower pureed",
+   "product": "Bloemkool, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Cauliflower",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 3.0,
+    "bitterness": 3.0,
+    "umami": 5.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Cauliflower puree (assumed boiled then blended)"
+  },
+  {
+   "code": "14300",
+   "label": "Cauliflower juice",
+   "product": "Bloemkool, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Cauliflower",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 14.0,
+    "sourness": 4.0,
+    "bitterness": 11.0,
+    "umami": 7.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Cauliflower juice (cold-pressed, raw)"
+  },
+  {
+   "code": "15200",
+   "label": "Cauliflower boiled",
+   "product": "Bloemkool, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Cauliflower",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 10.0,
+    "sourness": 4.0,
+    "bitterness": 4.0,
+    "umami": 5.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Cauliflower boiled (time not stated, 10 min assumed)"
+  },
+  {
+   "code": "151000",
+   "label": "Cauliflower boiled",
+   "product": "AH bloemkoolroosjes",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Cauliflower",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 4.0,
+    "bitterness": 3.0,
+    "umami": 4.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Cauliflower florets boiled 10 min"
+  },
+  {
+   "code": "37100",
+   "label": "Leek boiled",
+   "product": "AH Prei gesneden",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Leek",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 3.0,
+    "bitterness": 5.0,
+    "umami": 3.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Leek boiled 10 min"
+  },
+  {
+   "code": "37200",
+   "label": "Leek boiled",
+   "product": "Prei , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Leek",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 9.0,
+    "sourness": 4.0,
+    "bitterness": 11.0,
+    "umami": 6.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Leek boiled (time not stated, 10 min assumed)"
+  },
+  {
+   "code": "37300",
+   "label": "Leek pureed",
+   "product": "Prei , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Leek",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 6.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Leek puree (assumed boiled then blended)"
+  },
+  {
+   "code": "56210",
+   "label": "Leek raw",
+   "product": "Prei , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Leek",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 4.0,
+    "bitterness": 17.0,
+    "umami": 2.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Leek raw"
+  },
+  {
+   "code": "56220",
+   "label": "Leek juice",
+   "product": "Prei , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Leek",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 6.0,
+    "bitterness": 54.0,
+    "umami": 2.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Leek juice (cold-pressed)"
+  },
+  {
+   "code": "64100",
+   "label": "Onions boiled",
+   "product": "AH Gesneden uien voordeel",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Onion",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 4.0,
+    "bitterness": 3.0,
+    "umami": 5.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Onions boiled 10 min"
+  },
+  {
+   "code": "631000",
+   "label": "Onions raw",
+   "product": "Ui , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Onion",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 9.0,
+    "sourness": 8.0,
+    "bitterness": 31.0,
+    "umami": 3.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Onions raw"
+  },
+  {
+   "code": "632000",
+   "label": "Onion juice",
+   "product": "Ui , Bakker Barendrecht, koud geperst",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Onion",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 10.0,
+    "bitterness": 74.0,
+    "umami": 2.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Onion juice (cold-pressed)"
+  },
+  {
+   "code": "642000",
+   "label": "Onions boiled",
+   "product": "Ui , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Onion",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 9.0,
+    "sourness": 4.0,
+    "bitterness": 4.0,
+    "umami": 4.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Onions boiled (time not stated, 10 min assumed)"
+  },
+  {
+   "code": "643000",
+   "label": "Onion pureed",
+   "product": "Ui , Bakker Barendrecht, gekookt en geblenderd",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Onion",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 5.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Onion boiled and blended"
+  },
+  {
+   "code": "81003",
+   "label": "Radish, raw",
+   "product": "Rettich (groenteboer Wageningen)",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Daikon",
+     100
+    ]
+   ],
+   "opt": {
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 6.0,
+    "bitterness": 7.0,
+    "umami": 3.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 13.0,
+    "sourness": 13.0,
+    "bitterness": 13.0,
+    "umami": 13.0,
+    "saltiness": 13.0
+   },
+   "note": "Rettich (white radish) raw = daikon type; fridge-served"
+  },
+  {
+   "code": "92010",
+   "label": "Broccoli boiled",
+   "product": "AH broccoli roosjes",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Broccoli",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 5.0,
+    "bitterness": 4.0,
+    "umami": 6.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Broccoli boiled 10 min"
+  },
+  {
+   "code": "92020",
+   "label": "Broccoli boiled",
+   "product": "Broccoli, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Broccoli",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 11.0,
+    "sourness": 6.0,
+    "bitterness": 5.0,
+    "umami": 7.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Broccoli boiled (time not stated, 10 min assumed)"
+  },
+  {
+   "code": "92030",
+   "label": "Broccoli pureed",
+   "product": "Broccoli, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Broccoli",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 11.0,
+    "sourness": 5.0,
+    "bitterness": 5.0,
+    "umami": 9.0,
+    "saltiness": 5.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Broccoli puree (assumed boiled then blended)"
+  },
+  {
+   "code": "92040",
+   "label": "Broccoli raw",
+   "product": "Broccoli, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Broccoli",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 10.0,
+    "umami": 6.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Broccoli raw"
+  },
+  {
+   "code": "92050",
+   "label": "Broccoli juice",
+   "product": "Broccoli, Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Broccoli",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 7.0,
+    "bitterness": 12.0,
+    "umami": 9.0,
+    "saltiness": 6.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Broccoli juice (cold-pressed)"
+  },
+  {
+   "code": "96601",
+   "label": "Courgettes boiled",
+   "product": "AH courgette",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Zucchini",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 5,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 1.0,
+    "bitterness": 2.0,
+    "umami": 4.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Courgette boiled 5 min"
+  },
+  {
+   "code": "96602",
+   "label": "Courgettes, blanched",
+   "product": "AH Courgette",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Zucchini",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 2,
+    "cook_temp_c": 95.0,
+    "serve_temp_c": 5.5
+   },
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 5.0,
+    "bitterness": 5.0,
+    "umami": 5.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 13.0,
+    "sourness": 13.0,
+    "bitterness": 13.0,
+    "umami": 13.0,
+    "saltiness": 13.0
+   },
+   "note": "Courgette blanched 2 min, fridge-served"
+  },
+  {
+   "code": "273410",
+   "label": "Tomato average raw",
+   "product": "AH tomaten; medium size",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Tomato, Red (Fresh, Whole)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 10.0,
+    "sourness": 19.0,
+    "bitterness": 3.0,
+    "umami": 12.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Tomato raw"
+  },
+  {
+   "code": "273420",
+   "label": "Tomato raw",
+   "product": "Een normale tomaat , Bakker Barendrecht",
+   "group": "Vegetables",
+   "quality": "exact",
+   "items": [
+    [
+     "Tomato, Red (Fresh, Whole)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 8.0,
+    "sourness": 26.0,
+    "bitterness": 3.0,
+    "umami": 14.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Tomato raw"
+  },
+  {
+   "code": "273430",
+   "label": "Tomato juice",
+   "product": "Een normale tomaat , Bakker Barendrecht, koud geperst",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Tomato, Red (Fresh, Whole)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 9.0,
+    "sourness": 35.0,
+    "bitterness": 3.0,
+    "umami": 20.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Tomato cold-pressed juice"
+  },
+  {
+   "code": "273440",
+   "label": "Tomato pureed",
+   "product": "Een normale tomaat , Bakker Barendrecht, koud geblenderd",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Tomato, Red (Fresh, Whole)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 8.0,
+    "sourness": 31.0,
+    "bitterness": 4.0,
+    "umami": 17.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Tomato cold-blended"
+  },
+  {
+   "code": "21212133",
+   "label": "Pickles, sour",
+   "product": "AH augurk zuur",
+   "group": "Vegetables",
+   "quality": "close",
+   "items": [
+    [
+     "Pickles, Dill",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sourness": 78.0
+   },
+   "n_panellists": {
+    "sourness": 15.0
+   },
+   "note": "Dutch sour pickles (vinegar) vs US dill pickle; reference, sourness only"
+  },
+  {
+   "code": "982",
+   "label": "Potatoes wo skins boiled average",
+   "product": "AH krieltjes",
+   "group": "Potatoes",
+   "quality": "close",
+   "items": [
+    [
+     "Potato",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 2.0,
+    "bitterness": 1.0,
+    "umami": 7.0,
+    "saltiness": 8.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Baby potatoes peeled, boiled 10 min (no salt stated)"
+  },
+  {
+   "code": "2325",
+   "label": "Potatoes boiled with skin av",
+   "product": "AH Vastkokende aardappelen",
+   "group": "Potatoes",
+   "quality": "close",
+   "items": [
+    [
+     "Potato",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 20,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 2.0,
+    "bitterness": 1.0,
+    "umami": 8.0,
+    "saltiness": 6.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Waxy potatoes boiled with skin 20 min (no salt stated)"
+  },
+  {
+   "code": "84",
+   "label": "Eggs chicken boiled average",
+   "product": "Albert Heijn; medium; free-range",
+   "group": "Eggs",
+   "quality": "close",
+   "items": [
+    [
+     "Eggs",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 2.0,
+    "bitterness": 1.0,
+    "umami": 8.0,
+    "saltiness": 10.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Hen eggs boiled 8 min"
+  },
+  {
+   "code": "658",
+   "label": "Rice white boiled",
+   "product": "Lassie toverrijst",
+   "group": "Cereals and cereal products",
+   "quality": "close",
+   "items": [
+    [
+     "Rice",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 3.0,
+    "sourness": 2.0,
+    "bitterness": 2.0,
+    "umami": 4.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "White rice cooked (HFP Rice is cooked, 68.6% water)"
+  },
+  {
+   "code": "2359",
+   "label": "Wrap/Tortilla",
+   "product": "AH Tortilla wraps",
+   "group": "Cereals and cereal products",
+   "quality": "close",
+   "items": [
+    [
+     "Tortilla, Flour",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 11.0,
+    "sourness": 1.0,
+    "bitterness": 1.0,
+    "umami": 2.0,
+    "saltiness": 11.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Wheat tortilla wrap, warmed 10 s"
+  },
+  {
+   "code": "24802",
+   "label": "Bread white water based",
+   "product": "AH Zaanse snijder wit heel",
+   "group": "Bread",
+   "quality": "close",
+   "items": [
+    [
+     "Bread",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 2.0,
+    "bitterness": 2.0,
+    "umami": 0.0,
+    "saltiness": 11.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "White bread, water-based (HFP generic Bread)"
+  },
+  {
+   "code": "24810",
+   "label": "Bread white water based",
+   "product": "Albert Heijn; Zaanse, brood wit",
+   "group": "Bread",
+   "quality": "close",
+   "items": [
+    [
+     "Bread",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 3.0,
+    "bitterness": 1.0,
+    "umami": 1.0,
+    "saltiness": 11.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "White bread, water-based (HFP generic Bread)"
+  },
+  {
+   "code": "19140",
+   "label": "Pizza margherita",
+   "product": "AH pizza kaas/tomaat",
+   "group": "Mixed dishes",
+   "quality": "close",
+   "items": [
+    [
+     "Pizza",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 16.0,
+    "sourness": 4.0,
+    "bitterness": 1.0,
+    "umami": 15.0,
+    "saltiness": 35.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Pizza margherita; HFP Pizza is a single composite entry"
+  },
+  {
+   "code": "279",
+   "label": "Milk whole",
+   "product": "Albert Heijn, melk, volle",
+   "group": "Milk and milk products",
+   "quality": "exact",
+   "items": [
+    [
+     "Milk, Cow",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 4.0,
+    "bitterness": 1.0,
+    "umami": 1.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Whole milk"
+  },
+  {
+   "code": "286",
+   "label": "Milk semi-skimmed",
+   "product": "Albert Heijn, melk, halfvolle",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Milk, Cow",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 12.0,
+    "sourness": 4.0,
+    "bitterness": 1.0,
+    "umami": 1.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Semi-skimmed milk (lactose/salts ~ whole)"
+  },
+  {
+   "code": "294",
+   "label": "Milk skimmed",
+   "product": "Albert Heijn, melk, magere",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Milk, Cow",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 14.0,
+    "sourness": 5.0,
+    "bitterness": 1.0,
+    "umami": 1.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Skimmed milk (lactose/salts ~ whole)"
+  },
+  {
+   "code": "278",
+   "label": "Yoghurt full fat",
+   "product": "Albert Heijn, yoghurt, volle",
+   "group": "Milk and milk products",
+   "quality": "exact",
+   "items": [
+    [
+     "Yogurt, Plain (Whole Milk)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 2.0,
+    "sourness": 71.0,
+    "bitterness": 2.0,
+    "umami": 1.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Full-fat plain yoghurt"
+  },
+  {
+   "code": "1502",
+   "label": "Yoghurt half fat",
+   "product": "Albert Heijn, yoghurt, halfvolle",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Yogurt, Plain (Whole Milk)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 49.0,
+    "bitterness": 2.0,
+    "umami": 1.0,
+    "saltiness": 1.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Half-fat plain yoghurt"
+  },
+  {
+   "code": "301",
+   "label": "Yoghurt low fat",
+   "product": "Albert Heijn, yoghurt, magere",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Yogurt, Plain (Whole Milk)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 2.0,
+    "sourness": 67.0,
+    "bitterness": 2.0,
+    "umami": 1.0,
+    "saltiness": 3.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Low-fat plain yoghurt"
+  },
+  {
+   "code": "21212132",
+   "label": "Stirred yoghurt",
+   "product": "AH biogarde roeryoghurt",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Yogurt, Plain (Whole Milk)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sourness": 50.0
+   },
+   "n_panellists": {
+    "sourness": 15.0
+   },
+   "note": "Stirred Biogarde yoghurt (mild culture); reference, sourness only"
+  },
+  {
+   "code": "289",
+   "label": "Buttermilk",
+   "product": "Albert Heijn, karnemelk",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Buttermilk (Cultured)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 37.0,
+    "bitterness": 1.0,
+    "umami": 2.0,
+    "saltiness": 5.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Dutch karnemelk (cultured buttermilk)"
+  },
+  {
+   "code": "21212131",
+   "label": "Buttermilk",
+   "product": "Albert Heijn, karnemelk",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Buttermilk (Cultured)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sourness": 38.0
+   },
+   "n_panellists": {
+    "sourness": 15.0
+   },
+   "note": "Karnemelk; reference, sourness only"
+  },
+  {
+   "code": "1808",
+   "label": "Creme fraiche",
+   "product": "AH Crème fraîche",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Sour Cream",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 33.0,
+    "bitterness": 1.0,
+    "umami": 2.0,
+    "saltiness": 8.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Creme fraiche (higher fat) vs sour cream"
+  },
+  {
+   "code": "719",
+   "label": "Cheese cream soft Mon Chou",
+   "product": "Mon Chou Verse roomkaas",
+   "group": "Cheese",
+   "quality": "close",
+   "items": [
+    [
+     "Cheese, Cream",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 15.0,
+    "bitterness": 1.0,
+    "umami": 4.0,
+    "saltiness": 21.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Fresh cream cheese (Mon Chou)"
+  },
+  {
+   "code": "513",
+   "label": "Cheese Gouda 48+ average",
+   "product": "Albert Heijn; sliced; jong-belegen",
+   "group": "Cheese",
+   "quality": "close",
+   "items": [
+    [
+     "Cheese, Gouda",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 18.0,
+    "bitterness": 1.0,
+    "umami": 17.0,
+    "saltiness": 41.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Gouda 48+ jong-belegen (~8 weeks); HFP Gouda age unknown"
+  },
+  {
+   "code": "1725",
+   "label": "Cheese Leerdammer/Maasdammer 45+",
+   "product": "Leerdammer Original Plakken",
+   "group": "Cheese",
+   "quality": "close",
+   "items": [
+    [
+     "Cheese, Emmental",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 10.0,
+    "bitterness": 2.0,
+    "umami": 28.0,
+    "saltiness": 29.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Leerdammer (Maasdam, Swiss-type) vs Emmental"
+  },
+  {
+   "code": "21212139",
+   "label": "Cheese Parmesan",
+   "product": "Zanetti Grana Padano",
+   "group": "Cheese",
+   "quality": "close",
+   "items": [
+    [
+     "Cheese, Parmigiano Regianno",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "umami": 69.0
+   },
+   "n_panellists": {
+    "umami": 15.0
+   },
+   "note": "Grana Padano vs Parmigiano; reference, umami only"
+  },
+  {
+   "code": "879",
+   "label": "Butter salted",
+   "product": "AH Roomboter gezouten",
+   "group": "Fat, oils, mayonnaise and spicy s",
+   "quality": "close",
+   "items": [
+    [
+     "Butter, Salted",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 3.0,
+    "sourness": 1.0,
+    "bitterness": 0.0,
+    "umami": 2.0,
+    "saltiness": 32.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Dutch salted butter"
+  },
+  {
+   "code": "451",
+   "label": "Mayonnaise",
+   "product": "Remia mayonaise",
+   "group": "Fat, oils, mayonnaise and spicy s",
+   "quality": "close",
+   "items": [
+    [
+     "Mayonnaise",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 10.0,
+    "sourness": 33.0,
+    "bitterness": 1.0,
+    "umami": 8.0,
+    "saltiness": 25.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Dutch mayonnaise (Remia)"
+  },
+  {
+   "code": "462",
+   "label": "Ketchup tomato",
+   "product": "Heinz Tomato ketchup",
+   "group": "Fat, oils, mayonnaise and spicy s",
+   "quality": "close",
+   "items": [
+    [
+     "Ketchup",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 28.0,
+    "sourness": 42.0,
+    "bitterness": 1.0,
+    "umami": 22.0,
+    "saltiness": 29.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Heinz ketchup (NL); HFP ketchup has no organic-acid data"
+  },
+  {
+   "code": "824",
+   "label": "Mustard",
+   "product": "Kuhne Dijonmosterd",
+   "group": "Herbs and spices",
+   "quality": "close",
+   "items": [
+    [
+     "Mustard, Dijon",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 47.0,
+    "bitterness": 10.0,
+    "umami": 5.0,
+    "saltiness": 37.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Dijon mustard (Kuhne)"
+  },
+  {
+   "code": "21212140",
+   "label": "Soy sauce Kikkoman",
+   "product": "Kikkoman Sojasaus",
+   "group": "Fat, oils, mayonnaise and spicy s",
+   "quality": "close",
+   "items": [
+    [
+     "Sauce, Soy",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "umami": 86.0,
+    "saltiness": 94.0
+   },
+   "n_panellists": {
+    "umami": 15.0,
+    "saltiness": 15.0
+   },
+   "note": "Kikkoman soy sauce (reference: umami 86, salt 94)"
+  },
+  {
+   "code": "21212137",
+   "label": "Saitaku Sushi Nori Zeewier",
+   "product": "Saitaku Sushi Nori Zeewier",
+   "group": "Miscellaneous",
+   "quality": "close",
+   "items": [
+    [
+     "Seaweed, Nori",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "umami": 28.0
+   },
+   "n_panellists": {
+    "umami": 15.0
+   },
+   "note": "Sushi nori sheet (reference, umami only); dry solid: water-phase concentration flag"
+  },
+  {
+   "code": "443",
+   "label": "Honey",
+   "product": "AH BASIC Bloemenhoning",
+   "group": "Sugar, sweets, sweet spreads and",
+   "quality": "exact",
+   "items": [
+    [
+     "Honey",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 76.0,
+    "sourness": 1.0,
+    "bitterness": 3.0,
+    "umami": 0.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Flower honey"
+  },
+  {
+   "code": "1528",
+   "label": "Stock from cube prepared",
+   "product": "Maggi Groente bouillon vegetarisch",
+   "group": "Soups",
+   "quality": "close",
+   "items": [
+    [
+     "Bouillon",
+     5
+    ],
+    [
+     "Water",
+     250
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 3.0,
+    "bitterness": 1.0,
+    "umami": 41.0,
+    "saltiness": 57.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Vegetable stock cube: 1/2 cube in 250 g water (SVT); cube 10 g assumed; HFP Bouillon is a generic cube"
+  },
+  {
+   "code": "82003",
+   "label": "Unox Clear chicken soup",
+   "product": "Unox Heldere Kippensoep uit een zak",
+   "group": "Soups",
+   "quality": "close",
+   "items": [
+    [
+     "Chicken Soup",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 7.0,
+    "sourness": 5.0,
+    "bitterness": 1.0,
+    "umami": 29.0,
+    "saltiness": 38.0
+   },
+   "n_panellists": {
+    "sweetness": 13.0,
+    "sourness": 13.0,
+    "bitterness": 13.0,
+    "umami": 13.0,
+    "saltiness": 13.0
+   },
+   "note": "Clear chicken soup (Unox, pouch); HFP Chicken Soup is a generic entry"
+  },
+  {
+   "code": "206",
+   "label": "Walnuts unsalted",
+   "product": "AH Walnoten ongezouten",
+   "group": "Nuts, seeds and savoury snacks",
+   "quality": "exact",
+   "items": [
+    [
+     "Walnut",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 1.0,
+    "bitterness": 12.0,
+    "umami": 6.0,
+    "saltiness": 2.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Walnuts unsalted; dry solid: water-phase concentration flag"
+  },
+  {
+   "code": "21212136",
+   "label": "Lindt 85 % cacao",
+   "product": "Lindt 85 % cacao",
+   "group": "Sugar, sweets, sweet spreads and",
+   "quality": "close",
+   "items": [
+    [
+     "Chocolate, Dark (70-85%)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "bitterness": 70.0
+   },
+   "n_panellists": {
+    "bitterness": 15.0
+   },
+   "note": "Lindt 85% (reference, bitterness only); theobromine + caffeine modelled (v.2.8.2), polyphenols not"
+  },
+  {
+   "code": "432",
+   "label": "Chocolate plain",
+   "product": "AH BASIC Tablet puur",
+   "group": "Sugar, sweets, sweet spreads and",
+   "quality": "close",
+   "items": [
+    [
+     "Chocolate, Dark (45-59%)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 44.0,
+    "sourness": 6.0,
+    "bitterness": 39.0,
+    "umami": 1.0,
+    "saltiness": 4.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "AH basic plain chocolate; cocoa % not stated, USDA 45-59% dark used (v.2.8.2)"
+  },
+  {
+   "code": "431",
+   "label": "Chocolate milk",
+   "product": "Verkade melkchocolade",
+   "group": "Sugar, sweets, sweet spreads and",
+   "quality": "close",
+   "items": [
+    [
+     "Chocolate, Milk",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 55.0,
+    "sourness": 1.0,
+    "bitterness": 5.0,
+    "umami": 0.0,
+    "saltiness": 7.0
+   },
+   "n_panellists": {
+    "sweetness": 12.0,
+    "sourness": 12.0,
+    "bitterness": 12.0,
+    "umami": 12.0,
+    "saltiness": 12.0
+   },
+   "note": "Verkade milk chocolate; USDA SR 167587 milk chocolate (v.2.8.2)"
+  },
+  {
+   "code": "272",
+   "label": "Milk chocolate-flavoured full fat",
+   "product": "Chocomel Vol",
+   "group": "Milk and milk products",
+   "quality": "close",
+   "items": [
+    [
+     "Milk, Chocolate (Whole)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 37.0,
+    "sourness": 2.0,
+    "bitterness": 7.0,
+    "umami": 0.0,
+    "saltiness": 6.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Chocomel full-fat chocolate milk; USDA SR 170879 whole chocolate milk (v.2.8.2)"
+  },
+  {
+   "code": "1400",
+   "label": "Beef rump steak raw",
+   "product": "AH Biefstuk",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Beef",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 5,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 7.0,
+    "bitterness": 1.0,
+    "umami": 18.0,
+    "saltiness": 17.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Rump steak pan-fried in 15% margarine (frying-fat salt and water loss not modelled)"
+  },
+  {
+   "code": "1405",
+   "label": "Minced beef raw",
+   "product": "Rundergehakt slager",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Hamburger Meat",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 3.0,
+    "bitterness": 1.0,
+    "umami": 11.0,
+    "saltiness": 22.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Minced beef fried (frying fat and water loss not modelled)"
+  },
+  {
+   "code": "1415",
+   "label": "Beef steak tartare raw",
+   "product": "AH Rundertartaar",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Hamburger Meat",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 5.0,
+    "bitterness": 1.0,
+    "umami": 10.0,
+    "saltiness": 15.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Beef tartare (lean mince) fried"
+  },
+  {
+   "code": "1418",
+   "label": "Pork fillet raw",
+   "product": "AH Varkensfiletlapjes",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Pork",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 9.0,
+    "bitterness": 1.0,
+    "umami": 14.0,
+    "saltiness": 16.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Pork fillet fried"
+  },
+  {
+   "code": "1420",
+   "label": "Pork chop raw",
+   "product": "AH Hamlappen",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Pork",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 10.0,
+    "bitterness": 1.0,
+    "umami": 18.0,
+    "saltiness": 16.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Pork leg steak (hamlap) fried"
+  },
+  {
+   "code": "1422",
+   "label": "Pork tenderloin raw",
+   "product": "AH Varkenshaas",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Pork",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 9.0,
+    "bitterness": 1.0,
+    "umami": 14.0,
+    "saltiness": 17.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Pork tenderloin fried"
+  },
+  {
+   "code": "1425",
+   "label": "Pork shoulder chop raw",
+   "product": "Schouderkarbonade",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Pork",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 2.0,
+    "bitterness": 0.0,
+    "umami": 12.0,
+    "saltiness": 24.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Pork shoulder chop fried"
+  },
+  {
+   "code": "1788",
+   "label": "Pork rib chop raw",
+   "product": "AH Ribkarbonade",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Pork",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 4.0,
+    "bitterness": 0.0,
+    "umami": 14.0,
+    "saltiness": 16.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Pork rib chop fried"
+  },
+  {
+   "code": "1790",
+   "label": "Pork schnitzel not breaded raw",
+   "product": "AH Varkensschnitzel",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Pork",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 5.0,
+    "sourness": 7.0,
+    "bitterness": 1.0,
+    "umami": 16.0,
+    "saltiness": 18.0
+   },
+   "n_panellists": {
+    "sweetness": 10.0,
+    "sourness": 10.0,
+    "bitterness": 10.0,
+    "umami": 10.0,
+    "saltiness": 10.0
+   },
+   "note": "Pork schnitzel (not breaded) fried"
+  },
+  {
+   "code": "1634",
+   "label": "Chicken fillet raw",
+   "product": "Kipfilet enkel slager",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Chicken",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 8,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 7.0,
+    "bitterness": 1.0,
+    "umami": 13.0,
+    "saltiness": 18.0
+   },
+   "n_panellists": {
+    "sweetness": 9.0,
+    "sourness": 9.0,
+    "bitterness": 9.0,
+    "umami": 9.0,
+    "saltiness": 9.0
+   },
+   "note": "Chicken fillet fried"
+  },
+  {
+   "code": "328",
+   "label": "Ham smoked raw",
+   "product": "AH Coburger rauwe ham",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Ham, Dry-Cured",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 3.0,
+    "sourness": 4.0,
+    "bitterness": 1.0,
+    "umami": 27.0,
+    "saltiness": 65.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Coburger raw smoked ham vs dry-cured ham (HFP water 18%: likely too dry)"
+  },
+  {
+   "code": "639",
+   "label": "Bacon rashers streaky",
+   "product": "AH BASIC Ontbijtspek",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Bacon",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 6.0,
+    "bitterness": 0.0,
+    "umami": 21.0,
+    "saltiness": 53.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Streaky breakfast bacon (cured, smoked, ready to eat)"
+  },
+  {
+   "code": "3025",
+   "label": "Bacon lean smoked raw",
+   "product": "AH Gerookte spekblokjes",
+   "group": "Meat, meat products and poultry",
+   "quality": "close",
+   "items": [
+    [
+     "Bacon",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 6,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 6.0,
+    "sourness": 6.0,
+    "bitterness": 0.0,
+    "umami": 15.0,
+    "saltiness": 67.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Smoked bacon cubes fried without fat 6 min"
+  },
+  {
+   "code": "819",
+   "label": "Cod boiled",
+   "product": "AH Kabeljauw",
+   "group": "Fish",
+   "quality": "close",
+   "items": [
+    [
+     "Fish, Cod",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 10,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 2.0,
+    "sourness": 3.0,
+    "bitterness": 2.0,
+    "umami": 12.0,
+    "saltiness": 13.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Cod microwaved 10 min, no salt stated"
+  },
+  {
+   "code": "1610",
+   "label": "Salmon farmed prep in microwave oven",
+   "product": "AH Zalmfiletvis",
+   "group": "Fish",
+   "quality": "close",
+   "items": [
+    [
+     "Fish, Salmon (Fresh)",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 2,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 3.0,
+    "sourness": 9.0,
+    "bitterness": 1.0,
+    "umami": 25.0,
+    "saltiness": 18.0
+   },
+   "n_panellists": {
+    "sweetness": 8.0,
+    "sourness": 8.0,
+    "bitterness": 8.0,
+    "umami": 8.0,
+    "saltiness": 8.0
+   },
+   "note": "Farmed salmon microwaved"
+  },
+  {
+   "code": "2297",
+   "label": "Tuna raw",
+   "product": "AH Tonijnsteak",
+   "group": "Fish",
+   "quality": "close",
+   "items": [
+    [
+     "Fish, Tuna (Fresh)",
+     100
+    ]
+   ],
+   "opt": {
+    "cook_min": 5,
+    "cook_temp_c": 95.0
+   },
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 11.0,
+    "bitterness": 1.0,
+    "umami": 10.0,
+    "saltiness": 12.0
+   },
+   "n_panellists": {
+    "sweetness": 7.0,
+    "sourness": 7.0,
+    "bitterness": 7.0,
+    "umami": 7.0,
+    "saltiness": 7.0
+   },
+   "note": "Tuna steak fried in 10% margarine"
+  },
+  {
+   "code": "602",
+   "label": "Salmon tinned",
+   "product": "John West Wilde roze zalm zonder vel en graat MSC",
+   "group": "Fish",
+   "quality": "close",
+   "items": [
+    [
+     "Fish, Salmon (Canned)",
+     100
+    ]
+   ],
+   "opt": {},
+   "measured": {
+    "sweetness": 4.0,
+    "sourness": 8.0,
+    "bitterness": 2.0,
+    "umami": 28.0,
+    "saltiness": 26.0
+   },
+   "n_panellists": {
+    "sweetness": 11.0,
+    "sourness": 11.0,
+    "bitterness": 11.0,
+    "umami": 11.0,
+    "saltiness": 11.0
+   },
+   "note": "Tinned wild pink salmon"
+  }
+ ]
+}

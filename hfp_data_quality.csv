@@ -1,0 +1,311 @@
+Ingredient,Field,Tier,Basis
+Basil,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+"Beans, Fava",ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3]
+Beef,acids,2,"Organic acids review (Foods, 'Recent Progress in the Study of Taste Characteristics and th"
+Beef,ph,3,Default: typical post-rigor muscle pH 5.4-5.8 (not in FDA list)
+Bitter Melon,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97]
+Boar,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]"
+Bonito Flakes,acids,2,"Derived: lactate = K x (640/210), ratio from dried bonito dashi stock per 100 g (lactate 6"
+Bonito Flakes,ph,2,"Proxy: dried bonito dashi stock pH 5.7-5.8 (Delay et al. 2019, Physiol Behav 199:127)"
+Burdock Root,ph,3,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9) [value 5.95]
+"Cheese, Cabrales",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54]
+"Cheese, Emmental",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54]
+"Cheese, Feta",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54]
+"Cheese, Gouda",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54]
+"Cheese, Kashkaval",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54]
+"Cheese, Manchego",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54]
+"Cheese, Mozzarella",ph,3,Category estimate (tier 3): median pH of 9 FDA-referenced cheeses (range 4.88-7.44) [value 5.54]
+Chicken,acids,2,"Organic acids review (Foods, 'Recent Progress in the Study of Taste Characteristics and th"
+Chicken,ph,3,Default: typical post-rigor poultry breast pH 5.7-6.0 (not in FDA list)
+"Chicken, Barbecued",ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.9]"
+Chrysanthemum Greens,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97]
+Coriander,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+Cumin,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+Daikon,ph,3,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9) [value 5.95]
+Deer,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]"
+Dill,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+Edamame,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3]
+"Fish, Anchovy (Canned)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Anchovy (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Anchovy (Fresh)",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]"
+"Fish, Angler",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]"
+"Fish, Angler",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Black Scraper",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]"
+"Fish, Black Scraper",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Bonito",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Butter",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Eel",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]"
+"Fish, Eel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Fatty Tuna",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Flounder",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]"
+"Fish, Flying (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Flying (Dried, Grilled)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Flying (Fresh)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Fugu",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Horse Mackerel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Mackerel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Rock",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]"
+"Fish, Rock",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Salmon (Fresh)",imp,3,"Category estimate (tier 3): mean IMP of 13 measured fresh fish fillets (129-315 mg/100 g, CV 24%); IMP falls with storage time post-mortem [value 241.8]"
+"Fish, Sardine (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Seabream (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Seabream (Fresh)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Spanish Mackerel",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Tuna (Dried)",acids,2,"Derived: lactate = K x (640/210), ratio from dried bonito dashi stock per 100 g (lactate 6"
+"Fish, Tuna (Dried)",ph,2,"Proxy: dried bonito dashi stock pH 5.7-5.8 (Delay et al. 2019, Physiol Behav 199:127); ent"
+"Fish, Whitebait (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+"Fish, Yellowtail",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13]
+Green Onion,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+Green Pea,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3]
+Hamburger Meat,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]"
+"Juice, Tomato",acids,2,Derived: whole red tomato x dry-matter ratio 1.05
+Kale,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97]
+Lamb,ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]"
+Lobster,ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48]
+Mint,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+Monosodium Glutamate,ph,3,Default: MSG solution ~pH 7
+Mugwort,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+"Mushroom, King Trumpet",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35]
+"Mushroom, Morel (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35]
+"Mushroom, Porcini (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35]
+"Mushroom, Shiitake (Dried)",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fungi (range 5.5-6.35) [value 6.35]
+Mustard Greens,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97]
+Okra,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97]
+"Onion, Welsh",ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+"Oyster, European",ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48]
+"Oyster, Generic",ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48]
+"Oyster, Pacific",ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48]
+Paprika,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+"Paste, Tomato",acids,2,Derived: whole red tomato x dry-matter ratio 4.82
+Peanuts,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3]
+Perilla,ph,3,Category estimate (tier 3): median pH of 7 FDA-referenced Herbs & Spices (range 5.46-5.85) [value 5.75]
+Pork,ph,3,Default: typical post-rigor muscle pH 5.4-5.8 (not in FDA list)
+"Pork, Iberian",ph,3,"Category estimate (tier 3): typical post-rigor muscle pH (red meat 5.6, poultry 5.9), same default as beef/pork/chicken [value 5.6]"
+Prawn,ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48]
+"Sauce, Tomato",acids,2,Derived: whole red tomato x dry-matter ratio 1.58
+Scallop (Dried),ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48]
+Sea Urchin,ph,3,Category estimate (tier 3): median pH of 10 FDA-referenced Seafood (range 6.0-6.75) [value 6.48]
+Snap Pea,ph,3,Category estimate (tier 3): median pH of 3 FDA-referenced Legumes & Pulses (range 6.28-6.56) [value 6.3]
+Tomato (Canned),acids,2,Derived: whole red tomato x dry-matter ratio 1.93
+Tomato (Canned),amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+Tomato (Canned),gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+"Tomato, Beefsteak (Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Beefsteak (Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Conchita, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Conchita, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Dulce Supersweet, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Dulce Supersweet, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Generic)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Generic)",amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+"Tomato, Cherry (Generic)",gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+"Tomato, Cherry (Piccolo, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Piccolo, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Santa Pomodorino, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Santa Pomodorino, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Sungold, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Sungold, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Tiger, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Cherry (Tiger, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Plum (Celine, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Plum (Celine, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Plum (Flavorino, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Plum (Flavorino, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Plum (Vine Ripened, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Plum (Vine Ripened, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Red (Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Red (Fresh, Whole)",amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+"Tomato, Red (Fresh, Whole)",gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+"Tomato, Red (Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Carousel, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Carousel, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Elegance, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Elegance, Italian, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Elegance, Italian, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Elegance, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Generic, Flesh)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Salad (Generic, Pulp)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Yellow (Fresh, Whole)",acids,2,"LC-MS, ripe tomato: citric 345, malic 102 mg/100 g FW (Chromatographia 2010, 'Simple LC-MS"
+"Tomato, Yellow (Fresh, Whole)",amp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+"Tomato, Yellow (Fresh, Whole)",gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+Truffle,gmp,2,Sibling or 70:30 flesh/pulp derivation (Change Log)
+Yam,ph,3,Category estimate (tier 3): median pH of 5 FDA-referenced Roots (range 5.45-6.9) [value 5.95]
+Zucchini,ph,3,Category estimate (tier 3): median pH of 20 FDA-referenced vegetables excluding tomatoes and olives (range 5.05-6.41) [value 5.97]
+Prunes (Fresh),ph,2,"Proxy: FDA/USDA 'Plums, Blue' (2.8-3.4), midpoint; fresh prune plums are blue European plums"
+"Caviar, Red",ph,2,"Proxy: FDA/USDA 'Caviar, American' (5.7-6.0), midpoint; red caviar (salmon roe) proxied by American caviar"
+Salmon Roe,ph,2,"Proxy: FDA/USDA 'Caviar, American' (5.7-6.0), midpoint; salmon roe proxied by American caviar"
+"Broth, Turkey",ph,2,"Proxy: FDA/USDA 'Soup Chicken Broth' (5.8-5.8), midpoint; poultry broth proxy"
+"Broth, Beef",ph,2,"Proxy: FDA/USDA 'Soup Chicken Broth' (5.8-5.8), midpoint; meat broth proxy; no beef broth entry"
+Treacle,ph,2,"Proxy: FDA/USDA 'Molasses' (4.9-5.4), midpoint; black treacle is a cane molasses product"
+"Juice, Peach",ph,2,"Proxy: FDA/USDA 'Peaches' (3.3-4.05), midpoint; juice proxied by the fruit"
+"Juice, Tomato",amp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 0.651 (190/292); keeps the fresh-tomato Glu:nucleotide ratio"
+"Juice, Tomato",gmp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 0.651 (190/292); keeps the fresh-tomato Glu:nucleotide ratio"
+"Sauce, Tomato",amp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 1.507 (440/292); keeps the fresh-tomato Glu:nucleotide ratio"
+"Sauce, Tomato",gmp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 1.507 (440/292); keeps the fresh-tomato Glu:nucleotide ratio"
+"Paste, Tomato",amp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 2.620 (765/292); keeps the fresh-tomato Glu:nucleotide ratio"
+"Paste, Tomato",gmp,2,"Derived: Tomato, Red (Fresh, Whole) AMP 14.45 / GMP 1.2 mg/100 g x glutamate ratio 2.620 (765/292); keeps the fresh-tomato Glu:nucleotide ratio"
+"Yogurt, Plain (Whole Milk)",sugars,2,USDA FDC 171284 gives total sugars only (4.66 g/100 g); assigned to lactose (fermented dairy)
+"Yogurt, Plain (Whole Milk)",ph,2,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)"
+"Yogurt, Greek (Plain, Whole Milk)",sugars,2,USDA FDC 171304 gives total sugars only (4.0 g/100 g); assigned to lactose (fermented dairy)
+"Yogurt, Greek (Plain, Whole Milk)",ph,2,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)"
+"Yogurt, Greek (Plain, Whole Milk)",acids,2,lactic derived from plain yogurt by water-phase concentration
+"Yogurt, Greek (Plain, Whole Milk)",density,2,"sibling: Yogurt, Plain (Whole Milk) 1.036 g/mL"
+Buttermilk (Cultured),sugars,2,USDA FDC 167697 gives total sugars only (5.3 g/100 g); assigned to lactose (fermented dairy)
+Sour Cream,ph,2,"process endpoint pH 4.0-4.6, not a measured product value"
+Sour Cream,acids,2,titratable acidity expressed as lactic acid
+Kefir (Plain),ph,2,"Proxy: FDA/USDA 'Milk, Acidophilus' (4.09-4.25), midpoint; cultured milk proxy (no yogurt/kefir entry)"
+Kefir (Plain),acids,2,fermented-milk range applied (Alm 1982)
+Tamarind (Pulp),sugars,3,USDA FDC 167763 gives total sugars only (38.8 g/100 g); split 50:50 glucose/fructose (category estimate for fruit)
+Tamarind (Pulp),acids,2,secondary-summary range midpoint; primary source not verified
+Sauerkraut,acids,2,total acid 1.5% split 2:1 lactic:acetic
+"Juice, Cranberry (Unsweetened)",sugars,3,USDA FDC 168117 gives total sugars only (12.1 g/100 g); split 50:50 glucose/fructose (category estimate for fruit)
+Rhubarb,sugars,3,USDA FDC 167758 gives total sugars only (1.1 g/100 g); split 50:50 glucose/fructose (category estimate for fruit)
+"Juice, Pomegranate",ph,2,fruit pH applied to juice
+Pomegranate,sugars,2,USDA FDC 169134 total sugars 13.67 g/100 g split by the pomegranate-juice glucose:fructose ratio
+Mandarin,acids,2,juice concentrations applied to whole fruit
+Apple,acids,2,"Malic acid derived: original 2790 mg/100 g treated as dry weight, x dry matter 15.3% = 427 mg/100 g fresh"
+"Sauce, Tomato (Canned)",umami+acids+pH,2,"Copied from Sauce, Tomato (same product without added salt); composition and sodium from USDA FDC 170054"
+Bouillon,glutamate,2,"Copied from Beef Stock Cube (6827 mg/100 g); most commercial bouillon cubes and granules contain MSG. Was 4 mg/100 g (source unknown, implausible)"
+"Broth, Chicken (Low Sodium)",ph,2,"Copied from Broth, Chicken (FDA 'Soup Chicken Broth')"
+Spirulina (Dried),glutamate,2,"Free glutamate, Nawrocka 2017 Mar Drugs 15:237 Table 4 (dry mass, one sample, harsh extraction); Al-Dhabi 2016 reports not detected. Was 8400 (USDA total glutamic acid)"
+Spirulina (Dried),aspartate,2,"Free aspartate, Nawrocka 2017 Table 4 (dry mass). Was 4980 (total)"
+Watermelon,glutamate,2,Fresh juice value used for flesh: Corleto 2019 J Food Drug Anal 27:717 Table 3 (10.92 ug/mL). Was 375 (above USDA total of 63; source unknown)
+Watermelon,aspartate,2,Fresh juice value used for flesh: Corleto 2019 Table 3 (64.18 ug/mL). Was 30
+Green Tea,aspartate,1,"Standard Sencha dry leaf, Unno 2025 Table 2 (1.79 mg/g). Was blank"
+Walnut,glutamate,1,"Mapelli 2001 Tree Physiology 21:1299-1302, value supplied by Bryan (Nov 13, 2026). Was 658 (Skurray and Pucar 1988)"
+Mayonnaise,ph,3,Category estimate (tier 3): commercial mayonnaise/dressings pH 3.21-3.94 (Erickson 1995) [value 3.8]
+Mayonnaise,acids,2,"Industry use level 0.31-0.32% acetic acid (Smittle 1977), not measured for one product"
+"Mustard, Dijon",sugars,2,"Sibling: USDA SR 172234 yellow mustard (water, K, protein and sugars too); sodium from Dijon labels"
+"Mustard, Dijon",acids,3,"Spec range midpoint (USDA A-A-20036 Type III, 2.10-3.50% as acetic) [value 2800]"
+"Mustard, Yellow (Prepared)",ph,2,"Manufacturer spec range midpoint (Woeber, pH 3.3-3.6)"
+"Mustard, Yellow (Prepared)",acids,2,"Manufacturer spec range midpoint (Woeber, 2.8-3.5% as acetic)"
+"Sauce, Hoisin",sugars,3,Category estimate (tier 3): USDA SR 172886 total sugars 27.26 g/100 g entered as sucrose (sugars not split) [value 27260]
+"Sauce, Hoisin",ph,2,One US foodservice product spec (pH target 3.85)
+Salsa (Jarred),ph,3,Category estimate (tier 3): median pH of 12 FDA-referenced Condiments (range 2.9-6.0) [value 3.17]
+"Sauce, Hot (Tabasco)",ph,3,Category estimate (tier 3): median pH of 12 FDA-referenced Condiments (range 2.9-6.0) [value 3.17]
+Kosher Salt,density,3,"Brand not given: midpoint of Diamond Crystal 0.568 and Morton 0.974 g/mL (label serving sizes, 1/4 tsp = 0.7 g and 1.2 g) [value 0.771]; was 1.2 (table-salt density)"
+Monk Fruit Extract (Mogroside V 55%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026"
+Monk Fruit Extract (Mogroside V 50%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026"
+Monk Fruit Extract (Mogroside V 40%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026"
+Monk Fruit Extract (Mogroside V 25%),density,3,"Estimate (tier 3): EFSA ANS Panel 2019, EFSA J 17(12):5921 (PMC7008860) Table 2 specification for mogroside V 25-57% grades: loose density > 0.2, tapped > 0.3 g/mL (minimums only); midpoint of the two floors used [value 0.25]. Suggested by Bryan Nov 21, 2026"
+Stevia Extract (Reb A 97%),density,2,"Pyure Reb A 98% spec sheet, bulk 0.35 g/mL (labels 0.29-0.46) [value 0.35]"
+Stevia Extract (Reb A 80%),density,3,"No grade-specific data; Reb A 98% spec value used (Pyure, bulk 0.35 g/mL) [value 0.35]"
+Stevia Extract (Reb A 60%),density,3,"No grade-specific data; Reb A 98% spec value used (Pyure, bulk 0.35 g/mL) [value 0.35]"
+Stevia Extract (Reb A 50%),density,3,"No grade-specific data; Reb A 98% spec value used (Pyure, bulk 0.35 g/mL) [value 0.35]"
+Sucralose,density,3,Micronized powder ~0.30-0.35 g/mL (Tate & Lyle patent WO2004112506); granulated forms 0.6-0.8 [value 0.33]
+Aspartame,density,2,"Powder grade spec 0.15-0.30 g/mL (Hommel EP/USP spec), midpoint; fine granular grade 0.45-0.65 [value 0.25]"
+Acesulfame Potassium,density,2,"Hommel E950 spec bulk 1.10-1.30 g/mL, low end (loose); pharma monograph bulk 1.04, tapped 1.28 [value 1.1]"
+Allulose,density,2,CJ CheilJedang US11653684 Table 4: crystalline allulose poured bulk 67.3 g/100 mL (DIN ISO 697); labels use the sugar convention 4 g/tsp [value 0.67]
+Maltitol,density,2,Roquette SweetPearl P200 crystalline maltitol bulk 0.81 / tapped 0.96 g/mL [value 0.81]
+Xylitol,density,2,Four pure-xylitol labels 4 g/tsp = 0.812 (USDA FDC Branded); may copy the sugar serving convention [value 0.81]
+Mannitol,density,2,Roquette Pearlitol 160C crystalline mannitol bulk 0.64 / tapped 0.69 g/mL [value 0.64]
+"Butter, Salted",glutamate,2,"Sweet-cream butter, mean of 3 products (Lei et al. 2025, Food Chem X 32:103334, PMC12719179, Table 1; unit printed as mg/100 mg, read as mg/100 g) [value 1.06]"
+"Pickles, Dill",glutamate,2,"Fermented whole dill pickles, tissue (Moore, DuVivier & Johanningsmeier 2022, J Food Sci 87:599, Table 1); fresh-pack (acidified) pickles measured 0.72 [value 3.32]"
+Mayonnaise,glutamate,2,"One Malaysian product, from the abstract only (Khairunnisak et al. 2009, Food Addit Contam A 26:419) [value 28]"
+"Tofu, Firm",glutamate,2,"Han, Rombouts & Nout 2004 J Food Compos Anal (doi:10.1016/j.jfca.2003.09.012) Table 1: 0.09 mg/g dry matter x 17.1% dry matter [value 1.5]"
+"Tofu, Firm",sugars,3,"USDA FDC 172448 total sugars 0.60 g, not split; entered as sucrose [value 600]"
+"Tofu, Silken",glutamate,2,"Han, Rombouts & Nout 2004 (dry-matter value x 12.6% dry matter) [value 1.1]"
+"Tofu, Silken",sugars,3,"USDA FDC 172461 total sugars 1.27 g, not split; entered as sucrose [value 1270]"
+"Tofu, Silken",ph,2,FDA generic 'Tofu' 7.20 applied to silken [value 7.2]
+Tahini,sugars,3,"USDA FDC 170189 total sugars 0.49 g, not split; entered as sucrose [value 490]"
+Gochujang,glutamate,2,"Yang, Lee & Choi 2018 Table 3: lab-made gochujang 58-80 mg/100 g (mean of 5); retail paste with added MSG is likely higher [value 68]"
+Gochujang,sugars,3,"Ahn, Kim & Shin 1997 sugar split (glucose 8.6-29.4%, maltose 5.3-16.5%, fructose 0.3-3.4%, sucrose n.d.) scaled to the Sempio label total 25.2 g"
+Gochujang,ph,2,Lab-made gochujang (Yang 2018) [value 4.6]
+Doenjang,sugars,3,"Label total sugars 8 g (FDC branded 2067532), not split; entered as sucrose [value 8000]"
+"Beans, Black (Canned)",sugars,3,"USDA SR 175188 total sugars 0.23 g, not split; entered as sucrose [value 230]"
+"Beans, Pinto (Canned)",ph,3,FDA generic 'Beans' range 5.60-6.50 [value 6.0]
+Chickpeas (Canned),sugars,3,"USDA SR 173800 total sugars 4.01 g, not split; entered as sucrose [value 4010]"
+"Cheese, Monterey Jack",ph,3,FDA Cheddar 5.90 as sibling [value 5.9]
+"Cheese, Monterey Jack",sugars,2,USDA SR 170844 total sugars entered as lactose [value 500]
+"Cheese, Provolone",ph,3,FDA Cheddar 5.90 as sibling [value 5.9]
+"Cheese, Provolone",sugars,2,USDA SR 170850 total sugars entered as lactose [value 560]
+"Cheese, American (Processed)",ph,2,"FDA 'Cheese, American, mild' may not be processed cheese [value 4.98]"
+"Cheese, Ricotta (Whole Milk)",ph,2,"Italian whey ricotta, not US whole-milk ricotta [value 6.4]"
+"Cheese, Ricotta (Whole Milk)",sugars,2,USDA SR 170851 total sugars entered as lactose [value 270]
+"Cheese, Monterey Jack",density,2,Shredded: USDA SR 170844 1 cup shredded = 113 g [value 0.478]
+Beets,glutamate,2,"Fresh beet juice 445-455 mg/L (Choinska et al. 2022, Sci Rep, PMC9681880, Table 3); juice, not root [value 45]"
+Broccoli,glutamate,2,"41.15 mmol/kg dry weight x 147.13 x (1 - 0.893 moisture, assumed) (Lee, Finley & Harnly 2005, J Agric Food Chem 53:9105, Table 3); source has a units inconsistency, tentative [value 65]"
+"Cheese, Roquefort",glutamate,2,"Sibling: Cabrales long-ripened blue cheese, Glu above 1,500 mg/100 g in most samples (Foods 2025 14:2366, PMC12248881); lower bound used [value 1500]"
+Ketchup,glutamate,2,"German tomato ketchup, enzymatic assay (Wechjakwen et al. 2025, J Nutr Assoc Thailand 60:80); weak source (its MSG value is implausible), placeholder [value 226]"
+"Sauce, Chili",glutamate,2,"German chili ketchup, not true chili sauce (Wechjakwen et al. 2025); weak source, placeholder [value 250]"
+"Tomato, Cherry (Tiger, Flesh)",glutamate,2,"Mean flesh value across 13 cherry/salad varieties, 1.26 g/kg (Oruna-Concha et al. 2007, J Agric Food Chem 55:5776, abstract); not Tiger-specific [value 126]"
+"Tomato, Salad (Elegance, Italian, Pulp)",glutamate,2,"Mean pulp value across 13 varieties, 4.56 g/kg (Oruna-Concha et al. 2007, abstract); not Elegance-specific [value 456]"
+"Tomato, Red (Fresh, Whole)",glutamate,2,"Derived: 0.7 x flesh 126 + 0.3 x pulp 456 (Oruna-Concha et al. 2007 means), same 70:30 split as this entry's nucleotides [value 225]"
+"Broth, Chicken",glutamate,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [value 26.9]"
+"Broth, Chicken",gmp,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [IMP 12.2, GMP 0.73]"
+"Broth, Chicken (Low Sodium)",glutamate,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [value 26.9]"
+"Broth, Chicken (Low Sodium)",gmp,2,"Takakura et al. 2014, Food Sci Technol Res 20:109 (doi:10.3136/fstr.20.109), Table 1: home-style chicken broth reconstitution (Dunkel & Hofmann 2009 data), 1,830 umol/L Glu, 350 umol/L IMP, 20 umol/L GMP; replaces an unsourced 347 (Bryan, Nov 21 2026) [IMP 12.2, GMP 0.73]"
+"Broth, Turkey",glutamate,2,"Sibling: home-style chicken broth (Takakura et al. 2014, Food Sci Technol Res 20:109, Table 1); no turkey broth measurement found; replaces an unsourced 418 (Bryan, Nov 21 2026) [value 26.9]"
+"Broth, Turkey",gmp,2,"Sibling: chicken broth (Takakura 2014) [IMP 12.2, GMP 0.73]"
+Cocoa Powder (Unsweetened),sugars,3,"USDA SR 169593 total sugars 1.75 g, not split; entered as sucrose [value 1750]"
+"Coffee, Brewed",glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]"
+Espresso,glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]"
+"Tea, Black (Brewed)",glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]"
+"Tea, Green (Brewed)",glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]"
+Cola,glutamate,3,"Assumed negligible (dilute beverage; glutamate and nucleotides set to 0, not measured) [value 0]"
+"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",sugars,3,"USDA total sugars 2.13 g, not split; entered as sucrose [value 2130]"
+"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",density,3,Sibling: regular condensed cream of mushroom 126 g per 1/2 cup [value 1.065]
+"Soup, Cream of Chicken (Condensed)",sugars,3,"USDA total sugars 0.54 g, not split; entered as sucrose [value 540]"
+"Soup, Cream of Chicken (Condensed)",ph,3,Sibling: condensed cream of mushroom [value 6.1]
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",sugars,3,"USDA total sugars 0.39 g, not split; entered as sucrose [value 390]"
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",ph,3,Sibling: condensed cream of mushroom [value 6.1]
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",density,3,Sibling: regular condensed cream of chicken 126 g per 1/2 cup [value 1.065]
+"Soup, Cream of Celery (Condensed)",sugars,3,"USDA total sugars 1.35 g, not split; entered as sucrose [value 1350]"
+"Soup, Cream of Potato (Condensed)",sugars,3,"USDA total sugars 1.44 g, not split; entered as sucrose [value 1440]"
+"Soup, Tomato (Condensed)",sugars,3,"USDA total sugars 8.23 g, not split (brands sweeten with HFCS or sugar); entered as sucrose [value 8230]"
+"Soup, Tomato (Condensed)",ph,2,Sibling: canned cream of tomato soup [value 4.62]
+"Soup, Tomato (Condensed)",density,3,USDA's portion (148 g per cup) is implausible for a condensed soup; sibling cream soups 126 g per 1/2 cup used [value 1.065]
+"Soup, Tomato (Condensed, Reduced Sodium)",sugars,3,"USDA total sugars 8.11 g, not split; entered as sucrose [value 8110]"
+"Soup, Tomato (Condensed, Reduced Sodium)",ph,2,Sibling: canned cream of tomato soup [value 4.62]
+"Soup, Tomato (Condensed, Reduced Sodium)",density,3,Sibling cream soups 126 g per 1/2 cup [value 1.065]
+"Soup, Cheese (Condensed)",sugars,3,"USDA total sugars 3.73 g, not split; entered as lactose (cheese and milk solids) [value 3730]"
+"Soup, Cheese (Condensed)",ph,2,Sibling: condensed broccoli cheese soup [value 5.6]
+"Soup, Chicken Noodle (Condensed)",ph,2,Sibling: canned chicken broth [value 5.8]
+Sultana,sugars,1,"USDA FDC Foundation 2758979 (raisins, golden, seedless): glucose 32.2 g, fructose 36.4 g, sucrose/lactose/maltose 0 per 100 g; was blank"
+"Juice, Apple",acids,1,"USDA FDC Foundation 2003590: malic acid 360 mg/100 g, citric/oxalic/quinic 0 (was blank)"
+"Wine, Claret",acids,2,"Sibling: dry red wine means (Heras-Roger 2025, 205 wines; succinic Tasev 2016, 10 wines); not Claret-specific"
+"Wine, Claret",ph,2,Sibling: mean pH of 205 dry red wines (Heras-Roger et al. 2025) [value 3.73]
+"Wine, Claret",sugars,3,"USDA FDC SR Legacy 173190 (wine, table, red) total sugars 0.62 g/100 g, glucose:fructose split from USDA SR 171908 rose wine (1.7:2.1 g)"
+"Wine, Claret",sodium,2,"Sibling: USDA FDC SR Legacy 173190 (wine, table, red); USDA Claret entry (173194) has no minerals; was 0 [value 4]"
+"Wine, Claret",potassium,2,"Sibling: USDA FDC SR Legacy 173190 (wine, table, red); was 0 [value 127]"
+"Wine, Riesling",acids,2,Sibling: medians of 12 commercial white wines (Han 2022; 2 are Rieslings); succinic from 6 Chardonnays (Ivanova-Petropulos 2020)
+"Wine, Riesling",ph,2,Prenesti et al. 2012 Table 5: Riesling R07 [value 3.16]
+"Wine, Riesling",sugars,2,"Sibling: Han et al. 2022 Table 3 medians of 12 white wines, glucose 0.90 / fructose 2.19 / glycerol 5.58 g/L (per 100 g = g/L x 100 / density)"
+"Wine, Moselle",acids,2,Sibling: medians of 12 commercial white wines (Han 2022; 2 are Rieslings); succinic from 6 Chardonnays (Ivanova-Petropulos 2020)
+"Wine, Moselle",ph,2,Prenesti et al. 2012 Table 5: Riesling R07 (Moselle = Mosel Riesling) [value 3.16]
+"Wine, Moselle",sugars,2,"Sibling: Han et al. 2022 Table 3 medians of 12 white wines, glucose 0.90 / fructose 2.19 / glycerol 5.58 g/L (per 100 g = g/L x 100 / density)"
+"Wine, Generic",acids,3,Category estimate: average of dry red (Heras-Roger 2025) and dry white (Han 2022) wine acids
+"Wine, Generic",ph,3,"Category estimate: mean of red (3.73, Heras-Roger 2025) and white (3.15, Prenesti 2012) wine pH [value 3.44]"
+"Wine, Generic",sugars,3,"USDA FDC SR Legacy 173185 (wine, table, all) total sugars 0.79 g/100 g, glucose:fructose split from USDA SR 171908 rose wine (1.7:2.1 g)"
+"Wine, Champagne",acids,2,"Sibling: English traditional-method sparkling wines after 12 months on lees (Marangon 2023), not Champagne"
+"Wine, Champagne",ph,2,Marangon et al. 2023 Table 2: mean pH of 13 English sparkling wines (3.14-3.29) [value 3.22]
+"Wine, Champagne",sugars,2,"Sibling: Marangon et al. 2023 Table 2 range midpoints, glucose 0.10-0.27, fructose 0.35-1.7 g/L; dosage (added sugar) not included"
+Beer,acids,2,"Weak source: means of 10 Korean market beers, several below the paper's LOQ (Moon et al. 2018, Table 1)"
+Beer,ph,2,"One premium lager (Wang et al. 2025, Sci Rep, Table 1) [value 4.31]"
+Beer,sugars,1,"USDA FDC SR Legacy 168746 (beer, regular, all): glucose, maltose, sucrose, fructose, lactose, galactose measured 0 g/100 g (existing zeros confirmed)"
+Ketchup,acids,2,"8 Czech ketchups (Divis et al. 2018, Table 3); 4 of 8 exceed the Czech 2.2% acidity cap, so acetic may be high"
+Grape,acids,1,"Wang et al. 2025 Table 2: tartaric 3.95, malic 5.21, citric 0.11 g/kg FW (14 cultivar-years); Chinese cultivars, not Thompson Seedless"
+Grape,glutamate,2,"Grape must, not whole berry: Tempranillo control must 44.86 (2022) and 30.75 (2023) mg/L free Glu (Garde-Cerdan et al. 2026, J Sci Food Agric 106:7380, PMC13442748, Tables 6-7), mean 37.8 mg/L; replaces an unsourced 184 [value 3.8]"
+Bacon,glutamate,2,"One retail Japanese bacon without added MSG, free Glu 0.03 g/100 g by ninhydrin, no hydrolysis (Kobayashi et al. 2019, Heliyon 5:e01169, PMC6351430, Table 1B, Bacon No. 2) [value 30]"
+Carrot,acids,1,"Conversa et al. 2022 Table 5 root flesh means: malic 277, succinic 9.3, oxalic 10.9, citric 1.2 mg/100 g FW; no tartaric reported in carrot"
+Onion,acids,2,"Rodriguez Galdon et al. 2008 (6 cultivars): citric and malic from the abstract, minor acids via a review; basis assumed fresh weight"
+"Ham, Dry-Cured",sodium,1,"USDA FDC FNDDS 2705879 (Ham, prosciutto; food code 22311450): water 55.93 g, protein 27.8 g, Na 2695 mg, K 510 mg; was water 18 / protein 35.7 / Na 2110 / K 679 (unsourced; 18% water made the water phase above NaCl saturation)"
+"Ham, Dry-Cured",glutamate,2,"340 mg/100 g kept (unsourced) but inside measured free-Glu ranges for dry-cured hams as eaten, 166-739 (Garcia-Gonzalez 2013 Molecules 18:3927 Table 1; Munoz-Rosique 2022 Foods 11:812 Table 3) [value 340]"
+"Potato Chips, Salted",sodium,1,"USDA FDC SR Legacy 169677 (potato chips, plain, salted) (Na, K, water, protein, sugars, vitamin C); taste compounds (glutamate, glutathione), density and pH copied from Potato Chips, Unsalted"
+"Potato Chips, Salted",glutamate,2,"Sibling: Potato Chips, Unsalted (unsalted version of the same food)"
+"Potato Chips, Unsalted",sodium,1,"Renamed from 'Potato Chips' (Nov 24, 2026): values are USDA FDC SR Legacy 170649 (plain, unsalted)"
+"Peanut Butter, Salted",sodium,1,"USDA FDC SR Legacy 174266 (peanut butter, smooth style, with salt) (Na, K, water, protein, sugars, vitamin C); taste compounds (glutamate, glutathione), density and pH copied from Peanut Butter, Unsalted"
+"Peanut Butter, Salted",glutamate,2,"Sibling: Peanut Butter, Unsalted (unsalted version of the same food)"
+"Peanut Butter, Unsalted",sodium,1,"Renamed from 'Peanut Butter' (Nov 24, 2026): values are USDA FDC SR Legacy 172470 (smooth, without salt)"
+Cocoa Powder (Unsweetened),theobromine,1,"USDA FDC SR Legacy 169593, nutrient 1058 theobromine [value 2057] (v.2.8.2 bitterness)"
+"Chocolate, Dark (70-85%)",theobromine,1,"USDA FDC SR Legacy 170273, nutrient 1058 theobromine [value 802] (v.2.8.2 bitterness)"
+"Tea, Black (Brewed)",theobromine,1,"USDA FDC SR Legacy 173227, nutrient 1058 theobromine [value 2] (v.2.8.2 bitterness)"
+"Coffee, Brewed",theobromine,1,"USDA FDC SR Legacy 171890, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)"
+Espresso,theobromine,1,"USDA FDC SR Legacy 171891, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)"
+"Coffee, Instant (Powder)",theobromine,1,"USDA FDC SR Legacy 171893, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)"
+"Tea, Green (Brewed)",theobromine,1,"USDA FDC SR Legacy 171917, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)"
+Cola,theobromine,1,"USDA FDC SR Legacy 174852, nutrient 1058 theobromine [value 0] (v.2.8.2 bitterness)"
+"Chocolate, Milk",composition,1,"USDA FDC SR Legacy 167587 (Candies, milk chocolate): water, Na, K, protein, caffeine 20, theobromine 205 (v.2.8.2); glutamate/nucleotides/acids/pH blank"
+"Chocolate, Milk",sugars,3,"USDA SR 167587 total sugars 51.5 g, not split (sucrose + lactose); entered as sucrose [value 51500]"
+"Chocolate, Dark (45-59%)",composition,1,"USDA FDC SR Legacy 170271 (Chocolate, dark, 45-59% cacao solids): water, Na, K, protein, sucrose 46.25 g, lactose 1.65 g, caffeine 43, theobromine 493 (v.2.8.2); glutamate/nucleotides/acids/pH blank"
+"Milk, Chocolate (Whole)",composition,1,"USDA FDC SR Legacy 170879 (Milk, chocolate, fluid, commercial, whole): water, Na, K, protein, caffeine 1, theobromine 23; density 250 g/cup = 1.057 g/mL (v.2.8.2); glutamate/nucleotides/acids/pH blank"
+"Milk, Chocolate (Whole)",sugars,3,"USDA SR 170879 total sugars 9.54 g, not split (lactose + added sucrose); entered as sucrose [value 9540]"

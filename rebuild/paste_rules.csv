@@ -1,0 +1,379 @@
+table,order,pattern_or_key,regex_flags,value,note
+FRAC,1,½,, 1/2,unicode fraction replaced before parsing
+FRAC,2,¼,, 1/4,unicode fraction replaced before parsing
+FRAC,3,¾,, 3/4,unicode fraction replaced before parsing
+FRAC,4,⅓,, 1/3,unicode fraction replaced before parsing
+FRAC,5,⅔,, 2/3,unicode fraction replaced before parsing
+FRAC,6,⅛,, 1/8,unicode fraction replaced before parsing
+FRAC,7,⅜,, 3/8,unicode fraction replaced before parsing
+FRAC,8,⅝,, 5/8,unicode fraction replaced before parsing
+FRAC,9,⅞,, 7/8,unicode fraction replaced before parsing
+NUMBER,1,(?:\d+\s+\d+/\d+|\d+/\d+|\d+(?:\.\d+)?),,,"number: mixed number, fraction or decimal"
+QTY,1,^\s*((?:\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?))(?:\s*(?:-|–|to)\s*((?:\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)))?\s*,,,"leading quantity; optional range with -, en dash or 'to' (midpoint used)"
+SIZE,1,^\(\s*((?:\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?))(?:\s*-\s*(?:\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?))?\s*(ounce|ounces|oz|lb|lbs|pound|pounds|g|gram|grams|ml|fl\.? oz)\.?\s*\)\s*,i,oz/fl oz=28.35 g; lb=453.59 g; g and ml=1,package size in parentheses after the quantity; multiplies the quantity
+UNITS,1,^(?:fl\.?\s*oz\.?|fluid ounces?)\s+,i,fl oz,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,2,^(?:tablespoons?|tbsps?\.?|tbs\.?|T\b)\s+,i,tbsp,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,3,^(?:teaspoons?|tsps?\.?|t\b)\s+,i,tsp,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,4,^(?:cups?|c\.(?=\s)|c\b)\s+,i,cup,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,5,^(?:ounces?|oz\.?)\s+,i,oz,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,6,^(?:pounds?|lbs?\.?)\s+,i,lb,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,7,^(?:kilograms?|kg\.?)\s+,i,kg,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,8,^(?:grams?|g\b)\s+,i,g,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,9,^(?:milliliters?|millilitres?|ml\b)\s+,i,ml,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,10,^(?:liters?|litres?|l\b)\s+,i,l,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,11,^(?:pints?|pt\.?)\s+,i,pt,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,12,^(?:quarts?|qt\.?)\s+,i,qt,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,13,^(?:cans?|tins?)\s+,i,can,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,14,^(?:jars?|bottles?)\s+,i,jar,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,15,^(?:packages?|pkgs?\.?|packets?|envelopes?|boxes?|cartons?)\s+,i,pkg,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,16,^(?:cloves?)\s+,i,clove,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,17,^(?:stalks?|ribs?)\s+,i,stalk,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,18,^(?:sprigs?)\s+,i,sprig,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,19,^(?:slices?|strips?)\s+,i,slice,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,20,^(?:pinch(?:es)?|dash(?:es)?)\s+,i,pinch,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,21,^(?:bunch(?:es)?|handfuls?)\s+,i,bunch,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,22,^(?:heads?)\s+,i,head,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,23,^(?:sticks?)\s+,i,stick,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,24,^(?:scoops?)\s+,i,scoop,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,25,^(?:shots?)\s+,i,shot,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,26,^(?:inch(?:es)?(?: piece| knob)?(?: of)?|in\.(?: piece)?)\s+,i,inch,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,27,^(?:links?)\s+,i,each,unit words; first match wins; matched against the text after the quantity plus a trailing space
+UNITS,28,^(?:large|medium|small|whole|lg\.?|med\.?|sm\.?)\s+,i,each,unit words; first match wins; matched against the text after the quantity plus a trailing space
+MAP,1,soup mix|dry soup|onion soup|ramen|bouillon soup,i,"!dry soup mixes aren't in the database yet, so their salt would be missed",refuse
+MAP,2,(ready[- ]to[- ]serve|chunky|prepared|diluted|home-?made|homestyle).*soup|soup.*(ready[- ]to[- ]serve|prepared|diluted),i,"!only condensed (undiluted) canned soups are in the database; add broth, milk or cream for ready-to-serve soup",refuse
+MAP,3,(low|reduced|less)[- ]sodium.*cream of mushroom|cream of mushroom.*(low|reduced|less)[- ]sodium|healthy request.*mushroom,i,"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",map
+MAP,4,(low|reduced|less)[- ]sodium.*cream of chicken|cream of chicken.*(low|reduced|less)[- ]sodium|healthy request.*chicken,i,"Soup, Cream of Chicken (Condensed, Reduced Sodium)",map
+MAP,5,(low|reduced|less)[- ]sodium.*tomato soup|tomato soup.*(low|reduced|less)[- ]sodium|healthy request.*tomato,i,"Soup, Tomato (Condensed, Reduced Sodium)",map
+MAP,6,cream of mushroom,i,"Soup, Cream of Mushroom (Condensed)",map
+MAP,7,cream of chicken,i,"Soup, Cream of Chicken (Condensed)",map
+MAP,8,cream of celery,i,"Soup, Cream of Celery (Condensed)",map
+MAP,9,cream of potato,i,"Soup, Cream of Potato (Condensed)",map
+MAP,10,(cheddar |nacho |fiesta )?cheese soup|broccoli cheese soup,i,"Soup, Cheese (Condensed)*",map-approx
+MAP,11,tomato soup|cream of tomato,i,"Soup, Tomato (Condensed)",map
+MAP,12,chicken noodle soup,i,"Soup, Chicken Noodle (Condensed)",map
+MAP,13,\bsoup\b,i,"!this canned soup isn't in the database yet (we have cream of mushroom, chicken, celery and potato, tomato, cheese and chicken noodle)",refuse
+MAP,14,cake mix|brownie mix|baking mix|bisquick|muffin mix|pancake mix|cookie mix|stuffing mix,i,"!boxed mixes aren't in the database; enter flour, sugar and salt separately",refuse
+MAP,15,frosting|\bicing\b(?! sugar),i,!frosting isn't in the database (it's mostly sugar); add the sugar instead,refuse
+MAP,16,gelatin|jell-?o|pudding mix|instant pudding,i,!gelatin and pudding mixes aren't in the database,refuse
+MAP,17,liqueur|liquor|kahlua|brandy|cognac|\brum\b|vodka|whisk(e)?y|bourbon|tequila|\bgin\b|schnapps|amaretto,i,!spirits and liqueurs aren't in the database yet,refuse
+MAP,18,ginger ale|lemon-?lime soda|sprite|7-?up|root beer|club soda|seltzer|tonic water|sparkling water,i,!soft drinks other than cola aren't in the database yet (plain soda water barely matters),refuse
+MAP,19,corned beef|pastrami,i,!corned beef isn't in the database yet (it's far saltier than fresh beef),refuse
+MAP,20,\bgravy\b,i,!gravy isn't in the database yet,refuse
+MAP,21,tamarind,i,!tamarind isn't in the database yet,refuse
+MAP,22,swiss chard|\bchard\b,i,!chard isn't in the database yet,refuse
+MAP,23,mixed vegetables|frozen vegetables|cooked vegetables|vegetable medley,i,!mixed vegetables aren't in the database; add each vegetable on its own line,refuse
+MAP,24,black-?eyed peas?|split peas?|cowpeas?,i,!dried peas and black-eyed peas aren't in the database yet,refuse
+MAP,25,(snap|snow|sugar snap) peas?|mange ?tout,i,Snap Pea,map
+MAP,26,cream[- ]style corn|creamed corn,i,Corn (Canned)*,map-approx
+MAP,27,steak (seasoning|spice|rub)|montreal|cajun seasoning|creole seasoning|old bay|taco seasoning|fajita seasoning|seasoning blend|\brub\b,i,Dried spices & herbs*,map-approx
+MAP,28,cayenne|red pepper (powder|flakes)|ground red pepper|(ground|crushed|dried) (hot|red|chili|chile) peppers?|chili powder|chile powder|paprika,i,Dried spices & herbs,map
+MAP,29,(stock|broth|bouillon|consomm[eé]) (powder|granules?|base|paste|concentrate),i,Bouillon,map
+MAP,30,coconut cream|cream of coconut,i,Coconut Milk*,map-approx
+MAP,31,pork (steaks?|chops?|loin|tenderloin|shoulder|butt|roast),i,Pork,map
+MAP,32,canned .*salmon|salmon.*\bcanned\b,i,"Fish, Salmon (Canned)",map
+MAP,33,honeydew|cantaloupe|(?<!water)\bmelon,i,!melon isn't in the database yet (only watermelon),refuse
+MAP,34,watermelon,i,Watermelon,map
+MAP,35,(candied|crystallized) ginger,i,!candied ginger isn't in the database yet,refuse
+MAP,36,chocolate chips?|chocolate morsels?|semi-?sweet chocolate|milk chocolate|white chocolate,i,!sweetened chocolate isn't in the database yet (only 70-85% dark),refuse
+MAP,37,"(shredded|flaked|desiccated|sweetened|grated|toasted) coconut|coconut,? (flakes|shredded|grated)|^coconut$",i,!dried coconut isn't in the database yet,refuse
+MAP,38,ranch style beans|baked beans|pork and beans|refried beans,i,!seasoned canned beans aren't in the database yet,refuse
+MAP,39,(?<!monk |passion |dragon |star )\bfruit\b(?! juice),i,!mixed fruit isn't in the database; add each fruit on its own line,refuse
+MAP,40,ground coffee|coffee grounds|coffee beans?,i,!ground coffee (not brewed) isn't in the database,refuse
+MAP,41,peanut butter,i,"Peanut Butter, Salted",map
+MAP,42,steak sauce|\ba\.?1\b,i,"Sauce, Steak",map
+MAP,43,(red|hot) pepper sauce|pepper sauce,i,"Sauce, Hot (Tabasco)",map
+MAP,44,dill pickles?|pickle relish|\bpickles?\b,i,"Pickles, Dill",map
+MAP,45,\bapple cider(?! vinegar)|\bapple juice,i,"Juice, Apple",map
+MAP,46,orange juice|\boj\b,i,"Juice, Orange",map
+MAP,47,grapefruit juice,i,"Juice, Grapefruit",map
+MAP,48,grape juice,i,"Juice, Grape",map
+MAP,49,peach juice|peach nectar,i,"Juice, Peach",map
+MAP,50,pomegranate juice,i,"Juice, Pomegranate",map
+MAP,51,cranberry juice,i,"Juice, Cranberry (Unsweetened)*",map-approx
+MAP,52,lemonade|limeade,i,"!lemonade isn't in the database yet; add lemon juice, sugar and water",refuse
+MAP,53,sweetened condensed|condensed milk,i,!sweetened condensed milk isn't in the database yet (it's about half sugar),refuse
+MAP,54,ice cream|gelato|sherbet|frozen custard,i,!ice cream isn't in the database yet,refuse
+MAP,55,(almond|soy|oat|rice|cashew|hemp) ?milk(?! powder),i,!plant milks aren't in the database yet (canned coconut milk is),refuse
+MAP,56,evaporated milk,i,"Milk, Cow*",map-approx
+MAP,57,bouillon cubes?|stock cubes?|cubes? of bouillon|bouillon$,i,Beef Stock Cube*,map-approx
+MAP,58,bouillon (granules|powder|base|paste)|granulated bouillon|better than bouillon,i,Bouillon,map
+MAP,59,lemon ?grass|lime lea(f|ves)|kaffir|makrut|dried lime|loomi|celery seed|dry mustard|mustard powder|ground mustard,i,Dried spices & herbs,map
+MAP,60,lemon pepper,i,Dried spices & herbs*,map-approx
+MAP,61,(vanilla|fruit|peach|blueberry|strawberry|lemon|raspberry|cherry|flavou?red|frozen|sweetened) yogh?urt,i,"Yogurt, Plain (Whole Milk)*",map-approx
+MAP,62,sour cream,i,Sour Cream,map
+MAP,63,margarine,i,"Butter, Salted*",map-approx
+MAP,64,salmon roe|ikura,i,Salmon Roe,map
+MAP,65,salmon,i,"Fish, Salmon (Fresh)|canned-if-can",map-conditional
+MAP,66,sweet potato|\byams?\b,i,Sweet Potato,map
+MAP,67,potato chips|crisps,i,"Potato Chips, Salted",map
+MAP,68,\bpotato(es)?\b(?! starch| flakes),i,Potato,map
+MAP,69,\bapples?\b(?! juice| cider| sauce|sauce),i,Apple,map
+MAP,70,(?<!chick ?)\bpeas\b|green peas?|sweet peas?|garden peas?,i,Green Pea,map
+MAP,71,(light|dark)? ?corn syrup,i,Tapioca Syrup 42 DE*,map-approx
+MAP,72,swiss cheese|emmental|gruy[eè]re|jarlsberg|\bswiss\b(?! chard),i,"Cheese, Emmental*",map-approx
+MAP,73,gouda,i,"Cheese, Gouda",map
+MAP,74,manchego,i,"Cheese, Manchego",map
+MAP,75,blue cheese|bleu cheese|gorgonzola|roquefort|stilton,i,"Cheese, Roquefort*",map-approx
+MAP,76,\bbrie\b|camembert,i,"Cheese, Camembert*",map-approx
+MAP,77,colby|mexican (blend|cheese)|taco cheese|cheese blend,i,"Cheese, Cheddar (Aged One Year)*",map-approx
+MAP,78,espresso,i,Espresso,map
+MAP,79,instant coffee|coffee granules,i,"Coffee, Instant (Powder)",map
+MAP,80,\bcoffee\b(?! bean| grounds),i,"Coffee, Brewed",map
+MAP,81,green tea(?! leaves?| powder),i,"Tea, Green (Brewed)",map
+MAP,82,black tea|\btea\b(?! leaves?| bags?),i,"Tea, Black (Brewed)",map
+MAP,83,cocoa powder|\bcocoa\b|cacao powder,i,Cocoa Powder (Unsweetened),map
+MAP,84,dark chocolate|bittersweet chocolate|70% chocolate,i,"Chocolate, Dark (70-85%)*",map-approx
+MAP,85,\bcola\b|\bcoke\b|pepsi,i,Cola,map
+MAP,86,silken tofu,i,"Tofu, Silken",map
+MAP,87,\btofu\b|bean curd,i,"Tofu, Firm",map
+MAP,88,tahini|tahina,i,Tahini,map
+MAP,89,gochujang,i,Gochujang,map
+MAP,90,doenjang|soybean paste,i,Doenjang,map
+MAP,91,fermented black beans?|douchi,i,"Beans, Black (Fermented)",map
+MAP,92,black beans?,i,"Beans, Black (Canned)",map
+MAP,93,kidney beans?,i,"Beans, Kidney (Canned)",map
+MAP,94,pinto beans?,i,"Beans, Pinto (Canned)",map
+MAP,95,chick ?peas?|garbanzo,i,Chickpeas (Canned),map
+MAP,96,corn tortillas?,i,"Tortilla, Corn",map
+MAP,97,tortillas?,i,"Tortilla, Flour",map
+MAP,98,monterey jack|pepper jack|\bjack cheese,i,"Cheese, Monterey Jack",map
+MAP,99,provolone,i,"Cheese, Provolone",map
+MAP,100,american cheese|velveeta|cheese singles?|kraft singles?,i,"Cheese, American (Processed)",map
+MAP,101,ricotta,i,"Cheese, Ricotta (Whole Milk)",map
+MAP,102,sun[- ]?dried tomato,i,Tomato (Dried),map
+MAP,103,tomato paste,i,"Paste, Tomato",map
+MAP,104,tomato puree|tomato purée|passata,i,"Paste, Tomato*",map-approx
+MAP,105,(no[- ]salt|low[- ]sodium|salt[- ]free|unsalted).*(tomato|pasta|spaghetti|marinara) sauce,i,"Sauce, Tomato",map
+MAP,106,(pasta|spaghetti|marinara|pizza) sauce|tomato sauce|\bragu\b|\bprego\b,i,"Sauce, Tomato (Canned)",map
+MAP,107,tomato juice|v-?8,i,"Juice, Tomato",map
+MAP,108,cherry tomato|grape tomato,i,"Tomato, Cherry (Generic)",map
+MAP,109,(crushed|diced|stewed|whole|peeled|canned|italian|plum|san marzano|chopped|petite|fire[- ]roasted).*tomato|tomato.*(canned|with juice|undrained|drained),i,Tomato (Canned)|fresh-if-count,map-conditional
+MAP,110,tomato,i,"Tomato, Red (Fresh, Whole)",map
+MAP,111,garlic salt,i,Salt*,map-approx
+MAP,112,garlic powder|granulated garlic|onion powder|onion flakes|dried onion,i,Dried spices & herbs,map
+MAP,113,garlic,i,Garlic,map
+MAP,114,green onion|scallion|spring onion,i,Green Onion,map
+MAP,115,shallot,i,Shallot,map
+MAP,116,onion,i,Onion,map
+MAP,117,celery salt,i,Salt*,map-approx
+MAP,118,celery,i,Celery,map
+MAP,119,carrot,i,Carrot,map
+MAP,120,(green|red|yellow|orange|bell) pepper(?!corn| flake)|capsicum,i,Green Pepper,map
+MAP,121,jalape|chili pepper|chile pepper|serrano|hot pepper(?! sauce)|fresno,i,Chili Pepper,map
+MAP,122,mushroom,i,"Mushroom, Button",map
+MAP,123,zucchini,i,Zucchini,map
+MAP,124,eggplant|aubergine,i,Eggplant,map
+MAP,125,spinach,i,Spinach,map
+MAP,126,diamond crystal,i,Kosher Salt (Diamond Crystal),map
+MAP,127,morton.*kosher|kosher.*morton,i,Kosher Salt (Morton),map
+MAP,128,kosher salt,i,Kosher Salt,map
+MAP,129,sea salt,i,Sea Salt,map
+MAP,130,\bmsg\b|monosodium glutamate|accent seasoning,i,Monosodium Glutamate,map
+MAP,131,\bsalt\b(?! pork),i,Salt,map
+MAP,132,splenda|^equal\b|equal (sweetener|packets?)|nutrasweet|sweet'?n'? ?low|in the raw|sugar substitute|sweetener packet,i,BLEND,refuse-blend
+MAP,133,truvia,i,Erythritol*,map-approx
+MAP,134,stevia extract|pure stevia|rebaudioside|reb a\b,i,Stevia Extract (Reb A 97%),map
+MAP,135,\bstevia\b,i,Stevia Extract (Reb A 97%)*,map-approx
+MAP,136,monk fruit extract|luo han guo extract|mogroside,i,Monk Fruit Extract (Mogroside V 50%),map
+MAP,137,monk fruit sweetener|lakanto|swerve|erythritol,i,Erythritol,map
+MAP,138,monk fruit|luo han guo,i,Monk Fruit Extract (Mogroside V 50%)*,map-approx
+MAP,139,xylitol,i,Xylitol,map
+MAP,140,allulose,i,Allulose,map
+MAP,141,maltitol,i,Maltitol,map
+MAP,142,sorbitol,i,Sorbitol,map
+MAP,143,sucralose,i,Sucralose,map
+MAP,144,aspartame,i,Aspartame,map
+MAP,145,acesulfame|ace-?k\b,i,Acesulfame Potassium,map
+MAP,146,brown sugar,i,Brown Sugar,map
+MAP,147,powdered sugar|confectioners|icing sugar,i,Sugar*,map-approx
+MAP,148,"\bsugar\b(?! substitute)|sugar,",i,Sugar,map
+MAP,149,honey,i,Honey,map
+MAP,150,maple syrup,i,Maple Syrup,map
+MAP,151,molasses,i,Sugar Cane Molasses,map
+MAP,152,parmesan|parmigiano|romano|pecorino|asiago|grana padano,i,"Cheese, Parmigiano Regianno",map
+MAP,153,mozzarella,i,"Cheese, Mozzarella",map
+MAP,154,cheddar,i,"Cheese, Cheddar (Aged One Year)*",map-approx
+MAP,155,cottage,i,"Cheese, Cottage*",map-approx
+MAP,156,basil,i,Basil,map
+MAP,157,parsley,i,Parsley,map
+MAP,158,\bdill\b,i,Dill,map
+MAP,159,\bmint\b,i,Mint,map
+MAP,160,coriander leaves|cilantro,i,Coriander,map
+MAP,161,rice vinegar|rice wine vinegar,i,"Vinegar, Rice",map
+MAP,162,red wine vinegar|wine vinegar,i,"Vinegar, Red Wine",map
+MAP,163,balsamic,i,"Vinegar, Balsamic",map
+MAP,164,cider vinegar,i,"Vinegar, Apple Cider",map
+MAP,165,vinegar,i,"Vinegar, Distilled White",map
+MAP,166,\bwine\b|sherry|marsala|vermouth,i,"Wine, Generic",map
+MAP,167,(low|reduced)[- ]sodium.*(broth|stock)|(broth|stock).*(low|reduced)[- ]sodium,i,"Broth, Chicken (Low Sodium)*",map-approx
+MAP,168,beef (broth|stock|bouillon|consomm),i,"Broth, Beef",map
+MAP,169,vegetable (broth|stock|bouillon),i,"Broth, Vegetable",map
+MAP,170,chicken (broth|stock|bouillon)|\bbroth\b|\bstock\b,i,"Broth, Chicken",map
+MAP,171,capers?\b,i,Capers,map
+MAP,172,unsalted butter|sweet butter,i,Oil or fat,map
+MAP,173,\bbutter\b(?!milk)|margarine,i,"Butter, Salted",map
+MAP,174,(heavy cream|whipping cream|half[- ]and[- ]half|light cream|\bcream\b)(?! cheese),i,"Milk, Cow*",map-approx
+MAP,175,\bfeta\b,i,"Cheese, Feta",map
+MAP,176,fontina,i,"Cheese, Mozzarella*",map-approx
+MAP,177,bouillon cube,i,Beef Stock Cube*,map-approx
+MAP,178,ground beef|hamburger|beef mince|minced beef|ground chuck|ground round|lean beef,i,Hamburger Meat,map
+MAP,179,ground pork|pork mince,i,Pork,map
+MAP,180,ground turkey|turkey,i,Chicken*,map-approx
+MAP,181,chicken,i,Chicken,map
+MAP,182,\bbeef\b|steak|chuck,i,Beef,map
+MAP,183,\bbacon\b,i,Bacon,map
+MAP,184,pancetta|guanciale,i,Bacon*,map-approx
+MAP,185,prosciutto,i,"Ham, Dry-Cured",map
+MAP,186,italian sausage|\bsausage,i,"Sausage, Italian (Pork)",map
+MAP,187,chorizo|salami|pepperoni|kielbasa,i,"Sausage, Italian (Pork)*",map-approx
+MAP,188,\bham\b,i,"Ham, Dry-Cured*",map-approx
+MAP,189,\bpork\b,i,Pork,map
+MAP,190,shrimp|prawn,i,Shrimp,map
+MAP,191,clam,i,Clam*,map-approx
+MAP,192,anchov,i,"Fish, Anchovy (Canned)",map
+MAP,193,tuna,i,"Fish, Tuna (Fresh)*",map-approx
+MAP,194,worcestershire,i,"Sauce, Worcestershire",map
+MAP,195,soy sauce|\btamari\b|shoyu,i,"Sauce, Soy",map
+MAP,196,fish sauce|nam pla|nuoc mam,i,"Sauce, Fish",map
+MAP,197,ketchup|catsup,i,Ketchup,map
+MAP,198,cream cheese,i,"Cheese, Cream",map
+MAP,199,mayonnaise|mayo,i,Mayonnaise,map
+MAP,200,dijon,i,"Mustard, Dijon",map
+MAP,201,(yellow|prepared|ballpark|french'?s)? ?mustard(?! seed| green| powder),i,"Mustard, Yellow (Prepared)",map
+MAP,202,salsa,i,Salsa (Jarred),map
+MAP,203,tabasco|hot sauce|louisiana,i,"Sauce, Hot (Tabasco)",map
+MAP,204,hoisin,i,"Sauce, Hoisin",map
+MAP,205,lemon juice|lemon,i,Lemon,map
+MAP,206,lime juice|lime,i,"Juice, Lime",map
+MAP,207,black olive|kalamata|ripe olive,i,"Olives, Black",map
+MAP,208,green olive|olive(?! oil),i,"Olives, Green",map
+MAP,209,sour cream,i,Sour Cream,map
+MAP,210,greek yogurt,i,"Yogurt, Greek (Plain, Whole Milk)",map
+MAP,211,yogurt,i,"Yogurt, Plain (Whole Milk)",map
+MAP,212,buttermilk,i,Buttermilk (Cultured),map
+MAP,213,coconut milk,i,Coconut Milk,map
+MAP,214,\bmilk\b,i,"Milk, Cow",map
+MAP,215,miso,i,Miso,map
+MAP,216,kombu,i,"Seaweed, Kombu",map
+MAP,217,bonito|katsuobushi,i,Bonito Flakes,map
+MAP,218,\bwater\b,i,Water,map
+MAP,219,egg yolk,i,Egg Yolk,map
+MAP,220,egg white,i,Egg White,map
+MAP,221,\beggs?\b,i,Eggs,map
+MAP,222,flour,i,"Flour, Wheat",map
+MAP,223,lentil,i,Lentils,map
+MAP,224,\boil\b|\blard\b|shortening|\bghee\b|cooking spray,i,Oil or fat,map
+MAP,225,oregano|thyme|marjoram|rosemary|bay lea|pepper ?flakes|black pepper|ground pepper|peppercorn|^pepper\b|cayenne|paprika|cumin|chili powder|cinnamon|nutmeg|allspice|ground cloves?|fennel seed|saffron|turmeric|curry powder|garam masala|ginger powder|ground ginger|italian seasoning|dried herbs?|herbes|seasoning|crushed red pepper|sage|tarragon|cardamom|coriander seed|ground coriander|mustard seed|vanilla|star anise|\banise\b|cloves? \(spice\)|whole cloves|five.spice|sichuan pepper,i,Dried spices & herbs,map
+MAP,226,\bginger\b,i,Ginger,map
+MAP,227,\bcheese\b,i,"Cheese, Cheddar (Aged One Year)*",map-approx
+SKIP_FIRST,1,\b(zest|rind|peel|wedges?|wheels?)\b|garnish|tortellini|ravioli|gnocchi|wonton|egg roll|spring roll|wrappers?\b|\bwraps?\b|dumpling|noodle(?!s? soup)|pasta|spaghetti|penne|linguine|fettuccine|rigatoni|macaroni|\bbread\b|breadcrumb|\brice\b(?! vinegar| wine),i,skip,checked on the bare first choice before mapping
+SKIP,1,spaghetti|pasta|penne|linguine|fettuccine|rigatoni|macaroni|noodle|\brice\b|bread|cornstarch|baking soda|baking powder|\byeast\b(?!.*extract)|gelatin|zest|garnish|for serving|\bice\b,i,skip,checked after mapping fails
+HEADER,1,:\s*$|^(for the|ingredients|directions|instructions|method|steps?)\b,i,ignore line,section headers
+DESCRIPT,1,\b(fresh(ly)?|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|to taste|optional|divided|plus more|about|cut into.*|or more)\b,g,removed,descriptive words removed before the search fallback
+GUARDED,1,extract|stevia|monk fruit|sucralose|aspartame|acesulfame|erythritol|xylitol|maltitol|sorbitol|allulose|mannitol|salt|glutamate|ajitide|chloride|caffeine|espresso|bouillon|stock cube|roe,i,guess rejected,"a search guess matching this is rejected unless the line shares a word of 4+ letters with it (excluding fruit, salt, extract)"
+EACH_G,1,Onion,,110,grams per piece when no unit
+EACH_G,2,Garlic,,3,grams per piece when no unit
+EACH_G,3,"Tomato, Red (Fresh, Whole)",,123,grams per piece when no unit
+EACH_G,4,"Tomato, Cherry (Generic)",,17,grams per piece when no unit
+EACH_G,5,Carrot,,61,grams per piece when no unit
+EACH_G,6,Celery,,40,grams per piece when no unit
+EACH_G,7,Green Pepper,,119,grams per piece when no unit
+EACH_G,8,Chili Pepper,,15,grams per piece when no unit
+EACH_G,9,Shallot,,25,grams per piece when no unit
+EACH_G,10,Green Onion,,15,grams per piece when no unit
+EACH_G,11,"Mushroom, Button",,18,grams per piece when no unit
+EACH_G,12,Zucchini,,196,grams per piece when no unit
+EACH_G,13,Eggplant,,458,grams per piece when no unit
+EACH_G,14,Lemon,,58,grams per piece when no unit
+EACH_G,15,"Juice, Lime",,44,grams per piece when no unit
+EACH_G,16,Eggs,,50,grams per piece when no unit
+EACH_G,17,Egg Yolk,,17,grams per piece when no unit
+EACH_G,18,Egg White,,33,grams per piece when no unit
+EACH_G,19,"Fish, Anchovy (Canned)",,4,grams per piece when no unit
+EACH_G,20,Basil,,0.5,grams per piece when no unit
+EACH_G,21,Parsley,,1,grams per piece when no unit
+EACH_G,22,"Olives, Black",,4,grams per piece when no unit
+EACH_G,23,"Olives, Green",,4,grams per piece when no unit
+EACH_G,24,Beef Stock Cube,,4,grams per piece when no unit
+EACH_G,25,Tomato (Dried),,3,grams per piece when no unit
+EACH_G,26,"Sausage, Italian (Pork)",,75,grams per piece when no unit
+EACH_G,27,Bacon,,28,grams per piece when no unit
+EACH_G,28,Potato,,213,grams per piece when no unit
+EACH_G,29,Sweet Potato,,114,grams per piece when no unit
+EACH_G,30,Apple,,182,grams per piece when no unit
+EACH_G,31,"Pickles, Dill",,65,grams per piece when no unit
+EACH_G,32,"Tortilla, Flour",,49,grams per piece when no unit
+EACH_G,33,"Tortilla, Corn",,24,grams per piece when no unit
+EACH_G,34,Dried spices & herbs,,1,grams per piece when no unit
+UNIT_G,1,clove,,3,grams per unit
+UNIT_G,2,stalk,,40,grams per unit
+UNIT_G,3,sprig,,1,grams per unit
+UNIT_G,4,slice,,20,grams per unit
+UNIT_G,5,pinch,,0.4,grams per unit
+UNIT_G,6,bunch,,40,grams per unit
+UNIT_G,7,head,,50,grams per unit
+UNIT_G,8,stick,,113,grams per unit
+CAN_G,1,Tomato (Canned),,793.8000000000001,"grams per can, jar or package"
+CAN_G,2,"Paste, Tomato",,170.10000000000002,"grams per can, jar or package"
+CAN_G,3,"Sauce, Tomato",,226.8,"grams per can, jar or package"
+CAN_G,4,"Sauce, Tomato (Canned)",,226.8,"grams per can, jar or package"
+CAN_G,5,Capers,,99.22500000000001,"grams per can, jar or package"
+CAN_G,6,"Broth, Vegetable",,411.07500000000005,"grams per can, jar or package"
+CAN_G,7,"Butter, Salted",,113,"grams per can, jar or package"
+CAN_G,8,"Sausage, Italian (Pork)",,453.59,"grams per can, jar or package"
+CAN_G,9,Bacon,,453.59,"grams per can, jar or package"
+CAN_G,10,"Broth, Beef",,411.07500000000005,"grams per can, jar or package"
+CAN_G,11,"Broth, Chicken",,411.07500000000005,"grams per can, jar or package"
+CAN_G,12,"Olives, Black",,170.10000000000002,"grams per can, jar or package"
+CAN_G,13,"Fish, Anchovy (Canned)",,56.7,"grams per can, jar or package"
+CAN_G,14,Coconut Milk,,382.725,"grams per can, jar or package"
+CAN_G,15,Cola,,370,"grams per can, jar or package"
+CAN_G,16,"Fish, Salmon (Canned)",,418.1625,"grams per can, jar or package"
+CAN_G,17,"Pickles, Dill",,453.6,"grams per can, jar or package"
+CAN_G,18,Corn (Canned),,418.1625,"grams per can, jar or package"
+CAN_G,19,"Soup, Cream of Mushroom (Condensed)",,305,"grams per can, jar or package"
+CAN_G,20,"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",,305,"grams per can, jar or package"
+CAN_G,21,"Soup, Cream of Chicken (Condensed)",,305,"grams per can, jar or package"
+CAN_G,22,"Soup, Cream of Chicken (Condensed, Reduced Sodium)",,305,"grams per can, jar or package"
+CAN_G,23,"Soup, Cream of Celery (Condensed)",,305,"grams per can, jar or package"
+CAN_G,24,"Soup, Cream of Potato (Condensed)",,305,"grams per can, jar or package"
+CAN_G,25,"Soup, Tomato (Condensed)",,305,"grams per can, jar or package"
+CAN_G,26,"Soup, Tomato (Condensed, Reduced Sodium)",,305,"grams per can, jar or package"
+CAN_G,27,"Soup, Cheese (Condensed)",,305,"grams per can, jar or package"
+CAN_G,28,"Soup, Chicken Noodle (Condensed)",,305,"grams per can, jar or package"
+CAN_G,29,"Beans, Black (Canned)",,263.655,"grams per can, jar or package"
+CAN_G,30,"Beans, Kidney (Canned)",,263.655,"grams per can, jar or package"
+CAN_G,31,"Beans, Pinto (Canned)",,263.655,"grams per can, jar or package"
+CAN_G,32,Chickpeas (Canned),,263.655,"grams per can, jar or package"
+VOL,1,cup,,cup x 1,volume unit passed to the model (unit x multiplier)
+VOL,2,tbsp,,tbsp x 1,volume unit passed to the model (unit x multiplier)
+VOL,3,tsp,,tsp x 1,volume unit passed to the model (unit x multiplier)
+VOL,4,fl oz,,fl oz x 1,volume unit passed to the model (unit x multiplier)
+VOL,5,ml,,mL x 1,volume unit passed to the model (unit x multiplier)
+VOL,6,l,,L x 1,volume unit passed to the model (unit x multiplier)
+VOL,7,pt,,cup x 2,volume unit passed to the model (unit x multiplier)
+VOL,8,qt,,cup x 4,volume unit passed to the model (unit x multiplier)
+APPROX_NOTE,1,"Soup, Cheese (Condensed)",,read as plain condensed cheese soup (USDA); cheddar and nacho versions differ a little,note shown for an approximate (*) match
+APPROX_NOTE,2,"Yogurt, Plain (Whole Milk)",,read as plain yogurt; a flavored yogurt's added sugar isn't counted,note shown for an approximate (*) match
+APPROX_NOTE,3,Tapioca Syrup 42 DE,,"read as a 42 DE glucose syrup, close to light corn syrup",note shown for an approximate (*) match
+APPROX_NOTE,4,Dried spices & herbs,,"read as a spice blend with no salt; if your blend contains salt, add the salt on its own line",note shown for an approximate (*) match
+APPROX_NOTE,5,"Cheese, Cheddar (Aged One Year)",,"read as cheddar, the closest common cheese in the database",note shown for an approximate (*) match
+APPROX_NOTE,6,Erythritol,,"Truvia-type blends are mostly erythritol; their stevia share isn't counted, so sweetness may read a little low",note shown for an approximate (*) match
+APPROX_NOTE,7,Stevia Extract (Reb A 97%),,read as pure stevia extract; tabletop stevia blends are mostly erythritol or dextrose,note shown for an approximate (*) match
+APPROX_NOTE,8,Monk Fruit Extract (Mogroside V 50%),,read as pure monk fruit extract (50% mogroside V); blends like Lakanto are mostly erythritol,note shown for an approximate (*) match
+MESSAGE,1,toItem,,skip,"no amount (""to taste"")"
+MESSAGE,2,toItem,,none,no cup or spoon conversion for this one yet; enter it in grams
+MESSAGE,3,toItem,,none,don't know the ${u} size
+MESSAGE,4,toItem,,none,scoop size unknown for this one; enter it in grams
+MESSAGE,5,toItem,,none,piece size in inches can't be weighed; enter it in grams
+MESSAGE,6,toItem,,none,add a weight or cup/spoon amount
+MESSAGE,7,parse,,none,no ingredient name
+MESSAGE,8,parse,,skip,"bones aren't modelled as meat; add the finished broth instead (e.g. Broth, Beef)"
+MESSAGE,9,parse,,skip,barely affects these tastes
+MESSAGE,10,parse,,skip,barely affects these tastes
+MESSAGE,11,parse,,guess,best guess: ${g}
+MESSAGE,12,parse,,none,"tabletop blend bulked with dextrose or maltodextrin; the label doesn't give the sweetener share, so enter the pure sweetener in grams"
+MESSAGE,13,parse,,skip,barely affects these tastes
+MESSAGE,14,parse,,guess,best guess: ${g}
+MESSAGE,15,parse,,none,not in the database
+MESSAGE,16,parse,,none,not in the database

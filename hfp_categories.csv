@@ -1,0 +1,428 @@
+Ingredient,Category
+Amazake,Beverages
+Beer,Beverages
+"Juice, Apple",Beverages
+"Juice, Cranberry (Unsweetened)",Beverages
+"Juice, Grape",Beverages
+"Juice, Grapefruit",Beverages
+"Juice, Lime",Beverages
+"Juice, Orange",Beverages
+"Juice, Peach",Beverages
+"Juice, Pomegranate",Beverages
+"Juice, Tomato",Beverages
+Green Tea,Beverages
+"Milk, Cow",Beverages
+"Wine, Champagne",Beverages
+"Wine, Claret",Beverages
+"Wine, Generic",Beverages
+"Wine, Moselle",Beverages
+"Wine, Riesling",Beverages
+Capers,Condiments
+Ketchup,Condiments
+Mirin,Condiments
+Miso,Condiments
+Miso (Dried),Condiments
+"Paste, Shrimp",Condiments
+"Sauce, Chili",Condiments
+"Sauce, Fish",Condiments
+"Sauce, Oyster",Condiments
+"Sauce, Soy",Condiments
+"Sauce, Squid",Condiments
+"Sauce, Steak",Condiments
+"Sauce, Tartar",Condiments
+"Sauce, Tomato (Canned)",Condiments
+"Sauce, Worcestershire",Condiments
+"Vinegar, Apple Cider",Condiments
+"Vinegar, Balsamic",Condiments
+"Vinegar, Distilled White",Condiments
+"Vinegar, Malt",Condiments
+"Vinegar, Red Wine",Condiments
+"Vinegar, Rice",Condiments
+Wasabi,Condiments
+"Butter, Salted",Dairy
+Buttermilk (Cultured),Dairy
+"Cheese, Cabrales",Dairy
+"Cheese, Camembert",Dairy
+"Cheese, Cheddar (Aged One Year)",Dairy
+"Cheese, Cheddar (Aged Three Years)",Dairy
+"Cheese, Cottage",Dairy
+"Cheese, Emmental",Dairy
+"Cheese, Feta",Dairy
+"Cheese, Gouda",Dairy
+"Cheese, Kashkaval",Dairy
+"Cheese, Manchego",Dairy
+"Cheese, Mozzarella",Dairy
+"Cheese, Parmigiano Regianno",Dairy
+"Cheese, Parmigiano Regianno (Aged Two Years)",Dairy
+"Cheese, Parmigiano Regianno (Aged Four Years)",Dairy
+"Cheese, Roquefort",Dairy
+Kefir (Plain),Dairy
+Sour Cream,Dairy
+"Yogurt, Greek (Plain, Whole Milk)",Dairy
+"Yogurt, Plain (Whole Milk)",Dairy
+Bonito Flakes,Fish
+Caviar,Fish
+"Caviar, Red",Fish
+"Fish, Anchovy (Canned)",Fish
+"Fish, Anchovy (Dried)",Fish
+"Fish, Anchovy (Fresh)",Fish
+"Fish, Angler",Fish
+"Fish, Black Scraper",Fish
+"Fish, Bonito",Fish
+"Fish, Butter",Fish
+"Fish, Cod",Fish
+"Fish, Eel",Fish
+"Fish, Fatty Tuna",Fish
+"Fish, Flounder",Fish
+"Fish, Flying (Dried)",Fish
+"Fish, Flying (Dried, Grilled)",Fish
+"Fish, Flying (Fresh)",Fish
+"Fish, Fugu",Fish
+"Fish, Horse Mackerel",Fish
+"Fish, Mackerel",Fish
+"Fish, Rock",Fish
+"Fish, Salmon (Fresh)",Fish
+"Fish, Salmon (Canned)",Fish
+"Fish, Sardine (Fresh)",Fish
+"Fish, Sardine (Dried)",Fish
+"Fish, Sardine (Canned)",Fish
+"Fish, Seabream (Dried)",Fish
+"Fish, Seabream (Fresh)",Fish
+"Fish, Spanish Mackerel",Fish
+"Fish, Tuna (Dried)",Fish
+"Fish, Tuna (Fresh)",Fish
+"Fish, Yellowtail",Fish
+"Fish, Whitebait (Dried)",Fish
+Apple,Fruits
+Avocado,Fruits
+Grape,Fruits
+Grapefruit,Fruits
+Lemon,Fruits
+Mandarin,Fruits
+Nectarine,Fruits
+Peach,Fruits
+Persimmon,Fruits
+Plum,Fruits
+Pomegranate,Fruits
+Prunes (Dried),Fruits
+Prunes (Fresh),Fruits
+Strawberry,Fruits
+Sultana,Fruits
+Tamarind (Pulp),Fruits
+Watermelon,Fruits
+Mushroom (Canned),Fungi
+"Mushroom, Button",Fungi
+"Mushroom, Champignon",Fungi
+"Mushroom, Enoki",Fungi
+"Mushroom, King Trumpet",Fungi
+"Mushroom, Oyster (Dried)",Fungi
+"Mushroom, Porcini (Dried)",Fungi
+"Mushroom, Morel (Dried)",Fungi
+"Mushroom, Shiitake (Dried)",Fungi
+"Mushroom, Shiitake (Fresh)",Fungi
+"Mushroom, White Beech",Fungi
+Truffle,Fungi
+"Truffle, Black",Fungi
+Yeast Extract,Fungi
+Barley,Grains
+Bread,Grains
+Corn (Fresh),Grains
+Corn (Canned),Grains
+"Flour, Wheat",Grains
+Pizza,Grains
+Rice,Grains
+Rice Germ,Grains
+Basil,Herbs & Spices
+Chive,Herbs & Spices
+Coriander,Herbs & Spices
+Cumin,Herbs & Spices
+Dill,Herbs & Spices
+Garlic,Herbs & Spices
+Ginger,Herbs & Spices
+Green Onion,Herbs & Spices
+Leek,Herbs & Spices
+Mint,Herbs & Spices
+Mugwort,Herbs & Spices
+Onion,Herbs & Spices
+"Onion, Welsh",Herbs & Spices
+Paprika,Herbs & Spices
+Parsley,Herbs & Spices
+Perilla,Herbs & Spices
+Shallot,Herbs & Spices
+"Beans, Baked (Canned)",Legumes & Pulses
+"Beans, Black (Fermented)",Legumes & Pulses
+"Beans, Fava",Legumes & Pulses
+"Beans, Soy",Legumes & Pulses
+Edamame,Legumes & Pulses
+Green Pea,Legumes & Pulses
+Lentils,Legumes & Pulses
+Natto,Legumes & Pulses
+Peanuts,Legumes & Pulses
+"Peanut Butter, Unsalted",Legumes & Pulses
+"Peanut Butter, Salted",Legumes & Pulses
+Snap Pea,Legumes & Pulses
+Bacon,Meat & Eggs
+Beef,Meat & Eggs
+Beef Extract,Meat & Eggs
+Beef Stock Cube,Meat & Eggs
+Boar,Meat & Eggs
+Bouillon,Meat & Eggs
+"Broth, Beef",Meat & Eggs
+"Broth, Chicken",Meat & Eggs
+"Broth, Chicken (Low Sodium)",Meat & Eggs
+"Broth, Turkey",Meat & Eggs
+Chicken,Meat & Eggs
+"Chicken, Barbecued",Meat & Eggs
+Chicken Soup,Meat & Eggs
+Deer,Meat & Eggs
+Eggs,Meat & Eggs
+Egg White,Meat & Eggs
+Egg Yolk,Meat & Eggs
+"Ham, Dry-Cured",Meat & Eggs
+Hamburger Meat,Meat & Eggs
+Lamb,Meat & Eggs
+Pork,Meat & Eggs
+"Pork, Iberian",Meat & Eggs
+"Sausage, Italian (Pork)",Meat & Eggs
+Almonds,Nuts & Seeds
+Cacao Nib,Nuts & Seeds
+Chestnut,Nuts & Seeds
+Coconut Milk,Nuts & Seeds
+Coffee Bean,Nuts & Seeds
+Sesame Seed,Nuts & Seeds
+Walnut,Nuts & Seeds
+Beets,Roots
+Burdock Root,Roots
+Daikon,Roots
+Lotus Root,Roots
+Potato,Roots
+"Potato Chips, Unsalted",Roots
+"Potato Chips, Salted",Roots
+Radish,Roots
+Sweet Potato,Roots
+Yam,Roots
+Ajitide I+G,Salts & Miscellaneous
+Baking Powder,Salts & Miscellaneous
+Baking Soda,Salts & Miscellaneous
+Canning Salt,Salts & Miscellaneous
+Celtic Salt,Salts & Miscellaneous
+Fleur de Sel,Salts & Miscellaneous
+Himalayan Salt,Salts & Miscellaneous
+Iodized Salt,Salts & Miscellaneous
+Kosher Salt,Salts & Miscellaneous
+Monosodium Glutamate,Salts & Miscellaneous
+Other,Salts & Miscellaneous
+Pickling Salt,Salts & Miscellaneous
+Pink Salt,Salts & Miscellaneous
+Potassium Chloride,Salts & Miscellaneous
+Salt,Salts & Miscellaneous
+Salt Substitute,Salts & Miscellaneous
+Sel Gris,Salts & Miscellaneous
+Sodium Bicarbonate,Salts & Miscellaneous
+Sodium Chloride,Salts & Miscellaneous
+Table Salt,Salts & Miscellaneous
+Water,Salts & Miscellaneous
+Abalone,Seafood
+Clam,Seafood
+"Crab, Alaska King",Seafood
+"Crab, Blue",Seafood
+"Crab, Snow",Seafood
+Lobster,Seafood
+Mussel,Seafood
+Octopus,Seafood
+"Oyster, Generic",Seafood
+"Oyster, European",Seafood
+"Oyster, Pacific",Seafood
+Prawn,Seafood
+Scallop (Dried),Seafood
+Scallop (Fresh),Seafood
+"Seaweed, Kombu",Seafood
+"Seaweed, Nori",Seafood
+Sea Urchin,Seafood
+Shrimp,Seafood
+Spirulina (Dried),Seafood
+Squid (Fresh),Seafood
+Squid (Salted),Seafood
+Squid Ink,Seafood
+Salmon Roe,Seafood
+Agave Nectar,Sweeteners
+Agave Syrup,Sweeteners
+Barbados Sugar,Sweeteners
+Barley Malt,Sweeteners
+Barley Malt Extract,Sweeteners
+Brown Rice Syrup,Sweeteners
+Brown Sugar,Sweeteners
+Cane Sugar,Sweeteners
+Carob Syrup,Sweeteners
+Caster Sugar,Sweeteners
+Coconut Palm Sugar,Sweeteners
+Confectioner's Sugar,Sweeteners
+Date Sugar,Sweeteners
+Demerara Sugar,Sweeteners
+Dextrose,Sweeteners
+Erythritol,Sweeteners
+Evaporated Cane Juice,Sweeteners
+Fructose,Sweeteners
+Galactose,Sweeteners
+Glucose,Sweeteners
+Glycerin,Sweeteners
+Glycerol,Sweeteners
+Golden Syrup,Sweeteners
+Granulated Sugar,Sweeteners
+High Fructose Corn Syrup-42 (HFCS-42),Sweeteners
+High Fructose Corn Syrup-55 (HFCS-55),Sweeteners
+High Fructose Corn Syrup-90 (HFCS-90),Sweeteners
+Honey,Sweeteners
+Invert Sugar,Sweeteners
+Lactose,Sweeteners
+Malt Sugar,Sweeteners
+Maltose,Sweeteners
+Maltose Syrup,Sweeteners
+Mannitol,Sweeteners
+Maple Syrup,Sweeteners
+Molasses,Sweeteners
+Muscovado Sugar,Sweeteners
+Palm Date Sugar,Sweeteners
+Palm Sugar,Sweeteners
+Sorbitol,Sweeteners
+Sorghum Syrup,Sweeteners
+Sucrose,Sweeteners
+Sugar,Sweeteners
+Sugar Beet Molasses,Sweeteners
+Sugar Cane Molasses,Sweeteners
+Tapioca Syrup 28 DE,Sweeteners
+Tapioca Syrup 42 DE,Sweeteners
+Tapioca Syrup 60 DE,Sweeteners
+Treacle,Sweeteners
+Xylitol,Sweeteners
+Artichoke,Vegetables
+Asparagus (Fresh),Vegetables
+Asparagus (Canned),Vegetables
+"Asparagus, White",Vegetables
+Bamboo Shoots,Vegetables
+Bitter Melon,Vegetables
+Broccoli,Vegetables
+"Broth, Vegetable",Vegetables
+Brussel Sprouts,Vegetables
+Cabbage,Vegetables
+Cabbage (Chinese),Vegetables
+Carrot,Vegetables
+Cauliflower,Vegetables
+Celery,Vegetables
+Chili Pepper,Vegetables
+Chrysanthemum Greens,Vegetables
+Cucumber,Vegetables
+Eggplant,Vegetables
+Green Pepper,Vegetables
+Kale,Vegetables
+Kimchi,Vegetables
+Lettuce,Vegetables
+"Lettuce, Butterhead",Vegetables
+"Lettuce, Romaine",Vegetables
+Mustard Greens,Vegetables
+Okra,Vegetables
+"Olives, Black",Vegetables
+"Olives, Green",Vegetables
+"Paste, Tomato",Vegetables
+"Pickles, Dill",Vegetables
+Rhubarb,Vegetables
+"Sauce, Tomato",Vegetables
+Sauerkraut,Vegetables
+Spinach,Vegetables
+Tamarillo,Vegetables
+Tomatillo,Vegetables
+Tomato (Canned),Vegetables
+Tomato (Dried),Vegetables
+"Tomato, Beefsteak (Flesh)",Vegetables
+"Tomato, Beefsteak (Pulp)",Vegetables
+"Tomato, Cherry (Conchita, Flesh)",Vegetables
+"Tomato, Cherry (Conchita, Pulp)",Vegetables
+"Tomato, Cherry (Dulce Supersweet, Flesh)",Vegetables
+"Tomato, Cherry (Dulce Supersweet, Pulp)",Vegetables
+"Tomato, Cherry (Generic)",Vegetables
+"Tomato, Cherry (Piccolo, Flesh)",Vegetables
+"Tomato, Cherry (Piccolo, Pulp)",Vegetables
+"Tomato, Cherry (Santa Pomodorino, Flesh)",Vegetables
+"Tomato, Cherry (Santa Pomodorino, Pulp)",Vegetables
+"Tomato, Cherry (Sungold, Flesh)",Vegetables
+"Tomato, Cherry (Sungold, Pulp)",Vegetables
+"Tomato, Cherry (Tiger, Flesh)",Vegetables
+"Tomato, Cherry (Tiger, Pulp)",Vegetables
+"Tomato, Green (Fresh, Whole)",Vegetables
+"Tomato, Plum (Celine, Flesh)",Vegetables
+"Tomato, Plum (Celine, Pulp)",Vegetables
+"Tomato, Plum (Flavorino, Flesh)",Vegetables
+"Tomato, Plum (Flavorino, Pulp)",Vegetables
+"Tomato, Plum (Vine Ripened, Flesh)",Vegetables
+"Tomato, Plum (Vine Ripened, Pulp)",Vegetables
+"Tomato, Salad (Carousel, Flesh)",Vegetables
+"Tomato, Salad (Carousel, Pulp)",Vegetables
+"Tomato, Salad (Elegance, Flesh)",Vegetables
+"Tomato, Salad (Elegance, Pulp)",Vegetables
+"Tomato, Salad (Elegance, Italian, Flesh)",Vegetables
+"Tomato, Salad (Elegance, Italian, Pulp)",Vegetables
+"Tomato, Salad (Generic, Flesh)",Vegetables
+"Tomato, Salad (Generic, Pulp)",Vegetables
+"Tomato, Red (Flesh)",Vegetables
+"Tomato, Red (Fresh, Whole)",Vegetables
+"Tomato, Red (Pulp)",Vegetables
+"Tomato, Yellow (Fresh, Whole)",Vegetables
+Zucchini,Vegetables
+Stevia Extract (Reb A 97%),Sweeteners
+Stevia Extract (Reb A 80%),Sweeteners
+Stevia Extract (Reb A 60%),Sweeteners
+Stevia Extract (Reb A 50%),Sweeteners
+Monk Fruit Extract (Mogroside V 55%),Sweeteners
+Monk Fruit Extract (Mogroside V 50%),Sweeteners
+Monk Fruit Extract (Mogroside V 40%),Sweeteners
+Monk Fruit Extract (Mogroside V 25%),Sweeteners
+Sucralose,Sweeteners
+Aspartame,Sweeteners
+Acesulfame Potassium,Sweeteners
+Allulose,Sweeteners
+Maltitol,Sweeteners
+"Cheese, Cream",Dairy
+Mayonnaise,Condiments
+"Mustard, Dijon",Condiments
+"Mustard, Yellow (Prepared)",Condiments
+Salsa (Jarred),Condiments
+"Sauce, Hot (Tabasco)",Condiments
+"Sauce, Hoisin",Condiments
+Kosher Salt (Diamond Crystal),Salts & Miscellaneous
+Kosher Salt (Morton),Salts & Miscellaneous
+"Tofu, Firm",Legumes & Pulses
+"Tofu, Silken",Legumes & Pulses
+Tahini,Nuts & Seeds
+Gochujang,Condiments
+Doenjang,Condiments
+"Beans, Black (Canned)",Legumes & Pulses
+"Beans, Kidney (Canned)",Legumes & Pulses
+"Beans, Pinto (Canned)",Legumes & Pulses
+Chickpeas (Canned),Legumes & Pulses
+"Tortilla, Flour",Grains
+"Tortilla, Corn",Grains
+"Cheese, Monterey Jack",Dairy
+"Cheese, Provolone",Dairy
+"Cheese, American (Processed)",Dairy
+"Cheese, Ricotta (Whole Milk)",Dairy
+"Coffee, Brewed",Beverages
+Espresso,Beverages
+"Coffee, Instant (Powder)",Beverages
+"Tea, Black (Brewed)",Beverages
+"Tea, Green (Brewed)",Beverages
+Cocoa Powder (Unsweetened),Sweeteners
+"Chocolate, Dark (70-85%)",Sweeteners
+Cola,Beverages
+"Soup, Cream of Mushroom (Condensed)",Condiments
+"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",Condiments
+"Soup, Cream of Chicken (Condensed)",Condiments
+"Soup, Cream of Chicken (Condensed, Reduced Sodium)",Condiments
+"Soup, Cream of Celery (Condensed)",Condiments
+"Soup, Cream of Potato (Condensed)",Condiments
+"Soup, Tomato (Condensed)",Condiments
+"Soup, Tomato (Condensed, Reduced Sodium)",Condiments
+"Soup, Cheese (Condensed)",Condiments
+"Soup, Chicken Noodle (Condensed)",Condiments
+"Chocolate, Milk",Sweeteners
+"Chocolate, Dark (45-59%)",Sweeteners
+"Milk, Chocolate (Whole)",Beverages

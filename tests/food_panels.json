@@ -1,0 +1,216 @@
+[
+ {
+  "id": "akgun2019",
+  "citation": "Akg\u00fcn B., et al. (2019). Czech J Food Sci 37:92-97. doi:10.17221/140/2018-CJFS (open access)",
+  "matrix": "home-made tomato soup (butter 30 g, flour 9 g, unsalted tomato paste 20 g, chopped tomato 500 g, water 600 mL; simmered ~30 min; red pepper and mint 0.5 g each ignored)",
+  "panel": "8 trained assessors, 0-100 line scale",
+  "location": "Table 1 (values checked against the PDF, Nov 21, 2026)",
+  "assumptions": "Salt blend 0.9 g per 100 g of finished soup, finished mass taken as the ingredient total (no water loss measured); butter as unsalted fat (X Fat); chopped tomato as fresh red tomato; L-lysine HCl ignored; glutamic acid as free acid.",
+  "samples": [
+   {
+    "label": "A 100% NaCl",
+    "items": [
+     [
+      "X Fat",
+      30
+     ],
+     [
+      "Flour, Wheat",
+      9
+     ],
+     [
+      "Paste, Tomato",
+      20
+     ],
+     [
+      "Tomato, Red (Fresh, Whole)",
+      500
+     ],
+     [
+      "Water",
+      600
+     ],
+     [
+      "Salt",
+      10.525
+     ]
+    ],
+    "measured": {
+     "saltiness": 59.38,
+     "umami": 19.63,
+     "sweetness": 23.88,
+     "sourness": 20.88,
+     "bitterness": 10.13
+    }
+   },
+   {
+    "label": "B 60% NaCl + 40% KCl",
+    "items": [
+     [
+      "X Fat",
+      30
+     ],
+     [
+      "Flour, Wheat",
+      9
+     ],
+     [
+      "Paste, Tomato",
+      20
+     ],
+     [
+      "Tomato, Red (Fresh, Whole)",
+      500
+     ],
+     [
+      "Water",
+      600
+     ],
+     [
+      "Salt",
+      6.315
+     ],
+     [
+      "Potassium Chloride",
+      4.21
+     ]
+    ],
+    "measured": {
+     "saltiness": 29.75,
+     "umami": 16.5,
+     "sweetness": 23.5,
+     "sourness": 26.75,
+     "bitterness": 20.88
+    }
+   },
+   {
+    "label": "C 60% NaCl + 28% KCl + 12% Lys-HCl (Lys ignored)",
+    "items": [
+     [
+      "X Fat",
+      30
+     ],
+     [
+      "Flour, Wheat",
+      9
+     ],
+     [
+      "Paste, Tomato",
+      20
+     ],
+     [
+      "Tomato, Red (Fresh, Whole)",
+      500
+     ],
+     [
+      "Water",
+      600
+     ],
+     [
+      "Salt",
+      6.315
+     ],
+     [
+      "Potassium Chloride",
+      2.947
+     ]
+    ],
+    "measured": {
+     "saltiness": 35.25,
+     "umami": 19.25,
+     "sweetness": 24.75,
+     "sourness": 26.25,
+     "bitterness": 11.5
+    }
+   },
+   {
+    "label": "D 60% NaCl + 28% KCl + 6% Lys-HCl + 6% glutamic acid",
+    "items": [
+     [
+      "X Fat",
+      30
+     ],
+     [
+      "Flour, Wheat",
+      9
+     ],
+     [
+      "Paste, Tomato",
+      20
+     ],
+     [
+      "Tomato, Red (Fresh, Whole)",
+      500
+     ],
+     [
+      "Water",
+      600
+     ],
+     [
+      "Salt",
+      6.315
+     ],
+     [
+      "Potassium Chloride",
+      2.947
+     ],
+     [
+      "X Glutamic acid",
+      0.631
+     ]
+    ],
+    "measured": {
+     "saltiness": 43.75,
+     "umami": 23.0,
+     "sweetness": 24.13,
+     "sourness": 26.0,
+     "bitterness": 12.75
+    }
+   },
+   {
+    "label": "E 60% NaCl + 28% KCl + 12% glutamic acid",
+    "items": [
+     [
+      "X Fat",
+      30
+     ],
+     [
+      "Flour, Wheat",
+      9
+     ],
+     [
+      "Paste, Tomato",
+      20
+     ],
+     [
+      "Tomato, Red (Fresh, Whole)",
+      500
+     ],
+     [
+      "Water",
+      600
+     ],
+     [
+      "Salt",
+      6.315
+     ],
+     [
+      "Potassium Chloride",
+      2.947
+     ],
+     [
+      "X Glutamic acid",
+      1.263
+     ]
+    ],
+    "measured": {
+     "saltiness": 45.25,
+     "umami": 25.0,
+     "sweetness": 26.63,
+     "sourness": 26.38,
+     "bitterness": 13.13
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,1237 @@
+[
+ {
+  "id": "G01",
+  "name": "canned tomato",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Tomato (Canned)",
+    200,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G02",
+  "name": "canned tomato + salt",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Tomato (Canned)",
+    800,
+    "g"
+   ],
+   [
+    "Salt",
+    1,
+    "tsp"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G03",
+  "name": "soy + tomato",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Tomato (Canned)",
+    200,
+    "g"
+   ],
+   [
+    "Sauce, Soy",
+    15,
+    "mL"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G04",
+  "name": "garlic cooked",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Garlic",
+    10,
+    "g"
+   ],
+   [
+    "Water",
+    300,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 30,
+   "cook_temp_c": 85
+  }
+ },
+ {
+  "id": "G05",
+  "name": "reduced sauce",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Tomato (Canned)",
+    800,
+    "g"
+   ],
+   [
+    "Salt",
+    5,
+    "g"
+   ],
+   [
+    "Garlic",
+    12,
+    "g"
+   ],
+   [
+    "Onion",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {
+   "water_loss_g": 200,
+   "cook_min": 45,
+   "cook_temp_c": 95
+  }
+ },
+ {
+  "id": "G06",
+  "name": "mushroom broth",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Mushroom, Button",
+    200,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ],
+   [
+    "Salt",
+    4,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 20,
+   "cook_temp_c": 90
+  }
+ },
+ {
+  "id": "G07",
+  "name": "dashi",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Seaweed, Kombu",
+    10,
+    "g"
+   ],
+   [
+    "Bonito Flakes",
+    10,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G08",
+  "name": "lemonade",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Lemon",
+    150,
+    "g"
+   ],
+   [
+    "Sucrose",
+    100,
+    "g"
+   ],
+   [
+    "Water",
+    750,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G09",
+  "name": "vinaigrette",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Vinegar, Red Wine",
+    2,
+    "tbsp"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ],
+   [
+    "Salt",
+    1,
+    "g"
+   ],
+   [
+    "Honey",
+    1,
+    "tsp"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G10",
+  "name": "chicken broth + chicken",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Broth, Chicken",
+    500,
+    "g"
+   ],
+   [
+    "Chicken",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G11",
+  "name": "parmesan water",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Cheese, Parmigiano Regianno",
+    30,
+    "g"
+   ],
+   [
+    "Water",
+    200,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G12",
+  "name": "yogurt dressing",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Yogurt, Plain (Whole Milk)",
+    150,
+    "g"
+   ],
+   [
+    "Lemon",
+    15,
+    "g"
+   ],
+   [
+    "Salt",
+    2,
+    "g"
+   ],
+   [
+    "Garlic",
+    5,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G13",
+  "name": "KCl",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Potassium Chloride",
+    3,
+    "g"
+   ],
+   [
+    "Water",
+    300,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G14",
+  "name": "miso soup (tofu left out: not in the database)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Miso",
+    40,
+    "g"
+   ],
+   [
+    "Water",
+    400,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G15",
+  "name": "bo kho (Nov 15, 2026)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Beef",
+    1000,
+    "g"
+   ],
+   [
+    "Ginger",
+    40,
+    "g"
+   ],
+   [
+    "Garlic",
+    20,
+    "g"
+   ],
+   [
+    "Onion",
+    350,
+    "g"
+   ],
+   [
+    "Paste, Tomato",
+    66,
+    "g"
+   ],
+   [
+    "Butter, Salted",
+    35,
+    "g"
+   ],
+   [
+    "Wine, Generic",
+    60,
+    "g"
+   ],
+   [
+    "Carrot",
+    250,
+    "g"
+   ],
+   [
+    "Broth, Beef",
+    946,
+    "g"
+   ],
+   [
+    "Sauce, Fish",
+    58,
+    "g"
+   ],
+   [
+    "Water",
+    318,
+    "g"
+   ],
+   [
+    "Sugar",
+    37,
+    "g"
+   ]
+  ],
+  "opt": {
+   "water_loss_g": 300,
+   "cook_min": 120,
+   "cook_temp_c": 95
+  }
+ },
+ {
+  "id": "G16",
+  "name": "kitchen test A: 8 g/L salt",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Salt",
+    8,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G17",
+  "name": "kitchen test B: 6 g/L salt",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Salt",
+    6,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G18",
+  "name": "kitchen test C: 6 g/L salt + 2 g/L MSG",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Salt",
+    6,
+    "g"
+   ],
+   [
+    "Monosodium Glutamate",
+    2,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G19",
+  "name": "polyol syrup (v.2.6.3)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Erythritol",
+    40,
+    "g"
+   ],
+   [
+    "Xylitol",
+    30,
+    "g"
+   ],
+   [
+    "Sorbitol",
+    20,
+    "g"
+   ],
+   [
+    "Mannitol",
+    10,
+    "g"
+   ],
+   [
+    "Water",
+    400,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G20",
+  "name": "erythritol lemonade (v.2.6.3)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Erythritol",
+    60,
+    "g"
+   ],
+   [
+    "Lemon",
+    60,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G21",
+  "name": "stevia lemonade, Reb A 97% (v.2.7.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Lemon",
+    60,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ],
+   [
+    "Stevia Extract (Reb A 97%)",
+    0.2,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G22",
+  "name": "monk fruit tea, mogroside V 50% (v.2.7.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Water",
+    500,
+    "g"
+   ],
+   [
+    "Monk Fruit Extract (Mogroside V 50%)",
+    0.35,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G23",
+  "name": "diet soda: sucralose + acesulfame K (v.2.7.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Water",
+    355,
+    "g"
+   ],
+   [
+    "Sucralose",
+    0.06,
+    "g"
+   ],
+   [
+    "Acesulfame Potassium",
+    0.06,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G24",
+  "name": "coffee: erythritol + stevia Reb A 60% (v.2.7.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Water",
+    240,
+    "g"
+   ],
+   [
+    "Erythritol",
+    8,
+    "g"
+   ],
+   [
+    "Stevia Extract (Reb A 60%)",
+    0.03,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G25",
+  "name": "sucralose above tested range (v.2.7.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Water",
+    100,
+    "g"
+   ],
+   [
+    "Sucralose",
+    1,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G26",
+  "name": "keto syrup: allulose + maltitol (v.2.7.1)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Allulose",
+    30,
+    "g"
+   ],
+   [
+    "Maltitol",
+    20,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G27",
+  "name": "creamy dip: cream cheese + mayo + Dijon (v.2.7.1)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Cheese, Cream",
+    225,
+    "g"
+   ],
+   [
+    "Mayonnaise",
+    60,
+    "g"
+   ],
+   [
+    "Mustard, Dijon",
+    15,
+    "g"
+   ],
+   [
+    "Lemon",
+    10,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G28",
+  "name": "hoisin glaze (v.2.7.1)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Sauce, Hoisin",
+    60,
+    "g"
+   ],
+   [
+    "Sauce, Soy",
+    15,
+    "g"
+   ],
+   [
+    "Water",
+    60,
+    "g"
+   ],
+   [
+    "Garlic",
+    6,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G29",
+  "name": "salsa + hot sauce + yellow mustard (v.2.7.1)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Salsa (Jarred)",
+    200,
+    "g"
+   ],
+   [
+    "Sauce, Hot (Tabasco)",
+    5,
+    "g"
+   ],
+   [
+    "Mustard, Yellow (Prepared)",
+    10,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G30",
+  "name": "50/50 salt + KCl blend (v.2.7.2)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Salt",
+    5,
+    "g"
+   ],
+   [
+    "Potassium Chloride",
+    5,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G31",
+  "name": "lemonade by volume, 1 cup sugar (v.2.7.2)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Lemon",
+    0.75,
+    "cup"
+   ],
+   [
+    "Sugar",
+    1,
+    "cup"
+   ],
+   [
+    "Water",
+    4,
+    "cup"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G32",
+  "name": "black coffee (v.2.8.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Coffee, Brewed",
+    240,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G33",
+  "name": "coffee with sugar (v.2.8.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Coffee, Brewed",
+    240,
+    "g"
+   ],
+   [
+    "Sugar",
+    8,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G34",
+  "name": "1.5% KCl in water (v.2.8.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Potassium Chloride",
+    15,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G35",
+  "name": "dark chocolate + cocoa drink (v.2.8.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Chocolate, Dark (70-85%)",
+    30,
+    "g"
+   ],
+   [
+    "Cocoa Powder (Unsweetened)",
+    10,
+    "g"
+   ],
+   [
+    "Milk, Cow",
+    240,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G36",
+  "name": "stevia Reb A 97% in water, 1.5 g/L (v.2.8.2)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Water",
+    1000,
+    "g"
+   ],
+   [
+    "Stevia Extract (Reb A 97%)",
+    1.5,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G37",
+  "name": "chocolate milk, whole (v.2.8.2)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Milk, Chocolate (Whole)",
+    240,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G38",
+  "name": "milk chocolate + water, 1:4 (v.2.8.2)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Chocolate, Milk",
+    20,
+    "g"
+   ],
+   [
+    "Water",
+    80,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X01",
+  "name": "MSG + I+G (synergy cap reached)",
+  "origin": "added for the rebuild package",
+  "covers": "synergy cap 16x, glutamate threshold drop",
+  "items": [
+   [
+    "Monosodium Glutamate",
+    1,
+    "g"
+   ],
+   [
+    "Ajitide I+G",
+    0.1,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X02",
+  "name": "I+G alone in water (nucleotide-alone term)",
+  "origin": "added for the rebuild package",
+  "covers": "NUC_ALONE background glutamate",
+  "items": [
+   [
+    "Ajitide I+G",
+    0.25,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X03",
+  "name": "MSG alone, near threshold",
+  "origin": "added for the rebuild package",
+  "covers": "umami threshold and log curve near zero",
+  "items": [
+   [
+    "Monosodium Glutamate",
+    0.05,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X04",
+  "name": "Garlic, raw, 25% cut loss (API option)",
+  "origin": "added for the rebuild package",
+  "covers": "per-item cys_loss_on_cut",
+  "items": [
+   {
+    "ingredient": "Garlic",
+    "amount": 15,
+    "unit": "g",
+    "cys_loss_on_cut": 0.25
+   },
+   [
+    "Water",
+    300,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X05",
+  "name": "Garlic added late: per-item cook_min 0",
+  "origin": "added for the rebuild package",
+  "covers": "per-item cook override; cook temp outside 60-89 C note",
+  "items": [
+   {
+    "ingredient": "Garlic",
+    "amount": 15,
+    "unit": "g",
+    "cook_min": 0
+   },
+   [
+    "Onion",
+    100,
+    "g"
+   ],
+   [
+    "Water",
+    300,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 60,
+   "cook_temp_c": 93.33333333333333
+  }
+ },
+ {
+  "id": "X06",
+  "name": "Mushrooms cooked below nuclease temperature",
+  "origin": "added for the rebuild package",
+  "covers": "cooked nucleotides NOT applied below 65 C",
+  "items": [
+   [
+    "Mushroom, Button",
+    200,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 20,
+   "cook_temp_c": 60
+  }
+ },
+ {
+  "id": "X07",
+  "name": "Page example: Tomato sauce (page settings 45 min, 200 F, 10% cooked down)",
+  "origin": "added for the rebuild package",
+  "covers": "page example; helper row; volume units; water loss = 10% of total mass",
+  "items": [
+   [
+    "Tomato (Canned)",
+    800,
+    "g"
+   ],
+   [
+    "Onion",
+    0.5,
+    "cup"
+   ],
+   [
+    "Garlic",
+    12,
+    "g"
+   ],
+   [
+    "Oil or fat",
+    2,
+    "tbsp"
+   ],
+   [
+    "Salt",
+    0.5,
+    "tsp"
+   ],
+   [
+    "Sugar",
+    1,
+    "tsp"
+   ]
+  ],
+  "opt": {
+   "cook_min": 45,
+   "cook_temp_c": 93.33333333333333,
+   "water_loss_g": "PAGE_PCT:10"
+  }
+ },
+ {
+  "id": "X08",
+  "name": "Imperial mass units: oz, lb, kg",
+  "origin": "added for the rebuild package",
+  "covers": "oz/lb/kg conversion",
+  "items": [
+   [
+    "Tomato (Canned)",
+    1,
+    "lb"
+   ],
+   [
+    "Cheese, Parmigiano Regianno",
+    1,
+    "oz"
+   ],
+   [
+    "Water",
+    0.25,
+    "kg"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X09",
+  "name": "Cocoa in water above theobromine solubility",
+  "origin": "added for the rebuild package",
+  "covers": "theobromine cap 0.1153 g/100 g food",
+  "items": [
+   [
+    "Cocoa Powder (Unsweetened)",
+    20,
+    "g"
+   ],
+   [
+    "Water",
+    200,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X10",
+  "name": "Acesulfame K above bitterness range",
+  "origin": "added for the rebuild package",
+  "covers": "ace-K bitterness extrapolation; HIS sweetness",
+  "items": [
+   [
+    "Acesulfame Potassium",
+    2,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "X11",
+  "name": "Acidity model off (API option)",
+  "origin": "added for the rebuild package",
+  "covers": "acidity=false: no pH, sourness null",
+  "items": [
+   [
+    "Tomato (Canned)",
+    200,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {
+   "acidity": false
+  }
+ },
+ {
+  "id": "X12",
+  "name": "All potassium counted (API option k_source=total)",
+  "origin": "added for the rebuild package",
+  "covers": "k_source=total",
+  "items": [
+   [
+    "Tomato (Canned)",
+    400,
+    "g"
+   ],
+   [
+    "Salt",
+    2,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {
+   "k_source": "total"
+  }
+ },
+ {
+  "id": "X13",
+  "name": "Boundary: mushrooms cooked at exactly 65 C",
+  "origin": "added for the rebuild package",
+  "covers": "cooked nucleotides apply at T >= 65 (inclusive); no cook_range note inside 60-89",
+  "items": [
+   [
+    "Mushroom, Button",
+    200,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 20,
+   "cook_temp_c": 65
+  }
+ },
+ {
+  "id": "X14",
+  "name": "Boundary: garlic cooked at exactly 89 C",
+  "origin": "added for the rebuild package",
+  "covers": "cook_range note does not fire at the inclusive 89 C limit",
+  "items": [
+   [
+    "Garlic",
+    15,
+    "g"
+   ],
+   [
+    "Water",
+    300,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 30,
+   "cook_temp_c": 89
+  }
+ },
+ {
+  "id": "X15",
+  "name": "Boundary: ingredient at exactly 1% of recipe mass",
+  "origin": "added for the rebuild package",
+  "covers": "data-gap flags at share >= 0.01 (missing glutamate and organic acids; estimated tier-3 sugars)",
+  "items": [
+   [
+    "Sauce, Hoisin",
+    1,
+    "g"
+   ],
+   [
+    "Water",
+    99,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "P01",
+  "name": "Page placeholder recipe",
+  "paste": "1 (28 ounce) can crushed tomatoes\n3 cloves garlic, minced\n1/2 medium onion, diced\n1 tsp kosher salt\n2 tbsp olive oil"
+ },
+ {
+  "id": "P02",
+  "name": "Mixed lines: skips, refusals, cans, ranges",
+  "paste": "Ingredients:\n2 tbsp soy sauce\n1-2 cups chopped onion\nsalt to taste\n1 (14.5 oz) can diced tomatoes\n2 cups cooked rice\n1 cup ice cream\n3 cloves garlic\n1 can chicken broth\n\u00bd lb ground beef (or ground turkey)"
+ },
+ {
+  "id": "P03",
+  "name": "Sweeteners and salted/unsalted variants",
+  "paste": "1/2 cup Splenda\n2 tsp stevia\n1 tbsp honey\n\u00bd cup unsalted peanut butter\n1 scoop pure stevia\n1 oz potato chips\n2 shots espresso\n1 inch ginger"
+ }
+]

@@ -1,0 +1,2581 @@
+[
+ {
+  "id": "webb2015",
+  "citation": "Webb J, Bolhuis DP, Cicerale S, Hayes JE, Keast R. The Relationships Between Common Measurements of Taste Function. Chemosens Percept. 2015.",
+  "doi": "10.1007/s12078-015-9183-x",
+  "pmcid": "PMC4475569",
+  "taste": "mixed",
+  "matrix": "water (filtered deionized water; single tastants, no mixtures)",
+  "panel": "65 female university students, trained in gLMS use (not a descriptive panel)",
+  "scale": "gLMS 0-100 (barely detectable 1.5, weak 6, moderate 17, strong 35, very strong 52, strongest imaginable 100); values are geometric means",
+  "samples": [
+   {
+    "label": "sucrose 100 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 34.23,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 6.95,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.9"
+   },
+   {
+    "label": "sucrose 200 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 68.46,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 12.6,
+     "sourness": null
+    },
+    "sd_or_se": "SE 1.25"
+   },
+   {
+    "label": "sucrose 400 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 136.92,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 19.1,
+     "sourness": null
+    },
+    "sd_or_se": "SE 1.69"
+   },
+   {
+    "label": "NaCl 100 mM",
+    "components": {
+     "NaCl_g_per_L": 5.844,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 7.9,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 1.24"
+   },
+   {
+    "label": "NaCl 200 mM",
+    "components": {
+     "NaCl_g_per_L": 11.688,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 18.0,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 1.45"
+   },
+   {
+    "label": "NaCl 400 mM",
+    "components": {
+     "NaCl_g_per_L": 23.376,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 24.0,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 1.73"
+   },
+   {
+    "label": "citric acid 1.0 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0.1921,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 5.4
+    },
+    "sd_or_se": "SE 0.8"
+   },
+   {
+    "label": "citric acid 3.0 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0.5764,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 13.2
+    },
+    "sd_or_se": "SE 1.3"
+   },
+   {
+    "label": "citric acid 7.0 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 1.3448,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 18.7
+    },
+    "sd_or_se": "SE 1.47"
+   },
+   {
+    "label": "MSG 3.0 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0.5614,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "MSG 3.0 mM; g/L computed as monohydrate (form not stated)"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 2.61,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.66"
+   },
+   {
+    "label": "MSG 6.0 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 1.1228,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "MSG 6.0 mM; g/L computed as monohydrate (form not stated)"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 4.34,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.89"
+   },
+   {
+    "label": "MSG 12.0 mM",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 2.2456,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "MSG 12.0 mM; g/L computed as monohydrate (form not stated)"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 7.24,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 1.14"
+   }
+  ],
+  "location": "Table 2 (concentrations) and Table 4 (geometric mean intensity, SE)",
+  "quote": "Sucrose 100 mM 6.95 0.90 200 mM 12.6 1.25 400 mM 19.1 1.69 Sodium chloride 100 mM 7.9 1.24 200 mM 18.0 1.45 400 mM 24.0 1.73",
+  "source_file": "sources/webb2015.xml",
+  "read_level": "full_text",
+  "notes": "Conversions mM -> g/L: sucrose x342.30/1000 (100 mM = 34.23 g/L); NaCl x58.44/1000 (100 mM = 5.844 g/L); citric acid x192.12/1000 as anhydrous acid (1 mM = 0.1921 g/L; hydrate form not stated); MSG x187.13/1000 assuming monohydrate (3 mM = 0.5614 g/L); MSG form is NOT stated in the paper, anhydrous (169.11) would give 0.5073, 1.0147, 2.0293 g/L. Served at room temperature, 15 mL portions. Geometric means, not arithmetic. Each quality rated for its own tastant only. Caffeine rows (1, 2, 4 mM: 10.6, 18.7, 26.6) left out because bitterness is not a model output. Only 3 levels per taste, so rank-order tests are weak. Quote is a table row: cell text joined with single spaces.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape"
+ },
+ {
+  "id": "hayabuchi2020",
+  "citation": "Hayabuchi H, Morita R, Ohta M, Nanri A, et al. Validation of preferred salt concentration in soup based on a randomized blinded experiment in multiple regions in Japan - influence of umami (L-glutamate) on saltiness and palatability of low-salt solutions. Hypertens Res. 2020.",
+  "doi": "10.1038/s41440-020-0397-1",
+  "pmcid": "PMC8075858",
+  "taste": "saltiness",
+  "matrix": "water (distilled water; NaCl with or without MSG)",
+  "panel": "584 healthy adults from 19 regions of Japan, untrained (consumer)",
+  "scale": "100-mm VAS (left: not at all salty; right: extremely salty); mean of two evaluations",
+  "samples": [
+   {
+    "label": "0.3% NaCl no MSG",
+    "components": {
+     "NaCl_g_per_L": 3.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 23.5,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.6"
+   },
+   {
+    "label": "0.3% NaCl + 0.3% MSG",
+    "components": {
+     "NaCl_g_per_L": 3.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 3.0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 39.1,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.7"
+   },
+   {
+    "label": "0.6% NaCl no MSG",
+    "components": {
+     "NaCl_g_per_L": 6.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 55.8,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.7"
+   },
+   {
+    "label": "0.6% NaCl + 0.3% MSG",
+    "components": {
+     "NaCl_g_per_L": 6.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 3.0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 58.2,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.7"
+   },
+   {
+    "label": "0.9% NaCl no MSG",
+    "components": {
+     "NaCl_g_per_L": 9.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 73.8,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.6"
+   },
+   {
+    "label": "0.9% NaCl + 0.3% MSG",
+    "components": {
+     "NaCl_g_per_L": 9.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 3.0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 72.3,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SE 0.7"
+   }
+  ],
+  "location": "Table 2, row 'All' (N = 584); Table 4 for sodium content; Results text",
+  "quote": "saltiness of the 0.3% NaCl solution with MSG was significantly higher than that of the 0.3% NaCl without MSG (39.1",
+  "source_file": "sources/hayabuchi2020.xml",
+  "read_level": "full_text",
+  "notes": "Conversions: % taken as g/100 mL (Table 4 header gives NaCl in g/100 mL), so 0.3% = 3 g/L, 0.6% = 6 g/L, 0.9% = 9 g/L; MSG 0.3% = 3 g/L. MSG hydrate form not stated; Table 4 gives Na of 0.118 vs 0.155 g/100 mL for 0.3% NaCl without/with MSG, i.e. 0.037 g Na from 0.3 g MSG, which matches the monohydrate (0.3 x 22.99/187.13 = 0.0369) better than anhydrous (0.3 x 22.99/169.11 = 0.0408): my inference, not a statement in the paper. Only saltiness and palatability were rated; umami was not rated. Sites recorded water temperature but no value was found in the text read. Subgroup rows (sex, age) are also in Table 2. This is a salt x umami study: it tests whether MSG changes saltiness. Morita et al. 2021 (PMC7916089) reanalyses what appears to be the same experiment (561 participants; 'All' row 23.51, 39.28, 55.81, 58.24, 73.76, 72.42), so it is not entered as a separate study.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape, tags->nothing, tags->nothing+unescape"
+ },
+ {
+  "id": "laplamool2023",
+  "citation": "Laplamool T, Suwonsichon S, Sittiketgorn S, Soontrunnarudrungsri A. Sensory Flavor Profile of Split Gill Mushroom (Schizophyllum commune) Extract and Its Enhancement Effect on Taste Perception in Salt Solution and Seasoned Clear Soup. Foods. 2023;12(20):3745.",
+  "doi": "10.3390/foods12203745",
+  "pmcid": "PMC10606386",
+  "taste": "mixed",
+  "matrix": "water (salt solutions with 0 to 12.5% w/w of a mushroom extract of measured composition)",
+  "panel": "highly trained descriptive panel (9 panelists are stated for the extract profile; assumed the same panel for the salt solutions)",
+  "scale": "15-point intensity scale with references (salty: NaCl 2 g/L = 2.5, 3.5 g/L = 5.0, 5.0 g/L = 8.5, 7.0 g/L = 15.0; umami: MSG 2 g/L = 2.5, 3.5 g/L = 5.0)",
+  "samples": [
+   {
+    "label": "0% salt + 0% SGME",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 0.0,
+     "umami": 0.0,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.0; SD umami 0.0"
+   },
+   {
+    "label": "0% salt + 5% SGME",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 5% w/w"
+    },
+    "measured": {
+     "saltiness": 1.34,
+     "umami": 1.57,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.33; SD umami 0.3"
+   },
+   {
+    "label": "0% salt + 7.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 7.5% w/w"
+    },
+    "measured": {
+     "saltiness": 1.83,
+     "umami": 2.0,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.56; SD umami 0.37"
+   },
+   {
+    "label": "0% salt + 10% SGME",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 10% w/w"
+    },
+    "measured": {
+     "saltiness": 2.13,
+     "umami": 2.72,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.69; SD umami 0.6"
+   },
+   {
+    "label": "0% salt + 12.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 12.5% w/w"
+    },
+    "measured": {
+     "saltiness": 2.11,
+     "umami": 2.8,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.5; SD umami 0.46"
+   },
+   {
+    "label": "0.35% salt + 0% SGME",
+    "components": {
+     "NaCl_g_per_L": 3.5,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 4.67,
+     "umami": 0.0,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.45; SD umami 0.0"
+   },
+   {
+    "label": "0.35% salt + 5% SGME",
+    "components": {
+     "NaCl_g_per_L": 3.5,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 5% w/w"
+    },
+    "measured": {
+     "saltiness": 3.81,
+     "umami": 2.35,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.53; SD umami 0.45"
+   },
+   {
+    "label": "0.35% salt + 7.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 3.5,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 7.5% w/w"
+    },
+    "measured": {
+     "saltiness": 5.92,
+     "umami": 2.0,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.49; SD umami 0.75"
+   },
+   {
+    "label": "0.35% salt + 10% SGME",
+    "components": {
+     "NaCl_g_per_L": 3.5,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 10% w/w"
+    },
+    "measured": {
+     "saltiness": 5.82,
+     "umami": 3.04,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.78; SD umami 0.57"
+   },
+   {
+    "label": "0.35% salt + 12.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 3.5,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 12.5% w/w"
+    },
+    "measured": {
+     "saltiness": 6.16,
+     "umami": 3.44,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.65; SD umami 0.45"
+   },
+   {
+    "label": "0.5% salt + 0% SGME",
+    "components": {
+     "NaCl_g_per_L": 5.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 8.25,
+     "umami": 0.0,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.26; SD umami 0.0"
+   },
+   {
+    "label": "0.5% salt + 5% SGME",
+    "components": {
+     "NaCl_g_per_L": 5.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 5% w/w"
+    },
+    "measured": {
+     "saltiness": 7.72,
+     "umami": 1.86,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.6; SD umami 0.43"
+   },
+   {
+    "label": "0.5% salt + 7.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 5.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 7.5% w/w"
+    },
+    "measured": {
+     "saltiness": 7.67,
+     "umami": 2.51,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.82; SD umami 0.49"
+   },
+   {
+    "label": "0.5% salt + 10% SGME",
+    "components": {
+     "NaCl_g_per_L": 5.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 10% w/w"
+    },
+    "measured": {
+     "saltiness": 8.42,
+     "umami": 2.76,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.69; SD umami 0.55"
+   },
+   {
+    "label": "0.5% salt + 12.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 5.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 12.5% w/w"
+    },
+    "measured": {
+     "saltiness": 9.06,
+     "umami": 3.08,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.78; SD umami 0.73"
+   },
+   {
+    "label": "0.6% salt + 0% SGME",
+    "components": {
+     "NaCl_g_per_L": 6.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 11.78,
+     "umami": 0.0,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.6; SD umami 0.0"
+   },
+   {
+    "label": "0.6% salt + 5% SGME",
+    "components": {
+     "NaCl_g_per_L": 6.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 5% w/w"
+    },
+    "measured": {
+     "saltiness": 9.25,
+     "umami": 2.06,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.88; SD umami 0.8"
+   },
+   {
+    "label": "0.6% salt + 7.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 6.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 7.5% w/w"
+    },
+    "measured": {
+     "saltiness": 9.89,
+     "umami": 2.57,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.7; SD umami 0.68"
+   },
+   {
+    "label": "0.6% salt + 10% SGME",
+    "components": {
+     "NaCl_g_per_L": 6.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 10% w/w"
+    },
+    "measured": {
+     "saltiness": 9.36,
+     "umami": 3.09,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.85; SD umami 0.62"
+   },
+   {
+    "label": "0.6% salt + 12.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 6.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 12.5% w/w"
+    },
+    "measured": {
+     "saltiness": 9.86,
+     "umami": 3.08,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.89; SD umami 0.73"
+   },
+   {
+    "label": "0.7% salt + 0% SGME",
+    "components": {
+     "NaCl_g_per_L": 7.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 14.53,
+     "umami": 0.0,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.36; SD umami 0.0"
+   },
+   {
+    "label": "0.7% salt + 5% SGME",
+    "components": {
+     "NaCl_g_per_L": 7.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 5% w/w"
+    },
+    "measured": {
+     "saltiness": 12.39,
+     "umami": 2.07,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.87; SD umami 0.76"
+   },
+   {
+    "label": "0.7% salt + 7.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 7.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 7.5% w/w"
+    },
+    "measured": {
+     "saltiness": 10.72,
+     "umami": 2.87,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.62; SD umami 0.65"
+   },
+   {
+    "label": "0.7% salt + 10% SGME",
+    "components": {
+     "NaCl_g_per_L": 7.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 10% w/w"
+    },
+    "measured": {
+     "saltiness": 10.69,
+     "umami": 3.13,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.6; SD umami 0.69"
+   },
+   {
+    "label": "0.7% salt + 12.5% SGME",
+    "components": {
+     "NaCl_g_per_L": 7.0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "split gill mushroom extract (SGME) 12.5% w/w"
+    },
+    "measured": {
+     "saltiness": 10.03,
+     "umami": 3.04,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD saltiness 0.8; SD umami 0.48"
+   }
+  ],
+  "location": "Table 4 (salt solutions); Table 3 (extract composition); Table 1 (scale references)",
+  "quote": "the umami rating of the 0.35% salt solution with 12.5% of SGME was 3.44, while that of the 12.5% SGME solution alone with no salt was only 2.80",
+  "source_file": "sources/laplamool2023.xml",
+  "read_level": "full_text",
+  "notes": "Conversion: salt % w/v x 10 = g/L (0.35% = 3.5 g/L). NaCl_g_per_L is the ADDED salt only. The extract itself carries salt: its salt content was 'controlled in a range of 0.60-0.62%' by a conductivity salt meter, so e.g. 12.5% extract adds roughly 0.125 x 0.61% = 0.076% salt-equivalent (my arithmetic; conductivity reads all ions as NaCl). Extract composition (Table 3, mg/100 g extract): glutamic acid 426.47, aspartic acid 198.56, 5'-CMP 121.30, 5'-AMP 29.78, 5'-GMP 8.39, 5'-UMP 4.32; no IMP reported; EUC 14.80 g MSG/100 g extract (as printed). Extract % is w/w while salt is w/v; whether the stated salt % is before or after extract addition is not stated. The NaCl-only column is partly circular: 3.5, 5.0 and 7.0 g/L NaCl are the scale's own reference points (5.0, 8.5, 15.0). Umami of NaCl-only solutions is 0.00. Table 5 of the paper has 16 seasoned chicken soups (salty and umami scores) but the stock (chicken bones, soy sauce, sugar, radish) was not analysed, so those are not entered. Serving temperature not found.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape, tags->nothing, tags->nothing+unescape"
+ },
+ {
+  "id": "chaiya2026",
+  "citation": "Chaiya B, Chonpracha P, Waimaleongora-Ek P, et al. Saltiness and Bitterness Perception of KCl-Based Mixed Salts (KCl/NaCl/L-Arginine) Evaluated by the R-Index and Partial Projective Mapping Methods. Foods. 2026;15(9):1605.",
+  "doi": "10.3390/foods15091605",
+  "pmcid": "PMC13164237",
+  "taste": "saltiness",
+  "matrix": "water (filtered water; NaCl alone or KCl/NaCl/L-arginine blends)",
+  "panel": "30 panelists (partial projective mapping); training level not confirmed in the text read",
+  "scale": "0 (no) to 100 (strong) line scale on a partial projective mapping sheet",
+  "samples": [
+   {
+    "label": "A (KCl:NaCl:L-Arg 70:20:10) at 0.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 1.0,
+     "KCl_g_per_L": 3.5,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": 15.38,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 37.3
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "A (KCl:NaCl:L-Arg 70:20:10) at 1.0% w/v",
+    "components": {
+     "NaCl_g_per_L": 2.0,
+     "KCl_g_per_L": 7.0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": 36.23,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 41.6
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "A (KCl:NaCl:L-Arg 70:20:10) at 1.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 3.0,
+     "KCl_g_per_L": 10.5,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.5 g/L"
+    },
+    "measured": {
+     "saltiness": 48.19,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 45.7
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "B (KCl:NaCl:L-Arg 65:25:10) at 0.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 1.25,
+     "KCl_g_per_L": 3.25,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": 11.54,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 26.3
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "B (KCl:NaCl:L-Arg 65:25:10) at 1.0% w/v",
+    "components": {
+     "NaCl_g_per_L": 2.5,
+     "KCl_g_per_L": 6.5,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": 38.6,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 39.6
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "B (KCl:NaCl:L-Arg 65:25:10) at 1.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 3.75,
+     "KCl_g_per_L": 9.75,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.5 g/L"
+    },
+    "measured": {
+     "saltiness": 58.11,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 40.2
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "C (KCl:NaCl:L-Arg 60:30:10) at 0.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 1.5,
+     "KCl_g_per_L": 3.0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": 12.6,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 33.2
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "C (KCl:NaCl:L-Arg 60:30:10) at 1.0% w/v",
+    "components": {
+     "NaCl_g_per_L": 3.0,
+     "KCl_g_per_L": 6.0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": 30.75,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 45.5
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "C (KCl:NaCl:L-Arg 60:30:10) at 1.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 4.5,
+     "KCl_g_per_L": 9.0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.5 g/L"
+    },
+    "measured": {
+     "saltiness": 66.61,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 39.0
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "D (KCl:NaCl:L-Arg 55:35:10) at 0.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 1.75,
+     "KCl_g_per_L": 2.75,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": 13.18,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 24.5
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "D (KCl:NaCl:L-Arg 55:35:10) at 1.0% w/v",
+    "components": {
+     "NaCl_g_per_L": 3.5,
+     "KCl_g_per_L": 5.5,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": 38.07,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 30.3
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "D (KCl:NaCl:L-Arg 55:35:10) at 1.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 5.25,
+     "KCl_g_per_L": 8.25,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "L-arginine 1.5 g/L"
+    },
+    "measured": {
+     "saltiness": 64.75,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 40.4
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "E (KCl:NaCl:L-Arg 0:100:0) at 0.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 5.0,
+     "KCl_g_per_L": 0.0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 23.6,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 21.9
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "E (KCl:NaCl:L-Arg 0:100:0) at 1.0% w/v",
+    "components": {
+     "NaCl_g_per_L": 10.0,
+     "KCl_g_per_L": 0.0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 56.94,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 23.1
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "E (KCl:NaCl:L-Arg 0:100:0) at 1.5% w/v",
+    "components": {
+     "NaCl_g_per_L": 15.0,
+     "KCl_g_per_L": 0.0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": 79.27,
+     "umami": null,
+     "sweetness": null,
+     "sourness": null,
+     "bitterness": 17.1
+    },
+    "sd_or_se": ""
+   }
+  ],
+  "location": "Table 1 (ratios) and Table 6 (intensity scores, saltiness rows)",
+  "quote": "E 0:100:0 23.60 a, C 56.94 a, B 79.27 a, A",
+  "source_file": "sources/chaiya2026.xml",
+  "read_level": "full_text",
+  "notes": "Conversions: total salt % w/v x 10 = g/L (0.5% = 5 g/L, 1.0% = 10 g/L, 1.5% = 15 g/L); each component = total x its percentage in the blend (e.g. sample A at 0.5%: KCl 5 x 0.70 = 3.5, NaCl 5 x 0.20 = 1.0, L-arginine 5 x 0.10 = 0.5 g/L). The ratio is assumed to be by weight (table header gives '% KCl, % NaCl, % L-Arginine'). All blends contain L-arginine (a bitterness blocker), which the model may not handle; only sample E is pure NaCl (5, 10, 15 g/L). No SD/SE in the table. Served at room temperature (ca. 25 C). Bitterness scores are in the same table but not entered. The paper also has R-index and rank data (Tables 3-5), not entered. Quote is a table row: cell text joined with single spaces. Bitterness added Nov 21, 2026 from Table 6 (PPM 0-100, n=30); NaCl-only samples (E) score ~20, the scale's noise floor.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape"
+ },
+ {
+  "id": "junge2020",
+  "citation": "Junge JY, Bertelsen AS, Mielby LA, Zeng Y, Sun YX, Byrne DV, Kidmose U. Taste Interactions between Sweetness of Sucrose and Sourness of Citric and Tartaric Acid among Chinese and Danish Consumers. Foods. 2020;9(10):1425.",
+  "doi": "10.3390/foods9101425",
+  "pmcid": "PMC7600934",
+  "taste": "mixed",
+  "matrix": "water (still natural mineral water; sucrose, citric acid, tartaric acid, alone and in binary mixtures)",
+  "panel": "259 consumers (139 Danish, 120 Chinese), untrained",
+  "scale": "9-point intensity scale (anchors 'Not at all' to 'Extremely')",
+  "samples": [
+   {
+    "label": "W",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 1.53,
+     "sourness": 1.49
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "C",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 1.4,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 1.9,
+     "sourness": 6.42
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "T",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "tartaric acid 1.14 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 1.82,
+     "sourness": 6.36
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "S",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 25.0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 6.32,
+     "sourness": 1.51
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "SC",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 25.0,
+     "citric_acid_g_per_L": 1.4,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 4.53,
+     "sourness": 4.79
+    },
+    "sd_or_se": ""
+   },
+   {
+    "label": "ST",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 25.0,
+     "citric_acid_g_per_L": 0,
+     "other": "tartaric acid 1.14 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 4.49,
+     "sourness": 4.7
+    },
+    "sd_or_se": ""
+   }
+  ],
+  "location": "Table 1 (concentrations) and Table 3 (mean sweetness and sourness, all consumers)",
+  "quote": "Sweetness 1.53a 1.90b 1.82ab 6.32d 4.53c 4.49c 505.34",
+  "source_file": "sources/junge2020.xml",
+  "read_level": "full_text",
+  "notes": "Conversion: % w/v x 10 = g/L (sucrose 2.50% = 25 g/L; citric acid 0.140% = 1.40 g/L; tartaric acid 0.114% = 1.14 g/L). Citric acid hydrate form not stated. Solvent is a bottled mineral water (its minerals are not given). Evaluated at room temperature. Only one sucrose level and one acid level, so this tests the size of mutual suppression, not a dose-response. No SD/SE in Table 3; cluster means are in Tables 6-7. Plain water was rated 1.53 sweet and 1.49 sour (the scale floor is 1). Quote is a table row: cell text joined with single spaces.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape"
+ },
+ {
+  "id": "mao2025",
+  "citation": "Mao Y, Zhang Z, Liu L, Qin Y, Qin Z, Cao Y, et al. Dynamic interaction of sweet and sour taste perceptions based on sucrose and citric acid. npj Sci Food. 2025.",
+  "doi": "10.1038/s41538-025-00507-7",
+  "pmcid": "PMC12289946",
+  "taste": "mixed",
+  "matrix": "water (ultrapure water; sucrose + citric acid mixtures)",
+  "panel": "30 selected and trained assessors (15 male, 15 female)",
+  "scale": "time-intensity; the value recorded here is Imax (peak intensity). The numeric range of the scale is not stated in the text read; assessors were calibrated with 'slight' and 'extreme' reference samples for sweetness and for sourness",
+  "samples": [
+   {
+    "label": "T1: sucrose 2% + citric acid 0% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 4.76,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.09 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 2% + citric acid 0.006% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.06,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 4.55,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.09 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 2% + citric acid 0.008% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 4.38,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.08 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 2% + citric acid 0.016% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 4.18,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.1 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 2% + citric acid 0.024% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 3.97,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.11 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 2% + citric acid 0.032% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.32,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 3.94,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.09 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 6% + citric acid 0% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 9.38,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.07 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 6% + citric acid 0.008% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 9.03,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.12 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 6% + citric acid 0.016% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 8.55,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.12 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 6% + citric acid 0.024% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 8.27,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.17 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 6% + citric acid 0.048% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.48,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 6.88,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.28 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 6% + citric acid 0.096% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.96,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 6.08,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.28 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 10% + citric acid 0% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 11.58,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.14 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 10% + citric acid 0.016% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 11.05,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.16 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 10% + citric acid 0.024% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 10.65,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.14 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 10% + citric acid 0.048% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0.48,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 10.33,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.14 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 10% + citric acid 0.096% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0.96,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 9.45,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.19 (SD or SE not stated)"
+   },
+   {
+    "label": "T1: sucrose 10% + citric acid 0.192% (sweetness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 1.92,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": 9.34,
+     "sourness": null
+    },
+    "sd_or_se": "+/- 0.2 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.008% + sucrose 0% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 4.78
+    },
+    "sd_or_se": "+/- 0.09 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.008% + sucrose 2% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 3.79
+    },
+    "sd_or_se": "+/- 0.13 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.008% + sucrose 4% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 40,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 3.67
+    },
+    "sd_or_se": "+/- 0.13 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.008% + sucrose 6% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 3.4
+    },
+    "sd_or_se": "+/- 0.1 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.008% + sucrose 8% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 80,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 3.14
+    },
+    "sd_or_se": "+/- 0.15 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.008% + sucrose 10% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0.08,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 3.03
+    },
+    "sd_or_se": "+/- 0.07 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.016% + sucrose 0% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 9.09
+    },
+    "sd_or_se": "+/- 0.08 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.016% + sucrose 2% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 6.2
+    },
+    "sd_or_se": "+/- 0.17 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.016% + sucrose 4% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 40,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 5.69
+    },
+    "sd_or_se": "+/- 0.15 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.016% + sucrose 6% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 5.01
+    },
+    "sd_or_se": "+/- 0.14 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.016% + sucrose 8% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 80,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 4.87
+    },
+    "sd_or_se": "+/- 0.15 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.016% + sucrose 10% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0.16,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 4.41
+    },
+    "sd_or_se": "+/- 0.12 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.024% + sucrose 0% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 11.13
+    },
+    "sd_or_se": "+/- 0.09 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.024% + sucrose 2% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 20,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 8.77
+    },
+    "sd_or_se": "+/- 0.11 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.024% + sucrose 4% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 40,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 7.84
+    },
+    "sd_or_se": "+/- 0.14 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.024% + sucrose 6% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 60,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 7.37
+    },
+    "sd_or_se": "+/- 0.13 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.024% + sucrose 8% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 80,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 6.86
+    },
+    "sd_or_se": "+/- 0.14 (SD or SE not stated)"
+   },
+   {
+    "label": "T2: citric acid 0.024% + sucrose 10% (sourness Imax)",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 100,
+     "citric_acid_g_per_L": 0.24,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": null,
+     "sweetness": null,
+     "sourness": 6.13
+    },
+    "sd_or_se": "+/- 0.11 (SD or SE not stated)"
+   }
+  ],
+  "location": "Table 1 (sweetness Imax of sucrose under citric acid) and Table 2 (sourness Imax of citric acid under sucrose)",
+  "quote": "11.58 ± 0.14",
+  "source_file": "sources/mao2025.xml",
+  "read_level": "full_text",
+  "notes": "Conversion: % x 10 = g/L, treating % as w/v (the paper only says '%'; w/v or w/w is not stated): sucrose 2% = 20 g/L, citric acid 0.008% = 0.08 g/L. Each table reports ONE taste only: Table 1 is sweetness of the mixture, Table 2 is sourness of the mixture; the other taste is null. Three mixtures occur in both tables (2% sucrose + 0.008%, 0.016%, 0.024% citric acid), so both tastes are available for those, as two separate rows here. Samples kept at 20 C; 10 mL held 10 s then swallowed. Sweet and sour were each anchored to their own references, so the two sets of numbers are probably not on a common scale. Citric acid levels are very low (0.06 to 1.92 g/L, sourness series only 0.08 to 0.24 g/L) yet reach Imax 11.13, see the 'looked wrong' list. QUOTE CAVEAT: the quote is one table cell (Table 1, sucrose 10%, no citric acid, Imax); measured values appear only in table cells. In the source the characters around the plus-minus sign are thin spaces (U+2009), written here as ordinary spaces. Sample lists for the TI test are also said to be in Supplementary Tables 1-2, which were not fetched.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape, tags->nothing, tags->nothing+unescape"
+ },
+ {
+  "id": "tanaka2025",
+  "citation": "Tanaka K, Itoh T, Kondoh T. Effects of purine and pyrimidine 5'-ribonucleotides on glutamate detection threshold and umami intensity in Japanese young female trained participants. Chem Senses. 2025.",
+  "doi": "10.1093/chemse/bjaf043",
+  "pmcid": "PMC12547497",
+  "taste": "umami",
+  "matrix": "water (distilled water)",
+  "panel": "18 trained female participants (21-22 years)",
+  "scale": "LMS, 0-100% (barely detectable 1.4, weak 6, moderate 17, strong 34.7, very strong 52.5, strongest imaginable 100)",
+  "samples": [
+   {
+    "label": "IMP 3 mM alone",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 1.1765,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "IMP disodium salt 3 mM"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 4.51,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SEM 0.81"
+   },
+   {
+    "label": "GMP 3 mM alone",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 1.2215,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "GMP disodium salt 3 mM"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 4.16,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SEM 0.87"
+   },
+   {
+    "label": "AMP 3 mM alone",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "AMP disodium salt 3 mM"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 1.03,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SEM 0.34"
+   },
+   {
+    "label": "CMP 3 mM alone",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "CMP disodium salt 3 mM"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 0.8,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SEM 0.24"
+   },
+   {
+    "label": "UMP 3 mM alone",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "UMP disodium salt 3 mM"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 1.12,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SEM 0.36"
+   }
+  ],
+  "location": "Table 4 and Results section 3.3 (nucleotides alone); Table 3 (detection thresholds)",
+  "quote": "GMP alone (4.16 ± 0.87) on the LMS procedure were significantly larger",
+  "source_file": "sources/tanaka2025.xml",
+  "read_level": "full_text",
+  "notes": "Only the nucleotide-ALONE intensities are numeric. The glutamate + nucleotide mixture intensities (MPG 1, 3, 10, 30, 100 mM with or without 3 mM nucleotide) are in Fig. 5 only and were NOT read; the text gives only that the five mean intensities of 100 mM MPG alone 'ranged between 22.2% and 24.0%'. Conversions: 3 mM x 392.17 g/mol (IMP disodium, anhydrous) = 1.1765 g/L; 3 mM x 407.18 (GMP disodium, anhydrous) = 1.2215 g/L; the nucleotides were disodium salts, hydrate state not stated; the molar masses are mine, not from the paper. The glutamate used is monoPOTASSIUM glutamate (MPG), not MSG. Also usable as threshold data, not intensity (Table 3, MPG detection threshold, mean mM, n = 18): MPG alone 1.55; + 3 mM IMP 0.0161; + GMP 0.0144; + AMP 0.0760; + CMP 1.40; + UMP 0.88; enhancement ratios 96.3, 107.6, 20.4, 1.11, 1.76. Solutions prepared fresh in distilled water; temperature not found in the text read.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape, tags->nothing, tags->nothing+unescape"
+ },
+ {
+  "id": "wang2021",
+  "citation": "Wang K, Zhuang H, Bing F, Chen D, Feng T, et al. Evaluation of eight kinds of flavor enhancer of umami taste by an electronic tongue. Food Sci Nutr. 2021.",
+  "doi": "10.1002/fsn3.2178",
+  "pmcid": "PMC8020960",
+  "taste": "umami",
+  "matrix": "water (single flavor enhancers, no mixtures)",
+  "panel": "10 trained panelists (selected from 20 after a month of training)",
+  "scale": "1-10 umami intensity (1 = no umami, 10 = highest); trained with MSG 0.08, 0.34, 1.00 g/L as low, medium, high",
+  "samples": [
+   {
+    "label": "Monosodium glutamate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0.5,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 2.7,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.16"
+   },
+   {
+    "label": "Sodium aspartate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "sodium aspartate 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 1.5,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 0.71"
+   },
+   {
+    "label": "Disodium inosinate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0.5,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 5.6,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.84"
+   },
+   {
+    "label": "Disodium guanylate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0.5,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 6.1,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.66"
+   },
+   {
+    "label": "Disodium adenylate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium adenylate 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 6.4,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.71"
+   },
+   {
+    "label": "Disodium cytidylate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium cytidylate 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 3.2,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.23"
+   },
+   {
+    "label": "Disodium uridylate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium uridylate 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 2.5,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.27"
+   },
+   {
+    "label": "Disodium succinate 0.5 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium succinate 0.5 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 5.8,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.87"
+   },
+   {
+    "label": "Monosodium glutamate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 1.0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 7.1,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.45"
+   },
+   {
+    "label": "Sodium aspartate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "sodium aspartate 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 5.2,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.69"
+   },
+   {
+    "label": "Disodium inosinate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 1.0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 7.3,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.49"
+   },
+   {
+    "label": "Disodium guanylate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 1.0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": ""
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 7.2,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.75"
+   },
+   {
+    "label": "Disodium adenylate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium adenylate 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 8.6,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 0.97"
+   },
+   {
+    "label": "Disodium cytidylate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium cytidylate 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 6.4,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.65"
+   },
+   {
+    "label": "Disodium uridylate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium uridylate 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 3.6,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.17"
+   },
+   {
+    "label": "Disodium succinate 1.0 g/L",
+    "components": {
+     "NaCl_g_per_L": 0,
+     "KCl_g_per_L": 0,
+     "MSG_g_per_L": 0,
+     "IMP_g_per_L": 0,
+     "GMP_g_per_L": 0,
+     "sucrose_g_per_L": 0,
+     "citric_acid_g_per_L": 0,
+     "other": "disodium succinate 1.0 g/L"
+    },
+    "measured": {
+     "saltiness": null,
+     "umami": 7.9,
+     "sweetness": null,
+     "sourness": null
+    },
+    "sd_or_se": "SD 1.2"
+   }
+  ],
+  "location": "Table 3, 'Human sensory test' column",
+  "quote": "The umami score of the flavor substances from the human sensory evaluation ranged from 1.5 (sodium aspartate) to 8.6 (disodium adenylate).",
+  "source_file": "sources/wang2021.xml",
+  "read_level": "full_text",
+  "notes": "Concentrations are g/L as given, no conversion. IMP, GMP, AMP, CMP, UMP are the DISODIUM salts weighed as such (Table 2 lists MW 392.17 for disodium inosinate and 425.2 for disodium guanylate), so 0.5 g/L disodium inosinate = 0.5/392.17 = 1.27 mM; hydrate state not stated. MSG MW is listed as 169.11 (anhydrous) in Table 2. Served at 45 C. Each compound was tasted alone, so this tests single-compound umami, not glutamate-nucleotide synergy. The e-tongue column of Table 3 is not entered. Results look odd, see the 'looked wrong' list: disodium adenylate and disodium succinate score above MSG at equal g/L.",
+  "quote_check": "exact substring when tags->space, tags->space+unescape, tags->nothing, tags->nothing+unescape"
+ }
+]

@@ -1,0 +1,996 @@
+{
+ "golden": {
+  "canned tomato": {
+   "raw.umami_intensity": 8.1921348101235,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 4.370133565865298,
+   "raw.sweetness_intensity": 0.8614275353780647,
+   "raw.sourness_intensity": 96.03052884907733,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 3.4901244085554355,
+   "score.saltiness": 4.881110502078582,
+   "score.sweetness": 1.719560805710819,
+   "score.kokumi": 1.0,
+   "score.sourness": 6.7773700591890345,
+   "score.bitterness": 1.0,
+   "ph": 4.100698992458149
+  },
+  "canned tomato + salt": {
+   "raw.umami_intensity": 9.114137069879702,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 7.813080137197594,
+   "raw.sweetness_intensity": 1.4453654138505834,
+   "raw.sourness_intensity": 100.46694260012144,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 3.7703810675309457,
+   "score.saltiness": 7.938787320120508,
+   "score.sweetness": 2.207331155580519,
+   "score.kokumi": 1.0,
+   "score.sourness": 7.044272723192255,
+   "score.bitterness": 1.0,
+   "ph": 4.099811560839841
+  },
+  "soy + tomato": {
+   "raw.umami_intensity": 9.2182302605679,
+   "raw.kokumi_intensity_pct": 0.09883706793973933,
+   "raw.saltiness_intensity": 7.591227052783802,
+   "raw.sweetness_intensity": 0.8053327520121766,
+   "raw.sourness_intensity": 94.89386681058892,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 3.8020217815700725,
+   "score.saltiness": 7.741759855659841,
+   "score.sweetness": 1.6727041568840346,
+   "score.kokumi": 1.0088953361145765,
+   "score.sourness": 6.708986417994053,
+   "score.bitterness": 1.0,
+   "ph": 4.224781839602134
+  },
+  "garlic cooked": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 60.05808952423064,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 2.879190979388244,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 1.0,
+   "score.kokumi": 6.405228057180757,
+   "score.sourness": 1.1732173295134845,
+   "score.bitterness": 1.0,
+   "ph": 5.801739443232011
+  },
+  "reduced sauce": {
+   "raw.umami_intensity": 12.59263569520815,
+   "raw.kokumi_intensity_pct": 68.97695749448302,
+   "raw.saltiness_intensity": 10.082660229372157,
+   "raw.sweetness_intensity": 1.9679687410453925,
+   "raw.sourness_intensity": 99.17834966729521,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 4.827723815522946,
+   "score.saltiness": 9.954398742125884,
+   "score.sweetness": 2.64386801531581,
+   "score.kokumi": 7.207926174503472,
+   "score.sourness": 6.966748644986948,
+   "score.bitterness": 1.0,
+   "ph": 4.16550326930491
+  },
+  "mushroom broth": {
+   "raw.umami_intensity": 8.935323353258116,
+   "raw.kokumi_intensity_pct": 1.0332591667595874,
+   "raw.saltiness_intensity": 5.979350936594595,
+   "raw.sweetness_intensity": 0.07875365569144338,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 3.716027909207223,
+   "score.saltiness": 6.310254564504538,
+   "score.sweetness": 1.0657838780567153,
+   "score.kokumi": 1.0929933250083628,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 6.350249699477827
+  },
+  "dashi": {
+   "raw.umami_intensity": 11.11385350430916,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 4.3782253985847674,
+   "score.saltiness": 1.0,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 5.7622491013910455
+  },
+  "lemonade": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 1.1363745085802195,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 6.415958488866667,
+   "raw.sourness_intensity": 82.64351206858552,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 6.359327476837498,
+   "score.kokumi": 1.1022737057722198,
+   "score.sourness": 5.971982950980709,
+   "score.bitterness": 1.0,
+   "ph": 2.484542413437002
+  },
+  "vinaigrette": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 6.385375897778,
+   "raw.sweetness_intensity": 1.3257908483225338,
+   "raw.sourness_intensity": 134.05340137614886,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 6.6708448570447025,
+   "score.sweetness": 2.107449079398542,
+   "score.kokumi": 1.0,
+   "score.sourness": 9.064894744672166,
+   "score.bitterness": 1.0,
+   "ph": 2.9963591142429813
+  },
+  "chicken broth + chicken": {
+   "raw.umami_intensity": 18.479196979094123,
+   "raw.kokumi_intensity_pct": 3.018526162606897,
+   "raw.saltiness_intensity": 6.904766687552172,
+   "raw.sweetness_intensity": 0.13923059706102936,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 6.617033961804694,
+   "score.saltiness": 7.132115209196122,
+   "score.sweetness": 1.1163009962954846,
+   "score.kokumi": 1.2716673546346207,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 5.885640727131712
+  },
+  "parmesan water": {
+   "raw.umami_intensity": 8.722418489425975,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 3.3129752230014002,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 3.6513122263703828,
+   "score.saltiness": 3.9422494157958177,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 5.250391793806411
+  },
+  "yogurt dressing": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 57.92941310910265,
+   "raw.saltiness_intensity": 9.743611644420078,
+   "raw.sweetness_intensity": 0.5113294471776867,
+   "raw.sourness_intensity": 113.70461486421453,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 9.653290090882212,
+   "score.sweetness": 1.4271196518385787,
+   "score.kokumi": 6.2136471798192385,
+   "score.sourness": 7.840674995558407,
+   "score.bitterness": 1.0,
+   "ph": 3.9247456648107955
+  },
+  "KCl": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 6.131258774764674,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 4.340551934689748,
+   "score.umami": 1.0,
+   "score.saltiness": 6.445163737687487,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 4.906496741220773,
+   "ph": 7.0
+  },
+  "miso soup (tofu left out: not in the database)": {
+   "raw.umami_intensity": 4.3016946196249375,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 6.981678814129511,
+   "raw.sweetness_intensity": 0.2275672333724351,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 2.3075657345436387,
+   "score.saltiness": 7.200420778739374,
+   "score.sweetness": 1.1900896535969043,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 6.000484544860107
+  },
+  "bo kho (Nov 15, 2026)": {
+   "raw.umami_intensity": 21.59045576749019,
+   "raw.kokumi_intensity_pct": 59.33740050570799,
+   "raw.saltiness_intensity": 8.505165774607084,
+   "raw.sweetness_intensity": 1.1860695728172879,
+   "raw.sourness_intensity": 47.98686615265192,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 7.562748556337942,
+   "score.saltiness": 8.553427764217753,
+   "score.sweetness": 1.9907382134829619,
+   "score.kokumi": 6.340366045513719,
+   "score.sourness": 3.886976538266837,
+   "score.bitterness": 1.0,
+   "ph": 5.394913339458228
+  },
+  "kitchen test A: 8 g/L salt": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 6.610147456695751,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 6.870464215294575,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.0
+  },
+  "kitchen test B: 6 g/L salt": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 5.837739820091214,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 6.184489897775519,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.0
+  },
+  "kitchen test C: 6 g/L salt + 2 g/L MSG": {
+   "raw.umami_intensity": 9.493825056218157,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 6.332934209994942,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 3.885793025992405,
+   "score.saltiness": 6.624271455537865,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.000000000000037
+  },
+  "polyol syrup (v.2.6.3)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 20.259119013995324,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 10.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.0
+  },
+  "erythritol lemonade (v.2.6.3)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.6035770983924191,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 4.204715079160737,
+   "raw.sourness_intensity": 76.4193549125164,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 4.512249197859077,
+   "score.kokumi": 1.0543219388553178,
+   "score.sourness": 5.597526414834013,
+   "score.bitterness": 1.0,
+   "ph": 2.553842835867912
+  },
+  "stevia lemonade, Reb A 97% (v.2.7.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.6989571421111035,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 7.584960598187886,
+   "raw.sourness_intensity": 74.25189326153348,
+   "raw.bitterness_intensity": 1.7536537442755942,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 7.335809032296077,
+   "score.kokumi": 1.0629061427899993,
+   "score.sourness": 5.467128007193155,
+   "score.bitterness": 2.5782883698480346,
+   "ph": 2.553810263025479
+  },
+  "monk fruit tea, mogroside V 50% (v.2.7.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 10.744208824453752,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 9.974767163736171,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.0
+  },
+  "diet soda: sucralose + acesulfame K (v.2.7.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 11.309549077705778,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.44867870337891846,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 10.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.4038108330410266,
+   "ph": 6.999636661636414
+  },
+  "coffee: erythritol + stevia Reb A 60% (v.2.7.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 6.358049740138723,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 6.31095560087454,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.0
+  },
+  "sucralose above tested range (v.2.7.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 18.25208138482551,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 10.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.0
+  },
+  "keto syrup: allulose + maltitol (v.2.7.1)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 38.68491865721232,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 10.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 7.0
+  },
+  "creamy dip: cream cheese + mayo + Dijon (v.2.7.1)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.1225014157370617,
+   "raw.saltiness_intensity": 7.7014216459426965,
+   "raw.sweetness_intensity": 0.3318811411308084,
+   "raw.sourness_intensity": 97.52428798368325,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 7.8396235447978135,
+   "score.sweetness": 1.277224318360687,
+   "score.kokumi": 1.0110251274163355,
+   "score.sourness": 6.86723730665026,
+   "score.bitterness": 1.0,
+   "ph": 4.489963074935451
+  },
+  "hoisin glaze (v.2.7.1)": {
+   "raw.umami_intensity": 9.00572877566671,
+   "raw.kokumi_intensity_pct": 70.17692449002182,
+   "raw.saltiness_intensity": 13.400852417559102,
+   "raw.sweetness_intensity": 10.27497180476314,
+   "raw.sourness_intensity": 8.860267134028865,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 3.737428711915895,
+   "score.saltiness": 10.0,
+   "score.sweetness": 9.582807824045766,
+   "score.kokumi": 7.3159232041019635,
+   "score.sourness": 1.5330496735783292,
+   "score.bitterness": 1.0,
+   "ph": 4.545511329603411
+  },
+  "salsa + hot sauce + yellow mustard (v.2.7.1)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 8.698728176505156,
+   "raw.sweetness_intensity": 1.1543113988201237,
+   "raw.sourness_intensity": 87.1614266375862,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 8.7253303066668,
+   "score.sweetness": 1.9642102278651414,
+   "score.kokumi": 1.0,
+   "score.sourness": 6.243788851393277,
+   "score.bitterness": 1.0,
+   "ph": 3.270114271269941
+  },
+  "50/50 salt + KCl blend (v.2.7.2)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 6.0480128916853335,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.8661650883960516,
+   "score.umami": 1.0,
+   "score.saltiness": 6.371233166412131,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.7795485795564465,
+   "ph": 7.0
+  },
+  "lemonade by volume, 1 cup sugar (v.2.7.2)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.5289576514447912,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 11.446611200028759,
+   "raw.sourness_intensity": 65.34060770264325,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 10.0,
+   "score.kokumi": 1.0476061886300312,
+   "score.sourness": 4.931008973029254,
+   "score.bitterness": 1.0,
+   "ph": 2.5571128759670403
+  },
+  "black coffee (v.2.8.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 2.415476378847708,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 3.1739287409629373,
+   "ph": 5.999963995295543
+  },
+  "coffee with sugar (v.2.8.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 2.4717680547105245,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 2.169913637246315,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 3.06469765584772,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 2.9529222735216836,
+   "ph": 5.999964113353629
+  },
+  "1.5% KCl in water (v.2.8.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 7.144920588781125,
+   "raw.sweetness_intensity": 0.0,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 5.699393444405408,
+   "score.umami": 1.0,
+   "score.saltiness": 7.345395607638655,
+   "score.sweetness": 1.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 6.1294540999648675,
+   "ph": 7.0
+  },
+  "dark chocolate + cocoa drink (v.2.8.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.12830000625947433,
+   "raw.saltiness_intensity": 0.7285900913434327,
+   "raw.sweetness_intensity": 3.187756710625007,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 7.514166342075597,
+   "score.umami": 1.0,
+   "score.saltiness": 1.6470600068864236,
+   "score.sweetness": 3.6627716121248675,
+   "score.kokumi": 1.0115470005633527,
+   "score.sourness": 1.0,
+   "score.bitterness": 7.762749707868037,
+   "ph": 6.373432884182714
+  },
+  "stevia Reb A 97% in water, 1.5 g/L (v.2.8.2)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 18.25208138482551,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 4.42310119430984,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 10.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 4.980791074878857,
+   "ph": 7.0
+  },
+  "chocolate milk, whole (v.2.8.2)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 2.1498096814002174,
+   "raw.sweetness_intensity": 10.129156508309416,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 2.909243460457147,
+   "score.sweetness": 9.461006548962128,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 5.999959916903913
+  },
+  "milk chocolate + water, 1:4 (v.2.8.2)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 11.19064979802471,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 1.1413820273877446,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 10.0,
+   "score.kokumi": 1.0,
+   "score.sourness": 1.0,
+   "score.bitterness": 2.02724382464897,
+   "ph": 6.000282799909581
+  }
+ },
+ "panels": {
+  "salt in water, 3 levels (Webb 2015)": {
+   "n": 3,
+   "spearman": 0.9999999999999998,
+   "model_scores": [
+    6.12160868799486,
+    7.771989502851988,
+    9.408699835676334
+   ],
+   "measured": [
+    7.9,
+    18.0,
+    24.0
+   ]
+  },
+  "sugar in water, 3 levels (Webb 2015)": {
+   "n": 3,
+   "spearman": 0.9999999999999998,
+   "model_scores": [
+    3.1361431672720776,
+    6.0418030052469,
+    10.0
+   ],
+   "measured": [
+    6.95,
+    12.6,
+    19.1
+   ]
+  },
+  "citric acid in water, 3 levels (Webb 2015)": {
+   "n": 3,
+   "spearman": 0.9999999999999998,
+   "model_scores": [
+    1.9189680831836191,
+    3.446831655276441,
+    4.640191216897635
+   ],
+   "measured": [
+    5.4,
+    13.2,
+    18.7
+   ]
+  },
+  "MSG in water, 3 levels (Webb 2015)": {
+   "n": 3,
+   "spearman": 0.9999999999999998,
+   "model_scores": [
+    1.6054425837400765,
+    2.4157836799094987,
+    3.285554466647736
+   ],
+   "measured": [
+    2.61,
+    4.34,
+    7.24
+   ]
+  },
+  "salt with and without MSG (Hayabuchi 2020)": {
+   "n": 6,
+   "spearman": 0.9428571428571428,
+   "model_scores": [
+    4.527370088236718,
+    5.402022973168291,
+    6.184489897775519,
+    6.7042237771458995,
+    7.150887994138556,
+    7.498573622822267
+   ],
+   "measured": [
+    23.5,
+    39.1,
+    55.8,
+    58.2,
+    73.8,
+    72.3
+   ]
+  },
+  "pure salt, 3 levels (Chaiya 2026)": {
+   "n": 3,
+   "spearman": 0.9999999999999998,
+   "model_scores": [
+    5.749112103024112,
+    7.401486865923356,
+    8.363177407535314
+   ],
+   "measured": [
+    23.6,
+    56.94,
+    79.27
+   ]
+  },
+  "KCl and salt blends plus pure salt, L-arginine ignored (Chaiya 2026)": {
+   "n": 15,
+   "spearman": 0.9392857142857143,
+   "model_scores": [
+    3.580502244280264,
+    5.763019690022559,
+    7.40037348300126,
+    3.803036095567768,
+    5.743550738469274,
+    7.466214961570498,
+    4.012486481550615,
+    5.782838542311942,
+    7.52977188934376,
+    4.209923323115069,
+    5.864121674947338,
+    7.498185889234321,
+    5.749112103024112,
+    7.401486865923356,
+    8.363177407535314
+   ],
+   "measured": [
+    15.38,
+    36.23,
+    48.19,
+    11.54,
+    38.6,
+    58.11,
+    12.6,
+    30.75,
+    66.61,
+    13.18,
+    38.07,
+    64.75,
+    23.6,
+    56.94,
+    79.27
+   ]
+  },
+  "sweetness with citric acid, tartaric samples left out (Junge 2020)": {
+   "n": 4,
+   "spearman": 0.9486832980505138,
+   "model_scores": [
+    1.0,
+    1.0,
+    2.4364305870982843,
+    1.9645595189038865
+   ],
+   "measured": [
+    1.53,
+    1.9,
+    6.32,
+    4.53
+   ]
+  },
+  "sourness with sugar, tartaric samples left out (Junge 2020)": {
+   "n": 4,
+   "spearman": 0.9486832980505138,
+   "model_scores": [
+    1.0,
+    4.696673209950189,
+    1.0,
+    4.17293927911129
+   ],
+   "measured": [
+    1.49,
+    6.42,
+    1.51,
+    4.79
+   ]
+  },
+  "sweetness of sugar + citric acid, 18 samples (Mao 2025)": {
+   "n": 18,
+   "spearman": 0.9979360165118678,
+   "model_scores": [
+    2.0815894169058176,
+    2.0226928356833227,
+    2.0078027855470277,
+    1.9515561448237517,
+    1.8978269408465156,
+    1.855292338381234,
+    5.291436184193582,
+    5.007463123730916,
+    4.791902657757845,
+    4.5861395131129,
+    4.348216408892478,
+    4.130085861192713,
+    8.9449865690546,
+    8.04841714609419,
+    7.680240882427682,
+    7.208645349117884,
+    6.830240830961878,
+    6.094732115838847
+   ],
+   "measured": [
+    4.76,
+    4.55,
+    4.38,
+    4.18,
+    3.97,
+    3.94,
+    9.38,
+    9.03,
+    8.55,
+    8.27,
+    6.88,
+    6.08,
+    11.58,
+    11.05,
+    10.65,
+    10.33,
+    9.45,
+    9.34
+   ]
+  },
+  "sourness of citric acid + sugar, 18 samples (Mao 2025)": {
+   "n": 18,
+   "spearman": 0.8161985877761404,
+   "model_scores": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.6699809868938387,
+    1.281783872778712,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    2.224469964132866,
+    1.8301580380108051,
+    1.3074631780212018,
+    1.0280084456017147,
+    1.0,
+    1.0
+   ],
+   "measured": [
+    4.78,
+    3.79,
+    3.67,
+    3.4,
+    3.14,
+    3.03,
+    9.09,
+    6.2,
+    5.69,
+    5.01,
+    4.87,
+    4.41,
+    11.13,
+    8.77,
+    7.84,
+    7.37,
+    6.86,
+    6.13
+   ]
+  },
+  "MSG, IMP and GMP each alone (Wang 2021)": {
+   "n": 6,
+   "spearman": 0.08571428571428572,
+   "model_scores": [
+    1.5892082016204796,
+    3.058596762627035,
+    3.0585967848289375,
+    2.398033009335526,
+    3.0585965544514755,
+    3.0585965661447405
+   ],
+   "measured": [
+    2.7,
+    5.6,
+    6.1,
+    7.1,
+    7.3,
+    7.2
+   ]
+  },
+  "IMP, GMP, AMP, CMP, UMP each alone at 3 mM (Tanaka 2025)": {
+   "n": 5,
+   "spearman": 0.7826237921249264,
+   "model_scores": [
+    3.058596538944718,
+    3.0585965468478897,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "measured": [
+    4.51,
+    4.16,
+    1.03,
+    0.8,
+    1.12
+   ]
+  },
+  "bitterness of KCl blends and pure salt, L-arginine ignored (Chaiya 2026)": {
+   "n": 15,
+   "spearman": 0.8781418413475013,
+   "model_scores": [
+    2.21351535938377,
+    2.486202610580943,
+    2.6321773845037573,
+    2.066635853679709,
+    2.2809833396979196,
+    2.4001526863700358,
+    1.9420053044872367,
+    2.1166814339419773,
+    2.2189976869530845,
+    1.8340297052057344,
+    1.9803432263614509,
+    2.0710028660610016,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "measured": [
+    37.3,
+    41.6,
+    45.7,
+    26.3,
+    39.6,
+    40.2,
+    33.2,
+    45.5,
+    39.0,
+    24.5,
+    30.3,
+    40.4,
+    21.9,
+    23.1,
+    17.1
+   ]
+  },
+  "FOOD akgun2019: saltiness": {
+   "n": 5,
+   "spearman": 0.0,
+   "model_scores": [
+    7.386899739796666,
+    6.629798411186762,
+    6.561427470943849,
+    6.560223822902341,
+    6.559019024957441
+   ],
+   "measured": [
+    59.38,
+    29.75,
+    35.25,
+    43.75,
+    45.25
+   ]
+  },
+  "FOOD akgun2019: umami": {
+   "n": 5,
+   "spearman": 0.6999999999999998,
+   "model_scores": [
+    3.9393679030010817,
+    3.949447748266868,
+    3.9554704374177425,
+    4.29778083470409,
+    4.542139097117584
+   ],
+   "measured": [
+    19.63,
+    16.5,
+    19.25,
+    23.0,
+    25.0
+   ]
+  },
+  "FOOD akgun2019: sweetness": {
+   "n": 5,
+   "spearman": 0.5642880936468347,
+   "model_scores": [
+    1.2558487956558972,
+    1.255848795655897,
+    1.25620842923291,
+    1.2560286430983196,
+    1.2558487956558972
+   ],
+   "measured": [
+    23.88,
+    23.5,
+    24.75,
+    24.13,
+    26.63
+   ]
+  },
+  "FOOD akgun2019: sourness": {
+   "n": 5,
+   "spearman": -0.29999999999999993,
+   "model_scores": [
+    5.700494998495105,
+    5.700494988708388,
+    5.70178978366609,
+    5.685418957745624,
+    5.670623522915008
+   ],
+   "measured": [
+    20.88,
+    26.75,
+    26.25,
+    26.0,
+    26.38
+   ]
+  },
+  "FOOD akgun2019: bitterness": {
+   "n": 5,
+   "spearman": 0.5999999999999999,
+   "model_scores": [
+    1.0,
+    1.5993602306541044,
+    1.4703952278505708,
+    1.4703365970397173,
+    1.4702779214665833
+   ],
+   "measured": [
+    10.13,
+    20.88,
+    11.5,
+    12.75,
+    13.13
+   ]
+  }
+ },
+ "model": {
+  "umami_ref": 29.608646474769145,
+  "synergy_max_fold": 63,
+  "salt_shift_max": 2.0,
+  "kokumi_umami_gain": 0.41
+ }
+}
