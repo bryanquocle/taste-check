@@ -40,3 +40,5 @@ jobs:
         run: python tests/formulate_test.py
       - name: Python / JavaScript parity
         run: python tests/web_parity.py
+      - name: Cooking estimator parity
+        run: python tests/cook_evap_parity.py

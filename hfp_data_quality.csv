@@ -322,3 +322,150 @@ Daikon,nucleotides,1,Horie 2012 Table 2 raw GMP 0.08 mg/100 g (assumed free acid
 "Onion, Welsh",nucleotides,2,Horie 2012 Table 2 negi (A. fistulosum) raw GMP 0.09 mg/100 g (assumed free acid). v.2.9.0
 Spinach,nucleotides,1,"Horie 2012 Table 2 raw GMP 0.43 mg/100 g (assumed free acid). Note: Horie glutamate 67 vs DB 9.9, unresolved. v.2.9.0"
 Saccharin (Sodium),density,3,Placeholder 0.6 g/mL for sodium saccharin powder (no source); weigh it instead of measuring by volume. v.2.9.0
+"Extract, Vanilla",sugars,3,USDA SR Legacy 173471 total sugar 12.65 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Nutmeg (Ground)",sugars,3,USDA SR Legacy 171326 total sugar 2.99 g/100 g counted as sucrose (no split published). v.2.10.0
+"Herb, Thyme",sugars,3,USDA SR Legacy 170938 total sugar 1.71 g/100 g counted as sucrose (no split published). v.2.10.0
+"Butter, Unsalted",sugars,3,USDA SR Legacy 173430 total sugar 0.06 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, Semisweet Chips",sugars,3,USDA SR Legacy 167976 total sugar 54.5 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Cayenne (Ground)",sugars,3,USDA SR Legacy 170932 total sugar 10.34 g/100 g counted as sucrose (no split published). v.2.10.0
+"Coconut, Sweetened Shredded",sugars,3,USDA SR Legacy 168586 total sugar 43.17 g/100 g counted as sucrose (no split published). v.2.10.0
+Orange,sugars,3,USDA SR Legacy 169097 total sugar 9.35 g/100 g counted as sucrose (no split published). v.2.10.0
+Lemon Zest,sugars,3,USDA SR Legacy 167749 total sugar 4.17 g/100 g counted as sucrose (no split published). v.2.10.0
+Marshmallows,sugars,3,USDA SR Legacy 167995 total sugar 57.56 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chili Pepper, Green (Canned, Diced)",sugars,3,USDA SR Legacy 170426 total sugar 3.12 g/100 g counted as sucrose (no split published). v.2.10.0
+"Gelatin Dessert, Flavored (Dry Mix)",sugars,3,USDA SR Legacy 168775 total sugar 86.04 g/100 g counted as sucrose (no split published). v.2.10.0
+Pumpkin,sugars,3,USDA SR Legacy 168450 total sugar 3.3 g/100 g counted as sucrose (no split published). v.2.10.0
+"Milk, Sweetened Condensed",sugars,3,USDA SR Legacy 171275 total sugar 54.4 g/100 g counted as sucrose (no split published). v.2.10.0
+"Mix, Yellow Cake",sugars,3,USDA SR Legacy 174947 total sugar 43.29 g/100 g counted as sucrose (no split published). v.2.10.0
+Pimiento (Jarred),sugars,3,USDA SR Legacy 168559 total sugar 2.71 g/100 g counted as sucrose (no split published). v.2.10.0
+"Pudding Mix, Vanilla",sugars,3,USDA SR Legacy 168784 total sugar 92.9 g/100 g counted as sucrose (no split published). v.2.10.0
+"Herb, Sage",sugars,3,USDA SR Legacy 170935 total sugar 1.71 g/100 g counted as sucrose (no split published). v.2.10.0
+"Soup Mix, Onion (Dry)",sugars,3,USDA SR Legacy 171165 total sugar 4.65 g/100 g counted as sucrose (no split published). v.2.10.0
+"Mix, Bisquick",sugars,3,USDA SR Legacy 174902 total sugar 11.65 g/100 g counted as sucrose (no split published). v.2.10.0
+Water Chestnut,sugars,3,USDA SR Legacy 170067 total sugar 2.46 g/100 g counted as sucrose (no split published). v.2.10.0
+Horseradish,sugars,3,USDA SR Legacy 173472 total sugar 7.99 g/100 g counted as sucrose (no split published). v.2.10.0
+Vanilla Ice Cream,sugars,3,USDA SR Legacy 167575 total sugar 21.22 g/100 g counted as sucrose (no split published). v.2.10.0
+Maraschino Cherry,sugars,3,USDA SR Legacy 167766 total sugar 38.77 g/100 g counted as sucrose (no split published). v.2.10.0
+"Cream, Whipped (Sweetened)",sugars,3,USDA SR Legacy 170860 total sugar 8 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spirit, Whiskey",sugars,3,USDA SR Legacy 174819 total sugar 0.1 g/100 g counted as sucrose (no split published). v.2.10.0
+Arugula,sugars,3,USDA SR Legacy 169387 total sugar 2.05 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Pumpkin Pie Spice (Blend)",sugars,3,USDA SR Legacy 171332 total sugar 7.76 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, White",sugars,3,USDA SR Legacy 167571 total sugar 59 g/100 g counted as sucrose (no split published). v.2.10.0
+Fennel,sugars,3,USDA SR Legacy 169385 total sugar 3.93 g/100 g counted as sucrose (no split published). v.2.10.0
+"Herb, Marjoram",sugars,3,USDA SR Legacy 170928 total sugar 4.09 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Taco Seasoning (Blend, Salted)",sugars,3,USDA SR Legacy 172243 total sugar 10.83 g/100 g counted as sucrose (no split published). v.2.10.0
+"Mix, Chocolate Cake",sugars,3,USDA SR Legacy 174935 total sugar 39.53 g/100 g counted as sucrose (no split published). v.2.10.0
+Marshmallow Cream,sugars,3,USDA SR Legacy 169664 total sugar 46.8 g/100 g counted as sucrose (no split published). v.2.10.0
+"Mix, Stuffing",sugars,3,USDA SR Legacy 174930 total sugar 8.27 g/100 g counted as sucrose (no split published). v.2.10.0
+White Bean,sugars,3,USDA SR Legacy 175204 total sugar 0.29 g/100 g counted as sucrose (no split published). v.2.10.0
+Red Chile,sugars,3,USDA SR Legacy 170106 total sugar 5.3 g/100 g counted as sucrose (no split published). v.2.10.0
+"Mix, Cornbread",sugars,3,USDA SR Legacy 174908 total sugar 20.34 g/100 g counted as sucrose (no split published). v.2.10.0
+"Pudding Mix, Chocolate",sugars,3,USDA SR Legacy 168779 total sugar 67.86 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Caraway (Whole Seed)",sugars,3,USDA SR Legacy 170918 total sugar 0.64 g/100 g counted as sucrose (no split published). v.2.10.0
+Whipped Topping (Non-Dairy),sugars,3,USDA SR Legacy 170868 total sugar 23.05 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Poultry Seasoning (Blend)",sugars,3,USDA SR Legacy 171331 total sugar 1.8 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Cumin (Whole Seed)",sugars,3,USDA SR Legacy 170923 total sugar 2.25 g/100 g counted as sucrose (no split published). v.2.10.0
+Sucralose Blend (Splenda Granulated),sugars,3,USDA SR Legacy 170257 total sugar 80.33 g/100 g counted as sucrose (no split published). v.2.10.0
+Bean Sprout,sugars,3,USDA SR Legacy 169957 total sugar 4.13 g/100 g counted as sucrose (no split published). v.2.10.0
+"Milk, Nonfat Dry",sugars,3,USDA SR Legacy 171272 total sugar 52.19 g/100 g counted as sucrose (no split published). v.2.10.0
+Egg Substitute,sugars,3,USDA SR Legacy 173462 total sugar 2 g/100 g counted as sucrose (no split published). v.2.10.0
+"Jam, Strawberry",sugars,3,USDA SR Legacy 169641 total sugar 48.5 g/100 g counted as sucrose (no split published). v.2.10.0
+Frosting,sugars,3,USDA SR Legacy 169620 total sugar 63.1 g/100 g counted as sucrose (no split published). v.2.10.0
+"Corn Syrup, Light",sugars,3,USDA SR Legacy 168837 total sugar 76.77 g/100 g counted as sucrose (no split published). v.2.10.0
+Butterscotch Chips,sugars,3,USDA SR Legacy 167980 total sugar 67.1 g/100 g counted as sucrose (no split published). v.2.10.0
+"Mix, White Cake",sugars,3,USDA SR Legacy 172708 total sugar 48.95 g/100 g counted as sucrose (no split published). v.2.10.0
+Caramel,sugars,3,USDA SR Legacy 167974 total sugar 65.5 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, Syrup",sugars,3,USDA SR Legacy 174117 total sugar 49.65 g/100 g counted as sucrose (no split published). v.2.10.0
+"Jam, Apricot",sugars,3,USDA SR Legacy 170645 total sugar 43.4 g/100 g counted as sucrose (no split published). v.2.10.0
+Fruit Cocktail,sugars,3,USDA SR Legacy 173028 total sugar 17.91 g/100 g counted as sucrose (no split published). v.2.10.0
+Croutons,sugars,3,USDA SR Legacy 172752 total sugar 4.41 g/100 g counted as sucrose (no split published). v.2.10.0
+"Jam, Orange Marmalade",sugars,3,USDA SR Legacy 168819 total sugar 60 g/100 g counted as sucrose (no split published). v.2.10.0
+"Sauce, Caramel",sugars,3,USDA SR Legacy 168841 total sugar 57 g/100 g counted as sucrose (no split published). v.2.10.0
+Bran,sugars,3,USDA SR Legacy 169722 total sugar 0.41 g/100 g counted as sucrose (no split published). v.2.10.0
+Parsnip,sugars,3,USDA SR Legacy 170417 total sugar 4.8 g/100 g counted as sucrose (no split published). v.2.10.0
+Tapioca,sugars,3,USDA SR Legacy 169717 total sugar 3.35 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Onion (Dried Flakes)",sugars,3,USDA SR Legacy 170002 total sugar 37.41 g/100 g counted as sucrose (no split published). v.2.10.0
+"Jam, Grape",sugars,3,USDA SR Legacy 169642 total sugar 51.22 g/100 g counted as sucrose (no split published). v.2.10.0
+"Sauce, Teriyaki",sugars,3,USDA SR Legacy 171167 total sugar 14.1 g/100 g counted as sucrose (no split published). v.2.10.0
+Biscuit,sugars,3,USDA SR Legacy 172668 total sugar 7.4 g/100 g counted as sucrose (no split published). v.2.10.0
+Whipped Topping Mix,sugars,3,USDA SR Legacy 170865 total sugar 52.54 g/100 g counted as sucrose (no split published). v.2.10.0
+Soymilk,sugars,3,USDA SR Legacy 172446 total sugar 3.99 g/100 g counted as sucrose (no split published). v.2.10.0
+"Liqueur, Coffee",sugars,3,USDA SR Legacy 175097 total sugar 38.3 g/100 g counted as sucrose (no split published). v.2.10.0
+Candied Fruit,sugars,3,USDA SR Legacy 167781 total sugar 80.68 g/100 g counted as sucrose (no split published). v.2.10.0
+Pita Bread,sugars,3,USDA SR Legacy 174915 total sugar 1.3 g/100 g counted as sucrose (no split published). v.2.10.0
+Swiss Chard,sugars,3,USDA SR Legacy 169991 total sugar 1.1 g/100 g counted as sucrose (no split published). v.2.10.0
+Bok Choy,sugars,3,USDA SR Legacy 170390 total sugar 1.18 g/100 g counted as sucrose (no split published). v.2.10.0
+Orange Sherbet,sugars,3,USDA SR Legacy 167577 total sugar 24.32 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Red Pepper Flakes (Dried)",sugars,3,USDA SR Legacy 170932 total sugar 10.34 g/100 g counted as sucrose (no split published). v.2.10.0
+"Flour, Rice",sugars,3,USDA SR Legacy 169714 total sugar 0.12 g/100 g counted as sucrose (no split published). v.2.10.0
+Kaiser Roll,sugars,3,USDA SR Legacy 175031 total sugar 1.77 g/100 g counted as sucrose (no split published). v.2.10.0
+Fig,sugars,3,USDA SR Legacy 173021 total sugar 16.26 g/100 g counted as sucrose (no split published). v.2.10.0
+Hominy,sugars,3,USDA SR Legacy 169701 total sugar 1.51 g/100 g counted as sucrose (no split published). v.2.10.0
+"Wine, Cooking",sugars,3,USDA SR Legacy 169070 total sugar 1.55 g/100 g counted as sucrose (no split published). v.2.10.0
+Phyllo,sugars,3,USDA SR Legacy 172791 total sugar 0.18 g/100 g counted as sucrose (no split published). v.2.10.0
+"Pie Filling, Apple",sugars,3,USDA SR Legacy 168822 total sugar 13.8 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, Wafer",sugars,3,USDA SR Legacy 172714 total sugar 37.43 g/100 g counted as sucrose (no split published). v.2.10.0
+Jicama,sugars,3,USDA SR Legacy 170073 total sugar 1.8 g/100 g counted as sucrose (no split published). v.2.10.0
+"Pie Filling, Blueberry",sugars,3,USDA SR Legacy 167738 total sugar 37.75 g/100 g counted as sucrose (no split published). v.2.10.0
+Rye Bread,sugars,3,USDA SR Legacy 172684 total sugar 3.85 g/100 g counted as sucrose (no split published). v.2.10.0
+"Spice, Celery Seed (Whole)",sugars,3,USDA SR Legacy 170920 total sugar 0.67 g/100 g counted as sucrose (no split published). v.2.10.0
+"Pasta, Rice",sugars,3,USDA SR Legacy 169742 total sugar 0.12 g/100 g counted as sucrose (no split published). v.2.10.0
+Great Northern Bean,sugars,3,USDA SR Legacy 175192 total sugar 1.41 g/100 g counted as sucrose (no split published). v.2.10.0
+Radicchio,sugars,3,USDA SR Legacy 168564 total sugar 0.6 g/100 g counted as sucrose (no split published). v.2.10.0
+Grenadine,sugars,3,USDA SR Legacy 168088 total sugar 46.55 g/100 g counted as sucrose (no split published). v.2.10.0
+Endive,sugars,3,USDA SR Legacy 168412 total sugar 0.25 g/100 g counted as sucrose (no split published). v.2.10.0
+Nutella,sugars,3,USDA SR Legacy 168000 total sugar 54.05 g/100 g counted as sucrose (no split published). v.2.10.0
+Toffee,sugars,3,USDA SR Legacy 169671 total sugar 63.47 g/100 g counted as sucrose (no split published). v.2.10.0
+Navy Bean,sugars,3,USDA SR Legacy 173747 total sugar 0.28 g/100 g counted as sucrose (no split published). v.2.10.0
+"Flour, Tapioca",sugars,3,USDA SR Legacy 169717 total sugar 3.35 g/100 g counted as sucrose (no split published). v.2.10.0
+Sweet Relish,sugars,3,USDA SR Legacy 168561 total sugar 29.13 g/100 g counted as sucrose (no split published). v.2.10.0
+Dinner Roll,sugars,3,USDA SR Legacy 172793 total sugar 5.55 g/100 g counted as sucrose (no split published). v.2.10.0
+Dried Cherry,sugars,3,USDA SR Legacy 171708 total sugar 67.15 g/100 g counted as sucrose (no split published). v.2.10.0
+Almond Paste,sugars,3,USDA SR Legacy 170160 total sugar 36.25 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, Frosting",sugars,3,USDA SR Legacy 168795 total sugar 57.7 g/100 g counted as sucrose (no split published). v.2.10.0
+Bulgur,sugars,3,USDA SR Legacy 170688 total sugar 0.41 g/100 g counted as sucrose (no split published). v.2.10.0
+"Sauce, Cocktail",sugars,3,USDA SR Legacy 174067 total sugar 11.83 g/100 g counted as sucrose (no split published). v.2.10.0
+Collard Greens,sugars,3,USDA SR Legacy 170406 total sugar 0.46 g/100 g counted as sucrose (no split published). v.2.10.0
+"Juice, Apple Concentrate",sugars,3,USDA SR Legacy 173934 total sugar 38.83 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, Sweet",sugars,3,USDA SR Legacy 167977 total sugar 51.48 g/100 g counted as sucrose (no split published). v.2.10.0
+"Flour, Brown Rice",sugars,3,USDA SR Legacy 168898 total sugar 0.66 g/100 g counted as sucrose (no split published). v.2.10.0
+Granola,sugars,3,USDA SR Legacy 171646 total sugar 19.8 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, Ice Cream",sugars,3,USDA SR Legacy 168809 total sugar 25.36 g/100 g counted as sucrose (no split published). v.2.10.0
+"Mix, Chili Seasoning",sugars,3,USDA SR Legacy 173476 total sugar 8.67 g/100 g counted as sucrose (no split published). v.2.10.0
+Watercress,sugars,3,USDA SR Legacy 170068 total sugar 0.2 g/100 g counted as sucrose (no split published). v.2.10.0
+Apple Butter,sugars,3,USDA SR Legacy 168816 total sugar 35.3 g/100 g counted as sucrose (no split published). v.2.10.0
+"Cheese, Muenster",sugars,3,USDA SR Legacy 171245 total sugar 1.12 g/100 g counted as sucrose (no split published). v.2.10.0
+Unsweetened Coconut,sugars,3,USDA SR Legacy 170170 total sugar 7.35 g/100 g counted as sucrose (no split published). v.2.10.0
+"Cheese, Longhorn",sugars,3,USDA SR Legacy 173416 total sugar 0.52 g/100 g counted as sucrose (no split published). v.2.10.0
+"Frosting, Cream Cheese",sugars,3,USDA SR Legacy 169619 total sugar 63.54 g/100 g counted as sucrose (no split published). v.2.10.0
+Matzo Meal,sugars,3,USDA SR Legacy 172740 total sugar 0.29 g/100 g counted as sucrose (no split published). v.2.10.0
+Banana Pepper,sugars,3,USDA SR Legacy 169394 total sugar 1.95 g/100 g counted as sucrose (no split published). v.2.10.0
+Tortellini,sugars,3,USDA SR Legacy 172094 total sugar 0.95 g/100 g counted as sucrose (no split published). v.2.10.0
+Wax Bean,sugars,3,USDA SR Legacy 169320 total sugar 3.27 g/100 g counted as sucrose (no split published). v.2.10.0
+Pastry Sheet,sugars,3,USDA SR Legacy 172790 total sugar 0.74 g/100 g counted as sucrose (no split published). v.2.10.0
+Beef Gravy,sugars,3,USDA SR Legacy 171564 total sugar 0.21 g/100 g counted as sucrose (no split published). v.2.10.0
+Grated Coconut,sugars,3,USDA SR Legacy 170169 total sugar 6.23 g/100 g counted as sucrose (no split published). v.2.10.0
+Croissant,sugars,3,USDA SR Legacy 174987 total sugar 11.26 g/100 g counted as sucrose (no split published). v.2.10.0
+"Sauce, Chocolate",sugars,3,USDA SR Legacy 168835 total sugar 34.82 g/100 g counted as sucrose (no split published). v.2.10.0
+"Candy Bar, Butterfinger",sugars,3,USDA SR Legacy 167565 total sugar 45.9 g/100 g counted as sucrose (no split published). v.2.10.0
+"Flour, Chickpea",sugars,3,USDA SR Legacy 174288 total sugar 10.85 g/100 g counted as sucrose (no split published). v.2.10.0
+Rice Milk,sugars,3,USDA SR Legacy 171942 total sugar 5.28 g/100 g counted as sucrose (no split published). v.2.10.0
+Stove Top Stuffing,sugars,3,USDA SR Legacy 175079 total sugar 10.1 g/100 g counted as sucrose (no split published). v.2.10.0
+Masa Harina,sugars,3,USDA SR Legacy 169694 total sugar 1.61 g/100 g counted as sucrose (no split published). v.2.10.0
+Whole Wheat Pita Bread,sugars,3,USDA SR Legacy 174916 total sugar 2.87 g/100 g counted as sucrose (no split published). v.2.10.0
+"Flour, Soy",sugars,3,USDA SR Legacy 174273 total sugar 7.5 g/100 g counted as sucrose (no split published). v.2.10.0
+"Flour, Corn",sugars,3,USDA SR Legacy 170290 total sugar 0.64 g/100 g counted as sucrose (no split published). v.2.10.0
+"Wine, Dry Red",sugars,3,USDA SR Legacy 173190 total sugar 0.62 g/100 g counted as sucrose (no split published). v.2.10.0
+Chili with Beans (Canned),sugars,3,USDA SR Legacy 175207 total sugar 1.65 g/100 g counted as sucrose (no split published). v.2.10.0
+"Dressing, Sesame",sugars,3,USDA SR Legacy 171006 total sugar 8.32 g/100 g counted as sucrose (no split published). v.2.10.0
+"Candy Bar, Snickers",sugars,3,USDA SR Legacy 169589 total sugar 50.47 g/100 g counted as sucrose (no split published). v.2.10.0
+"Sauce, Cheese",sugars,3,USDA SR Legacy 171191 total sugar 0.42 g/100 g counted as sucrose (no split published). v.2.10.0
+"Rice, Yellow",sugars,3,USDA SR Legacy 168956 total sugar 1.75 g/100 g counted as sucrose (no split published). v.2.10.0
+Kumquat,sugars,3,USDA SR Legacy 168154 total sugar 9.36 g/100 g counted as sucrose (no split published). v.2.10.0
+"Cookie, Sugar",sugars,3,USDA SR Legacy 174972 total sugar 36.51 g/100 g counted as sucrose (no split published). v.2.10.0
+"Dressing, Caesar Salad",sugars,3,USDA SR Legacy 169055 total sugar 2.81 g/100 g counted as sucrose (no split published). v.2.10.0
+"Chocolate, Chip Cookie",sugars,3,USDA SR Legacy 174953 total sugar 38.04 g/100 g counted as sucrose (no split published). v.2.10.0
+"Cereal, Bran Flakes",sugars,3,USDA SR Legacy 173888 total sugar 18.6 g/100 g counted as sucrose (no split published). v.2.10.0
+"Candy, Gumdrops",sugars,3,USDA SR Legacy 167989 total sugar 58.97 g/100 g counted as sucrose (no split published). v.2.10.0
+"Soup, Cream of Onion",sugars,3,USDA SR Legacy 171552 total sugar 3.64 g/100 g counted as sucrose (no split published). v.2.10.0
+Bologna,sugars,3,USDA SR Legacy 172013 total sugar 4.42 g/100 g counted as sucrose (no split published). v.2.10.0

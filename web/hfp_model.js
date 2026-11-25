@@ -1,4 +1,4 @@
-/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.9.0).
+/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.10.0).
    Same equations, constants and defaults as the Python model (acidity on, chloride-only K, shift mode,
    synergy capped at 63x, v.2.8.4). hfp_model.py is the source of truth: change it first, then mirror the change here.
    Parity-tested against Python with tests/web_parity.py (Node), raw values and 1-10 scores. Needs window.HFP_DB. */

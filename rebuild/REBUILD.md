@@ -2,7 +2,7 @@
 
 **Taste Check** (https://tools.mendocinofoodconsulting.com/taste-check/) predicts how salty, savory (umami), sweet, sour, bitter and rich (kokumi) a recipe should taste from its chemistry. This document is a complete specification of the model as it runs on the live page, written so that you, or you and your AI, can rebuild it from scratch and check that your version gives the same numbers.
 
-- **Model version:** 2.9.0 (sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin, data fixes; Nov 25, 2026; whole-food tasted basis from 2.8.5; synergy cap 63× from 2.8.4; bitterness v.2.8.3). **Ingredient data:** the database embedded in the same page (432 research ingredients: workbook data release v.2.6.9 plus the theobromine and saccharin columns, three chocolate rows and the sodium saccharin row).
+- **Model version:** 2.10.0 (taste equations unchanged from 2.9.0; Nov 25, 2026: 824 ingredients, recipe-paste coverage of the 1,000 most common missing recipe ingredients, and a pot-based cooking water-loss estimator on the page). 2.9.0: sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin. **Ingredient data:** the database embedded in the same page (824 research ingredients: workbook data release v.2.6.9, the bitterness and saccharin additions, and 392 composition rows from USDA FoodData Central SR Legacy 2018-04 added in v.2.10.0; section 13).
 - **Source of truth:** the JavaScript embedded in the live page between the markers `/*HFP_DB:BEGIN*/ … /*HFP_DB:END*/` (database), `/*HFP_MODEL:BEGIN*/ … /*HFP_MODEL:END*/` (model) and `/*HFP_PASTE:BEGIN*/ … /*HFP_PASTE:END*/` (recipe paste parser). Where this document and that code disagree, the code wins, and that is a bug in this document.
 - **Date:** November 25, 2026. **Author of the model:** Dr. Bryan Quoc Le, Mendocino Food Consulting (Human Flavorome Project).
 
@@ -34,7 +34,7 @@ The six raw scales come from different studies and are **not commensurable**: a 
 | File | What it is |
 |---|---|
 | `REBUILD.md` | This specification. |
-| `hfp_ingredients_v2.9.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `19f6f9baf9ded985cd496245ccfe3d23fde08e12bdd5ff995b659f404f66fe62` |
+| `hfp_ingredients_v2.10.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `c34dcac3ceced3336c6476d57f4a751d36d28652fb62bd1a4b4f38cfb3211d16` |
 | `hfp_ingredient_provenance.csv` | Where ingredient values came from, where that was recorded: data-quality tier and basis per field, pH source and organic-acid source (section 13.4). |
 | `test_recipes.json` | 53 recipes (38 project golden recipes + 15 added for this package) and 3 paste-parser cases, with expected outputs computed by executing the live page's JavaScript, plus tolerances (section 15). |
 | `paste_rules.csv` | Every rule table and message of the recipe paste parser, exported programmatically from the live page (section 5.5). |
@@ -50,7 +50,7 @@ To get the live page: `curl -L -o index.html https://tools.mendocinofoodconsulti
 
 ## 3. How to rebuild and verify (short version)
 
-1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.9.0.csv` plus the two helper rows in section 5.2.
+1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.10.0.csv` plus the two helper rows in section 5.2.
 2. Run every recipe in `test_recipes.json` through your implementation and compare with `expected` using the tolerances in the file (raw outputs within 1e-6 relative, scores within 0.05, pH within 1e-4).
 3. Two derived constants must come out the same as the reference: the Miranda logistic fit (S50 = 29.4 mM, Hill = 0.9; section 7.4) and the score references (section 10). They are printed in `test_recipes.json` under `derived_constants`. If yours differ, check the grid search and bisection details first.
 4. Optional: `node tools/oracle.js index.html tools/test_recipe_inputs.json test_recipes.json` regenerates the expected values from a fresh copy of the live page; `python check_spec.py index.html` checks this document against that page.
@@ -112,7 +112,21 @@ If an ingredient has density 0, a volume amount counts as 0 g and a note says so
 - **Thermal loss of cysteine sulfoxides** (Chen et al. 2017, alliin kinetics, first order): fraction remaining `f = (1 − cut) × exp(−k × t)`, with `k = 4.38e17 × exp(−142494 / (8.314 × (T + 273.15)))` per minute, T in °C, t = item cooking minutes. If t = 0 or T is not given, the thermal factor is 1. Chen fitted 60–89 °C; outside that range a note says the loss is extrapolated. ASSUMPTION: alliin kinetics are applied to all cysteine sulfoxides (isoalliin, methiin), in pure solution, not tissue.
 - The item cooking time is the item's own `cook_min` if present, otherwise the recipe `cook_min`.
 
-**What the page does:** the cooking box takes minutes, the liquid temperature in °F (capped at 212 °F; default 200 °F) and "cooked down by P% weight". It passes `cook_min` and `cook_temp_c = (°F − 32) × 5/9` only when minutes > 0. Negative inputs are read as 0. Note that the default 200 °F (93.3 °C) is above Chen's 60–89 °C range, so cooked recipes on the page always carry the extrapolation note.
+**What the page does (v.2.10.0):** the cooking box takes minutes, a heat setting (bare simmer 195 °F, simmer 205 °F (default), rolling boil 212 °F), a pot type (or "not sure") and the lid (off, ajar, on). It passes `cook_min` and `cook_temp_c = (°F − 32) × 5/9` only when minutes > 0, and `water_loss_g` from the estimator in 5.3.1 (used only when it is above 0.5 g). An optional "cooked down by P% weight" box overrides the estimate (`water_loss_g = total mass × P/100`). Negative inputs are read as 0. Shared links store {m, t, r, p, l}; an older link's temperature snaps to the nearest heat setting. All three heat settings are above Chen's 60–89 °C range, so cooked recipes on the page carry the extrapolation note.
+
+### 5.3.1 Cooking water-loss estimator (page, block HFP_COOK, v.2.10.0)
+
+Not part of the taste model: it only sets `water_loss_g`. Inputs: recipe mass M (g, read as mL: ASSUMPTION 1 g/mL), minutes, liquid °F, pot type (optional), lid. Sources and validation: `validation/cook_evaporation/REPORT.md` in the model folder; Python reference `cook_evap.py`, parity with the page within 0.5 g on 1,575 cases.
+
+1. **Surface flux** (Shah 2014, ASHRAE Trans. 120(2) SE-14-001, Eqs. 1–2; valid to 94 °C): `E = max(35 × Δρ^(1/3) × (ρv,w − ρda,w × Wr), 0.00005 × (pw − pr), 0)` kg/m²/h, with the liquid temperature capped at 99.97 °C; pw = saturation pressure at the liquid (Hyland–Wexler, ASHRAE Fundamentals 2017 Ch. 1 Eq. 6: `exp(−5.8002206e3/T + 1.3914993 − 4.8640239e−2 T + 4.1764768e−5 T² − 1.4452093e−8 T³ + 6.5459673 ln T)` Pa, T in K); room air ROOM_C 22 °C at ROOM_RH 0.50, pr = 0.5 × pws(22 °C); ρda = (101325 − pv)/(287.042 T), ρv = pv/(461.52 T), W = ρv/ρda; Δρ = max(ρda,room − ρda,w, 0).
+2. **Rate in a pot** (g/min) at liquid volume V: surface area A(V) (cylinder: π(d/2)²; flared pan: frustum, solved for the liquid height by 60-step bisection); `surf = min(K × E × A × 1000/60, full)`, where `full = P_net × 1000/2.257e6 × 1000 × 60` and P_net = 0.92 kW if the pot's top diameter ≤ 20.5 cm, else 1.79 kW (Frontier Energy 2019, SMUD report 501318071-R0, Tables 1–2). Boil weight `w = clamp((°F − 210)/2, 0, 1)`; `boil = max(throttle × full, E(100 °C) × A × 1000/60)`; rate = `(1 − w) surf + w boil`, times the lid factor.
+3. **Settings** (central / low / high): K 1.3 / 1.0 / 1.5 (ASSUMPTION, calibrated on Opadokun 2019 and Boelter 1946); throttle 0.75 / 0.5 / 1.0 (ASSUMPTION); lid off 1, ajar 0.4 / 0.25 / 0.6 (ASSUMPTION), on 0.01 / 0.003 / 0.08 (Opadokun 2019; Brundrett & Poultney 1979; Newborough & Probert 1987; Aprovecho/Berick).
+4. **Time stepping:** 0.5-minute steps; the volume falls by each step's loss.
+5. **Pots** (name, type, capacity L, top/bottom diameter cm, depth cm; IN = 2.54, QT = 0.946353): Saucepan 2 qt (2 QT, 6 in, 6 in, 4.5 in); Saucepan 3 qt (3 QT, 8.5 in, 8.5 in, 4 in); Sauté pan 3 qt (3 QT, 10.5 in, 10.5 in, 4 in); Skillet 10 in (frustum, 10.5 in, 8 in, 2 in); Skillet 12 in (frustum, 12.2 in, 9.125 in, 2.25 in); Wok 14 in (frustum, 14 in, 6 in, 4 in; ASSUMED); Dutch oven 3.5, 5.5, 7.25 QT (22, 26, 28 cm); Stockpot 8 QT (11.5 in); Stockpot 15 L (28 cm). Sources: All-Clad D3 and Le Creuset specs (Williams-Sonoma), Lodge (dimensions.com, Abt).
+6. **Which pots:** saucepan, Dutch oven, stockpot when 25–80% full; skillet, sauté pan, wok when 10–80% full and, with no pot picked, only up to PAN_MAX_L 1.5 L. If none fits, the pot whose fill is nearest the window. All ASSUMPTION.
+7. **Output:** central = mean over the fitting pots at central settings; low = minimum at low settings; high = maximum at high settings; each capped at CAP_FRAC 0.6 × recipe water (ASSUMPTION), with a page message when the central estimate hits the cap.
+
+Validation (REPORT.md): Shah Table 12 reproduced to 0.1%; Opadokun 2019 (28 cm pot, 90 °C, 45 min) −21 to −34% at K = 1.0 and −14 to +3% at K = 1.3 (a fit); expect about ±30% in real kitchens.
 
 ### 5.4 Evaporation (cooking down)
 
@@ -124,7 +138,9 @@ If total water is ≤ 0 after evaporation, the model throws "This recipe has no 
 
 The page's "paste a whole recipe" box turns free-text lines into recipe items. It is not part of the taste model, but it decides what goes into it. **Every rule table is published in `paste_rules.csv`**, exported programmatically from the live page's HFP_PASTE block by `tools/export_paste_rules.js` (the script runs the page's own parser code in a sandbox and dumps its tables; nothing is retyped). Tables in the CSV (column `table`): FRAC (unicode fractions), NUMBER/QTY/SIZE (quantity and package-size regular expressions), UNITS (28 unit-word patterns → unit, first match wins, including synonyms such as ounce/ounces, cups, shots, tbs, T vs t), MAP (227 text patterns → database name, in order; first match wins), SKIP_FIRST, SKIP, HEADER, DESCRIPT, GUARDED, EACH_G, UNIT_G, CAN_G, VOL, APPROX_NOTE, and MESSAGE (every status/note text in the parser). Regex columns hold the JavaScript source and flags (all case-insensitive except NUMBER and DESCRIPT, which has the `g` flag).
 
-MAP values: a plain name = match; `name*` = approximate match (status `approx`, note = APPROX_NOTE[name] or "closest match"); `!reason` = refuse the line (status `none`, note = the reason); `BLEND` = refuse as a tabletop blend; `Tomato (Canned)|fresh-if-count` = use "Tomato, Red (Fresh, Whole)" when the line has no unit (or unit `each`) and no package size; `Fish, Salmon (Fresh)|canned-if-can` = use "Fish, Salmon (Canned)" when the unit is can, jar or pkg or a package size is given.
+**v.2.10.0 additions:** the parser now reads the 1,000 most common RecipeNLG ingredients that were missing (validation/missing_ingredients): rules between `/*AUTO_PHRASES*/` (multi-word names, longest first, top of MAP) and `/*AUTO_SINGLE*/` (one-word names anchored to the whole line, so "green pepper" can never hit a one-word "pepper" rule) are generated from that list by `gen_paste_rules.py`; `/*AUTO_EACH*/` adds per-piece weights from USDA SR portions (1 medium / large / whole). Fixes: "mayo" (a `\b` escape bug), baking soda and powder (no longer skipped; they carry sodium), white wine vinegar (approximate: red wine vinegar), red and bell peppers ("1/2 tsp red pepper" = crushed red pepper via `Red Sweet Pepper|spice-if-spoon`), heavy cream, sherry (cooking wine, approximate). Pasta, rice, bread, zest and yeast are no longer skipped. Refusal messages that new rows made out of date were rewritten as matches.
+
+MAP values: a plain name = match; `name*` = approximate match (status `approx`, note = APPROX_NOTE[name] or "closest match"); `!reason` = refuse the line (status `none`, note = the reason); `BLEND` = refuse as a tabletop blend; `Tomato (Canned)|fresh-if-count` = use "Tomato, Red (Fresh, Whole)" when the line has no unit (or unit `each`) and no package size; `Fish, Salmon (Fresh)|canned-if-can` = use "Fish, Salmon (Canned)" when the unit is can, jar or pkg or a package size is given; `Red Sweet Pepper|spice-if-spoon` = use "Spice, Red Pepper Flakes (Dried)" when the unit is tsp, tbsp or pinch and no package size is given.
 
 **parseLine(line)** → {qty, unit, size, text}:
 1. Replace each FRAC character by its value (e.g. "½" → " 1/2"); strip leading spaces, hyphens, en dashes, bullets, asterisks and middle dots; collapse whitespace; trim.
@@ -568,7 +584,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 
 ### 13.1 Structure
 
-`hfp_ingredients_v2.9.0.csv` has one row per ingredient (432 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
+`hfp_ingredients_v2.10.0.csv` has one row per ingredient (824 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
 
 | Column | Units | Meaning |
 |---|---|---|
@@ -591,6 +607,8 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 | ph_ref | pH | Reference pH for calibration (blank = none) |
 | blank_fields | list | Fields that were blank in the source (glu, amp, imp, gmp, acids); used only for data-gap flags |
 | tiers | field:tier list | Data-quality tier for fields with one (see 13.2) |
+
+**USDA composition rows (v.2.10.0).** 392 rows carry composition from USDA FoodData Central SR Legacy (2018-04): water, sodium, potassium (total K: the model's saltiness counts chloride K only), protein, the six individual sugars, caffeine, theobromine, and vitamin C as ascorbic acid. Their source is in the `Organic Acid Source` column ("Composition: USDA FDC SR Legacy <fdc_id>"). Density = USDA cup (236.588 mL), tbsp (14.787) or tsp (4.929) gram weight (bulk density: "1 cup, chopped"); blank when USDA has no volume portion. Umami, kokumi and organic-acid fields are blank (tier 4, flagged), except 18 pure fats, oils and sugars set to 0 by composition; USDA total glutamic and aspartic acid are protein-bound and were not used. Where USDA gives only total sugar (147 rows), the total is counted as sucrose and flagged tier 3 (`sugars`) in the data-quality file. Mapping decisions: `sr_mapping.txt` and `staging_rows.csv` in the model folder (validation/missing_ingredients/usda_fill).
 
 ### 13.2 Quality tiers
 
@@ -713,5 +731,6 @@ How the open-access check was done: DOIs were resolved on Crossref; open-access 
 | 2.8.4 | Nov 25 | Synergy cap 16× → 63× (Yamaguchi & Kimizuka 1979); kokumi EC50 relabelled as an assumption; model header comment fixed |
 | 2.8.5 | Nov 25 | Whole-food tasted basis for salt, sweet, umami, sour and kokumi (pH stays water-phase); validated on a pre-registered SVT hold-out |
 | 2.9.0 | Nov 25 | Nucleotide thresholds from Kuninaka 1980 (alone only); kokumi detection floor (Ueda 1997); Horie 2012 cooked GMP for 5 vegetables; saccharin sweetness and bitterness (Schiffman 1995); data fixes (3 tomato glutamates, celery and parsley acids, green tea K/Na/water, mint density, 5 raw GMP fills) |
+| 2.10.0 | Nov 25 | 824 ingredients (392 USDA SR Legacy composition rows); paste parser covers the 1,000 most common missing recipe ingredients plus fixes; page: paste-first layout and pot-based cooking water-loss estimator. Taste equations unchanged |
 
 Data: v.2.6.9 (Nov 24, 2026) corrected the database flags found with the SVT validation (sugars and acids for several foods, salted/unsalted chips and peanut butter rows); v.2.8.2 added the theobromine column and three chocolate rows.

@@ -39,235 +39,971 @@ UNITS,25,^(?:shots?)\s+,i,shot,unit words; first match wins; matched against the
 UNITS,26,^(?:inch(?:es)?(?: piece| knob)?(?: of)?|in\.(?: piece)?)\s+,i,inch,unit words; first match wins; matched against the text after the quantity plus a trailing space
 UNITS,27,^(?:links?)\s+,i,each,unit words; first match wins; matched against the text after the quantity plus a trailing space
 UNITS,28,^(?:large|medium|small|whole|lg\.?|med\.?|sm\.?)\s+,i,each,unit words; first match wins; matched against the text after the quantity plus a trailing space
-MAP,1,soup mix|dry soup|onion soup|ramen|bouillon soup,i,"!dry soup mixes aren't in the database yet, so their salt would be missed",refuse
-MAP,2,(ready[- ]to[- ]serve|chunky|prepared|diluted|home-?made|homestyle).*soup|soup.*(ready[- ]to[- ]serve|prepared|diluted),i,"!only condensed (undiluted) canned soups are in the database; add broth, milk or cream for ready-to-serve soup",refuse
-MAP,3,(low|reduced|less)[- ]sodium.*cream of mushroom|cream of mushroom.*(low|reduced|less)[- ]sodium|healthy request.*mushroom,i,"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",map
-MAP,4,(low|reduced|less)[- ]sodium.*cream of chicken|cream of chicken.*(low|reduced|less)[- ]sodium|healthy request.*chicken,i,"Soup, Cream of Chicken (Condensed, Reduced Sodium)",map
-MAP,5,(low|reduced|less)[- ]sodium.*tomato soup|tomato soup.*(low|reduced|less)[- ]sodium|healthy request.*tomato,i,"Soup, Tomato (Condensed, Reduced Sodium)",map
-MAP,6,cream of mushroom,i,"Soup, Cream of Mushroom (Condensed)",map
-MAP,7,cream of chicken,i,"Soup, Cream of Chicken (Condensed)",map
-MAP,8,cream of celery,i,"Soup, Cream of Celery (Condensed)",map
-MAP,9,cream of potato,i,"Soup, Cream of Potato (Condensed)",map
-MAP,10,(cheddar |nacho |fiesta )?cheese soup|broccoli cheese soup,i,"Soup, Cheese (Condensed)*",map-approx
-MAP,11,tomato soup|cream of tomato,i,"Soup, Tomato (Condensed)",map
-MAP,12,chicken noodle soup,i,"Soup, Chicken Noodle (Condensed)",map
-MAP,13,\bsoup\b,i,"!this canned soup isn't in the database yet (we have cream of mushroom, chicken, celery and potato, tomato, cheese and chicken noodle)",refuse
-MAP,14,cake mix|brownie mix|baking mix|bisquick|muffin mix|pancake mix|cookie mix|stuffing mix,i,"!boxed mixes aren't in the database; enter flour, sugar and salt separately",refuse
-MAP,15,frosting|\bicing\b(?! sugar),i,!frosting isn't in the database (it's mostly sugar); add the sugar instead,refuse
-MAP,16,gelatin|jell-?o|pudding mix|instant pudding,i,!gelatin and pudding mixes aren't in the database,refuse
-MAP,17,liqueur|liquor|kahlua|brandy|cognac|\brum\b|vodka|whisk(e)?y|bourbon|tequila|\bgin\b|schnapps|amaretto,i,!spirits and liqueurs aren't in the database yet,refuse
-MAP,18,ginger ale|lemon-?lime soda|sprite|7-?up|root beer|club soda|seltzer|tonic water|sparkling water,i,!soft drinks other than cola aren't in the database yet (plain soda water barely matters),refuse
-MAP,19,corned beef|pastrami,i,!corned beef isn't in the database yet (it's far saltier than fresh beef),refuse
-MAP,20,\bgravy\b,i,!gravy isn't in the database yet,refuse
-MAP,21,tamarind,i,!tamarind isn't in the database yet,refuse
-MAP,22,swiss chard|\bchard\b,i,!chard isn't in the database yet,refuse
-MAP,23,mixed vegetables|frozen vegetables|cooked vegetables|vegetable medley,i,!mixed vegetables aren't in the database; add each vegetable on its own line,refuse
-MAP,24,black-?eyed peas?|split peas?|cowpeas?,i,!dried peas and black-eyed peas aren't in the database yet,refuse
-MAP,25,(snap|snow|sugar snap) peas?|mange ?tout,i,Snap Pea,map
-MAP,26,cream[- ]style corn|creamed corn,i,Corn (Canned)*,map-approx
-MAP,27,steak (seasoning|spice|rub)|montreal|cajun seasoning|creole seasoning|old bay|taco seasoning|fajita seasoning|seasoning blend|\brub\b,i,Dried spices & herbs*,map-approx
-MAP,28,cayenne|red pepper (powder|flakes)|ground red pepper|(ground|crushed|dried) (hot|red|chili|chile) peppers?|chili powder|chile powder|paprika,i,Dried spices & herbs,map
-MAP,29,(stock|broth|bouillon|consomm[eé]) (powder|granules?|base|paste|concentrate),i,Bouillon,map
-MAP,30,coconut cream|cream of coconut,i,Coconut Milk*,map-approx
-MAP,31,pork (steaks?|chops?|loin|tenderloin|shoulder|butt|roast),i,Pork,map
-MAP,32,canned .*salmon|salmon.*\bcanned\b,i,"Fish, Salmon (Canned)",map
-MAP,33,honeydew|cantaloupe|(?<!water)\bmelon,i,!melon isn't in the database yet (only watermelon),refuse
-MAP,34,watermelon,i,Watermelon,map
-MAP,35,(candied|crystallized) ginger,i,!candied ginger isn't in the database yet,refuse
-MAP,36,chocolate chips?|chocolate morsels?|semi-?sweet chocolate|milk chocolate|white chocolate,i,!sweetened chocolate isn't in the database yet (only 70-85% dark),refuse
-MAP,37,"(shredded|flaked|desiccated|sweetened|grated|toasted) coconut|coconut,? (flakes|shredded|grated)|^coconut$",i,!dried coconut isn't in the database yet,refuse
-MAP,38,ranch style beans|baked beans|pork and beans|refried beans,i,!seasoned canned beans aren't in the database yet,refuse
-MAP,39,(?<!monk |passion |dragon |star )\bfruit\b(?! juice),i,!mixed fruit isn't in the database; add each fruit on its own line,refuse
-MAP,40,ground coffee|coffee grounds|coffee beans?,i,!ground coffee (not brewed) isn't in the database,refuse
-MAP,41,peanut butter,i,"Peanut Butter, Salted",map
-MAP,42,steak sauce|\ba\.?1\b,i,"Sauce, Steak",map
-MAP,43,(red|hot) pepper sauce|pepper sauce,i,"Sauce, Hot (Tabasco)",map
-MAP,44,dill pickles?|pickle relish|\bpickles?\b,i,"Pickles, Dill",map
-MAP,45,\bapple cider(?! vinegar)|\bapple juice,i,"Juice, Apple",map
-MAP,46,orange juice|\boj\b,i,"Juice, Orange",map
-MAP,47,grapefruit juice,i,"Juice, Grapefruit",map
-MAP,48,grape juice,i,"Juice, Grape",map
-MAP,49,peach juice|peach nectar,i,"Juice, Peach",map
-MAP,50,pomegranate juice,i,"Juice, Pomegranate",map
-MAP,51,cranberry juice,i,"Juice, Cranberry (Unsweetened)*",map-approx
-MAP,52,lemonade|limeade,i,"!lemonade isn't in the database yet; add lemon juice, sugar and water",refuse
-MAP,53,sweetened condensed|condensed milk,i,!sweetened condensed milk isn't in the database yet (it's about half sugar),refuse
-MAP,54,ice cream|gelato|sherbet|frozen custard,i,!ice cream isn't in the database yet,refuse
-MAP,55,(almond|soy|oat|rice|cashew|hemp) ?milk(?! powder),i,!plant milks aren't in the database yet (canned coconut milk is),refuse
-MAP,56,evaporated milk,i,"Milk, Cow*",map-approx
-MAP,57,bouillon cubes?|stock cubes?|cubes? of bouillon|bouillon$,i,Beef Stock Cube*,map-approx
-MAP,58,bouillon (granules|powder|base|paste)|granulated bouillon|better than bouillon,i,Bouillon,map
-MAP,59,lemon ?grass|lime lea(f|ves)|kaffir|makrut|dried lime|loomi|celery seed|dry mustard|mustard powder|ground mustard,i,Dried spices & herbs,map
-MAP,60,lemon pepper,i,Dried spices & herbs*,map-approx
-MAP,61,(vanilla|fruit|peach|blueberry|strawberry|lemon|raspberry|cherry|flavou?red|frozen|sweetened) yogh?urt,i,"Yogurt, Plain (Whole Milk)*",map-approx
-MAP,62,sour cream,i,Sour Cream,map
-MAP,63,margarine,i,"Butter, Salted*",map-approx
-MAP,64,salmon roe|ikura,i,Salmon Roe,map
-MAP,65,salmon,i,"Fish, Salmon (Fresh)|canned-if-can",map-conditional
-MAP,66,sweet potato|\byams?\b,i,Sweet Potato,map
-MAP,67,potato chips|crisps,i,"Potato Chips, Salted",map
-MAP,68,\bpotato(es)?\b(?! starch| flakes),i,Potato,map
-MAP,69,\bapples?\b(?! juice| cider| sauce|sauce),i,Apple,map
-MAP,70,(?<!chick ?)\bpeas\b|green peas?|sweet peas?|garden peas?,i,Green Pea,map
-MAP,71,(light|dark)? ?corn syrup,i,Tapioca Syrup 42 DE*,map-approx
-MAP,72,swiss cheese|emmental|gruy[eè]re|jarlsberg|\bswiss\b(?! chard),i,"Cheese, Emmental*",map-approx
-MAP,73,gouda,i,"Cheese, Gouda",map
-MAP,74,manchego,i,"Cheese, Manchego",map
-MAP,75,blue cheese|bleu cheese|gorgonzola|roquefort|stilton,i,"Cheese, Roquefort*",map-approx
-MAP,76,\bbrie\b|camembert,i,"Cheese, Camembert*",map-approx
-MAP,77,colby|mexican (blend|cheese)|taco cheese|cheese blend,i,"Cheese, Cheddar (Aged One Year)*",map-approx
-MAP,78,espresso,i,Espresso,map
-MAP,79,instant coffee|coffee granules,i,"Coffee, Instant (Powder)",map
-MAP,80,\bcoffee\b(?! bean| grounds),i,"Coffee, Brewed",map
-MAP,81,green tea(?! leaves?| powder),i,"Tea, Green (Brewed)",map
-MAP,82,black tea|\btea\b(?! leaves?| bags?),i,"Tea, Black (Brewed)",map
-MAP,83,cocoa powder|\bcocoa\b|cacao powder,i,Cocoa Powder (Unsweetened),map
-MAP,84,dark chocolate|bittersweet chocolate|70% chocolate,i,"Chocolate, Dark (70-85%)*",map-approx
-MAP,85,\bcola\b|\bcoke\b|pepsi,i,Cola,map
-MAP,86,silken tofu,i,"Tofu, Silken",map
-MAP,87,\btofu\b|bean curd,i,"Tofu, Firm",map
-MAP,88,tahini|tahina,i,Tahini,map
-MAP,89,gochujang,i,Gochujang,map
-MAP,90,doenjang|soybean paste,i,Doenjang,map
-MAP,91,fermented black beans?|douchi,i,"Beans, Black (Fermented)",map
-MAP,92,black beans?,i,"Beans, Black (Canned)",map
-MAP,93,kidney beans?,i,"Beans, Kidney (Canned)",map
-MAP,94,pinto beans?,i,"Beans, Pinto (Canned)",map
-MAP,95,chick ?peas?|garbanzo,i,Chickpeas (Canned),map
-MAP,96,corn tortillas?,i,"Tortilla, Corn",map
-MAP,97,tortillas?,i,"Tortilla, Flour",map
-MAP,98,monterey jack|pepper jack|\bjack cheese,i,"Cheese, Monterey Jack",map
-MAP,99,provolone,i,"Cheese, Provolone",map
-MAP,100,american cheese|velveeta|cheese singles?|kraft singles?,i,"Cheese, American (Processed)",map
-MAP,101,ricotta,i,"Cheese, Ricotta (Whole Milk)",map
-MAP,102,sun[- ]?dried tomato,i,Tomato (Dried),map
-MAP,103,tomato paste,i,"Paste, Tomato",map
-MAP,104,tomato puree|tomato purée|passata,i,"Paste, Tomato*",map-approx
-MAP,105,(no[- ]salt|low[- ]sodium|salt[- ]free|unsalted).*(tomato|pasta|spaghetti|marinara) sauce,i,"Sauce, Tomato",map
-MAP,106,(pasta|spaghetti|marinara|pizza) sauce|tomato sauce|\bragu\b|\bprego\b,i,"Sauce, Tomato (Canned)",map
-MAP,107,tomato juice|v-?8,i,"Juice, Tomato",map
-MAP,108,cherry tomato|grape tomato,i,"Tomato, Cherry (Generic)",map
-MAP,109,(crushed|diced|stewed|whole|peeled|canned|italian|plum|san marzano|chopped|petite|fire[- ]roasted).*tomato|tomato.*(canned|with juice|undrained|drained),i,Tomato (Canned)|fresh-if-count,map-conditional
-MAP,110,tomato,i,"Tomato, Red (Fresh, Whole)",map
-MAP,111,garlic salt,i,Salt*,map-approx
-MAP,112,garlic powder|granulated garlic|onion powder|onion flakes|dried onion,i,Dried spices & herbs,map
-MAP,113,garlic,i,Garlic,map
-MAP,114,green onion|scallion|spring onion,i,Green Onion,map
-MAP,115,shallot,i,Shallot,map
-MAP,116,onion,i,Onion,map
-MAP,117,celery salt,i,Salt*,map-approx
-MAP,118,celery,i,Celery,map
-MAP,119,carrot,i,Carrot,map
-MAP,120,(green|red|yellow|orange|bell) pepper(?!corn| flake)|capsicum,i,Green Pepper,map
-MAP,121,jalape|chili pepper|chile pepper|serrano|hot pepper(?! sauce)|fresno,i,Chili Pepper,map
-MAP,122,mushroom,i,"Mushroom, Button",map
-MAP,123,zucchini,i,Zucchini,map
-MAP,124,eggplant|aubergine,i,Eggplant,map
-MAP,125,spinach,i,Spinach,map
-MAP,126,diamond crystal,i,Kosher Salt (Diamond Crystal),map
-MAP,127,morton.*kosher|kosher.*morton,i,Kosher Salt (Morton),map
-MAP,128,kosher salt,i,Kosher Salt,map
-MAP,129,sea salt,i,Sea Salt,map
-MAP,130,\bmsg\b|monosodium glutamate|accent seasoning,i,Monosodium Glutamate,map
-MAP,131,\bsalt\b(?! pork),i,Salt,map
-MAP,132,splenda|^equal\b|equal (sweetener|packets?)|nutrasweet|sweet'?n'? ?low|in the raw|sugar substitute|sweetener packet,i,BLEND,refuse-blend
-MAP,133,truvia,i,Erythritol*,map-approx
-MAP,134,stevia extract|pure stevia|rebaudioside|reb a\b,i,Stevia Extract (Reb A 97%),map
-MAP,135,\bstevia\b,i,Stevia Extract (Reb A 97%)*,map-approx
-MAP,136,monk fruit extract|luo han guo extract|mogroside,i,Monk Fruit Extract (Mogroside V 50%),map
-MAP,137,monk fruit sweetener|lakanto|swerve|erythritol,i,Erythritol,map
-MAP,138,monk fruit|luo han guo,i,Monk Fruit Extract (Mogroside V 50%)*,map-approx
-MAP,139,xylitol,i,Xylitol,map
-MAP,140,allulose,i,Allulose,map
-MAP,141,maltitol,i,Maltitol,map
-MAP,142,sorbitol,i,Sorbitol,map
-MAP,143,sucralose,i,Sucralose,map
-MAP,144,aspartame,i,Aspartame,map
-MAP,145,acesulfame|ace-?k\b,i,Acesulfame Potassium,map
-MAP,146,brown sugar,i,Brown Sugar,map
-MAP,147,powdered sugar|confectioners|icing sugar,i,Sugar*,map-approx
-MAP,148,"\bsugar\b(?! substitute)|sugar,",i,Sugar,map
-MAP,149,honey,i,Honey,map
-MAP,150,maple syrup,i,Maple Syrup,map
-MAP,151,molasses,i,Sugar Cane Molasses,map
-MAP,152,parmesan|parmigiano|romano|pecorino|asiago|grana padano,i,"Cheese, Parmigiano Regianno",map
-MAP,153,mozzarella,i,"Cheese, Mozzarella",map
-MAP,154,cheddar,i,"Cheese, Cheddar (Aged One Year)*",map-approx
-MAP,155,cottage,i,"Cheese, Cottage*",map-approx
-MAP,156,basil,i,Basil,map
-MAP,157,parsley,i,Parsley,map
-MAP,158,\bdill\b,i,Dill,map
-MAP,159,\bmint\b,i,Mint,map
-MAP,160,coriander leaves|cilantro,i,Coriander,map
-MAP,161,rice vinegar|rice wine vinegar,i,"Vinegar, Rice",map
-MAP,162,red wine vinegar|wine vinegar,i,"Vinegar, Red Wine",map
-MAP,163,balsamic,i,"Vinegar, Balsamic",map
-MAP,164,cider vinegar,i,"Vinegar, Apple Cider",map
-MAP,165,vinegar,i,"Vinegar, Distilled White",map
-MAP,166,\bwine\b|sherry|marsala|vermouth,i,"Wine, Generic",map
-MAP,167,(low|reduced)[- ]sodium.*(broth|stock)|(broth|stock).*(low|reduced)[- ]sodium,i,"Broth, Chicken (Low Sodium)*",map-approx
-MAP,168,beef (broth|stock|bouillon|consomm),i,"Broth, Beef",map
-MAP,169,vegetable (broth|stock|bouillon),i,"Broth, Vegetable",map
-MAP,170,chicken (broth|stock|bouillon)|\bbroth\b|\bstock\b,i,"Broth, Chicken",map
-MAP,171,capers?\b,i,Capers,map
-MAP,172,unsalted butter|sweet butter,i,Oil or fat,map
-MAP,173,\bbutter\b(?!milk)|margarine,i,"Butter, Salted",map
-MAP,174,(heavy cream|whipping cream|half[- ]and[- ]half|light cream|\bcream\b)(?! cheese),i,"Milk, Cow*",map-approx
-MAP,175,\bfeta\b,i,"Cheese, Feta",map
-MAP,176,fontina,i,"Cheese, Mozzarella*",map-approx
-MAP,177,bouillon cube,i,Beef Stock Cube*,map-approx
-MAP,178,ground beef|hamburger|beef mince|minced beef|ground chuck|ground round|lean beef,i,Hamburger Meat,map
-MAP,179,ground pork|pork mince,i,Pork,map
-MAP,180,ground turkey|turkey,i,Chicken*,map-approx
-MAP,181,chicken,i,Chicken,map
-MAP,182,\bbeef\b|steak|chuck,i,Beef,map
-MAP,183,\bbacon\b,i,Bacon,map
-MAP,184,pancetta|guanciale,i,Bacon*,map-approx
-MAP,185,prosciutto,i,"Ham, Dry-Cured",map
-MAP,186,italian sausage|\bsausage,i,"Sausage, Italian (Pork)",map
-MAP,187,chorizo|salami|pepperoni|kielbasa,i,"Sausage, Italian (Pork)*",map-approx
-MAP,188,\bham\b,i,"Ham, Dry-Cured*",map-approx
-MAP,189,\bpork\b,i,Pork,map
-MAP,190,shrimp|prawn,i,Shrimp,map
-MAP,191,clam,i,Clam*,map-approx
-MAP,192,anchov,i,"Fish, Anchovy (Canned)",map
-MAP,193,tuna,i,"Fish, Tuna (Fresh)*",map-approx
-MAP,194,worcestershire,i,"Sauce, Worcestershire",map
-MAP,195,soy sauce|\btamari\b|shoyu,i,"Sauce, Soy",map
-MAP,196,fish sauce|nam pla|nuoc mam,i,"Sauce, Fish",map
-MAP,197,ketchup|catsup,i,Ketchup,map
-MAP,198,cream cheese,i,"Cheese, Cream",map
-MAP,199,mayonnaise|mayo,i,Mayonnaise,map
-MAP,200,dijon,i,"Mustard, Dijon",map
-MAP,201,(yellow|prepared|ballpark|french'?s)? ?mustard(?! seed| green| powder),i,"Mustard, Yellow (Prepared)",map
-MAP,202,salsa,i,Salsa (Jarred),map
-MAP,203,tabasco|hot sauce|louisiana,i,"Sauce, Hot (Tabasco)",map
-MAP,204,hoisin,i,"Sauce, Hoisin",map
-MAP,205,lemon juice|lemon,i,Lemon,map
-MAP,206,lime juice|lime,i,"Juice, Lime",map
-MAP,207,black olive|kalamata|ripe olive,i,"Olives, Black",map
-MAP,208,green olive|olive(?! oil),i,"Olives, Green",map
-MAP,209,sour cream,i,Sour Cream,map
-MAP,210,greek yogurt,i,"Yogurt, Greek (Plain, Whole Milk)",map
-MAP,211,yogurt,i,"Yogurt, Plain (Whole Milk)",map
-MAP,212,buttermilk,i,Buttermilk (Cultured),map
-MAP,213,coconut milk,i,Coconut Milk,map
-MAP,214,\bmilk\b,i,"Milk, Cow",map
-MAP,215,miso,i,Miso,map
-MAP,216,kombu,i,"Seaweed, Kombu",map
-MAP,217,bonito|katsuobushi,i,Bonito Flakes,map
-MAP,218,\bwater\b,i,Water,map
-MAP,219,egg yolk,i,Egg Yolk,map
-MAP,220,egg white,i,Egg White,map
-MAP,221,\beggs?\b,i,Eggs,map
-MAP,222,flour,i,"Flour, Wheat",map
-MAP,223,lentil,i,Lentils,map
-MAP,224,\boil\b|\blard\b|shortening|\bghee\b|cooking spray,i,Oil or fat,map
-MAP,225,oregano|thyme|marjoram|rosemary|bay lea|pepper ?flakes|black pepper|ground pepper|peppercorn|^pepper\b|cayenne|paprika|cumin|chili powder|cinnamon|nutmeg|allspice|ground cloves?|fennel seed|saffron|turmeric|curry powder|garam masala|ginger powder|ground ginger|italian seasoning|dried herbs?|herbes|seasoning|crushed red pepper|sage|tarragon|cardamom|coriander seed|ground coriander|mustard seed|vanilla|star anise|\banise\b|cloves? \(spice\)|whole cloves|five.spice|sichuan pepper,i,Dried spices & herbs,map
-MAP,226,\bginger\b,i,Ginger,map
-MAP,227,\bcheese\b,i,"Cheese, Cheddar (Aged One Year)*",map-approx
-SKIP_FIRST,1,\b(zest|rind|peel|wedges?|wheels?)\b|garnish|tortellini|ravioli|gnocchi|wonton|egg roll|spring roll|wrappers?\b|\bwraps?\b|dumpling|noodle(?!s? soup)|pasta|spaghetti|penne|linguine|fettuccine|rigatoni|macaroni|\bbread\b|breadcrumb|\brice\b(?! vinegar| wine),i,skip,checked on the bare first choice before mapping
-SKIP,1,spaghetti|pasta|penne|linguine|fettuccine|rigatoni|macaroni|noodle|\brice\b|bread|cornstarch|baking soda|baking powder|\byeast\b(?!.*extract)|gelatin|zest|garnish|for serving|\bice\b,i,skip,checked after mapping fails
+MAP,1,\bextra[\s\-]+virgin[\s\-]+extra[\s\-]+virgin[\s\-]+olive[\s\-]+oil(?:e?s)?\b,i,"Oil, Olive (Extra Virgin)",map
+MAP,2,\bsemi[\s\-]+sweet[\s\-]+chocolate[\s\-]+baking[\s\-]+squares?\b,i,"Chocolate, Semisweet Chips",map
+MAP,3,\bfreshly[\s\-]+cracked[\s\-]+black[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,4,\bfreshly[\s\-]+ground[\s\-]+black[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,5,\bfreshly[\s\-]+ground[\s\-]+white[\s\-]+pepper(?:e?s)?\b,i,"Spice, White Pepper (Ground)",map
+MAP,6,\bvanilla[\s\-]+instant[\s\-]+pudding[\s\-]+mix(?:e?s)?\b,i,"Pudding Mix, Vanilla",map
+MAP,7,\bvegetable[\s\-]+oil[\s\-]+cooking[\s\-]+spray(?:e?s)?\b,i,"Oil, Cooking Spray",map
+MAP,8,\bjet[\s\-]+puffed[\s\-]+miniature[\s\-]+marshmallows?\b,i,Marshmallows,map
+MAP,9,\bcaramel[\s\-]+ice[\s\-]+cream[\s\-]+topping(?:e?s)?\b,i,"Sauce, Caramel",map
+MAP,10,\bfresh[\s\-]+ground[\s\-]+black[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,11,\bfresh[\s\-]+ground[\s\-]+white[\s\-]+pepper(?:e?s)?\b,i,"Spice, White Pepper (Ground)",map
+MAP,12,\bfreshly[\s\-]+grated[\s\-]+lemon[\s\-]+zest(?:e?s)?\b,i,Lemon Zest,map
+MAP,13,\bgraham[\s\-]+cracker[\s\-]+pie[\s\-]+crust(?:e?s)?\b,i,Graham Cracker Crust,map
+MAP,14,\bgraham[\s\-]+cracker[\s\-]+pie[\s\-]+shell(?:e?s)?\b,i,Graham Cracker Crust,map
+MAP,15,\bextra[\s\-]+virgin[\s\-]+olive[\s\-]+oil(?:e?s)?\b,i,"Oil, Olive (Extra Virgin)",map
+MAP,16,\bitalian[\s\-]+seasoned[\s\-]+bread[\s\-]+crumbs?\b,i,"Bread Crumbs, Dry (Italian Seasoned)",map
+MAP,17,\bnonfat[\s\-]+dry[\s\-]+milk[\s\-]+powder(?:e?s)?\b,i,"Milk, Nonfat Dry",map
+MAP,18,\bwhole[\s\-]+wheat[\s\-]+pita[\s\-]+bread(?:e?s)?\b,i,Whole Wheat Pita Bread,map
+MAP,19,\bsemi[\s\-]+sweet[\s\-]+chocolate[\s\-]+morsels?\b,i,"Chocolate, Semisweet Chips",map
+MAP,20,\bsemi[\s\-]+sweet[\s\-]+chocolate[\s\-]+pieces?\b,i,"Chocolate, Semisweet Chips",map
+MAP,21,\bcream[\s\-]+of[\s\-]+onion[\s\-]+soup(?:e?s)?\b,i,"Soup, Cream of Onion",map
+MAP,22,\bsemi[\s\-]+sweet[\s\-]+chocolate[\s\-]+chips?\b,i,"Chocolate, Semisweet Chips",map
+MAP,23,\bchocolate[\s\-]+sandwich[\s\-]+cook(?:y|ies)\b,i,"Cookie, Oreo",map
+MAP,24,\borange[\s\-]+juice[\s\-]+concentrate(?:e?s)?\b,i,"Juice, Orange Concentrate",map
+MAP,25,\bsemi[\s\-]+sweet[\s\-]+chocolate[\s\-]+bits?\b,i,"Chocolate, Semisweet Chips",map
+MAP,26,\bunsweetened[\s\-]+coconut[\s\-]+milk(?:e?s)?\b,i,Coconut Milk,map
+MAP,27,\bapple[\s\-]+juice[\s\-]+concentrate(?:e?s)?\b,i,"Juice, Apple Concentrate",map
+MAP,28,\bfrench[\s\-]+style[\s\-]+green[\s\-]+beans?\b,i,Green Beans,map
+MAP,29,\binstant[\s\-]+vanilla[\s\-]+pudding(?:e?s)?\b,i,"Pudding Mix, Vanilla",map
+MAP,30,\bvanilla[\s\-]+instant[\s\-]+pudding(?:e?s)?\b,i,"Pudding Mix, Vanilla",map
+MAP,31,\bvegetable[\s\-]+cooking[\s\-]+spray(?:e?s)?\b,i,"Oil, Cooking Spray",map
+MAP,32,\bwhole[\s\-]+wheat[\s\-]+bread[\s\-]+crumbs?\b,i,"Bread, Whole Wheat",map
+MAP,33,\bfrozen[\s\-]+whipped[\s\-]+topping(?:e?s)?\b,i,Whipped Topping (Non-Dairy),map
+MAP,34,\bitalian[\s\-]+salad[\s\-]+dressing(?:e?s)?\b,i,"Dressing, Italian",map
+MAP,35,\bnonstick[\s\-]+cooking[\s\-]+spray(?:e?s)?\b,i,"Oil, Cooking Spray",map
+MAP,36,\bseedless[\s\-]+raspberry[\s\-]+jam(?:e?s)?\b,i,"Jam, Strawberry",map
+MAP,37,\bblueberry[\s\-]+pie[\s\-]+filling(?:e?s)?\b,i,"Pie Filling, Blueberry",map
+MAP,38,\bcaesar[\s\-]+salad[\s\-]+dressing(?:e?s)?\b,i,"Dressing, Caesar Salad",map
+MAP,39,\bchocolate[\s\-]+chip[\s\-]+cookie(?:e?s)?\b,i,"Chocolate, Chip Cookie",map
+MAP,40,\bchocolate[\s\-]+wafer[\s\-]+cook(?:y|ies)\b,i,"Chocolate, Wafer",map
+MAP,41,\bextravirgin[\s\-]+olive[\s\-]+oil(?:e?s)?\b,i,"Oil, Olive (Extra Virgin)",map
+MAP,42,\bfreshly[\s\-]+grated[\s\-]+nutmeg(?:e?s)?\b,i,"Spice, Nutmeg (Ground)",map
+MAP,43,\bfreshly[\s\-]+ground[\s\-]+nutmeg(?:e?s)?\b,i,"Spice, Nutmeg (Ground)",map
+MAP,44,\bfreshly[\s\-]+ground[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,45,\bitalian[\s\-]+seasoned[\s\-]+breadcrumbs?\b,i,"Bread Crumbs, Dry (Italian Seasoned)",map
+MAP,46,\blemon[\s\-]+instant[\s\-]+pudding(?:e?s)?\b,i,"Pudding Mix, Lemon",map
+MAP,47,\bliquid[\s\-]+egg[\s\-]+substitute(?:e?s)?\b,i,Egg Substitute,map
+MAP,48,\bcold[\s\-]+unsalted[\s\-]+butter(?:e?s)?\b,i,"Butter, Unsalted",map
+MAP,49,\bcondensed[\s\-]+beef[\s\-]+broth(?:e?s)?\b,i,Condensed Beef Broth,map
+MAP,50,\bcracked[\s\-]+black[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,51,\bfresh[\s\-]+cracked[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,52,\bgraham[\s\-]+cracker[\s\-]+crust(?:e?s)?\b,i,Graham Cracker Crust,map
+MAP,53,\bsemi[\s\-]+sweet[\s\-]+chocolate(?:e?s)?\b,i,"Chocolate, Semisweet Chips",map
+MAP,54,\bbread[\s\-]+machine[\s\-]+yeast(?:e?s)?\b,i,Active Dry Yeast,map
+MAP,55,\bchili[\s\-]+seasoning[\s\-]+mix(?:e?s)?\b,i,"Mix, Chili Seasoning",map
+MAP,56,\bcoarse[\s\-]+black[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,57,\bfresh[\s\-]+ground[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,58,\bground[\s\-]+black[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,59,\bground[\s\-]+white[\s\-]+pepper(?:e?s)?\b,i,"Spice, White Pepper (Ground)",map
+MAP,60,\bmixed[\s\-]+candied[\s\-]+fruit(?:e?s)?\b,i,Candied Fruit,map
+MAP,61,\bred[\s\-]+enchilada[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Enchilada",map
+MAP,62,\bvegetable[\s\-]+oil[\s\-]+spray(?:e?s)?\b,i,"Oil, Cooking Spray",map
+MAP,63,\bcherry[\s\-]+pie[\s\-]+filling(?:e?s)?\b,i,"Pie Filling, Cherry",map
+MAP,64,\bcrispy[\s\-]+rice[\s\-]+cereal(?:e?s)?\b,i,"Cereal, Crisp Rice",map
+MAP,65,\bdried[\s\-]+leaf[\s\-]+oregano(?:e?s)?\b,i,"Herb, Oregano",map
+MAP,66,\bfresh[\s\-]+black[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,67,\bgreen[\s\-]+sweet[\s\-]+pepper(?:e?s)?\b,i,Green Pepper,map
+MAP,68,\binstant[\s\-]+brown[\s\-]+rice(?:e?s)?\b,i,"Rice, Brown",map
+MAP,69,\binstant[\s\-]+white[\s\-]+rice(?:e?s)?\b,i,"Rice, Instant",map
+MAP,70,\bsolid[\s\-]+pack[\s\-]+pumpkin(?:e?s)?\b,i,Pumpkin,map
+MAP,71,\bstove[\s\-]+top[\s\-]+stuffing(?:e?s)?\b,i,Stove Top Stuffing,map
+MAP,72,\btaco[\s\-]+seasoning[\s\-]+mix(?:e?s)?\b,i,"Spice, Taco Seasoning (Blend, Salted)",map
+MAP,73,\btoasted[\s\-]+wheat[\s\-]+germ(?:e?s)?\b,i,Toasted Wheat Germ,map
+MAP,74,\bvital[\s\-]+wheat[\s\-]+gluten(?:e?s)?\b,i,Vital Wheat Gluten,map
+MAP,75,\bapple[\s\-]+pie[\s\-]+filling(?:e?s)?\b,i,"Pie Filling, Apple",map
+MAP,76,\bcrisp[\s\-]+rice[\s\-]+cereal(?:e?s)?\b,i,"Cereal, Crisp Rice",map
+MAP,77,\bground[\s\-]+red[\s\-]+pepper(?:e?s)?\b,i,"Spice, Cayenne (Ground)",map
+MAP,78,\bpumpkin[\s\-]+pie[\s\-]+spice(?:e?s)?\b,i,"Spice, Pumpkin Pie Spice (Blend)",map
+MAP,79,\bunbaked[\s\-]+pie[\s\-]+shell(?:e?s)?\b,i,Pie Crust,map
+MAP,80,\bwhole[\s\-]+wheat[\s\-]+bread(?:e?s)?\b,i,"Bread, Whole Wheat",map
+MAP,81,\basian[\s\-]+sesame[\s\-]+oil(?:e?s)?\b,i,"Oil, Sesame (Toasted)",map
+MAP,82,\bbrown[\s\-]+rice[\s\-]+flour(?:e?s)?\b,i,"Flour, Brown Rice",map
+MAP,83,\bfrozen[\s\-]+pie[\s\-]+crust(?:e?s)?\b,i,Pie Crust,map
+MAP,84,\blight[\s\-]+karo[\s\-]+syrup(?:e?s)?\b,i,"Corn Syrup, Light",map
+MAP,85,\bred[\s\-]+chili[\s\-]+powder(?:e?s)?\b,i,"Spice, Chili Powder (Blend)",map
+MAP,86,\bunsweetened[\s\-]+applesauce(?:e?s)?\b,i,"Applesauce, Unsweetened",map
+MAP,87,\bvirgin[\s\-]+olive[\s\-]+oil(?:e?s)?\b,i,"Oil, Olive",map
+MAP,88,\bwhite[\s\-]+karo[\s\-]+syrup(?:e?s)?\b,i,"Corn Syrup, Light",map
+MAP,89,\bwhole[\s\-]+black[\s\-]+peppercorns?\b,i,"Spice, Black Pepper (Whole)",map
+MAP,90,\byellow[\s\-]+corn[\s\-]+meal(?:e?s)?\b,i,Cornmeal,map
+MAP,91,\bangel[\s\-]+food[\s\-]+cake(?:e?s)?\b,i,Angel Food Cake,map
+MAP,92,\bapple[\s\-]+pie[\s\-]+spice(?:e?s)?\b,i,"Spice, Pumpkin Pie Spice (Blend)",map
+MAP,93,\bbrown[\s\-]+gravy[\s\-]+mix(?:e?s)?\b,i,"Mix, Brown Gravy",map
+MAP,94,\bchocolate[\s\-]+wafer[\s\-]+crumbs?\b,i,"Chocolate, Wafer",map
+MAP,95,\bcream[\s\-]+of[\s\-]+tartar(?:e?s)?\b,i,Cream of Tartar (Potassium Bitartrate),map
+MAP,96,\bdark[\s\-]+sesame[\s\-]+oil(?:e?s)?\b,i,"Oil, Sesame (Toasted)",map
+MAP,97,\blight[\s\-]+olive[\s\-]+oil(?:e?s)?\b,i,"Oil, Olive",map
+MAP,98,\bnonfat[\s\-]+dry[\s\-]+milk(?:e?s)?\b,i,"Milk, Nonfat Dry",map
+MAP,99,\bolive[\s\-]+oil[\s\-]+spray(?:e?s)?\b,i,"Oil, Cooking Spray",map
+MAP,100,\bparty[\s\-]+rye[\s\-]+bread(?:e?s)?\b,i,Rye Bread,map
+MAP,101,\bdish[\s\-]+pie[\s\-]+crust(?:e?s)?\b,i,Pie Crust,map
+MAP,102,\bdish[\s\-]+pie[\s\-]+shell(?:e?s)?\b,i,Pie Crust,map
+MAP,103,\bgraham[\s\-]+cracker[\s\-]+crumbs?\b,i,"Crackers, Graham",map
+MAP,104,\bhearts[\s\-]+of[\s\-]+palm(?:e?s)?\b,i,Hearts of Palm,map
+MAP,105,\bvegetable[\s\-]+shortening(?:e?s)?\b,i,"Shortening, Vegetable",map
+MAP,106,\bgreat[\s\-]+northern[\s\-]+beans?\b,i,Great Northern Bean,map
+MAP,107,\bitalian[\s\-]+bread[\s\-]+crumbs?\b,i,"Bread Crumbs, Dry (Italian Seasoned)",map
+MAP,108,\bmilk[\s\-]+chocolate[\s\-]+chips?\b,i,"Chocolate, Milk",map
+MAP,109,\bunflavored[\s\-]+gelatine(?:e?s)?\b,i,"Gelatin Dessert, Unflavored",map
+MAP,110,\bvanilla[\s\-]+wafer[\s\-]+crumbs?\b,i,Vanilla Wafer,map
+MAP,111,\byellow[\s\-]+mustard[\s\-]+seeds?\b,i,"Spice, Mustard Seed (Whole)",map
+MAP,112,\bblack[\s\-]+mustard[\s\-]+seeds?\b,i,"Spice, Mustard Seed (Whole)",map
+MAP,113,\bdry[\s\-]+red[\s\-]+wine(?:e?s)?\b,i,"Wine, Dry Red",map
+MAP,114,\bgreen[\s\-]+cardamom[\s\-]+pods?\b,i,"Spice, Cardamom (Whole Pod)",map
+MAP,115,\bimitation[\s\-]+crabmeat(?:e?s)?\b,i,Imitation Crabmeat,map
+MAP,116,\bmashed[\s\-]+ripe[\s\-]+bananas?\b,i,Banana,map
+MAP,117,\bstrawberry[\s\-]+gelatin(?:e?s)?\b,i,"Gelatin Dessert, Flavored (Dry Mix)",map
+MAP,118,\bunflavored[\s\-]+gelatin(?:e?s)?\b,i,"Gelatin Dessert, Unflavored",map
+MAP,119,\bcandied[\s\-]+pineapple(?:e?s)?\b,i,Candied Fruit,map
+MAP,120,\bfresh[\s\-]+bean[\s\-]+sprouts?\b,i,Bean Sprout,map
+MAP,121,\bfrozen[\s\-]+green[\s\-]+beans?\b,i,Green Beans,map
+MAP,122,\bfrozen[\s\-]+hash[\s\-]+browns?\b,i,Hash Brown,map
+MAP,123,\bhorseradish[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Horseradish",map
+MAP,124,\bmaraschino[\s\-]+cherr(?:y|ies)\b,i,Maraschino Cherry,map
+MAP,125,\bmarshmallow[\s\-]+cream(?:e?s)?\b,i,Marshmallow Cream,map
+MAP,126,\bmarshmallow[\s\-]+creme(?:e?s)?\b,i,Marshmallow Cream,map
+MAP,127,\bmarshmallow[\s\-]+fluff(?:e?s)?\b,i,Marshmallow Cream,map
+MAP,128,\bold[\s\-]+fashioned[\s\-]+oats?\b,i,"Oats, Rolled",map
+MAP,129,\bpoultry[\s\-]+seasoning(?:e?s)?\b,i,"Spice, Poultry Seasoning (Blend)",map
+MAP,130,\bquick[\s\-]+cooking[\s\-]+oats?\b,i,"Oats, Rolled",map
+MAP,131,\braspberry[\s\-]+gelatin(?:e?s)?\b,i,"Gelatin Dessert, Flavored (Dry Mix)",map
+MAP,132,\bstalks[\s\-]+lemongrass(?:e?s)?\b,i,"Herb, Lemongrass",map
+MAP,133,\bvanilla[\s\-]+flavoring(?:e?s)?\b,i,"Extract, Vanilla",map
+MAP,134,\bbutternut[\s\-]+squash(?:e?s)?\b,i,Butternut Squash,map
+MAP,135,\bcoriander[\s\-]+powder(?:e?s)?\b,i,"Spice, Coriander Seed (Ground)",map
+MAP,136,\bcorn[\s\-]+flake[\s\-]+crumbs?\b,i,"Cereal, Corn Flakes",map
+MAP,137,\bcornish[\s\-]+game[\s\-]+hens?\b,i,Cornish Hen,map
+MAP,138,\begg[\s\-]+roll[\s\-]+wrappers?\b,i,Wonton Wrapper,map
+MAP,139,\bfresh[\s\-]+blackberr(?:y|ies)\b,i,Blackberry,map
+MAP,140,\bfresh[\s\-]+green[\s\-]+beans?\b,i,Green Beans,map
+MAP,141,\bfrozen[\s\-]+blueberr(?:y|ies)\b,i,Blueberry,map
+MAP,142,\bfrozen[\s\-]+cranberr(?:y|ies)\b,i,Cranberry,map
+MAP,143,\bfrozen[\s\-]+lima[\s\-]+beans?\b,i,Lima Bean,map
+MAP,144,\bfrozen[\s\-]+raspberr(?:y|ies)\b,i,Raspberry,map
+MAP,145,\bground[\s\-]+coriander(?:e?s)?\b,i,"Spice, Coriander Seed (Ground)",map
+MAP,146,\bground[\s\-]+flax[\s\-]+seeds?\b,i,Flax Seed,map
+MAP,147,\bitalian[\s\-]+dressing(?:e?s)?\b,i,"Dressing, Italian",map
+MAP,148,\borange[\s\-]+marmalade(?:e?s)?\b,i,"Jam, Orange Marmalade",map
+MAP,149,\bpeppermint[\s\-]+cand(?:y|ies)\b,i,"Herb, Peppermint",map
+MAP,150,\bprocessed[\s\-]+cheese(?:e?s)?\b,i,"Cheese, American (Processed)",map
+MAP,151,\bred[\s\-]+sweet[\s\-]+peppers?\b,i,Red Sweet Pepper,map
+MAP,152,\bshortbread[\s\-]+cook(?:y|ies)\b,i,"Cookie, Shortbread",map
+MAP,153,\bstalk[\s\-]+lemongrass(?:e?s)?\b,i,"Herb, Lemongrass",map
+MAP,154,\bsugar[\s\-]+substitute(?:e?s)?\b,i,Sucralose Blend (Splenda Granulated),map
+MAP,155,\bvery[\s\-]+ripe[\s\-]+bananas?\b,i,Banana,map
+MAP,156,\bbuckwheat[\s\-]+flour(?:e?s)?\b,i,"Flour, Buckwheat",map
+MAP,157,\bcaramel[\s\-]+topping(?:e?s)?\b,i,"Sauce, Caramel",map
+MAP,158,\bcardamom[\s\-]+powder(?:e?s)?\b,i,"Spice, Cardamom (Ground)",map
+MAP,159,\bchili[\s\-]+seasoning(?:e?s)?\b,i,"Mix, Chili Seasoning",map
+MAP,160,\bchili[\s\-]+with[\s\-]+beans?\b,i,Chili with Beans (Canned),map
+MAP,161,\bchocolate[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Chocolate",map
+MAP,162,\bchocolate[\s\-]+syrup(?:e?s)?\b,i,"Chocolate, Syrup",map
+MAP,163,\bcinnamon[\s\-]+ground(?:e?s)?\b,i,"Spice, Cinnamon (Ground)",map
+MAP,164,\bcinnamon[\s\-]+powder(?:e?s)?\b,i,"Spice, Cinnamon (Ground)",map
+MAP,165,\bcranberry[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Cranberry",map
+MAP,166,\benchilada[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Enchilada",map
+MAP,167,\bespresso[\s\-]+powder(?:e?s)?\b,i,"Coffee, Instant (Powder)",map
+MAP,168,\bfrench[\s\-]+dressing(?:e?s)?\b,i,"Dressing, French",map
+MAP,169,\bfresh[\s\-]+blueberr(?:y|ies)\b,i,Blueberry,map
+MAP,170,\bfresh[\s\-]+cranberr(?:y|ies)\b,i,Cranberry,map
+MAP,171,\bfresh[\s\-]+pineapple(?:e?s)?\b,i,Pineapple (Canned or Fresh),map
+MAP,172,\bfresh[\s\-]+raspberr(?:y|ies)\b,i,Raspberry,map
+MAP,173,\bground[\s\-]+allspice(?:e?s)?\b,i,"Spice, Allspice (Ground)",map
+MAP,174,\bground[\s\-]+cardamom(?:e?s)?\b,i,"Spice, Cardamom (Ground)",map
+MAP,175,\bground[\s\-]+cinnamon(?:e?s)?\b,i,"Spice, Cinnamon (Ground)",map
+MAP,176,\bground[\s\-]+flaxseed(?:e?s)?\b,i,Flax Seed,map
+MAP,177,\bground[\s\-]+turmeric(?:e?s)?\b,i,"Spice, Turmeric (Ground)",map
+MAP,178,\binstant[\s\-]+pudding(?:e?s)?\b,i,"Pudding Mix, Chocolate",map
+MAP,179,\blonghorn[\s\-]+cheese(?:e?s)?\b,i,"Cheese, Longhorn",map
+MAP,180,\bmuenster[\s\-]+cheese(?:e?s)?\b,i,"Cheese, Muenster",map
+MAP,181,\bpineapple[\s\-]+juice(?:e?s)?\b,i,"Juice, Pineapple",map
+MAP,182,\bred[\s\-]+chili[\s\-]+flakes?\b,i,"Spice, Red Pepper Flakes (Dried)",map
+MAP,183,\bsesame[\s\-]+dressing(?:e?s)?\b,i,"Dressing, Sesame",map
+MAP,184,\bsweet[\s\-]+chocolate(?:e?s)?\b,i,"Chocolate, Sweet",map
+MAP,185,\bturbinado[\s\-]+sugar(?:e?s)?\b,i,Turbinado Sugar,map
+MAP,186,\bturmeric[\s\-]+powder(?:e?s)?\b,i,"Spice, Turmeric (Ground)",map
+MAP,187,\bunsalted[\s\-]+butter(?:e?s)?\b,i,"Butter, Unsalted",map
+MAP,188,\bvanilla[\s\-]+essence(?:e?s)?\b,i,"Extract, Vanilla",map
+MAP,189,\bvanilla[\s\-]+extract(?:e?s)?\b,i,"Extract, Vanilla",map
+MAP,190,\bvanilla[\s\-]+pudding(?:e?s)?\b,i,"Pudding Mix, Vanilla",map
+MAP,191,\bvegetable[\s\-]+juice(?:e?s)?\b,i,"Juice, Vegetable",map
+MAP,192,\bwhipped[\s\-]+topping(?:e?s)?\b,i,Whipped Topping (Non-Dairy),map
+MAP,193,\byellow[\s\-]+cornmeal(?:e?s)?\b,i,Cornmeal,map
+MAP,194,\bapricot[\s\-]+nectar(?:e?s)?\b,i,Apricot Nectar,map
+MAP,195,\bbarbecue[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Barbecue",map
+MAP,196,\bbarbeque[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Barbecue",map
+MAP,197,\bblackberry[\s\-]+jam(?:e?s)?\b,i,"Jam, Strawberry",map
+MAP,198,\bcherry[\s\-]+gelatin(?:e?s)?\b,i,"Gelatin Dessert, Flavored (Dry Mix)",map
+MAP,199,\bchickpea[\s\-]+flour(?:e?s)?\b,i,"Flour, Chickpea",map
+MAP,200,\bchocolate[\s\-]+cake(?:e?s)?\b,i,"Mix, Chocolate Cake",map
+MAP,201,\bcocktail[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Cocktail",map
+MAP,202,\bcracked[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,203,\begg[\s\-]+substitute(?:e?s)?\b,i,Egg Substitute,map
+MAP,204,\bfresh[\s\-]+crabmeat(?:e?s)?\b,i,Crabmeat,map
+MAP,205,\bfresh[\s\-]+rosemary(?:e?s)?\b,i,"Herb, Rosemary (Fresh)",map
+MAP,206,\bfrozen[\s\-]+coconut(?:e?s)?\b,i,"Coconut, Sweetened Shredded",map
+MAP,207,\bfruit[\s\-]+cocktail(?:e?s)?\b,i,Fruit Cocktail,map
+MAP,208,\bgranola[\s\-]+cereal(?:e?s)?\b,i,Granola,map
+MAP,209,\bgrated[\s\-]+coconut(?:e?s)?\b,i,Grated Coconut,map
+MAP,210,\bgreen[\s\-]+cardamom(?:e?s)?\b,i,"Spice, Cardamom (Ground)",map
+MAP,211,\bground[\s\-]+mustard(?:e?s)?\b,i,"Spice, Mustard (Powder)",map
+MAP,212,\bground[\s\-]+oregano(?:e?s)?\b,i,"Herb, Oregano",map
+MAP,213,\bground[\s\-]+sirloin(?:e?s)?\b,i,Ground Sirloin,map
+MAP,214,\bground[\s\-]+venison(?:e?s)?\b,i,Ground Venison,map
+MAP,215,\bhead[\s\-]+radicchio(?:e?s)?\b,i,Radicchio,map
+MAP,216,\bmustard[\s\-]+powder(?:e?s)?\b,i,"Spice, Mustard (Powder)",map
+MAP,217,\borange[\s\-]+gelatin(?:e?s)?\b,i,"Gelatin Dessert, Flavored (Dry Mix)",map
+MAP,218,\bprocess[\s\-]+cheese(?:e?s)?\b,i,"Cheese, American (Processed)",map
+MAP,219,\branch[\s\-]+dressing(?:e?s)?\b,i,"Dressing, Ranch",map
+MAP,220,\brefrigerated[\s\-]+biscuits?\b,i,Biscuit,map
+MAP,221,\brefrigerator[\s\-]+biscuits?\b,i,Biscuit,map
+MAP,222,\bsparkling[\s\-]+wine(?:e?s)?\b,i,"Wine, Champagne",map
+MAP,223,\bsriracha[\s\-]+sauce(?:e?s)?\b,i,Sriracha,map
+MAP,224,\bstrawberry[\s\-]+jam(?:e?s)?\b,i,"Jam, Strawberry",map
+MAP,225,\btaco[\s\-]+seasoning(?:e?s)?\b,i,"Spice, Taco Seasoning (Blend, Salted)",map
+MAP,226,\btamarind[\s\-]+paste(?:e?s)?\b,i,Tamarind (Pulp),map
+MAP,227,\btapioca[\s\-]+starch(?:e?s)?\b,i,"Flour, Tapioca",map
+MAP,228,\bteriyaki[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Teriyaki",map
+MAP,229,\bvanilla[\s\-]+flavor(?:e?s)?\b,i,"Extract, Vanilla",map
+MAP,230,\bwhite[\s\-]+cornmeal(?:e?s)?\b,i,White Cornmeal,map
+MAP,231,\bwhole[\s\-]+allspice(?:e?s)?\b,i,"Spice, Allspice (Whole)",map
+MAP,232,\balmond[\s\-]+butter(?:e?s)?\b,i,Almond Butter,map
+MAP,233,\bbutterscotch[\s\-]+morsels?\b,i,Butterscotch Chips,map
+MAP,234,\bcandied[\s\-]+fruit(?:e?s)?\b,i,Candied Fruit,map
+MAP,235,\bcaramel[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Caramel",map
+MAP,236,\bchicken[\s\-]+gravy(?:e?s)?\b,i,Chicken Gravy,map
+MAP,237,\bchilli[\s\-]+powder(?:e?s)?\b,i,"Spice, Chili Powder (Blend)",map
+MAP,238,\bchocolate[\s\-]+bar(?:e?s)?\b,i,"Chocolate, Milk",map
+MAP,239,\bchocolate[\s\-]+kiss(?:es)?\b,i,"Chocolate, Milk",map
+MAP,240,\bcoconut[\s\-]+sugar(?:e?s)?\b,i,Coconut Palm Sugar,map
+MAP,241,\bcoconut[\s\-]+water(?:e?s)?\b,i,Coconut Water,map
+MAP,242,\bcoffee[\s\-]+powder(?:e?s)?\b,i,"Coffee, Instant (Powder)",map
+MAP,243,\bcooking[\s\-]+spray(?:e?s)?\b,i,"Oil, Cooking Spray",map
+MAP,244,\bcotija[\s\-]+cheese(?:e?s)?\b,i,"Cheese, Cotija",map
+MAP,245,\bcountry[\s\-]+bread(?:e?s)?\b,i,Baguette,map
+MAP,246,\bcurrant[\s\-]+jelly(?:e?s)?\b,i,"Jam, Grape",map
+MAP,247,\begg[\s\-]+roll[\s\-]+wraps?\b,i,Wonton Wrapper,map
+MAP,248,\bfresh[\s\-]+coconut(?:e?s)?\b,i,"Coconut, Sweetened Shredded",map
+MAP,249,\bgarlic[\s\-]+powder(?:e?s)?\b,i,"Spice, Garlic (Powder)",map
+MAP,250,\bginger[\s\-]+powder(?:e?s)?\b,i,"Spice, Ginger (Ground)",map
+MAP,251,\bgrapeseed[\s\-]+oil(?:e?s)?\b,i,"Oil, Grapeseed",map
+MAP,252,\bground[\s\-]+fennel(?:e?s)?\b,i,"Spice, Fennel (Whole Seed)",map
+MAP,253,\bground[\s\-]+ginger(?:e?s)?\b,i,"Spice, Ginger (Ground)",map
+MAP,254,\bground[\s\-]+nutmeg(?:e?s)?\b,i,"Spice, Nutmeg (Ground)",map
+MAP,255,\bground[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,256,\bherb[\s\-]+stuffing(?:e?s)?\b,i,"Mix, Stuffing",map
+MAP,257,\bitalian[\s\-]+bread(?:e?s)?\b,i,"Bread, Italian",map
+MAP,258,\blemon[\s\-]+gelatin(?:e?s)?\b,i,"Gelatin Dessert, Flavored (Dry Mix)",map
+MAP,259,\bmashed[\s\-]+banana(?:e?s)?\b,i,Banana,map
+MAP,260,\bmushroom[\s\-]+soup(?:e?s)?\b,i,"Soup, Cream of Mushroom (Condensed)",map
+MAP,261,\bpepperoncini[\s\-]+peppers?\b,i,Pepperoncini Pepper,map
+MAP,262,\bpicante[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Picante",map
+MAP,263,\bpowdered[\s\-]+milk(?:e?s)?\b,i,"Milk, Nonfat Dry",map
+MAP,264,\bpumpkin[\s\-]+puree(?:e?s)?\b,i,Pumpkin,map
+MAP,265,\bpumpkin[\s\-]+spice(?:e?s)?\b,i,"Spice, Pumpkin Pie Spice (Blend)",map
+MAP,266,\braspberry[\s\-]+jam(?:e?s)?\b,i,"Jam, Strawberry",map
+MAP,267,\bsafflower[\s\-]+oil(?:e?s)?\b,i,"Oil, Safflower",map
+MAP,268,\bshaoxing[\s\-]+wine(?:e?s)?\b,i,"Wine, Sake",map
+MAP,269,\bstrawberry[\s\-]+preserves?\b,i,"Jam, Strawberry",map
+MAP,270,\bsunflower[\s\-]+oil(?:e?s)?\b,i,"Oil, Sunflower",map
+MAP,271,\btapioca[\s\-]+flour(?:e?s)?\b,i,"Flour, Tapioca",map
+MAP,272,\bvegetable[\s\-]+oil(?:e?s)?\b,i,"Oil, Vegetable",map
+MAP,273,\bwhipped[\s\-]+cream(?:e?s)?\b,i,"Cream, Whipped (Sweetened)",map
+MAP,274,\byellow[\s\-]+squash(?:e?s)?\b,i,Yellow Squash,map
+MAP,275,\bacorn[\s\-]+squash(?:e?s)?\b,i,Acorn Squash,map
+MAP,276,\balmond[\s\-]+flour(?:e?s)?\b,i,"Flour, Almond",map
+MAP,277,\balmond[\s\-]+paste(?:e?s)?\b,i,Almond Paste,map
+MAP,278,\bapple[\s\-]+butter(?:e?s)?\b,i,Apple Butter,map
+MAP,279,\barborio[\s\-]+rice(?:e?s)?\b,i,"Rice, Arborio",map
+MAP,280,\bbaby[\s\-]+arugula(?:e?s)?\b,i,Arugula,map
+MAP,281,\bblack[\s\-]+cherr(?:y|ies)\b,i,Cherry,map
+MAP,282,\bblack[\s\-]+pepper(?:e?s)?\b,i,"Spice, Black Pepper (Ground)",map
+MAP,283,\bbulgur[\s\-]+wheat(?:e?s)?\b,i,Bulgur,map
+MAP,284,\bcheese[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Cheese",map
+MAP,285,\bcherry[\s\-]+juice(?:e?s)?\b,i,"Juice, Cherry",map
+MAP,286,\bcoleslaw[\s\-]+mix(?:e?s)?\b,i,"Mix, Coleslaw",map
+MAP,287,\bcooking[\s\-]+wine(?:e?s)?\b,i,"Wine, Cooking",map
+MAP,288,\bcream[\s\-]+sherry(?:e?s)?\b,i,"Wine, Port",map
+MAP,289,\bcrusty[\s\-]+bread(?:e?s)?\b,i,Baguette,map
+MAP,290,\bcumin[\s\-]+powder(?:e?s)?\b,i,Cumin,map
+MAP,291,\bcurry[\s\-]+powder(?:e?s)?\b,i,"Spice, Curry Powder (Blend)",map
+MAP,292,\bdried[\s\-]+cherr(?:y|ies)\b,i,Dried Cherry,map
+MAP,293,\bfresh[\s\-]+cherr(?:y|ies)\b,i,Cherry,map
+MAP,294,\bgreen[\s\-]+chill(?:y|ies)\b,i,"Chili Pepper, Green (Canned, Diced)",map
+MAP,295,\bground[\s\-]+thyme(?:e?s)?\b,i,"Herb, Thyme",map
+MAP,296,\binstant[\s\-]+rice(?:e?s)?\b,i,"Rice, Instant",map
+MAP,297,\bitalian[\s\-]+breadcrumbs?\b,i,"Bread Crumbs, Dry (Italian Seasoned)",map
+MAP,298,\blemonade[\s\-]+mix(?:e?s)?\b,i,"Mix, Lemonade",map
+MAP,299,\blime[\s\-]+gelatin(?:e?s)?\b,i,"Gelatin Dessert, Flavored (Dry Mix)",map
+MAP,300,\bmadeira[\s\-]+wine(?:e?s)?\b,i,"Wine, Port",map
+MAP,301,\bmiracle[\s\-]+whip(?:e?s)?\b,i,Miracle Whip,map
+MAP,302,\bonion[\s\-]+powder(?:e?s)?\b,i,"Spice, Onion (Powder)",map
+MAP,303,\bpastry[\s\-]+shell(?:e?s)?\b,i,Pie Crust,map
+MAP,304,\bpeanut[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Peanut",map
+MAP,305,\bphyllo[\s\-]+dough(?:e?s)?\b,i,Phyllo,map
+MAP,306,\bqueso[\s\-]+fresco(?:e?s)?\b,i,"Cheese, Queso Fresco",map
+MAP,307,\braspberry[\s\-]+preserves?\b,i,"Jam, Strawberry",map
+MAP,308,\bred[\s\-]+cinnamon(?:e?s)?\b,i,"Spice, Cinnamon (Ground)",map
+MAP,309,\bsugar[\s\-]+cookie(?:e?s)?\b,i,"Cookie, Sugar",map
+MAP,310,\bsweet[\s\-]+butter(?:e?s)?\b,i,"Butter, Unsalted",map
+MAP,311,\bsweet[\s\-]+cherr(?:y|ies)\b,i,Cherry,map
+MAP,312,\bsweet[\s\-]+relish(?:e?s)?\b,i,Sweet Relish,map
+MAP,313,\bwasabi[\s\-]+paste(?:e?s)?\b,i,Wasabi,map
+MAP,314,\bwhite[\s\-]+hominy(?:e?s)?\b,i,Hominy,map
+MAP,315,\bwhite[\s\-]+pepper(?:e?s)?\b,i,"Spice, White Pepper (Ground)",map
+MAP,316,\balmond[\s\-]+meal(?:e?s)?\b,i,"Flour, Almond",map
+MAP,317,\bapple[\s\-]+jelly(?:e?s)?\b,i,"Jam, Grape",map
+MAP,318,\bapple[\s\-]+sauce(?:e?s)?\b,i,"Applesauce, Sweetened",map
+MAP,319,\bapricot[\s\-]+jam(?:e?s)?\b,i,"Jam, Apricot",map
+MAP,320,\bbing[\s\-]+cherr(?:y|ies)\b,i,Cherry,map
+MAP,321,\bbiscuit[\s\-]+mix(?:e?s)?\b,i,"Mix, Bisquick",map
+MAP,322,\bbutterscotch[\s\-]+chips?\b,i,Butterscotch Chips,map
+MAP,323,\bcelery[\s\-]+soup(?:e?s)?\b,i,"Soup, Cream of Celery (Condensed)",map
+MAP,324,\bchocolate[\s\-]+shavings?\b,i,"Chocolate, Semisweet Chips",map
+MAP,325,\bcoconut[\s\-]+oil(?:e?s)?\b,i,"Oil, Coconut",map
+MAP,326,\bcooking[\s\-]+oil(?:e?s)?\b,i,"Oil, Vegetable",map
+MAP,327,\bcorn[\s\-]+muffin(?:e?s)?\b,i,"Mix, Cornbread",map
+MAP,328,\bcorn[\s\-]+starch(?:e?s)?\b,i,"Starch, Corn",map
+MAP,329,\bdry[\s\-]+mustard(?:e?s)?\b,i,"Spice, Mustard (Powder)",map
+MAP,330,\bfennel[\s\-]+bulb(?:e?s)?\b,i,Fennel,map
+MAP,331,\bfresh[\s\-]+thyme(?:e?s)?\b,i,"Herb, Thyme (Fresh)",map
+MAP,332,\bgoat[\s\-]+cheese(?:e?s)?\b,i,"Cheese, Goat",map
+MAP,333,\bgrape[\s\-]+jelly(?:e?s)?\b,i,"Jam, Grape",map
+MAP,334,\bgreen[\s\-]+chil(?:y|ies)\b,i,"Chili Pepper, Green (Canned, Diced)",map
+MAP,335,\bgreen[\s\-]+chili(?:e?s)?\b,i,"Chili Pepper, Green (Canned, Diced)",map
+MAP,336,\bground[\s\-]+flax(?:e?s)?\b,i,Flax Seed,map
+MAP,337,\bground[\s\-]+mace(?:e?s)?\b,i,"Spice, Mace (Ground)",map
+MAP,338,\bground[\s\-]+meat(?:e?s)?\b,i,Hamburger Meat,map
+MAP,339,\bground[\s\-]+sage(?:e?s)?\b,i,"Herb, Sage",map
+MAP,340,\bground[\s\-]+veal(?:e?s)?\b,i,Ground Veal,map
+MAP,341,\bhot[\s\-]+dog[\s\-]+buns?\b,i,"Bun, Hot Dog",map
+MAP,342,\blemon[\s\-]+grass(?:e?s)?\b,i,"Herb, Lemongrass",map
+MAP,343,\bmasa[\s\-]+harina(?:e?s)?\b,i,Masa Harina,map
+MAP,344,\bmilk[\s\-]+powder(?:e?s)?\b,i,"Milk, Nonfat Dry",map
+MAP,345,\bmixed[\s\-]+spice(?:e?s)?\b,i,"Spice, Pumpkin Pie Spice (Blend)",map
+MAP,346,\bneutral[\s\-]+oil(?:e?s)?\b,i,"Oil, Vegetable",map
+MAP,347,\borange[\s\-]+peel(?:e?s)?\b,i,Orange Zest,map
+MAP,348,\borange[\s\-]+rind(?:e?s)?\b,i,Orange Zest,map
+MAP,349,\borange[\s\-]+zest(?:e?s)?\b,i,Orange Zest,map
+MAP,350,\bpancake[\s\-]+mix(?:e?s)?\b,i,"Mix, Pancake",map
+MAP,351,\bpesto[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Pesto",map
+MAP,352,\bred[\s\-]+currant(?:e?s)?\b,i,Red Currant,map
+MAP,353,\bred[\s\-]+snapper(?:e?s)?\b,i,Red Snapper,map
+MAP,354,\brice[\s\-]+cereal(?:e?s)?\b,i,"Cereal, Crisp Rice",map
+MAP,355,\brice[\s\-]+krisp(?:y|ies)\b,i,"Cereal, Crisp Rice",map
+MAP,356,\bsour[\s\-]+cherr(?:y|ies)\b,i,Sour Cherry,map
+MAP,357,\btruffle[\s\-]+oil(?:e?s)?\b,i,"Oil, Olive",map
+MAP,358,\bwhite[\s\-]+syrup(?:e?s)?\b,i,"Corn Syrup, Light",map
+MAP,359,\byellow[\s\-]+cake(?:e?s)?\b,i,"Mix, Yellow Cake",map
+MAP,360,\byellow[\s\-]+rice(?:e?s)?\b,i,"Rice, Yellow",map
+MAP,361,\banise[\s\-]+seed(?:e?s)?\b,i,"Spice, Anise Seed (Whole)",map
+MAP,362,\bapricot[\s\-]+preserves?\b,i,"Jam, Apricot",map
+MAP,363,\bbeef[\s\-]+gravy(?:e?s)?\b,i,Beef Gravy,map
+MAP,364,\bblack[\s\-]+peppercorns?\b,i,"Spice, Black Pepper (Whole)",map
+MAP,365,\bbrown[\s\-]+rice(?:e?s)?\b,i,"Rice, Brown",map
+MAP,366,\bcake[\s\-]+yeast(?:e?s)?\b,i,Cake Yeast,map
+MAP,367,\bcanola[\s\-]+oil(?:e?s)?\b,i,"Oil, Canola",map
+MAP,368,\bchili[\s\-]+pwdr(?:e?s)?\b,i,"Spice, Chili Powder (Blend)",map
+MAP,369,\bchocolate[\s\-]+squares?\b,i,"Chocolate, Baking (Unsweetened)",map
+MAP,370,\bclam[\s\-]+juice(?:e?s)?\b,i,"Juice, Clam",map
+MAP,371,\bcorn[\s\-]+bread(?:e?s)?\b,i,"Mix, Cornbread",map
+MAP,372,\bcorn[\s\-]+flour(?:e?s)?\b,i,"Flour, Corn",map
+MAP,373,\bcrisco[\s\-]+oil(?:e?s)?\b,i,"Oil, Vegetable",map
+MAP,374,\bcrisp[\s\-]+rice(?:e?s)?\b,i,"Cereal, Crisp Rice",map
+MAP,375,\bcurry[\s\-]+pwdr(?:e?s)?\b,i,"Spice, Curry Powder (Blend)",map
+MAP,376,\bdream[\s\-]+whip(?:e?s)?\b,i,Whipped Topping Mix,map
+MAP,377,\blemon[\s\-]+peel(?:e?s)?\b,i,Lemon Zest,map
+MAP,378,\blemon[\s\-]+rind(?:e?s)?\b,i,Lemon Zest,map
+MAP,379,\blemon[\s\-]+zest(?:e?s)?\b,i,Lemon Zest,map
+MAP,380,\bmatzo[\s\-]+meal(?:e?s)?\b,i,Matzo Meal,map
+MAP,381,\boreo[\s\-]+cook(?:y|ies)\b,i,"Cookie, Oreo",map
+MAP,382,\bpeanut[\s\-]+oil(?:e?s)?\b,i,"Oil, Peanut",map
+MAP,383,\bpineapple[\s\-]+tidbits?\b,i,Pineapple Tidbit,map
+MAP,384,\bpita[\s\-]+bread(?:e?s)?\b,i,Pita Bread,map
+MAP,385,\bplum[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Plum",map
+MAP,386,\bpomegranate[\s\-]+seeds?\b,i,Pomegranate,map
+MAP,387,\bpoppy[\s\-]+seed(?:e?s)?\b,i,"Spice, Poppy Seed (Whole)",map
+MAP,388,\bred[\s\-]+cherr(?:y|ies)\b,i,Cherry,map
+MAP,389,\bred[\s\-]+chilli(?:e?s)?\b,i,Red Chile,map
+MAP,390,\brice[\s\-]+flour(?:e?s)?\b,i,"Flour, Rice",map
+MAP,391,\brump[\s\-]+roast(?:e?s)?\b,i,Rump Roast,map
+MAP,392,\bsesame[\s\-]+oil(?:e?s)?\b,i,"Oil, Sesame",map
+MAP,393,\bwalnut[\s\-]+oil(?:e?s)?\b,i,"Oil, Walnut",map
+MAP,394,\bwesson[\s\-]+oil(?:e?s)?\b,i,"Oil, Vegetable",map
+MAP,395,\bwhite[\s\-]+cake(?:e?s)?\b,i,"Mix, White Cake",map
+MAP,396,\bwhite[\s\-]+karo(?:e?s)?\b,i,"Corn Syrup, Light",map
+MAP,397,\bwhite[\s\-]+peppercorns?\b,i,"Spice, White Pepper (Ground)",map
+MAP,398,\bbbq[\s\-]+sauce(?:e?s)?\b,i,"Sauce, Barbecue",map
+MAP,399,\bcannellini[\s\-]+beans?\b,i,White Bean,map
+MAP,400,\bcherry[\s\-]+preserves?\b,i,"Jam, Strawberry",map
+MAP,401,\bchocolate[\s\-]+wafers?\b,i,"Chocolate, Wafer",map
+MAP,402,\bcool[\s\-]+whip(?:e?s)?\b,i,Whipped Topping (Non-Dairy),map
+MAP,403,\bcorn[\s\-]+meal(?:e?s)?\b,i,Cornmeal,map
+MAP,404,\bcornflake[\s\-]+crumbs?\b,i,"Cereal, Corn Flakes",map
+MAP,405,\bflax[\s\-]+seed(?:e?s)?\b,i,Flax Seed,map
+MAP,406,\bground[\s\-]+hazelnuts?\b,i,Hazelnuts,map
+MAP,407,\bolive[\s\-]+oil(?:e?s)?\b,i,"Oil, Olive",map
+MAP,408,\bpie[\s\-]+crust(?:e?s)?\b,i,Pie Crust,map
+MAP,409,\bpie[\s\-]+shell(?:e?s)?\b,i,Pie Crust,map
+MAP,410,\bpie[\s\-]+spice(?:e?s)?\b,i,"Spice, Pumpkin Pie Spice (Blend)",map
+MAP,411,\bport[\s\-]+wine(?:e?s)?\b,i,"Wine, Port",map
+MAP,412,\bred[\s\-]+chil(?:y|ies)\b,i,Red Chile,map
+MAP,413,\bred[\s\-]+chile(?:e?s)?\b,i,Red Chile,map
+MAP,414,\bred[\s\-]+chili(?:e?s)?\b,i,Red Chile,map
+MAP,415,\brice[\s\-]+wine(?:e?s)?\b,i,"Wine, Sake",map
+MAP,416,\brye[\s\-]+bread(?:e?s)?\b,i,Rye Bread,map
+MAP,417,\brye[\s\-]+flour(?:e?s)?\b,i,"Flour, Rye",map
+MAP,418,\bsalad[\s\-]+oil(?:e?s)?\b,i,"Oil, Vegetable",map
+MAP,419,\bsalt[\s\-]+pork(?:e?s)?\b,i,"Pork, Salt Pork",map
+MAP,420,\bsaltine[\s\-]+crackers?\b,i,"Crackers, Saltine",map
+MAP,421,\bsoy[\s\-]+flour(?:e?s)?\b,i,"Flour, Soy",map
+MAP,422,\bstew[\s\-]+meat(?:e?s)?\b,i,Stew Meat,map
+MAP,423,\bwild[\s\-]+rice(?:e?s)?\b,i,"Rice, Wild",map
+MAP,424,\balfalfa[\s\-]+sprouts?\b,i,Alfalfa Sprout,map
+MAP,425,\bbay[\s\-]+leaf(?:e?s)?\b,i,"Herb, Bay Leaf (Dried)",map
+MAP,426,\bbean[\s\-]+dip(?:e?s)?\b,i,Bean Dip,map
+MAP,427,\bbok[\s\-]+choy(?:e?s)?\b,i,Bok Choy,map
+MAP,428,\bcatfish[\s\-]+fillets?\b,i,Catfish Fillet,map
+MAP,429,\bchocolate[\s\-]+curls?\b,i,"Chocolate, Semisweet Chips",map
+MAP,430,\bcinnamon[\s\-]+sticks?\b,i,"Spice, Cinnamon (Whole Stick)",map
+MAP,431,\bcoriander[\s\-]+seeds?\b,i,"Spice, Coriander Seed (Whole)",map
+MAP,432,\bcorn[\s\-]+oil(?:e?s)?\b,i,"Oil, Corn",map
+MAP,433,\benglish[\s\-]+muffins?\b,i,English Muffin,map
+MAP,434,\bfenugreek[\s\-]+seeds?\b,i,"Spice, Fenugreek Seed (Whole)",map
+MAP,435,\bgraham[\s\-]+crackers?\b,i,"Crackers, Graham",map
+MAP,436,\blasagna[\s\-]+noodles?\b,i,"Pasta, Dry (Generic)",map
+MAP,437,\blasagne[\s\-]+noodles?\b,i,"Pasta, Dry (Generic)",map
+MAP,438,\bmarjoram[\s\-]+leaves?\b,i,"Herb, Marjoram",map
+MAP,439,\borange[\s\-]+sections?\b,i,Orange,map
+MAP,440,\borange[\s\-]+segments?\b,i,Orange,map
+MAP,441,\boyster[\s\-]+crackers?\b,i,"Crackers, Saltine",map
+MAP,442,\brosemary[\s\-]+sprigs?\b,i,"Herb, Rosemary (Fresh)",map
+MAP,443,\bsaffron[\s\-]+threads?\b,i,"Spice, Saffron (Threads)",map
+MAP,444,\bsunflower[\s\-]+seeds?\b,i,Sunflower Seed,map
+MAP,445,\btilapia[\s\-]+fillets?\b,i,Tilapia Fillet,map
+MAP,446,\bwater[\s\-]+chestnuts?\b,i,Water Chestnut,map
+MAP,447,\bwonton[\s\-]+wrappers?\b,i,Wonton Wrapper,map
+MAP,448,\bapricot[\s\-]+halves?\b,i,Apricot,map
+MAP,449,\bbanana[\s\-]+peppers?\b,i,Banana Pepper,map
+MAP,450,\bcardamom[\s\-]+seeds?\b,i,"Spice, Cardamom (Ground)",map
+MAP,451,\bchocolate[\s\-]+bits?\b,i,"Chocolate, Semisweet Chips",map
+MAP,452,\bcollard[\s\-]+greens?\b,i,Collard Greens,map
+MAP,453,\bcracker[\s\-]+crumbs?\b,i,"Crackers, Saltine",map
+MAP,454,\bcrawfish[\s\-]+tails?\b,i,Crawfish,map
+MAP,455,\bdried[\s\-]+apricots?\b,i,Dried Apricot,map
+MAP,456,\bgolden[\s\-]+raisins?\b,i,"Raisins, Golden",map
+MAP,457,\bharicots[\s\-]+verts?\b,i,Green Beans,map
+MAP,458,\bparsley[\s\-]+flakes?\b,i,"Herb, Parsley (Dried)",map
+MAP,459,\bpistachio[\s\-]+nuts?\b,i,Pistachios,map
+MAP,460,\bsandwich[\s\-]+rolls?\b,i,Kaiser Roll,map
+MAP,461,\btortilla[\s\-]+chips?\b,i,Tortilla Chips,map
+MAP,462,\bvanilla[\s\-]+wafers?\b,i,Vanilla Wafer,map
+MAP,463,\bcaraway[\s\-]+seeds?\b,i,"Spice, Caraway (Whole Seed)",map
+MAP,464,\bcardamom[\s\-]+pods?\b,i,"Spice, Cardamom (Whole Pod)",map
+MAP,465,\bground[\s\-]+pecans?\b,i,Pecans,map
+MAP,466,\bmustard[\s\-]+seeds?\b,i,"Spice, Mustard Seed (Whole)",map
+MAP,467,\borange[\s\-]+slices?\b,i,Orange,map
+MAP,468,\bpastry[\s\-]+sheets?\b,i,Pastry Sheet,map
+MAP,469,\bpotato[\s\-]+flakes?\b,i,Potato Flake,map
+MAP,470,\bpumpkin[\s\-]+seeds?\b,i,Pumpkin Seed,map
+MAP,471,\bro[\s\-]+tel(?:e?s)?\b,i,"Tomato, Diced with Green Chiles (Canned)",map
+MAP,472,\bsoda[\s\-]+crackers?\b,i,"Crackers, Saltine",map
+MAP,473,\bsweet[\s\-]+peppers?\b,i,Red Sweet Pepper,map
+MAP,474,\bwhite[\s\-]+raisins?\b,i,"Raisins, Golden",map
+MAP,475,\bancho[\s\-]+chiles?\b,i,Ancho Chile,map
+MAP,476,\bbass[\s\-]+fillets?\b,i,Bass,map
+MAP,477,\bbean[\s\-]+sprouts?\b,i,Bean Sprout,map
+MAP,478,\bbutter[\s\-]+beans?\b,i,Butter Bean,map
+MAP,479,\bcelery[\s\-]+seeds?\b,i,"Spice, Celery Seed (Whole)",map
+MAP,480,\bcooking[\s\-]+oats?\b,i,"Oats, Rolled",map
+MAP,481,\bcornish[\s\-]+hens?\b,i,Cornish Hen,map
+MAP,482,\bdark[\s\-]+raisins?\b,i,Raisins,map
+MAP,483,\bdinner[\s\-]+rolls?\b,i,Dinner Roll,map
+MAP,484,\bduck[\s\-]+breasts?\b,i,Duck Breast,map
+MAP,485,\bfennel[\s\-]+seeds?\b,i,"Spice, Fennel (Whole Seed)",map
+MAP,486,\bgreen[\s\-]+chiles?\b,i,"Chili Pepper, Green (Canned, Diced)",map
+MAP,487,\bgreen[\s\-]+chilis?\b,i,"Chili Pepper, Green (Canned, Diced)",map
+MAP,488,\bhoagie[\s\-]+rolls?\b,i,Kaiser Roll,map
+MAP,489,\bkaiser[\s\-]+rolls?\b,i,Kaiser Roll,map
+MAP,490,\bonion[\s\-]+flakes?\b,i,"Spice, Onion (Dried Flakes)",map
+MAP,491,\bpecan[\s\-]+halves?\b,i,Pecans,map
+MAP,492,\bregular[\s\-]+oats?\b,i,"Oats, Rolled",map
+MAP,493,\brice[\s\-]+noodles?\b,i,"Pasta, Rice",map
+MAP,494,\bveal[\s\-]+cutlets?\b,i,Veal Cutlet,map
+MAP,495,\bbran[\s\-]+flakes?\b,i,"Cereal, Bran Flakes",map
+MAP,496,\bbread[\s\-]+rolls?\b,i,Dinner Roll,map
+MAP,497,\bcashew[\s\-]+nuts?\b,i,Cashews,map
+MAP,498,\bcorn[\s\-]+flakes?\b,i,"Cereal, Corn Flakes",map
+MAP,499,\bcumin[\s\-]+seeds?\b,i,"Spice, Cumin (Whole Seed)",map
+MAP,500,\begg[\s\-]+beaters?\b,i,Egg Substitute,map
+MAP,501,\begg[\s\-]+noodles?\b,i,"Pasta, Egg Noodle",map
+MAP,502,\bgreen[\s\-]+beans?\b,i,Green Beans,map
+MAP,503,\bhash[\s\-]+browns?\b,i,Hash Brown,map
+MAP,504,\bnacho[\s\-]+chips?\b,i,Tortilla Chips,map
+MAP,505,\bpear[\s\-]+halves?\b,i,Pear,map
+MAP,506,\brolled[\s\-]+oats?\b,i,"Oats, Rolled",map
+MAP,507,\btoffee[\s\-]+bits?\b,i,Toffee,map
+MAP,508,\bwhite[\s\-]+beans?\b,i,White Bean,map
+MAP,509,\bchia[\s\-]+seeds?\b,i,Chia Seed,map
+MAP,510,\bcorn[\s\-]+chips?\b,i,Corn Chips,map
+MAP,511,\bfresh[\s\-]+figs?\b,i,Fig,map
+MAP,512,\blima[\s\-]+beans?\b,i,Lima Bean,map
+MAP,513,\bmixed[\s\-]+nuts?\b,i,"Nuts, Mixed",map
+MAP,514,\bnavy[\s\-]+beans?\b,i,Navy Bean,map
+MAP,515,\bshort[\s\-]+ribs?\b,i,Short Rib,map
+MAP,516,\btaco[\s\-]+chips?\b,i,Tortilla Chips,map
+MAP,517,\bnut[\s\-]+meats?\b,i,"Nuts, Mixed",map
+MAP,518,\bpine[\s\-]+nuts?\b,i,Pine Nut,map
+MAP,519,\bred[\s\-]+beans?\b,i,"Beans, Kidney (Canned)",map
+MAP,520,\bwax[\s\-]+beans?\b,i,Wax Bean,map
+MAP,521,\bhot[\s\-]+dogs?\b,i,Hot Dog (Frankfurter),map
+MAP,522,baking soda|bicarbonate of soda|sodium bicarbonate|^soda$,i,Baking Soda,map
+MAP,523,baking powder,i,Baking Powder,map
+MAP,524,white wine vinegar|champagne vinegar|sherry vinegar,i,"Vinegar, Red Wine*",map-approx
+MAP,525,(roasted |sweet )?red (bell )?peppers?(?! flakes)|red capsicum,i,Red Sweet Pepper|spice-if-spoon,map-conditional
+MAP,526,(green )?bell peppers?|green capsicum|green peppers?,i,Green Pepper,map
+MAP,527,heavy cream|heavy whipping cream|whipping cream|double cream,i,"Cream, Heavy (Whipping)",map
+MAP,528,(cooking )?sherry|marsala,i,"Wine, Cooking*",map-approx
+MAP,529,onion soup mix|dry onion soup|onion soup,i,"Soup Mix, Onion (Dry)",map
+MAP,530,\bramen\b,i,"Pasta, Ramen",map
+MAP,531,soup mix|dry soup|bouillon soup,i,"!dry soup mixes other than onion aren't in the database yet, so their salt would be missed",refuse
+MAP,532,(ready[- ]to[- ]serve|chunky|prepared|diluted|home-?made|homestyle).*soup|soup.*(ready[- ]to[- ]serve|prepared|diluted),i,"!only condensed (undiluted) canned soups are in the database; add broth, milk or cream for ready-to-serve soup",refuse
+MAP,533,(low|reduced|less)[- ]sodium.*cream of mushroom|cream of mushroom.*(low|reduced|less)[- ]sodium|healthy request.*mushroom,i,"Soup, Cream of Mushroom (Condensed, Reduced Sodium)",map
+MAP,534,(low|reduced|less)[- ]sodium.*cream of chicken|cream of chicken.*(low|reduced|less)[- ]sodium|healthy request.*chicken,i,"Soup, Cream of Chicken (Condensed, Reduced Sodium)",map
+MAP,535,(low|reduced|less)[- ]sodium.*tomato soup|tomato soup.*(low|reduced|less)[- ]sodium|healthy request.*tomato,i,"Soup, Tomato (Condensed, Reduced Sodium)",map
+MAP,536,cream of mushroom,i,"Soup, Cream of Mushroom (Condensed)",map
+MAP,537,cream of chicken,i,"Soup, Cream of Chicken (Condensed)",map
+MAP,538,cream of celery,i,"Soup, Cream of Celery (Condensed)",map
+MAP,539,cream of potato,i,"Soup, Cream of Potato (Condensed)",map
+MAP,540,(cheddar |nacho |fiesta )?cheese soup|broccoli cheese soup,i,"Soup, Cheese (Condensed)*",map-approx
+MAP,541,tomato soup|cream of tomato,i,"Soup, Tomato (Condensed)",map
+MAP,542,chicken noodle soup,i,"Soup, Chicken Noodle (Condensed)",map
+MAP,543,\bsoup\b,i,"!this canned soup isn't in the database yet (we have cream of mushroom, chicken, celery and potato, tomato, cheese and chicken noodle)",refuse
+MAP,544,chocolate cake mix|devil'?s food,i,"Mix, Chocolate Cake",map
+MAP,545,white cake mix,i,"Mix, White Cake",map
+MAP,546,cake mix,i,"Mix, Yellow Cake*",map-approx
+MAP,547,brownie mix,i,"Mix, Brownie",map
+MAP,548,bisquick|baking mix,i,"Mix, Bisquick",map
+MAP,549,pancake mix,i,"Mix, Pancake",map
+MAP,550,stuffing mix|stove ?top,i,"Mix, Stuffing",map
+MAP,551,cornbread mix|jiffy,i,"Mix, Cornbread",map
+MAP,552,muffin mix|cookie mix,i,"!muffin and cookie mixes aren't in the database; enter flour, sugar and salt separately",refuse
+MAP,553,cream cheese frosting,i,"Frosting, Cream Cheese",map
+MAP,554,chocolate frosting,i,"Chocolate, Frosting",map
+MAP,555,frosting|\bicing\b(?! sugar),i,Frosting,map
+MAP,556,jell-?o|flavou?red gelatin|gelatin dessert,i,"Gelatin Dessert, Flavored (Dry Mix)",map
+MAP,557,gelatine?,i,"Gelatin Dessert, Unflavored",map
+MAP,558,chocolate (instant )?pudding,i,"Pudding Mix, Chocolate",map
+MAP,559,lemon (instant )?pudding,i,"Pudding Mix, Lemon",map
+MAP,560,pudding mix|instant pudding,i,"Pudding Mix, Vanilla*",map-approx
+MAP,561,kahlua|coffee liqueur|tia maria,i,"Liqueur, Coffee",map
+MAP,562,brandy|cognac,i,"Spirit, Brandy",map
+MAP,563,\brum\b,i,"Spirit, Rum",map
+MAP,564,vodka,i,"Spirit, Vodka",map
+MAP,565,whisk(e)?y|bourbon|scotch,i,"Spirit, Whiskey",map
+MAP,566,tequila,i,"Spirit, Tequila",map
+MAP,567,\bgin\b,i,"Spirit, Gin",map
+MAP,568,liqueur|liquor|schnapps|amaretto|triple sec|grand marnier|creme de|cointreau,i,!liqueurs other than coffee liqueur aren't in the database yet,refuse
+MAP,569,ginger ale,i,Ginger Ale,map
+MAP,570,lemon-?lime soda|sprite|7-?up,i,Lemon Lime Soda,map
+MAP,571,club soda|seltzer|sparkling water|soda water,i,Club Soda,map
+MAP,572,root beer|tonic water,i,!this soft drink isn't in the database yet,refuse
+MAP,573,corned beef,i,Corned Beef,map
+MAP,574,pastrami,i,Corned Beef*,map-approx
+MAP,575,\bgravy\b,i,!gravy isn't in the database yet,refuse
+MAP,576,tamarind,i,!tamarind isn't in the database yet,refuse
+MAP,577,swiss chard|\bchard\b,i,Swiss Chard,map
+MAP,578,mixed vegetables|frozen vegetables|vegetable medley,i,Mixed Vegetable,map
+MAP,579,black-?eyed peas?|cowpeas?,i,Black-Eyed Peas,map
+MAP,580,split peas?,i,!split peas aren't in the database yet,refuse
+MAP,581,(snap|snow|sugar snap) peas?|mange ?tout,i,Snap Pea,map
+MAP,582,cream[- ]style corn|creamed corn,i,Corn (Canned)*,map-approx
+MAP,583,steak (seasoning|spice|rub)|montreal|cajun seasoning|creole seasoning|old bay|taco seasoning|fajita seasoning|seasoning blend|\brub\b,i,Dried spices & herbs*,map-approx
+MAP,584,cayenne|ground red pepper|red pepper powder,i,"Spice, Cayenne (Ground)",map
+MAP,585,red pepper flakes|crushed red pepper|(crushed|dried) (hot|red|chili|chile) peppers?|chil[ie] flakes,i,"Spice, Red Pepper Flakes (Dried)",map
+MAP,586,chili powder|chile powder,i,"Spice, Chili Powder (Blend)",map
+MAP,587,paprika,i,Paprika,map
+MAP,588,(stock|broth|bouillon|consomm[eé]) (powder|granules?|base|paste|concentrate),i,Bouillon,map
+MAP,589,coconut cream|cream of coconut,i,Coconut Milk*,map-approx
+MAP,590,pork (steaks?|chops?|loin|tenderloin|shoulder|butt|roast),i,Pork,map
+MAP,591,canned .*salmon|salmon.*\bcanned\b,i,"Fish, Salmon (Canned)",map
+MAP,592,honeydew,i,Honeydew Melon,map
+MAP,593,cantaloupe|muskmelon,i,Cantaloupe,map
+MAP,594,(?<!water)\bmelon,i,Cantaloupe*,map-approx
+MAP,595,(candied|crystallized) ginger,i,!candied ginger isn't in the database yet,refuse
+MAP,596,white chocolate,i,"Chocolate, White",map
+MAP,597,bittersweet chocolate,i,"Chocolate, Bittersweet Chip",map
+MAP,598,unsweetened chocolate|baking chocolate,i,"Chocolate, Baking (Unsweetened)",map
+MAP,599,chocolate chips?|chocolate morsels?|semi-?sweet chocolate,i,"Chocolate, Semisweet Chips",map
+MAP,600,milk chocolate,i,"Chocolate, Sweet*",map-approx
+MAP,601,(unsweetened|desiccated) coconut,i,Unsweetened Coconut,map
+MAP,602,"(shredded|flaked|sweetened|grated|toasted) coconut|coconut,? (flakes|shredded|grated)|^coconut$",i,"Coconut, Sweetened Shredded",map
+MAP,603,ranch style beans|baked beans|pork and beans|refried beans,i,!seasoned canned beans aren't in the database yet,refuse
+MAP,604,(?<!monk |passion |dragon |star )\bfruit\b(?! juice),i,!mixed fruit isn't in the database; add each fruit on its own line,refuse
+MAP,605,ground coffee|coffee grounds|coffee beans?,i,!ground coffee (not brewed) isn't in the database,refuse
+MAP,606,peanut butter,i,"Peanut Butter, Salted",map
+MAP,607,steak sauce|\ba\.?1\b,i,"Sauce, Steak",map
+MAP,608,(red|hot) pepper sauce|pepper sauce,i,"Sauce, Hot (Tabasco)",map
+MAP,609,dill pickles?|pickle relish|\bpickles?\b,i,"Pickles, Dill",map
+MAP,610,\bapple cider(?! vinegar)|\bapple juice,i,"Juice, Apple",map
+MAP,611,orange juice|\boj\b,i,"Juice, Orange",map
+MAP,612,grapefruit juice,i,"Juice, Grapefruit",map
+MAP,613,grape juice,i,"Juice, Grape",map
+MAP,614,peach juice|peach nectar,i,"Juice, Peach",map
+MAP,615,pomegranate juice,i,"Juice, Pomegranate",map
+MAP,616,cranberry juice,i,"Juice, Cranberry (Unsweetened)*",map-approx
+MAP,617,lemonade,i,Lemonade Concentrate (Frozen)*,map-approx
+MAP,618,limeade,i,Lemonade Concentrate (Frozen)*,map-approx
+MAP,619,sweetened condensed|condensed milk,i,"Milk, Sweetened Condensed",map
+MAP,620,strawberry ice cream,i,Strawberry Ice Cream,map
+MAP,621,chocolate ice cream,i,"Chocolate, Ice Cream",map
+MAP,622,sherbet|sorbet,i,Orange Sherbet*,map-approx
+MAP,623,ice cream|gelato|frozen custard,i,Vanilla Ice Cream*,map-approx
+MAP,624,almond ?milk,i,Almond Milk,map
+MAP,625,soy ?milk,i,Soymilk,map
+MAP,626,rice ?milk,i,Rice Milk,map
+MAP,627,(oat|cashew|hemp) ?milk(?! powder),i,"!oat, cashew and hemp milks aren't in the database yet",refuse
+MAP,628,evaporated milk,i,"Milk, Cow*",map-approx
+MAP,629,bouillon cubes?|stock cubes?|cubes? of bouillon|bouillon$,i,Beef Stock Cube*,map-approx
+MAP,630,bouillon (granules|powder|base|paste)|granulated bouillon|better than bouillon,i,Bouillon,map
+MAP,631,lemon ?grass|lime lea(f|ves)|kaffir|makrut|dried lime|loomi|celery seed|dry mustard|mustard powder|ground mustard,i,Dried spices & herbs,map
+MAP,632,lemon pepper,i,Dried spices & herbs*,map-approx
+MAP,633,(vanilla|fruit|peach|blueberry|strawberry|lemon|raspberry|cherry|flavou?red|frozen|sweetened) yogh?urt,i,"Yogurt, Plain (Whole Milk)*",map-approx
+MAP,634,sour cream,i,Sour Cream,map
+MAP,635,margarine,i,"Butter, Salted*",map-approx
+MAP,636,salmon roe|ikura,i,Salmon Roe,map
+MAP,637,salmon,i,"Fish, Salmon (Fresh)|canned-if-can",map-conditional
+MAP,638,sweet potato|\byams?\b,i,Sweet Potato,map
+MAP,639,potato chips|crisps,i,"Potato Chips, Salted",map
+MAP,640,\bpotato(es)?\b(?! starch| flakes),i,Potato,map
+MAP,641,\bapples?\b(?! juice| cider| sauce|sauce),i,Apple,map
+MAP,642,(?<!chick ?)\bpeas\b|green peas?|sweet peas?|garden peas?,i,Green Pea,map
+MAP,643,(light|dark)? ?corn syrup,i,Tapioca Syrup 42 DE*,map-approx
+MAP,644,swiss cheese|emmental|gruy[eè]re|jarlsberg|\bswiss\b(?! chard),i,"Cheese, Emmental*",map-approx
+MAP,645,gouda,i,"Cheese, Gouda",map
+MAP,646,manchego,i,"Cheese, Manchego",map
+MAP,647,blue cheese|bleu cheese|gorgonzola|roquefort|stilton,i,"Cheese, Roquefort*",map-approx
+MAP,648,\bbrie\b|camembert,i,"Cheese, Camembert*",map-approx
+MAP,649,colby|mexican (blend|cheese)|taco cheese|cheese blend,i,"Cheese, Cheddar (Aged One Year)*",map-approx
+MAP,650,espresso,i,Espresso,map
+MAP,651,instant coffee|coffee granules,i,"Coffee, Instant (Powder)",map
+MAP,652,\bcoffee\b(?! bean| grounds),i,"Coffee, Brewed",map
+MAP,653,green tea(?! leaves?| powder),i,"Tea, Green (Brewed)",map
+MAP,654,black tea|\btea\b(?! leaves?| bags?),i,"Tea, Black (Brewed)",map
+MAP,655,cocoa powder|\bcocoa\b|cacao powder,i,Cocoa Powder (Unsweetened),map
+MAP,656,dark chocolate|bittersweet chocolate|70% chocolate,i,"Chocolate, Dark (70-85%)*",map-approx
+MAP,657,\bcola\b|\bcoke\b|pepsi,i,Cola,map
+MAP,658,silken tofu,i,"Tofu, Silken",map
+MAP,659,\btofu\b|bean curd,i,"Tofu, Firm",map
+MAP,660,tahini|tahina,i,Tahini,map
+MAP,661,gochujang,i,Gochujang,map
+MAP,662,doenjang|soybean paste,i,Doenjang,map
+MAP,663,fermented black beans?|douchi,i,"Beans, Black (Fermented)",map
+MAP,664,black beans?,i,"Beans, Black (Canned)",map
+MAP,665,kidney beans?,i,"Beans, Kidney (Canned)",map
+MAP,666,pinto beans?,i,"Beans, Pinto (Canned)",map
+MAP,667,chick ?peas?|garbanzo,i,Chickpeas (Canned),map
+MAP,668,corn tortillas?,i,"Tortilla, Corn",map
+MAP,669,tortillas?,i,"Tortilla, Flour",map
+MAP,670,monterey jack|pepper jack|\bjack cheese,i,"Cheese, Monterey Jack",map
+MAP,671,provolone,i,"Cheese, Provolone",map
+MAP,672,american cheese|velveeta|cheese singles?|kraft singles?,i,"Cheese, American (Processed)",map
+MAP,673,ricotta,i,"Cheese, Ricotta (Whole Milk)",map
+MAP,674,sun[- ]?dried tomato,i,Tomato (Dried),map
+MAP,675,tomato paste,i,"Paste, Tomato",map
+MAP,676,tomato puree|tomato purée|passata,i,"Paste, Tomato*",map-approx
+MAP,677,(no[- ]salt|low[- ]sodium|salt[- ]free|unsalted).*(tomato|pasta|spaghetti|marinara) sauce,i,"Sauce, Tomato",map
+MAP,678,(pasta|spaghetti|marinara|pizza) sauce|tomato sauce|\bragu\b|\bprego\b,i,"Sauce, Tomato (Canned)",map
+MAP,679,tomato juice|v-?8,i,"Juice, Tomato",map
+MAP,680,cherry tomato|grape tomato,i,"Tomato, Cherry (Generic)",map
+MAP,681,(crushed|diced|stewed|whole|peeled|canned|italian|plum|san marzano|chopped|petite|fire[- ]roasted).*tomato|tomato.*(canned|with juice|undrained|drained),i,Tomato (Canned)|fresh-if-count,map-conditional
+MAP,682,tomato,i,"Tomato, Red (Fresh, Whole)",map
+MAP,683,garlic salt,i,Salt*,map-approx
+MAP,684,garlic powder|granulated garlic|onion powder|onion flakes|dried onion,i,Dried spices & herbs,map
+MAP,685,garlic,i,Garlic,map
+MAP,686,green onion|scallion|spring onion,i,Green Onion,map
+MAP,687,shallot,i,Shallot,map
+MAP,688,onion,i,Onion,map
+MAP,689,celery salt,i,Salt*,map-approx
+MAP,690,celery,i,Celery,map
+MAP,691,carrot,i,Carrot,map
+MAP,692,(green|red|yellow|orange|bell) pepper(?!corn| flake)|capsicum,i,Green Pepper,map
+MAP,693,jalape|chili pepper|chile pepper|serrano|hot pepper(?! sauce)|fresno,i,Chili Pepper,map
+MAP,694,mushroom,i,"Mushroom, Button",map
+MAP,695,zucchini,i,Zucchini,map
+MAP,696,eggplant|aubergine,i,Eggplant,map
+MAP,697,spinach,i,Spinach,map
+MAP,698,diamond crystal,i,Kosher Salt (Diamond Crystal),map
+MAP,699,morton.*kosher|kosher.*morton,i,Kosher Salt (Morton),map
+MAP,700,kosher salt,i,Kosher Salt,map
+MAP,701,sea salt,i,Sea Salt,map
+MAP,702,\bmsg\b|monosodium glutamate|accent seasoning,i,Monosodium Glutamate,map
+MAP,703,\bsalt\b(?! pork),i,Salt,map
+MAP,704,splenda,i,Sucralose Blend (Splenda Granulated),map
+MAP,705,^equal\b|equal (sweetener|packets?)|nutrasweet|sweet'?n'? ?low|in the raw|sugar substitute|sweetener packet,i,BLEND,refuse-blend
+MAP,706,truvia,i,Erythritol*,map-approx
+MAP,707,stevia extract|pure stevia|rebaudioside|reb a\b,i,Stevia Extract (Reb A 97%),map
+MAP,708,\bstevia\b,i,Stevia Extract (Reb A 97%)*,map-approx
+MAP,709,monk fruit extract|luo han guo extract|mogroside,i,Monk Fruit Extract (Mogroside V 50%),map
+MAP,710,monk fruit sweetener|lakanto|swerve|erythritol,i,Erythritol,map
+MAP,711,monk fruit|luo han guo,i,Monk Fruit Extract (Mogroside V 50%)*,map-approx
+MAP,712,xylitol,i,Xylitol,map
+MAP,713,allulose,i,Allulose,map
+MAP,714,maltitol,i,Maltitol,map
+MAP,715,sorbitol,i,Sorbitol,map
+MAP,716,sucralose,i,Sucralose,map
+MAP,717,aspartame,i,Aspartame,map
+MAP,718,acesulfame|ace-?k\b,i,Acesulfame Potassium,map
+MAP,719,brown sugar,i,Brown Sugar,map
+MAP,720,powdered sugar|confectioners|icing sugar,i,Sugar*,map-approx
+MAP,721,"\bsugar\b(?! substitute)|sugar,",i,Sugar,map
+MAP,722,honey,i,Honey,map
+MAP,723,maple syrup,i,Maple Syrup,map
+MAP,724,molasses,i,Sugar Cane Molasses,map
+MAP,725,parmesan|parmigiano|romano|pecorino|asiago|grana padano,i,"Cheese, Parmigiano Regianno",map
+MAP,726,mozzarella,i,"Cheese, Mozzarella",map
+MAP,727,cheddar,i,"Cheese, Cheddar (Aged One Year)*",map-approx
+MAP,728,cottage,i,"Cheese, Cottage*",map-approx
+MAP,729,basil,i,Basil,map
+MAP,730,parsley,i,Parsley,map
+MAP,731,\bdill\b,i,Dill,map
+MAP,732,\bmint\b,i,Mint,map
+MAP,733,coriander leaves|cilantro,i,Coriander,map
+MAP,734,rice vinegar|rice wine vinegar,i,"Vinegar, Rice",map
+MAP,735,red wine vinegar|wine vinegar,i,"Vinegar, Red Wine",map
+MAP,736,balsamic,i,"Vinegar, Balsamic",map
+MAP,737,cider vinegar,i,"Vinegar, Apple Cider",map
+MAP,738,vinegar,i,"Vinegar, Distilled White",map
+MAP,739,\bwine\b|sherry|marsala|vermouth,i,"Wine, Generic",map
+MAP,740,(low|reduced)[- ]sodium.*(broth|stock)|(broth|stock).*(low|reduced)[- ]sodium,i,"Broth, Chicken (Low Sodium)*",map-approx
+MAP,741,beef (broth|stock|bouillon|consomm),i,"Broth, Beef",map
+MAP,742,vegetable (broth|stock|bouillon),i,"Broth, Vegetable",map
+MAP,743,chicken (broth|stock|bouillon)|\bbroth\b|\bstock\b,i,"Broth, Chicken",map
+MAP,744,capers?\b,i,Capers,map
+MAP,745,unsalted butter|sweet butter,i,Oil or fat,map
+MAP,746,\bbutter\b(?!milk)|margarine,i,"Butter, Salted",map
+MAP,747,(heavy cream|whipping cream|half[- ]and[- ]half|light cream|\bcream\b)(?! cheese),i,"Milk, Cow*",map-approx
+MAP,748,\bfeta\b,i,"Cheese, Feta",map
+MAP,749,fontina,i,"Cheese, Mozzarella*",map-approx
+MAP,750,bouillon cube,i,Beef Stock Cube*,map-approx
+MAP,751,ground beef|hamburger|beef mince|minced beef|ground chuck|ground round|lean beef,i,Hamburger Meat,map
+MAP,752,ground pork|pork mince,i,Pork,map
+MAP,753,ground turkey|turkey,i,Chicken*,map-approx
+MAP,754,chicken,i,Chicken,map
+MAP,755,\bbeef\b|steak|chuck,i,Beef,map
+MAP,756,\bbacon\b,i,Bacon,map
+MAP,757,pancetta|guanciale,i,Bacon*,map-approx
+MAP,758,prosciutto,i,"Ham, Dry-Cured",map
+MAP,759,italian sausage|\bsausage,i,"Sausage, Italian (Pork)",map
+MAP,760,chorizo|salami|pepperoni|kielbasa,i,"Sausage, Italian (Pork)*",map-approx
+MAP,761,\bham\b,i,"Ham, Dry-Cured*",map-approx
+MAP,762,\bpork\b,i,Pork,map
+MAP,763,shrimp|prawn,i,Shrimp,map
+MAP,764,clam,i,Clam*,map-approx
+MAP,765,anchov,i,"Fish, Anchovy (Canned)",map
+MAP,766,tuna,i,"Fish, Tuna (Fresh)*",map-approx
+MAP,767,worcestershire,i,"Sauce, Worcestershire",map
+MAP,768,soy sauce|\btamari\b|shoyu,i,"Sauce, Soy",map
+MAP,769,fish sauce|nam pla|nuoc mam,i,"Sauce, Fish",map
+MAP,770,ketchup|catsup,i,Ketchup,map
+MAP,771,cream cheese,i,"Cheese, Cream",map
+MAP,772,mayonnaise|\bmayo\b,i,Mayonnaise,map
+MAP,773,dijon,i,"Mustard, Dijon",map
+MAP,774,(yellow|prepared|ballpark|french'?s)? ?mustard(?! seed| green| powder),i,"Mustard, Yellow (Prepared)",map
+MAP,775,salsa,i,Salsa (Jarred),map
+MAP,776,tabasco|hot sauce|louisiana,i,"Sauce, Hot (Tabasco)",map
+MAP,777,hoisin,i,"Sauce, Hoisin",map
+MAP,778,lemon juice|lemon,i,Lemon,map
+MAP,779,lime juice|lime,i,"Juice, Lime",map
+MAP,780,black olive|kalamata|ripe olive,i,"Olives, Black",map
+MAP,781,green olive|olive(?! oil),i,"Olives, Green",map
+MAP,782,sour cream,i,Sour Cream,map
+MAP,783,greek yogurt,i,"Yogurt, Greek (Plain, Whole Milk)",map
+MAP,784,yogurt,i,"Yogurt, Plain (Whole Milk)",map
+MAP,785,buttermilk,i,Buttermilk (Cultured),map
+MAP,786,coconut milk,i,Coconut Milk,map
+MAP,787,\bmilk\b,i,"Milk, Cow",map
+MAP,788,miso,i,Miso,map
+MAP,789,kombu,i,"Seaweed, Kombu",map
+MAP,790,bonito|katsuobushi,i,Bonito Flakes,map
+MAP,791,\bwater\b,i,Water,map
+MAP,792,egg yolk,i,Egg Yolk,map
+MAP,793,egg white,i,Egg White,map
+MAP,794,\beggs?\b,i,Eggs,map
+MAP,795,cornflour|corn flour(?! tortilla),i,"Starch, Corn",map
+MAP,796,flour,i,"Flour, Wheat",map
+MAP,797,lentil,i,Lentils,map
+MAP,798,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*biscuit\/baking(?:e?s)?(?:\s*,.*)?$",i,"Mix, Bisquick",map
+MAP,799,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*butterfinger(?:e?s)?(?:\s*,.*)?$",i,"Candy Bar, Butterfinger",map
+MAP,800,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*bittersweet(?:e?s)?(?:\s*,.*)?$",i,"Chocolate, Bittersweet Chip",map
+MAP,801,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*horseradish(?:e?s)?(?:\s*,.*)?$",i,Horseradish,map
+MAP,802,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*applesauce(?:e?s)?(?:\s*,.*)?$",i,"Applesauce, Sweetened",map
+MAP,803,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*blackberr(?:y|ies)(?:\s*,.*)?$",i,Blackberry,map
+MAP,804,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cornstarch(?:e?s)?(?:\s*,.*)?$",i,"Starch, Corn",map
+MAP,805,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*peppermint(?:e?s)?(?:\s*,.*)?$",i,"Herb, Peppermint",map
+MAP,806,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*shortening(?:e?s)?(?:\s*,.*)?$",i,"Shortening, Vegetable",map
+MAP,807,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*tortellini(?:e?s)?(?:\s*,.*)?$",i,Tortellini,map
+MAP,808,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*vermicelli(?:e?s)?(?:\s*,.*)?$",i,"Pasta, Dry (Generic)",map
+MAP,809,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*watercress(?:e?s)?(?:\s*,.*)?$",i,Watercress,map
+MAP,810,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*arrowroot(?:e?s)?(?:\s*,.*)?$",i,Arrowroot,map
+MAP,811,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*blueberr(?:y|ies)(?:\s*,.*)?$",i,Blueberry,map
+MAP,812,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*champagne(?:e?s)?(?:\s*,.*)?$",i,"Wine, Champagne",map
+MAP,813,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*chocolate(?:e?s)?(?:\s*,.*)?$",i,"Chocolate, Baking (Unsweetened)",map
+MAP,814,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cornbread(?:e?s)?(?:\s*,.*)?$",i,"Mix, Cornbread",map
+MAP,815,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cranberr(?:y|ies)(?:\s*,.*)?$",i,Cranberry,map
+MAP,816,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*grenadine(?:e?s)?(?:\s*,.*)?$",i,Grenadine,map
+MAP,817,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pineapple(?:e?s)?(?:\s*,.*)?$",i,Pineapple (Canned or Fresh),map
+MAP,818,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*radicchio(?:e?s)?(?:\s*,.*)?$",i,Radicchio,map
+MAP,819,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*raspberr(?:y|ies)(?:\s*,.*)?$",i,Raspberry,map
+MAP,820,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*swordfish(?:e?s)?(?:\s*,.*)?$",i,Swordfish,map
+MAP,821,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*allspice(?:e?s)?(?:\s*,.*)?$",i,"Spice, Allspice (Ground)",map
+MAP,822,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*baguette(?:e?s)?(?:\s*,.*)?$",i,Baguette,map
+MAP,823,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*calamari(?:e?s)?(?:\s*,.*)?$",i,Squid (Fresh),map
+MAP,824,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cardamom(?:e?s)?(?:\s*,.*)?$",i,"Spice, Cardamom (Ground)",map
+MAP,825,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cinnamon(?:e?s)?(?:\s*,.*)?$",i,"Spice, Cinnamon (Ground)",map
+MAP,826,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*consomme(?:e?s)?(?:\s*,.*)?$",i,Condensed Beef Broth,map
+MAP,827,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cornmeal(?:e?s)?(?:\s*,.*)?$",i,Cornmeal,map
+MAP,828,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*crawfish(?:e?s)?(?:\s*,.*)?$",i,Crawfish,map
+MAP,829,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*flounder(?:e?s)?(?:\s*,.*)?$",i,"Fish, Flounder",map
+MAP,830,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*linguini(?:e?s)?(?:\s*,.*)?$",i,"Pasta, Dry (Generic)",map
+MAP,831,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*marjoram(?:e?s)?(?:\s*,.*)?$",i,"Herb, Marjoram",map
+MAP,832,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pimiento(?:e?s)?(?:\s*,.*)?$",i,Pimiento (Jarred),map
+MAP,833,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*rosemary(?:e?s)?(?:\s*,.*)?$",i,"Herb, Rosemary",map
+MAP,834,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*semolina(?:e?s)?(?:\s*,.*)?$",i,Semolina,map
+MAP,835,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*sriracha(?:e?s)?(?:\s*,.*)?$",i,Sriracha,map
+MAP,836,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*stuffing(?:e?s)?(?:\s*,.*)?$",i,"Mix, Stuffing",map
+MAP,837,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*tarragon(?:e?s)?(?:\s*,.*)?$",i,"Herb, Tarragon",map
+MAP,838,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*turmeric(?:e?s)?(?:\s*,.*)?$",i,"Spice, Turmeric (Ground)",map
+MAP,839,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*arugula(?:e?s)?(?:\s*,.*)?$",i,Arugula,map
+MAP,840,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*bologna(?:e?s)?(?:\s*,.*)?$",i,Bologna,map
+MAP,841,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*brisket(?:e?s)?(?:\s*,.*)?$",i,Brisket,map
+MAP,842,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*caraway(?:e?s)?(?:\s*,.*)?$",i,"Spice, Caraway (Whole Seed)",map
+MAP,843,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*chervil(?:e?s)?(?:\s*,.*)?$",i,"Herb, Chervil",map
+MAP,844,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*fusilli(?:e?s)?(?:\s*,.*)?$",i,"Pasta, Dry (Generic)",map
+MAP,845,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*granola(?:e?s)?(?:\s*,.*)?$",i,Granola,map
+MAP,846,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*haddock(?:e?s)?(?:\s*,.*)?$",i,Haddock,map
+MAP,847,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*lasagna(?:e?s)?(?:\s*,.*)?$",i,"Pasta, Dry (Generic)",map
+MAP,848,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*nutella(?:e?s)?(?:\s*,.*)?$",i,Nutella,map
+MAP,849,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*oatmeal(?:e?s)?(?:\s*,.*)?$",i,"Oats, Rolled",map
+MAP,850,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*oregano(?:e?s)?(?:\s*,.*)?$",i,"Herb, Oregano",map
+MAP,851,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pimento(?:e?s)?(?:\s*,.*)?$",i,Pimiento (Jarred),map
+MAP,852,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*polenta(?:e?s)?(?:\s*,.*)?$",i,Polenta,map
+MAP,853,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*popcorn(?:e?s)?(?:\s*,.*)?$",i,Popcorn,map
+MAP,854,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pumpkin(?:e?s)?(?:\s*,.*)?$",i,Pumpkin,map
+MAP,855,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*saffron(?:e?s)?(?:\s*,.*)?$",i,"Spice, Saffron (Threads)",map
+MAP,856,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*sirloin(?:e?s)?(?:\s*,.*)?$",i,Sirloin,map
+MAP,857,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*tapioca(?:e?s)?(?:\s*,.*)?$",i,Tapioca,map
+MAP,858,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*tilapia(?:e?s)?(?:\s*,.*)?$",i,Tilapia Fillet,map
+MAP,859,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*tumeric(?:e?s)?(?:\s*,.*)?$",i,"Spice, Turmeric (Ground)",map
+MAP,860,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*vanilla(?:e?s)?(?:\s*,.*)?$",i,"Extract, Vanilla",map
+MAP,861,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*brown(?:y|ies)(?:\s*,.*)?$",i,"Mix, Brownie",map
+MAP,862,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*bulgur(?:e?s)?(?:\s*,.*)?$",i,Bulgur,map
+MAP,863,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cherr(?:y|ies)(?:\s*,.*)?$",i,Cherry,map
+MAP,864,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*crisco(?:e?s)?(?:\s*,.*)?$",i,"Shortening, Vegetable",map
+MAP,865,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*eggnog(?:e?s)?(?:\s*,.*)?$",i,Eggnog,map
+MAP,866,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*endive(?:e?s)?(?:\s*,.*)?$",i,Endive,map
+MAP,867,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*fennel(?:e?s)?(?:\s*,.*)?$",i,Fennel,map
+MAP,868,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*hominy(?:e?s)?(?:\s*,.*)?$",i,Hominy,map
+MAP,869,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*jicama(?:e?s)?(?:\s*,.*)?$",i,Jicama,map
+MAP,870,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*millet(?:e?s)?(?:\s*,.*)?$",i,Millet,map
+MAP,871,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*nutmeg(?:e?s)?(?:\s*,.*)?$",i,"Spice, Nutmeg (Ground)",map
+MAP,872,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*orange(?:e?s)?(?:\s*,.*)?$",i,Orange,map
+MAP,873,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*papaya(?:e?s)?(?:\s*,.*)?$",i,Papaya,map
+MAP,874,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pectin(?:e?s)?(?:\s*,.*)?$",i,Pectin,map
+MAP,875,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pepper(?:e?s)?(?:\s*,.*)?$",i,"Spice, Black Pepper (Ground)",map
+MAP,876,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*phyllo(?:e?s)?(?:\s*,.*)?$",i,Phyllo,map
+MAP,877,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*poupon(?:e?s)?(?:\s*,.*)?$",i,"Mustard, Dijon",map
+MAP,878,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*quinoa(?:e?s)?(?:\s*,.*)?$",i,Quinoa,map
+MAP,879,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*rabbit(?:e?s)?(?:\s*,.*)?$",i,Rabbit,map
+MAP,880,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*relish(?:e?s)?(?:\s*,.*)?$",i,Sweet Relish,map
+MAP,881,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*rocket(?:e?s)?(?:\s*,.*)?$",i,Arugula,map
+MAP,882,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*squash(?:e?s)?(?:\s*,.*)?$",i,Yellow Squash,map
+MAP,883,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*toffee(?:e?s)?(?:\s*,.*)?$",i,Toffee,map
+MAP,884,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*anise(?:e?s)?(?:\s*,.*)?$",i,"Spice, Anise Seed (Whole)",map
+MAP,885,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cacao(?:e?s)?(?:\s*,.*)?$",i,Cacao Nib,map
+MAP,886,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cider(?:e?s)?(?:\s*,.*)?$",i,Cider,map
+MAP,887,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*frankfurters?(?:\s*,.*)?$",i,Hot Dog (Frankfurter),map
+MAP,888,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*mango(?:e?s)?(?:\s*,.*)?$",i,Mango,map
+MAP,889,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*marshmallows?(?:\s*,.*)?$",i,Marshmallows,map
+MAP,890,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pesto(?:e?s)?(?:\s*,.*)?$",i,"Sauce, Pesto",map
+MAP,891,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*stout(?:e?s)?(?:\s*,.*)?$",i,Beer,map
+MAP,892,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*thyme(?:e?s)?(?:\s*,.*)?$",i,"Herb, Thyme",map
+MAP,893,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*trout(?:e?s)?(?:\s*,.*)?$",i,Trout,map
+MAP,894,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*bass(?:e?s)?(?:\s*,.*)?$",i,Bass,map
+MAP,895,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*bran(?:e?s)?(?:\s*,.*)?$",i,Bran,map
+MAP,896,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*choy(?:e?s)?(?:\s*,.*)?$",i,Bok Choy,map
+MAP,897,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*clementines?(?:\s*,.*)?$",i,Clementine,map
+MAP,898,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*duck(?:e?s)?(?:\s*,.*)?$",i,Duck,map
+MAP,899,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*evoo(?:e?s)?(?:\s*,.*)?$",i,"Oil, Olive (Extra Virgin)",map
+MAP,900,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*ghee(?:e?s)?(?:\s*,.*)?$",i,Ghee,map
+MAP,901,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*kiwi(?:e?s)?(?:\s*,.*)?$",i,Kiwi,map
+MAP,902,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*ladyfingers?(?:\s*,.*)?$",i,Ladyfingers,map
+MAP,903,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*lard(?:e?s)?(?:\s*,.*)?$",i,Lard,map
+MAP,904,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*mace(?:e?s)?(?:\s*,.*)?$",i,"Spice, Mace (Ground)",map
+MAP,905,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pear(?:e?s)?(?:\s*,.*)?$",i,Pear,map
+MAP,906,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*peppercorns?(?:\s*,.*)?$",i,"Spice, Black Pepper (Whole)",map
+MAP,907,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*port(?:e?s)?(?:\s*,.*)?$",i,"Wine, Port",map
+MAP,908,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*sage(?:e?s)?(?:\s*,.*)?$",i,"Herb, Sage",map
+MAP,909,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*sake(?:e?s)?(?:\s*,.*)?$",i,"Wine, Sake",map
+MAP,910,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*suet(?:e?s)?(?:\s*,.*)?$",i,"Suet, Beef",map
+MAP,911,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*veal(?:e?s)?(?:\s*,.*)?$",i,Veal,map
+MAP,912,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cornflakes?(?:\s*,.*)?$",i,"Cereal, Corn Flakes",map
+MAP,913,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cornichons?(?:\s*,.*)?$",i,Cornichon,map
+MAP,914,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*croissants?(?:\s*,.*)?$",i,Croissant,map
+MAP,915,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*oil(?:e?s)?(?:\s*,.*)?$",i,"Oil, Vegetable",map
+MAP,916,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pistachios?(?:\s*,.*)?$",i,Pistachios,map
+MAP,917,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*tangerines?(?:\s*,.*)?$",i,Tangerine,map
+MAP,918,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*hazelnuts?(?:\s*,.*)?$",i,Hazelnuts,map
+MAP,919,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*meatballs?(?:\s*,.*)?$",i,Meatballs,map
+MAP,920,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*plantains?(?:\s*,.*)?$",i,Plantain,map
+MAP,921,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*spareribs?(?:\s*,.*)?$",i,Pork Spareribs,map
+MAP,922,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*apricots?(?:\s*,.*)?$",i,Apricot,map
+MAP,923,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*biscuits?(?:\s*,.*)?$",i,Biscuit,map
+MAP,924,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*calvados?(?:\s*,.*)?$",i,"Spirit, Brandy",map
+MAP,925,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*caramels?(?:\s*,.*)?$",i,Caramel,map
+MAP,926,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*couscous?(?:\s*,.*)?$",i,Couscous,map
+MAP,927,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*crackers?(?:\s*,.*)?$",i,"Crackers, Saltine",map
+MAP,928,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*craisins?(?:\s*,.*)?$",i,"Cranberries, Dried (Sweetened)",map
+MAP,929,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*croutons?(?:\s*,.*)?$",i,Croutons,map
+MAP,930,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*currants?(?:\s*,.*)?$",i,Currant,map
+MAP,931,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*gumdrops?(?:\s*,.*)?$",i,"Candy, Gumdrops",map
+MAP,932,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*kumquats?(?:\s*,.*)?$",i,Kumquat,map
+MAP,933,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*nutmeats?(?:\s*,.*)?$",i,"Nuts, Mixed",map
+MAP,934,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*parsnips?(?:\s*,.*)?$",i,Parsnip,map
+MAP,935,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pretzels?(?:\s*,.*)?$",i,Pretzels,map
+MAP,936,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*saltines?(?:\s*,.*)?$",i,"Crackers, Saltine",map
+MAP,937,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*snickers?(?:\s*,.*)?$",i,"Candy Bar, Snickers",map
+MAP,938,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*bananas?(?:\s*,.*)?$",i,Banana,map
+MAP,939,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*cashews?(?:\s*,.*)?$",i,Cashews,map
+MAP,940,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pepitas?(?:\s*,.*)?$",i,Pumpkin Seed,map
+MAP,941,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*raisins?(?:\s*,.*)?$",i,Raisins,map
+MAP,942,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*sprouts?(?:\s*,.*)?$",i,Alfalfa Sprout,map
+MAP,943,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*wieners?(?:\s*,.*)?$",i,Hot Dog (Frankfurter),map
+MAP,944,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*bagels?(?:\s*,.*)?$",i,Bagel,map
+MAP,945,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pecans?(?:\s*,.*)?$",i,Pecans,map
+MAP,946,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*dates?(?:\s*,.*)?$",i,Dates (Dried),map
+MAP,947,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*grits?(?:\s*,.*)?$",i,Grits,map
+MAP,948,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*kiwis?(?:\s*,.*)?$",i,Kiwi,map
+MAP,949,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*oreos?(?:\s*,.*)?$",i,"Cookie, Oreo",map
+MAP,950,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*pitas?(?:\s*,.*)?$",i,Pita Bread,map
+MAP,951,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*figs?(?:\s*,.*)?$",i,Fig,map
+MAP,952,"^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\s+)*oats?(?:\s*,.*)?$",i,"Oats, Rolled",map
+MAP,953,spaghetti|penne|linguine|fettuccine|rigatoni|macaroni|ziti|rotini|farfalle|orzo|\bpasta\b|\bshells\b,i,"Pasta, Dry (Generic)",map
+MAP,954,\bnoodles?\b,i,"Pasta, Egg Noodle*",map-approx
+MAP,955,\brice\b(?! vinegar| wine| milk| flour| krispies| paper),i,"Rice, White",map
+MAP,956,bread ?crumbs?|panko,i,"Bread Crumbs, Dry (Plain)",map
+MAP,957,\bbread\b|\bbuns?\b|\brolls?\b,i,"Bread, White*",map-approx
+MAP,958,\byeast\b(?!.*extract),i,Active Dry Yeast,map
+MAP,959,unflavou?red gelatin|\bgelatin\b,i,"Gelatin Dessert, Unflavored",map
+MAP,960,\boil\b|\blard\b|shortening|\bghee\b|cooking spray,i,Oil or fat,map
+MAP,961,oregano|thyme|marjoram|rosemary|bay lea|pepper ?flakes|black pepper|ground pepper|peppercorn|^pepper\b|cayenne|paprika|cumin|chili powder|cinnamon|nutmeg|allspice|ground cloves?|fennel seed|saffron|turmeric|curry powder|garam masala|ginger powder|ground ginger|italian seasoning|dried herbs?|herbes|seasoning|crushed red pepper|sage|tarragon|cardamom|coriander seed|ground coriander|mustard seed|vanilla|star anise|\banise\b|cloves? \(spice\)|whole cloves|five.spice|sichuan pepper,i,Dried spices & herbs,map
+MAP,962,\bginger\b,i,Ginger,map
+MAP,963,\bcheese\b,i,"Cheese, Cheddar (Aged One Year)*",map-approx
+SKIP_FIRST,1,\b(wedges?|wheels?)\b|garnish|ravioli|gnocchi|egg roll(?!s? wrap)|spring roll|rice paper|\bwraps?\b|dumpling,i,skip,checked on the bare first choice before mapping
+SKIP,1,garnish|for serving|\bice\b(?! cream)|ravioli|gnocchi|dumpling,i,skip,checked after mapping fails
 HEADER,1,:\s*$|^(for the|ingredients|directions|instructions|method|steps?)\b,i,ignore line,section headers
 DESCRIPT,1,\b(fresh(ly)?|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|to taste|optional|divided|plus more|about|cut into.*|or more)\b,g,removed,descriptive words removed before the search fallback
 GUARDED,1,extract|stevia|monk fruit|sucralose|aspartame|acesulfame|erythritol|xylitol|maltitol|sorbitol|allulose|mannitol|salt|glutamate|ajitide|chloride|caffeine|espresso|bouillon|stock cube|roe,i,guess rejected,"a search guess matching this is rejected unless the line shares a word of 4+ letters with it (excluding fruit, salt, extract)"
@@ -305,6 +1041,33 @@ EACH_G,31,"Pickles, Dill",,65,grams per piece when no unit
 EACH_G,32,"Tortilla, Flour",,49,grams per piece when no unit
 EACH_G,33,"Tortilla, Corn",,24,grams per piece when no unit
 EACH_G,34,Dried spices & herbs,,1,grams per piece when no unit
+EACH_G,35,Ancho Chile,,17,grams per piece when no unit
+EACH_G,36,Banana,,152,grams per piece when no unit
+EACH_G,37,"Candy, Gumdrops",,4.2,grams per piece when no unit
+EACH_G,38,Cantaloupe,,552,grams per piece when no unit
+EACH_G,39,"Chili Pepper, Green (Canned, Diced)",,73,grams per piece when no unit
+EACH_G,40,Clementine,,74,grams per piece when no unit
+EACH_G,41,Cornichon,,35,grams per piece when no unit
+EACH_G,42,"Crackers, Saltine",,10,grams per piece when no unit
+EACH_G,43,Croissant,,57,grams per piece when no unit
+EACH_G,44,Dinner Roll,,43,grams per piece when no unit
+EACH_G,45,Fig,,50,grams per piece when no unit
+EACH_G,46,Grated Coconut,,397,grams per piece when no unit
+EACH_G,47,Jicama,,659,grams per piece when no unit
+EACH_G,48,Kiwi,,69,grams per piece when no unit
+EACH_G,49,Kumquat,,19,grams per piece when no unit
+EACH_G,50,Mango,,336,grams per piece when no unit
+EACH_G,51,"Mix, Coleslaw",,908,grams per piece when no unit
+EACH_G,52,Orange,,184,grams per piece when no unit
+EACH_G,53,Papaya,,781,grams per piece when no unit
+EACH_G,54,Pear,,178,grams per piece when no unit
+EACH_G,55,Pimiento (Jarred),,66,grams per piece when no unit
+EACH_G,56,Pineapple (Canned or Fresh),,905,grams per piece when no unit
+EACH_G,57,Pita Bread,,60,grams per piece when no unit
+EACH_G,58,Red Chile,,45,grams per piece when no unit
+EACH_G,59,Red Sweet Pepper,,74,grams per piece when no unit
+EACH_G,60,Tangerine,,88,grams per piece when no unit
+EACH_G,61,Whole Wheat Pita Bread,,64,grams per piece when no unit
 UNIT_G,1,clove,,3,grams per unit
 UNIT_G,2,stalk,,40,grams per unit
 UNIT_G,3,sprig,,1,grams per unit
@@ -353,14 +1116,18 @@ VOL,5,ml,,mL x 1,volume unit passed to the model (unit x multiplier)
 VOL,6,l,,L x 1,volume unit passed to the model (unit x multiplier)
 VOL,7,pt,,cup x 2,volume unit passed to the model (unit x multiplier)
 VOL,8,qt,,cup x 4,volume unit passed to the model (unit x multiplier)
-APPROX_NOTE,1,"Soup, Cheese (Condensed)",,read as plain condensed cheese soup (USDA); cheddar and nacho versions differ a little,note shown for an approximate (*) match
-APPROX_NOTE,2,"Yogurt, Plain (Whole Milk)",,read as plain yogurt; a flavored yogurt's added sugar isn't counted,note shown for an approximate (*) match
-APPROX_NOTE,3,Tapioca Syrup 42 DE,,"read as a 42 DE glucose syrup, close to light corn syrup",note shown for an approximate (*) match
-APPROX_NOTE,4,Dried spices & herbs,,"read as a spice blend with no salt; if your blend contains salt, add the salt on its own line",note shown for an approximate (*) match
-APPROX_NOTE,5,"Cheese, Cheddar (Aged One Year)",,"read as cheddar, the closest common cheese in the database",note shown for an approximate (*) match
-APPROX_NOTE,6,Erythritol,,"Truvia-type blends are mostly erythritol; their stevia share isn't counted, so sweetness may read a little low",note shown for an approximate (*) match
-APPROX_NOTE,7,Stevia Extract (Reb A 97%),,read as pure stevia extract; tabletop stevia blends are mostly erythritol or dextrose,note shown for an approximate (*) match
-APPROX_NOTE,8,Monk Fruit Extract (Mogroside V 50%),,read as pure monk fruit extract (50% mogroside V); blends like Lakanto are mostly erythritol,note shown for an approximate (*) match
+APPROX_NOTE,1,"Vinegar, Red Wine",,"read as red wine vinegar, the closest wine vinegar in the database (similar acidity)",note shown for an approximate (*) match
+APPROX_NOTE,2,"Wine, Cooking",,read as salted cooking wine; plain sherry or marsala has no added salt,note shown for an approximate (*) match
+APPROX_NOTE,3,"Bread, White",,read as white bread; other breads differ a little in salt,note shown for an approximate (*) match
+APPROX_NOTE,4,"Pasta, Egg Noodle",,read as dry egg noodles,note shown for an approximate (*) match
+APPROX_NOTE,5,"Soup, Cheese (Condensed)",,read as plain condensed cheese soup (USDA); cheddar and nacho versions differ a little,note shown for an approximate (*) match
+APPROX_NOTE,6,"Yogurt, Plain (Whole Milk)",,read as plain yogurt; a flavored yogurt's added sugar isn't counted,note shown for an approximate (*) match
+APPROX_NOTE,7,Tapioca Syrup 42 DE,,"read as a 42 DE glucose syrup, close to light corn syrup",note shown for an approximate (*) match
+APPROX_NOTE,8,Dried spices & herbs,,"read as a spice blend with no salt; if your blend contains salt, add the salt on its own line",note shown for an approximate (*) match
+APPROX_NOTE,9,"Cheese, Cheddar (Aged One Year)",,"read as cheddar, the closest common cheese in the database",note shown for an approximate (*) match
+APPROX_NOTE,10,Erythritol,,"Truvia-type blends are mostly erythritol; their stevia share isn't counted, so sweetness may read a little low",note shown for an approximate (*) match
+APPROX_NOTE,11,Stevia Extract (Reb A 97%),,read as pure stevia extract; tabletop stevia blends are mostly erythritol or dextrose,note shown for an approximate (*) match
+APPROX_NOTE,12,Monk Fruit Extract (Mogroside V 50%),,read as pure monk fruit extract (50% mogroside V); blends like Lakanto are mostly erythritol,note shown for an approximate (*) match
 MESSAGE,1,toItem,,skip,"no amount (""to taste"")"
 MESSAGE,2,toItem,,none,no cup or spoon conversion for this one yet; enter it in grams
 MESSAGE,3,toItem,,none,don't know the ${u} size

@@ -3,9 +3,9 @@
  "model_version": "2.8.3",
  "source_page": "https://tools.mendocinofoodconsulting.com/taste-check/",
  "block_sha256": {
-  "HFP_DB": "4b4109972a6850c88421b36eef3f7cd038dde37bb7ee3b3c02d61c1f3daa82c6",
-  "HFP_MODEL": "de378ec226f1043e3e57cc29d61e930d713c5481af9a46a6ccd0a3ed4e995e54",
-  "HFP_PASTE": "ef7c0ec86136639a10ad61dea9ab14735d1a2b7fe6113e460dc72b169c1beee7",
+  "HFP_DB": "2f833db8c04ca64656813ea342b836187f4eaee676318824cede2df59288c9fe",
+  "HFP_MODEL": "2abec2866368b7fc9f825cbee8957b6c03d5734c2cdbc6708ad20dc6cab7ab76",
+  "HFP_PASTE": "8fdc06e620b0f5db5e9cd6dc4c5ab9554234787ec72126391fd0947c1971119d",
   "helpers": "9f63101394fef850ad5e064aa6ed6dfacd488765df0c8eaa846f93fbe0d66ca5"
  },
  "derived_constants": {
@@ -3578,7 +3578,7 @@
      "line": "2 tbsp olive oil",
      "status": "ok",
      "item": [
-      "Oil or fat",
+      "Oil, Olive",
       2,
       "tbsp"
      ],
@@ -3629,15 +3629,19 @@
     },
     {
      "line": "2 cups cooked rice",
-     "status": "skip",
-     "item": null,
-     "note": "barely affects these tastes"
+     "status": "ok",
+     "item": [
+      "Rice, White",
+      2,
+      "cup"
+     ],
+     "note": ""
     },
     {
      "line": "1 cup ice cream",
      "status": "none",
      "item": null,
-     "note": "ice cream isn't in the database yet"
+     "note": "no cup or spoon conversion for this one yet; enter it in grams"
     },
     {
      "line": "3 cloves garlic",
@@ -3680,7 +3684,7 @@
      "line": "1/2 cup Splenda",
      "status": "none",
      "item": null,
-     "note": "tabletop blend bulked with dextrose or maltodextrin; the label doesn't give the sweetener share, so enter the pure sweetener in grams"
+     "note": "no cup or spoon conversion for this one yet; enter it in grams"
     },
     {
      "line": "2 tsp stevia",
