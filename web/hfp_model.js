@@ -1,4 +1,4 @@
-/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.8.5).
+/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.9.0).
    Same equations, constants and defaults as the Python model (acidity on, chloride-only K, shift mode,
    synergy capped at 63x, v.2.8.4). hfp_model.py is the source of truth: change it first, then mirror the change here.
    Parity-tested against Python with tests/web_parity.py (Node), raw values and 1-10 scores. Needs window.HFP_DB. */
@@ -173,7 +173,7 @@
     allulose: Math.pow(0.75, 1.3), maltitol: Math.pow(0.89, 1.3) };
   const SUGARS = ["sucrose", "glucose", "fructose", "lactose", "galactose", "maltose", "maltotriose", "uronic",
     "arabinose", "xylose", "mannose", "glycerol", "sorbitol", "erythritol", "xylitol", "mannitol",
-    "allulose", "maltitol", "reb_a", "mogroside_v", "sucralose", "aspartame", "ace_k"];
+    "allulose", "maltitol", "reb_a", "mogroside_v", "sucralose", "aspartame", "ace_k", "saccharin"];
   // v.2.7.0 high-intensity sweeteners (Wee 2018 Table 4 equi-sweet points; see hfp_sweet.py)
   const WEE_LEVELS = [5.0, 10.0, 15.0], WEE_SUC_N = 1.31;
   const HIS = {
@@ -181,19 +181,24 @@
     mogroside_v: ["Monk fruit (mogroside V)", 0.506, 0.70, [0.0191, 0.0694, 0.141]],
     sucralose: ["Sucralose", 1.0, 0.65, [0.0096, 0.0387, 0.0748]],
     aspartame: ["Aspartame", 1.0, 0.84, [0.0290, 0.0827, 0.134]],
-    ace_k: ["Acesulfame K", 1.0, 0.68, [0.0293, 0.0832, 0.170]] };
+    ace_k: ["Acesulfame K", 1.0, 0.68, [0.0293, 0.0832, 0.170]],
+    // v.2.9.0 saccharin: Schiffman 1995 Table 2 equi-sweet points at 2/5/10% sucrose; capped at 9% (hfp_sweet.py)
+    saccharin: ["Saccharin", 1.0, 0.868 * 1.31, [0.00392, 0.01126, 0.0405]] };
+  const HIS_LEVELS = { saccharin: [2.0, 5.0, 10.0] }, HIS_CAP = { saccharin: 9.0 };
   function hisSucroseEq(key, g) {
-    const [, purity, n, xs] = HIS[key], ys = WEE_LEVELS, c = g / purity;
+    const [, purity, n, xs] = HIS[key], ys = HIS_LEVELS[key] || WEE_LEVELS, c = g / purity, cap = HIS_CAP[key];
     if (c <= 0) return [0, false];
-    if (c < xs[0]) return [ys[0] * POW(c / xs[0], n / WEE_SUC_N), false];
-    if (c > xs[xs.length - 1]) return [ys[ys.length - 1], true];
-    for (let i = 0; i < xs.length - 1; i++) {
-      if (c <= xs[i + 1]) {
-        const t = (LN(c) - LN(xs[i])) / (LN(xs[i + 1]) - LN(xs[i]));
-        return [Math.exp(LN(ys[i]) + t * (LN(ys[i + 1]) - LN(ys[i]))), false];
+    let v, high = false;
+    if (c < xs[0]) v = ys[0] * POW(c / xs[0], n / WEE_SUC_N);
+    else if (c > xs[xs.length - 1]) { v = ys[ys.length - 1]; high = true; }
+    else {
+      v = ys[ys.length - 1];
+      for (let i = 0; i < xs.length - 1; i++) {
+        if (c <= xs[i + 1]) { const t = (LN(c) - LN(xs[i])) / (LN(xs[i + 1]) - LN(xs[i])); v = Math.exp(LN(ys[i]) + t * (LN(ys[i + 1]) - LN(ys[i]))); break; }
       }
     }
-    return [ys[ys.length - 1], false];
+    if (cap != null && v >= cap) return [cap, true];
+    return [v, high];
   }
   const SUCROSE_THR = 0.086, MOSK_MAX = 32.0;
   const SF_SUC_M = [0.125, 0.25, 0.5, 1.0], SF_SUC_G = [4.40, 9.06, 19.2, 43.6], SF_CIT = [1.25, 2.5, 5.0, 10.0];
@@ -244,6 +249,8 @@
   const SALT_FORM = { glu: 187.13 / 147.13, asp: 173.10 / 133.10, imp: 527.28 / 348.21, gmp: 533.29 / 363.22, amp: 391.18 / 347.22 };
   const GLU_THR_DROP_MAX = 0.012 / 0.00019, GLU_THR_AT_IMP = 5.0, NUC_W = { amp: 0.18, gmp: 2.3 };
   const TASTE_BASIS = "food"; // v.2.8.5
+  const KOK_THR_PTS = [[0.05, 0.04], [0.8, 0.02], [3.1, 0.01]]; // Ueda 1997 Table II (v.2.9.0 kokumi floor)
+  const NUC_THR_IMP = 0.387 * 348.21 / 1e4, NUC_THR_GMP = 0.206 * 363.22 / 1e4; // Kuninaka 1980 Table I (v.2.9.0)
   const SYNERGY_MAX_FOLD = 63, SALT_SHIFT_MAX = 2.0, DOG_R_PEAK = 0.5828;
   const KOKUMI_POT = { gsh: 1.0, evg: 12.8, cys: 1.0 }, KOK_EC50 = 0.9122, KOK_N = 1.456; // ASSUMPTION: sensory curve on mouth mM, not a receptor EC50 (hfp_model.py)
   const KOK_UMAMI_GAIN = 0.41, KOK_SALT_GAIN = 0.41;
@@ -251,7 +258,9 @@
   const COOKED_NUC = { "Asparagus (Fresh)": [0.972, 0.436], "Green Pepper": [2.049, 1.562], "Broccoli": [1.493, 1.271],
     "Cabbage": [0.451, 0.0], "Cauliflower": [0.833, 3.015], "Mushroom, Button": [11.736, 4.431],
     "Mushroom, Champignon": [11.736, 4.431], "Sweet Potato": [4.41, 1.126], "Potato": [1.042, 0.799],
-    "Radish": [0.764, 0.182], "Mushroom, Shiitake (Fresh)": [8.214, 14.019] };
+    "Radish": [0.764, 0.182], "Mushroom, Shiitake (Fresh)": [8.214, 14.019],
+    // v.2.9.0 Horie 2012 steamed GMP; null AMP = keep the raw AMP (hfp_model.py)
+    "Eggplant": [null, 1.70], "Carrot": [null, 0.34], "Daikon": [null, 0.14], "Onion, Welsh": [null, 0.21], "Spinach": [null, 0.76] };
   const MIN_SHARE = 0.01, ACIDS_BELOW_PH = 5.5, NUC_FLAG_GLU = 100;
   // Umami 10/10 (Nov 15, 2026, Bryan): 5 g/dL MSG-eq with the salt shift and kokumi gain at their maximum
   // (= 29.61; was the bare curve at 5 g/dL, 18.46). Mirrors UMAMI_REF_WITH_BOOSTS in hfp_model.py.
@@ -284,9 +293,11 @@
   const SCH_N = LN(5.0 / 2.0) / LN(0.08 / 0.05);
   const REBA_A = 9.928380940042402, REBA_B = 0.6768788634937082, REBA_MAX = 0.15;
   const ACEK_A = 5.8931225453905265, ACEK_B = 0.5499448249760767, ACEK_MAX = 0.156;
+  const SACC_A = 8.573335360776412, SACC_B = 0.6132138096664971, SACC_MAX = 0.09625; // v.2.9.0 (hfp_bitter.py SACC_A/B)
   const schCaf = r => (r <= 0 ? 0 : 0.05 * POW(r / 2.0, 1 / SCH_N));
   const rebaCafEq = pct => (pct > 0 ? schCaf(REBA_A * POW(pct, REBA_B)) : 0);
   const acekCafEq = pct => (pct > 0 ? schCaf(ACEK_A * POW(pct, ACEK_B)) : 0);
+  const saccCafEq = pct => (pct > 0 ? schCaf(SACC_A * POW(pct, SACC_B)) : 0);
   const PROTEIN_BITTER_RE = /hydroly[sz]|isolate|protein powder|whey protein|pea protein|soy protein|casein/i;
 
   function compute(recipe, opt) {
@@ -316,7 +327,7 @@
       const itemCook = +("cook_min" in item ? item.cook_min : cookMin) || 0;
       if (name in COOKED_NUC && itemCook > 0 && (cookTemp == null || cookTemp >= 65)) {
         const [ca, cg] = COOKED_NUC[name];
-        r.nucleotides_cooked = true; r.amp_mg = mass / 100 * ca; r.gmp_mg = mass / 100 * cg;
+        r.nucleotides_cooked = true; r.amp_mg = mass / 100 * (ca == null ? d.amp : ca); r.gmp_mg = mass / 100 * cg;
         note("cooked_nuc", `Cooking releases savory nucleotides in ${name}, so its cooked values are used.`, { name });
       }
       r.protein_g = mass / 100 * d.protein;
@@ -395,8 +406,10 @@
     const div = Math.min(GLU_THR_DROP_MAX, 1 + (GLU_THR_DROP_MAX - 1) * impEq / GLU_THR_AT_IMP);
     const thr = { glu: 0.01 / div, asp: 0.0166 / div };
     const u16 = conc.glu > thr.glu ? conc.glu : 0, v16 = conc.asp > thr.asp ? conc.asp : 0;
-    const lvl = u16 > 0.0735 ? 0 : (u16 > 0.0037 ? 1 : 2);
-    thr.amp = [0.00305, 0.0061, 0.061][lvl]; thr.imp = [0.00051, 0.001, 0.011][lvl]; thr.gmp = [0.00028, 0.00056, 0.0056][lvl];
+    // v.2.9.0 (hfp_model.py NUC_THRESHOLD_MODE "kuninaka"): no nucleotide threshold when glutamate is above its own;
+    // nucleotide-alone thresholds from Kuninaka 1980 (IMP 0.387 mM, GMP 0.206 mM); AMP = IMP / 0.18 (assumption)
+    if (u16 > 0) { thr.amp = 0; thr.imp = 0; thr.gmp = 0; }
+    else { thr.imp = NUC_THR_IMP; thr.gmp = NUC_THR_GMP; thr.amp = NUC_THR_IMP / 0.18; }
     const w16 = conc.amp > thr.amp ? conc.amp : 0, x16 = conc.imp > thr.imp ? conc.imp : 0, y16 = conc.gmp > thr.gmp ? conc.gmp : 0;
     const u = SALT_FORM.glu * u16 + 0.077 * SALT_FORM.asp * v16;
     const synergy = 219 * SALT_FORM.amp * w16 + 1218 * SALT_FORM.imp * x16 + 2800 * SALT_FORM.gmp * y16;
@@ -422,7 +435,21 @@
     umamiNa *= acid.umami_remaining;
     const gshEq = KOKUMI_POT.gsh * conc.gsh + KOKUMI_POT.evg * conc.evg + KOKUMI_POT.cys * conc.cys;
     const gshMM = gshEq / 307.33 * 10 * 1000;
-    const kokumi = gshMM > 0 ? 100 * POW(gshMM, KOK_N) / (POW(KOK_EC50, KOK_N) + POW(gshMM, KOK_N)) : 0;
+    const kHill = c => (c > 0 ? 100 * POW(c, KOK_N) / (POW(KOK_EC50, KOK_N) + POW(c, KOK_N)) : 0);
+    // v.2.9.0 kokumi floor (hfp_model.py kokumi_threshold_mM; Ueda 1997 Table II): threshold falls with umami
+    const kThr = (() => {
+      const P = KOK_THR_PTS, x = umamiEq > 0 ? umamiEq : P[0][0];
+      let pct;
+      if (x <= P[0][0]) pct = P[0][1];
+      else if (x >= P[P.length - 1][0]) pct = P[P.length - 1][1];
+      else for (let i = 0; i < P.length - 1; i++) {
+        const [x0, y0] = P[i], [x1, y1] = P[i + 1];
+        if (x <= x1) { const t = (LN(x) - LN(x0)) / (LN(x1) - LN(x0)); pct = Math.exp(LN(y0) + t * (LN(y1) - LN(y0))); break; }
+      }
+      return pct * 10 / 307.33 * 1000;
+    })();
+    const hThr = kHill(kThr);
+    const kokumi = Math.max(0, (kHill(gshMM) - hThr) / (100 - hThr) * 100);
     const umamiFinal = umamiNa + umamiNa * KOK_UMAMI_GAIN * (kokumi / 100);
     let totalSugar = 0; SUGARS.forEach(s => (totalSugar += sugars[s]));
     const q = acidity ? sweetQ(acid.citric_equiv_mM) : 1;
@@ -432,8 +459,8 @@
     const unsc = unscored.filter(s => sugars[s] >= 0.01 * Math.max(totalSugar, 1e-9));
     if (unsc.length) note("unscored_sugar", `Not counted for sweetness (no published sweetness value): ${unsc.join(", ")}.`);
     const hisHigh = Object.keys(HIS).filter(k => hisSucroseEq(k, sugars[k] || 0)[1]).map(k => HIS[k][0]);
-    if (hisHigh.length) note("his_high", `Above the tested range (Wee 2018, up to 15% sucrose-eq), sweetness held at 15%: ${hisHigh.join(", ")}.`);
-    if (Object.keys(HIS).some(k => (sugars[k] || 0) > 0)) note("his", "High-intensity sweeteners (Wee 2018): bitterness is modelled for Reb A and acesulfame K (Schiffman 1995); sucralose and aspartame are not bitter at normal levels; lingering and synergy between sweeteners are not modelled. Stevia and monk fruit grades are scaled by their Reb A / mogroside V content.");
+    if (hisHigh.length) note("his_high", `Above the tested range, sweetness is held at its top tested level (15% sucrose-eq, Wee 2018; saccharin 9%, Schiffman 1995): ${hisHigh.join(", ")}.`);
+    if (Object.keys(HIS).some(k => (sugars[k] || 0) > 0)) note("his", "High-intensity sweeteners (Wee 2018; saccharin from Schiffman 1995): bitterness is modelled for Reb A, acesulfame K and saccharin (Schiffman 1995); sucralose and aspartame are not bitter at normal levels; lingering and synergy between sweeteners are not modelled. Stevia and monk fruit grades are scaled by their Reb A / mogroside V content.");
     // v.2.8.1: umami raises saltiness beyond its own sodium (Sun 2022 fit; hfp_model.py UMAMI_SALT_*)
     let saltUm = saltTotal;
     if (UMAMI_SALT_EMAX > 0 && naM > 0) {
@@ -455,12 +482,14 @@
     const sNaC = sNaCaf(naF), sNaK = sNaKcl(naF);
     const sucFR = sucroseEquivalent(Object.assign({}, sugF, { reb_a: 0 }))[0];
     const sucFA = sucroseEquivalent(Object.assign({}, sugF, { ace_k: 0 }))[0];
+    const sucFS = sucroseEquivalent(Object.assign({}, sugF, { saccharin: 0 }))[0], saccPct = sugF.saccharin || 0;
     const sSug = sSugar(sucF), sSugR = sSugar(sucFR), sSugA = sSugar(sucFA);
     const tbEff = Math.min(tbPct, TB_SOL_MAX);
     const cXan = cafPct + TB_CAF_EQ * tbEff, cReba = rebaCafEq(rebaPct), cAcek = acekCafEq(acekPct);
     const bX = cafInt(cXan) * (1 - sNaC) * (1 - sSug), bK = kclInt(kclPct) * (1 - sNaK) * (1 - sSug);
     const bR = cafInt(cReba) * (1 - sNaC) * (1 - sSugR), bA = cafInt(cAcek) * (1 - sNaC) * (1 - sSugA);
-    const ceqB = cafEq(bX) + cafEq(bK) + cafEq(bR) + cafEq(bA);
+    const sSugS = sSugar(sucFS), bS = cafInt(saccCafEq(saccPct)) * (1 - sNaC) * (1 - sSugS);
+    const ceqB = cafEq(bX) + cafEq(bK) + cafEq(bR) + cafEq(bA) + cafEq(bS);
     const bitterFinal = ceqB > 0 ? CAF_K * POW(ceqB, CAF_N) : 0;
     if (cXan > CAF_MAX) note("bitter_caf_extrap", "Caffeine (plus theobromine as caffeine) is above the measured range (0.15%), so bitterness is extrapolated.");
     if (kclPct > KCL_MAX) note("bitter_kcl_extrap", "KCl is above the measured range (1.5%), so bitterness is extrapolated.");
@@ -468,7 +497,8 @@
     if (tbPct > 0) note("bitter_tb", "Theobromine (cocoa) counts as 0.91 g of caffeine per gram, assuming equal bitterness at equal multiples of each one's taste threshold" + (tbPct > TB_SOL_MAX ? `. Only ${TB_SOL_MAX.toFixed(3)}% can dissolve at room temperature (Stark 2006), so the rest is not tasted; a hot drink may dissolve more.` : "."));
     if (rebaPct > REBA_MAX) note("bitter_reba_extrap", "Stevia (Reb A) is above the tested range for bitterness (0.15%), so its bitterness is extrapolated.");
     if (acekPct > ACEK_MAX) note("bitter_acek_extrap", "Acesulfame K is above the tested range for bitterness (0.156%), so its bitterness is extrapolated.");
-    if (bitterFinal > 0 && Math.max(sucF, sucFR, sucFA) > SUG_FIT_MAX) note("bitter_sugar_high", "Sugar is above the tested range for masking bitterness (19% sucrose), so the masking is held near its maximum.");
+    if (saccPct > SACC_MAX) note("bitter_sacc_extrap", "Saccharin is above the tested range for bitterness (0.096%), so its bitterness is extrapolated.");
+    if (bitterFinal > 0 && Math.max(sucF, sucFR, sucFA, sucFS) > SUG_FIT_MAX) note("bitter_sugar_high", "Sugar is above the tested range for masking bitterness (19% sucrose), so the masking is held near its maximum.");
     if (cafPct > 0 || tbPct > 0) note("bitter_scope", "Bitterness counts caffeine, theobromine, potassium chloride, stevia (Reb A) and acesulfame K only. Coffee, tea and cocoa also get bitterness from other compounds, so their bitterness may read low.");
     const protFlag = rows.filter(r => PROTEIN_BITTER_RE.test(r.ingredient) && tot.mass > 0 && r.mass_g / tot.mass >= MIN_SHARE).map(r => r.ingredient);
     if (protFlag.length) note("bitter_protein", `Protein hydrolysates and isolates (${protFlag.join(", ")}) can taste bitter from small peptides. This is not scored.`, { names: protFlag });
@@ -479,7 +509,8 @@
       const rk = CHLORIDE_K.has(r.ingredient) ? cafEq(kclInt((r.k_mg / 1000) / m100b * KCL_PER_K) * (1 - sNaK) * (1 - sSug)) : 0;
       const rr = cafEq(cafInt(rebaCafEq((r.mass_g / 100 * (d.sugar_reb_a || 0) / 1000) / m100b)) * (1 - sNaC) * (1 - sSugR));
       const ra = cafEq(cafInt(acekCafEq((r.mass_g / 100 * (d.sugar_ace_k || 0) / 1000) / m100b)) * (1 - sNaC) * (1 - sSugA));
-      r.bitter_w = rx + rk + rr + ra;
+      const rs = cafEq(cafInt(saccCafEq((r.mass_g / 100 * (d.sugar_saccharin || 0) / 1000) / m100b)) * (1 - sNaC) * (1 - sSugS));
+      r.bitter_w = rx + rk + rr + ra + rs;
     });
     return {
       results: { umami_intensity: umamiFinal, kokumi_intensity_pct: kokumi, saltiness_intensity: saltFinal,

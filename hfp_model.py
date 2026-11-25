@@ -125,6 +125,29 @@ def to_score(raw, key):
 # against human points: 0.33 mM (Ueda 1997 threshold in umami) 18%, 0.65 mM (Ueda significant effects) 38%, 2.6 mM
 # (Ohsu 2010 Fig. 1) 82%, 5.26 mM (Goto 2016) 93%. No human GSH dose-response curve exists (searched Nov 25 2026).
 KOKUMI_POTENCY = {"gsh": 1.0, "evg": 12.8, "cys": 1.0}
+# Kokumi detection floor (v.2.9.0, Bryan, Nov 25 2026). Ueda et al. 1997 (Biosci Biotechnol Biochem 61:1977, Table II,
+# triangle tests, pH 7): GSH threshold 0.04% w/v in water and in 0.05% MSG, 0.02% in 0.8% MSG, 0.01% in 3.1% MSG and in
+# 0.05% MSG + 0.05% IMP. Context = the recipe's umami MSG-equivalent (g/dL, after synergy); log-log interpolation,
+# held at the end points. Kokumi = 0 below the threshold and rescales the Hill curve above it (same 100% ceiling).
+# KOKUMI_FLOOR = False restores pre-2.9.0 (no floor).
+KOKUMI_FLOOR = True
+KOKUMI_THR_POINTS = [(0.05, 0.04), (0.8, 0.02), (3.1, 0.01)]     # (MSG-eq g/dL, GSH % w/v threshold)
+
+
+def kokumi_threshold_mM(umami_eq):
+    pts = KOKUMI_THR_POINTS
+    x = umami_eq if umami_eq and umami_eq > 0 else pts[0][0]
+    if x <= pts[0][0]:
+        pct = pts[0][1]
+    elif x >= pts[-1][0]:
+        pct = pts[-1][1]
+    else:
+        for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+            if x <= x1:
+                t = (math.log(x) - math.log(x0)) / (math.log(x1) - math.log(x0))
+                pct = math.exp(math.log(y0) + t * (math.log(y1) - math.log(y0)))
+                break
+    return pct * 10 / 307.33 * 1000      # % w/v GSH -> mM
 KOKUMI_EC50_MM = 0.9122
 KOKUMI_HILL_N = 1.456
 
@@ -141,6 +164,10 @@ COOKED_NUCLEOTIDES = {  # name: (AMP, GMP) mg/100 g after cooking
     "Mushroom, Button": (11.736, 4.431), "Mushroom, Champignon": (11.736, 4.431),
     "Sweet Potato": (4.41, 1.126), "Potato": (1.042, 0.799), "Radish": (0.764, 0.182),
     "Mushroom, Shiitake (Fresh)": (8.214, 14.019),
+    # v.2.9.0: Horie 2012 (J Cookery Sci Jpn 45:346, Tables 1-2) steamed GMP (100 C 15 min; spinach 87 C 10 min),
+    # enzyme-inactivated raw controls, mg/100 g fresh, assumed free acid. AMP not measured: None = keep the raw AMP.
+    "Eggplant": (None, 1.70), "Carrot": (None, 0.34), "Daikon": (None, 0.14),
+    "Onion, Welsh": (None, 0.21), "Spinach": (None, 0.76),
 }
 NUCLEASE_MIN_TEMP_C = 65
 
@@ -267,6 +294,11 @@ ACIDITY_MODEL = True
 # acts through perceived sourness (v.2.4.0, an assumption; set False to use the raw sour stimulus).
 SUGAR_SOUR_ON_UMAMI = True
 
+# Nucleotide detection thresholds, g/100 mL free acid (v.2.9.0; see compute()). "kuninaka" = current; "tiers" = pre-2.9.0.
+NUC_THRESHOLD_MODE = "kuninaka"
+NUC_THR_ALONE = {"imp": 0.387 * 348.21 / 1e4, "gmp": 0.206 * 363.22 / 1e4}     # Kuninaka 1980 Table I (0.0135, 0.0075)
+NUC_THR_ALONE["amp"] = NUC_THR_ALONE["imp"] / 0.18                           # ASSUMPTION (no human AMP threshold found)
+
 # Tasted-concentration basis (v.2.8.5, Bryan, Nov 25 2026). "food": salt, sweet, umami, sour and kokumi use
 # concentration per 100 g of FOOD (water-phase concentration x water/mass), the Stark 2006 dose-over-threshold
 # convention already used for bitterness (v.2.8.3). pH, buffering and the pH synergy factor stay in the water phase.
@@ -354,9 +386,11 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
         if (name in COOKED_NUCLEOTIDES and item_cook > 0
                 and (cook_temp_c is None or cook_temp_c >= NUCLEASE_MIN_TEMP_C)):
             c_amp, c_gmp = COOKED_NUCLEOTIDES[name]
+            if c_amp is None:                       # GMP-only source (Horie 2012): keep the raw AMP
+                c_amp = d["amp"]
             r["nucleotides_cooked"] = True
             r["amp_mg"], r["gmp_mg"] = mass / 100 * c_amp, mass / 100 * c_gmp
-            warnings.append(f"{name}: cooked 5'-AMP/GMP applied (Nguyen 1988): AMP {d['amp']:.2f} -> "
+            warnings.append(f"{name}: cooked 5'-AMP/GMP applied (Nguyen 1988; Horie 2012): AMP {d['amp']:.2f} -> "
                             f"{c_amp:.2f}, GMP {d['gmp']:.2f} -> {c_gmp:.2f} mg/100 g.")
         r["protein_g"] = mass / 100 * d["protein"]
         if r["cys_mg"] > 0:
@@ -500,10 +534,22 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
            "asp": 0.0166 / glu_thr_div * z37}                        # V19
     u16 = conc["glu"] if conc["glu"] > thr["glu"] else 0.0
     v16 = conc["asp"] if conc["asp"] > thr["asp"] else 0.0
-    lvl = 0 if u16 > 0.0735 else (1 if u16 > 0.0037 else 2)
-    thr["amp"] = (0.00305, 0.0061, 0.061)[lvl] * aa37              # W19
-    thr["imp"] = (0.00051, 0.001, 0.011)[lvl] * aa37               # X19
-    thr["gmp"] = (0.00028, 0.00056, 0.0056)[lvl] * aa37            # Y19
+    # Nucleotide thresholds (v.2.9.0, Bryan, Nov 25 2026). With glutamate above its own threshold, nucleotides count
+    # at any level: synergy is already gated by glutamate, whose threshold drops with nucleotides (above), and IMP may
+    # have no umami of its own (Yamaguchi & Ninomiya 2000, p. 923S). Without glutamate (the nucleotide-alone path),
+    # human thresholds in water from Kuninaka et al. 1980 (Agric Biol Chem 44:1437, Table I): IMP 0.387 mM, GMP 0.206 mM
+    # as free acids; AMP has no human threshold, so IMP / 0.18 (its synergy weight) is an ASSUMPTION. Replaces the old
+    # three-tier table (unsourced; its 0.0037 cut was the NaCl threshold copied by mistake). pre-2.9.0: NUC_THRESHOLD_MODE.
+    if NUC_THRESHOLD_MODE == "tiers":
+        lvl = 0 if u16 > 0.0735 else (1 if u16 > 0.0037 else 2)
+        thr["amp"] = (0.00305, 0.0061, 0.061)[lvl] * aa37          # W19
+        thr["imp"] = (0.00051, 0.001, 0.011)[lvl] * aa37           # X19
+        thr["gmp"] = (0.00028, 0.00056, 0.0056)[lvl] * aa37        # Y19
+    elif u16 > 0:
+        thr["amp"] = thr["imp"] = thr["gmp"] = 0.0
+    else:
+        thr["amp"], thr["imp"], thr["gmp"] = (NUC_THR_ALONE["amp"] * aa37, NUC_THR_ALONE["imp"] * aa37,
+                                               NUC_THR_ALONE["gmp"] * aa37)
     w16 = conc["amp"] if conc["amp"] > thr["amp"] else 0.0
     x16 = conc["imp"] if conc["imp"] > thr["imp"] else 0.0
     y16 = conc["gmp"] if conc["gmp"] > thr["gmp"] else 0.0
@@ -572,8 +618,11 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
     # Kokumi as glutathione equivalents (BC16, BC22, BC25 -> AW28).
     gsh_eq = sum(KOKUMI_POTENCY[k] * conc[k] for k in ("gsh", "evg", "cys"))  # g/100 g water
     gsh_eq_mM = gsh_eq / 307.33 * 10 * 1000
-    kokumi = (100 * gsh_eq_mM**KOKUMI_HILL_N / (KOKUMI_EC50_MM**KOKUMI_HILL_N
-                                                 + gsh_eq_mM**KOKUMI_HILL_N)) if gsh_eq_mM > 0 else 0.0
+    hill = lambda c: (100 * c**KOKUMI_HILL_N / (KOKUMI_EC50_MM**KOKUMI_HILL_N + c**KOKUMI_HILL_N)) if c > 0 else 0.0
+    kokumi = hill(gsh_eq_mM)
+    if KOKUMI_FLOOR:
+        h_thr = hill(kokumi_threshold_mM(umami_eq))
+        kokumi = max(0.0, (kokumi - h_thr) / (100 - h_thr) * 100)
     # contribution of each compound to the GSH-equivalent dose (for reporting)
     k_gsh, k_cys, k_evg = ((KOKUMI_POTENCY[k] * conc[k] / gsh_eq * 100) if gsh_eq > 0 else 0.0
                            for k in ("gsh", "cys", "evg"))
@@ -626,11 +675,11 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
         warnings.append("Not counted for sweetness (no Moskowitz 1970 value): " + ", ".join(unscored_present) + ".")
     his_high = sw.his_above_range(sugars)
     if his_high:
-        warnings.append("Above the tested range (Wee 2018, up to 15% sucrose-eq), sweetness held at 15%: "
-                        + ", ".join(his_high) + ".")
+        warnings.append("Above the tested range, sweetness held at its top tested level (15% sucrose-eq, Wee 2018; "
+                        "saccharin 9%, Schiffman 1995): " + ", ".join(his_high) + ".")
     if any(sugars.get(k, 0) > 0 for k in sw.HIGH_INTENSITY):
-        warnings.append("High-intensity sweeteners (Wee 2018): bitterness is modelled for Reb A and acesulfame K "
-                        "(Schiffman 1995); sucralose and aspartame are not bitter at normal levels; lingering and "
+        warnings.append("High-intensity sweeteners (Wee 2018; saccharin from Schiffman 1995): bitterness is modelled for "
+                        "Reb A, acesulfame K and saccharin (Schiffman 1995); sucralose and aspartame are not bitter at normal levels; lingering and "
                         "synergy between sweeteners are not modelled. Stevia and monk fruit grades are scaled by their "
                         "Reb A / mogroside V content.")
     umami_salt_e = 0.0
@@ -653,10 +702,12 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
     fw = f_food / fb                       # conc and na_m are already per food when TASTE_BASIS == "food"
     suc_food_reba = sw.sucrose_equivalent({**sugars_food, "reb_a": 0.0})[0]
     suc_food_acek = sw.sucrose_equivalent({**sugars_food, "ace_k": 0.0})[0]
+    suc_food_sacc = sw.sucrose_equivalent({**sugars_food, "saccharin": 0.0})[0]
     bitter_final, bitter_detail, bwarn = bt.bitterness(
         conc["caf"] * fw, conc["k_cl"] * bt.KCL_PER_K * fw, na_m * fw, suc_food,
         tb_pct=conc["tb"] * fw, reba_pct=sugars_food.get("reb_a", 0.0), acek_pct=sugars_food.get("ace_k", 0.0),
-        sucrose_eq_pct_reba=suc_food_reba, sucrose_eq_pct_acek=suc_food_acek)
+        sucrose_eq_pct_reba=suc_food_reba, sucrose_eq_pct_acek=suc_food_acek,
+        sacc_pct=sugars_food.get("saccharin", 0.0), sucrose_eq_pct_sacc=suc_food_sacc)
     warnings.extend(bwarn)
     if conc["caf"] > 0 or conc["tb"] > 0:
         warnings.append("Bitterness counts caffeine, theobromine, KCl, Reb A and acesulfame K only. Coffee, tea and "
@@ -721,7 +772,7 @@ def report(res, detail=False):
                    f"10 = 5% citric acid, ~lemon juice)")
     if sc.get("bitterness") is not None:
         out.append(f"  BITTERNESS {sc['bitterness']:5.1f} / 10     {r['bitterness_intensity']:8.2f}  (Spectrum scale; "
-                   f"10 = ~0.15% caffeine; caffeine, theobromine, KCl, Reb A, acesulfame K; per 100 g food)")
+                   f"10 = ~0.15% caffeine; caffeine, theobromine, KCl, Reb A, acesulfame K, saccharin; per 100 g food)")
     a = res.get("acidity") or {}
     if a.get("pH") is not None:
         out.append(f"Predicted pH         {a['pH']:8.2f}   (sour stimulus {a['sour_stimulus_mM']:.2f} mM = "

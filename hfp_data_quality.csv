@@ -309,3 +309,16 @@ Cola,theobromine,1,"USDA FDC SR Legacy 174852, nutrient 1058 theobromine [value 
 "Chocolate, Dark (45-59%)",composition,1,"USDA FDC SR Legacy 170271 (Chocolate, dark, 45-59% cacao solids): water, Na, K, protein, sucrose 46.25 g, lactose 1.65 g, caffeine 43, theobromine 493 (v.2.8.2); glutamate/nucleotides/acids/pH blank"
 "Milk, Chocolate (Whole)",composition,1,"USDA FDC SR Legacy 170879 (Milk, chocolate, fluid, commercial, whole): water, Na, K, protein, caffeine 1, theobromine 23; density 250 g/cup = 1.057 g/mL (v.2.8.2); glutamate/nucleotides/acids/pH blank"
 "Milk, Chocolate (Whole)",sugars,3,"USDA SR 170879 total sugars 9.54 g, not split (lactose + added sucrose); entered as sucrose [value 9540]"
+"Tomato, Cherry (Tiger, Flesh)",glutamate,1,Oruna-Concha et al. 2007 Table 2 Tiger flesh 1.57 g/kg (v.2.9.0; was 126 = all-variety mean from the abstract)
+"Tomato, Salad (Elegance, Italian, Pulp)",glutamate,1,Oruna-Concha et al. 2007 Table 2 Elegance pulp 2.63 g/kg (v.2.9.0; was 456 = all-variety mean)
+"Tomato, Plum (Flavorino, Flesh)",glutamate,1,"Oruna-Concha et al. 2007 Table 2 Flavorino flesh 1.73 g/kg (v.2.9.0; was 178, transcription slip)"
+Celery,acids,2,"Priecina & Karklina 2015 dry-weight acids scaled to the row's dry matter 4.6% (paper sample 19.18% DM), v.2.9.0; ascorbic is USDA, unchanged"
+Parsley,acids,2,"Priecina & Karklina 2015 dry-weight acids scaled to the row's dry matter 12.3% (paper sample 21.0% DM), v.2.9.0; ascorbic is USDA, unchanged"
+Green Tea,potassium,1,"MEXT 2020 food 16036 sencha leaf K 2,200 mg/100 g (v.2.9.0; was 22,000, a x10 slip); Na 3 and water 2.8 from the same entry"
+Mint,density,2,"USDA SR 173474 Peppermint, fresh: 2 tbsp = 3.2 g -> 0.108 g/mL (v.2.9.0; was 0.031, no source); depends on packing"
+Eggplant,nucleotides,1,Horie 2012 Table 1 raw GMP 0.65 mg/100 g fresh (enzyme-inactivated; assumed free acid). AMP/IMP not measured. v.2.9.0
+Carrot,nucleotides,1,Horie 2012 Table 2 raw GMP 0.08 mg/100 g (assumed free acid). v.2.9.0
+Daikon,nucleotides,1,Horie 2012 Table 2 raw GMP 0.08 mg/100 g (assumed free acid). v.2.9.0
+"Onion, Welsh",nucleotides,2,Horie 2012 Table 2 negi (A. fistulosum) raw GMP 0.09 mg/100 g (assumed free acid). v.2.9.0
+Spinach,nucleotides,1,"Horie 2012 Table 2 raw GMP 0.43 mg/100 g (assumed free acid). Note: Horie glutamate 67 vs DB 9.9, unresolved. v.2.9.0"
+Saccharin (Sodium),density,3,Placeholder 0.6 g/mL for sodium saccharin powder (no source); weigh it instead of measuring by volume. v.2.9.0

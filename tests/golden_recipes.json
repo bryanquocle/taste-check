@@ -1,40 +1,849 @@
 [
- {"name": "canned tomato", "items": [["Tomato (Canned)", 200, "g"], ["Water", 100, "g"]], "opt": {}},
- {"name": "canned tomato + salt", "items": [["Tomato (Canned)", 800, "g"], ["Salt", 1, "tsp"]], "opt": {}},
- {"name": "soy + tomato", "items": [["Tomato (Canned)", 200, "g"], ["Sauce, Soy", 15, "mL"], ["Water", 100, "g"]], "opt": {}},
- {"name": "garlic cooked", "items": [["Garlic", 10, "g"], ["Water", 300, "g"]], "opt": {"cook_min": 30, "cook_temp_c": 85}},
- {"name": "reduced sauce", "items": [["Tomato (Canned)", 800, "g"], ["Salt", 5, "g"], ["Garlic", 12, "g"], ["Onion", 100, "g"]], "opt": {"water_loss_g": 200, "cook_min": 45, "cook_temp_c": 95}},
- {"name": "mushroom broth", "items": [["Mushroom, Button", 200, "g"], ["Water", 500, "g"], ["Salt", 4, "g"]], "opt": {"cook_min": 20, "cook_temp_c": 90}},
- {"name": "dashi", "items": [["Seaweed, Kombu", 10, "g"], ["Bonito Flakes", 10, "g"], ["Water", 500, "g"]], "opt": {}},
- {"name": "lemonade", "items": [["Lemon", 150, "g"], ["Sucrose", 100, "g"], ["Water", 750, "g"]], "opt": {}},
- {"name": "vinaigrette", "items": [["Vinegar, Red Wine", 2, "tbsp"], ["Water", 100, "g"], ["Salt", 1, "g"], ["Honey", 1, "tsp"]], "opt": {}},
- {"name": "chicken broth + chicken", "items": [["Broth, Chicken", 500, "g"], ["Chicken", 100, "g"]], "opt": {}},
- {"name": "parmesan water", "items": [["Cheese, Parmigiano Regianno", 30, "g"], ["Water", 200, "g"]], "opt": {}},
- {"name": "yogurt dressing", "items": [["Yogurt, Plain (Whole Milk)", 150, "g"], ["Lemon", 15, "g"], ["Salt", 2, "g"], ["Garlic", 5, "g"]], "opt": {}},
- {"name": "KCl", "items": [["Potassium Chloride", 3, "g"], ["Water", 300, "g"]], "opt": {}},
- {"name": "miso soup (tofu left out: not in the database)", "items": [["Miso", 40, "g"], ["Water", 400, "g"]], "opt": {}},
- {"name": "bo kho (Nov 15, 2026)", "items": [["Beef", 1000, "g"], ["Ginger", 40, "g"], ["Garlic", 20, "g"], ["Onion", 350, "g"], ["Paste, Tomato", 66, "g"], ["Butter, Salted", 35, "g"], ["Wine, Generic", 60, "g"], ["Carrot", 250, "g"], ["Broth, Beef", 946, "g"], ["Sauce, Fish", 58, "g"], ["Water", 318, "g"], ["Sugar", 37, "g"]], "opt": {"water_loss_g": 300, "cook_min": 120, "cook_temp_c": 95}},
- {"name": "kitchen test A: 8 g/L salt", "items": [["Salt", 8, "g"], ["Water", 1000, "g"]], "opt": {}},
- {"name": "kitchen test B: 6 g/L salt", "items": [["Salt", 6, "g"], ["Water", 1000, "g"]], "opt": {}},
- {"name": "kitchen test C: 6 g/L salt + 2 g/L MSG", "items": [["Salt", 6, "g"], ["Monosodium Glutamate", 2, "g"], ["Water", 1000, "g"]], "opt": {}},
- {"name": "polyol syrup (v.2.6.3)", "items": [["Erythritol", 40, "g"], ["Xylitol", 30, "g"], ["Sorbitol", 20, "g"], ["Mannitol", 10, "g"], ["Water", 400, "g"]], "opt": {}},
- {"name": "erythritol lemonade (v.2.6.3)", "items": [["Erythritol", 60, "g"], ["Lemon", 60, "g"], ["Water", 500, "g"]], "opt": {}},
- {"name": "stevia lemonade, Reb A 97% (v.2.7.0)", "items": [["Lemon", 60, "g"], ["Water", 500, "g"], ["Stevia Extract (Reb A 97%)", 0.2, "g"]], "opt": {}},
- {"name": "monk fruit tea, mogroside V 50% (v.2.7.0)", "items": [["Water", 500, "g"], ["Monk Fruit Extract (Mogroside V 50%)", 0.35, "g"]], "opt": {}},
- {"name": "diet soda: sucralose + acesulfame K (v.2.7.0)", "items": [["Water", 355, "g"], ["Sucralose", 0.06, "g"], ["Acesulfame Potassium", 0.06, "g"]], "opt": {}},
- {"name": "coffee: erythritol + stevia Reb A 60% (v.2.7.0)", "items": [["Water", 240, "g"], ["Erythritol", 8, "g"], ["Stevia Extract (Reb A 60%)", 0.03, "g"]], "opt": {}},
- {"name": "sucralose above tested range (v.2.7.0)", "items": [["Water", 100, "g"], ["Sucralose", 1, "g"]], "opt": {}},
- {"name": "keto syrup: allulose + maltitol (v.2.7.1)", "items": [["Allulose", 30, "g"], ["Maltitol", 20, "g"], ["Water", 100, "g"]], "opt": {}},
- {"name": "creamy dip: cream cheese + mayo + Dijon (v.2.7.1)", "items": [["Cheese, Cream", 225, "g"], ["Mayonnaise", 60, "g"], ["Mustard, Dijon", 15, "g"], ["Lemon", 10, "g"]], "opt": {}},
- {"name": "hoisin glaze (v.2.7.1)", "items": [["Sauce, Hoisin", 60, "g"], ["Sauce, Soy", 15, "g"], ["Water", 60, "g"], ["Garlic", 6, "g"]], "opt": {}},
- {"name": "salsa + hot sauce + yellow mustard (v.2.7.1)", "items": [["Salsa (Jarred)", 200, "g"], ["Sauce, Hot (Tabasco)", 5, "g"], ["Mustard, Yellow (Prepared)", 10, "g"]], "opt": {}},
- {"name": "50/50 salt + KCl blend (v.2.7.2)", "items": [["Salt", 5, "g"], ["Potassium Chloride", 5, "g"], ["Water", 1000, "g"]], "opt": {}},
- {"name": "lemonade by volume, 1 cup sugar (v.2.7.2)", "items": [["Lemon", 0.75, "cup"], ["Sugar", 1, "cup"], ["Water", 4, "cup"]], "opt": {}},
- {"name": "black coffee (v.2.8.0)", "items": [["Coffee, Brewed", 240, "g"]], "opt": {}},
- {"name": "coffee with sugar (v.2.8.0)", "items": [["Coffee, Brewed", 240, "g"], ["Sugar", 8, "g"]], "opt": {}},
- {"name": "1.5% KCl in water (v.2.8.0)", "items": [["Potassium Chloride", 15, "g"], ["Water", 1000, "g"]], "opt": {}},
- {"name": "dark chocolate + cocoa drink (v.2.8.0)", "items": [["Chocolate, Dark (70-85%)", 30, "g"], ["Cocoa Powder (Unsweetened)", 10, "g"], ["Milk, Cow", 240, "g"]], "opt": {}},
- {"name": "stevia Reb A 97% in water, 1.5 g/L (v.2.8.2)", "items": [["Water", 1000, "g"], ["Stevia Extract (Reb A 97%)", 1.5, "g"]], "opt": {}},
- {"name": "chocolate milk, whole (v.2.8.2)", "items": [["Milk, Chocolate (Whole)", 240, "g"]], "opt": {}},
- {"name": "milk chocolate + water, 1:4 (v.2.8.2)", "items": [["Chocolate, Milk", 20, "g"], ["Water", 80, "g"]], "opt": {}}
+ {
+  "name": "canned tomato",
+  "items": [
+   [
+    "Tomato (Canned)",
+    200,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "canned tomato + salt",
+  "items": [
+   [
+    "Tomato (Canned)",
+    800,
+    "g"
+   ],
+   [
+    "Salt",
+    1,
+    "tsp"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "soy + tomato",
+  "items": [
+   [
+    "Tomato (Canned)",
+    200,
+    "g"
+   ],
+   [
+    "Sauce, Soy",
+    15,
+    "mL"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "garlic cooked",
+  "items": [
+   [
+    "Garlic",
+    10,
+    "g"
+   ],
+   [
+    "Water",
+    300,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 30,
+   "cook_temp_c": 85
+  }
+ },
+ {
+  "name": "reduced sauce",
+  "items": [
+   [
+    "Tomato (Canned)",
+    800,
+    "g"
+   ],
+   [
+    "Salt",
+    5,
+    "g"
+   ],
+   [
+    "Garlic",
+    12,
+    "g"
+   ],
+   [
+    "Onion",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {
+   "water_loss_g": 200,
+   "cook_min": 45,
+   "cook_temp_c": 95
+  }
+ },
+ {
+  "name": "mushroom broth",
+  "items": [
+   [
+    "Mushroom, Button",
+    200,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ],
+   [
+    "Salt",
+    4,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 20,
+   "cook_temp_c": 90
+  }
+ },
+ {
+  "name": "dashi",
+  "items": [
+   [
+    "Seaweed, Kombu",
+    10,
+    "g"
+   ],
+   [
+    "Bonito Flakes",
+    10,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "lemonade",
+  "items": [
+   [
+    "Lemon",
+    150,
+    "g"
+   ],
+   [
+    "Sucrose",
+    100,
+    "g"
+   ],
+   [
+    "Water",
+    750,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "vinaigrette",
+  "items": [
+   [
+    "Vinegar, Red Wine",
+    2,
+    "tbsp"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ],
+   [
+    "Salt",
+    1,
+    "g"
+   ],
+   [
+    "Honey",
+    1,
+    "tsp"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "chicken broth + chicken",
+  "items": [
+   [
+    "Broth, Chicken",
+    500,
+    "g"
+   ],
+   [
+    "Chicken",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "parmesan water",
+  "items": [
+   [
+    "Cheese, Parmigiano Regianno",
+    30,
+    "g"
+   ],
+   [
+    "Water",
+    200,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "yogurt dressing",
+  "items": [
+   [
+    "Yogurt, Plain (Whole Milk)",
+    150,
+    "g"
+   ],
+   [
+    "Lemon",
+    15,
+    "g"
+   ],
+   [
+    "Salt",
+    2,
+    "g"
+   ],
+   [
+    "Garlic",
+    5,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "KCl",
+  "items": [
+   [
+    "Potassium Chloride",
+    3,
+    "g"
+   ],
+   [
+    "Water",
+    300,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "miso soup (tofu left out: not in the database)",
+  "items": [
+   [
+    "Miso",
+    40,
+    "g"
+   ],
+   [
+    "Water",
+    400,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "bo kho (Nov 15, 2026)",
+  "items": [
+   [
+    "Beef",
+    1000,
+    "g"
+   ],
+   [
+    "Ginger",
+    40,
+    "g"
+   ],
+   [
+    "Garlic",
+    20,
+    "g"
+   ],
+   [
+    "Onion",
+    350,
+    "g"
+   ],
+   [
+    "Paste, Tomato",
+    66,
+    "g"
+   ],
+   [
+    "Butter, Salted",
+    35,
+    "g"
+   ],
+   [
+    "Wine, Generic",
+    60,
+    "g"
+   ],
+   [
+    "Carrot",
+    250,
+    "g"
+   ],
+   [
+    "Broth, Beef",
+    946,
+    "g"
+   ],
+   [
+    "Sauce, Fish",
+    58,
+    "g"
+   ],
+   [
+    "Water",
+    318,
+    "g"
+   ],
+   [
+    "Sugar",
+    37,
+    "g"
+   ]
+  ],
+  "opt": {
+   "water_loss_g": 300,
+   "cook_min": 120,
+   "cook_temp_c": 95
+  }
+ },
+ {
+  "name": "kitchen test A: 8 g/L salt",
+  "items": [
+   [
+    "Salt",
+    8,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "kitchen test B: 6 g/L salt",
+  "items": [
+   [
+    "Salt",
+    6,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "kitchen test C: 6 g/L salt + 2 g/L MSG",
+  "items": [
+   [
+    "Salt",
+    6,
+    "g"
+   ],
+   [
+    "Monosodium Glutamate",
+    2,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "polyol syrup (v.2.6.3)",
+  "items": [
+   [
+    "Erythritol",
+    40,
+    "g"
+   ],
+   [
+    "Xylitol",
+    30,
+    "g"
+   ],
+   [
+    "Sorbitol",
+    20,
+    "g"
+   ],
+   [
+    "Mannitol",
+    10,
+    "g"
+   ],
+   [
+    "Water",
+    400,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "erythritol lemonade (v.2.6.3)",
+  "items": [
+   [
+    "Erythritol",
+    60,
+    "g"
+   ],
+   [
+    "Lemon",
+    60,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "stevia lemonade, Reb A 97% (v.2.7.0)",
+  "items": [
+   [
+    "Lemon",
+    60,
+    "g"
+   ],
+   [
+    "Water",
+    500,
+    "g"
+   ],
+   [
+    "Stevia Extract (Reb A 97%)",
+    0.2,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "monk fruit tea, mogroside V 50% (v.2.7.0)",
+  "items": [
+   [
+    "Water",
+    500,
+    "g"
+   ],
+   [
+    "Monk Fruit Extract (Mogroside V 50%)",
+    0.35,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "diet soda: sucralose + acesulfame K (v.2.7.0)",
+  "items": [
+   [
+    "Water",
+    355,
+    "g"
+   ],
+   [
+    "Sucralose",
+    0.06,
+    "g"
+   ],
+   [
+    "Acesulfame Potassium",
+    0.06,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "coffee: erythritol + stevia Reb A 60% (v.2.7.0)",
+  "items": [
+   [
+    "Water",
+    240,
+    "g"
+   ],
+   [
+    "Erythritol",
+    8,
+    "g"
+   ],
+   [
+    "Stevia Extract (Reb A 60%)",
+    0.03,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "sucralose above tested range (v.2.7.0)",
+  "items": [
+   [
+    "Water",
+    100,
+    "g"
+   ],
+   [
+    "Sucralose",
+    1,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "keto syrup: allulose + maltitol (v.2.7.1)",
+  "items": [
+   [
+    "Allulose",
+    30,
+    "g"
+   ],
+   [
+    "Maltitol",
+    20,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "creamy dip: cream cheese + mayo + Dijon (v.2.7.1)",
+  "items": [
+   [
+    "Cheese, Cream",
+    225,
+    "g"
+   ],
+   [
+    "Mayonnaise",
+    60,
+    "g"
+   ],
+   [
+    "Mustard, Dijon",
+    15,
+    "g"
+   ],
+   [
+    "Lemon",
+    10,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "hoisin glaze (v.2.7.1)",
+  "items": [
+   [
+    "Sauce, Hoisin",
+    60,
+    "g"
+   ],
+   [
+    "Sauce, Soy",
+    15,
+    "g"
+   ],
+   [
+    "Water",
+    60,
+    "g"
+   ],
+   [
+    "Garlic",
+    6,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "salsa + hot sauce + yellow mustard (v.2.7.1)",
+  "items": [
+   [
+    "Salsa (Jarred)",
+    200,
+    "g"
+   ],
+   [
+    "Sauce, Hot (Tabasco)",
+    5,
+    "g"
+   ],
+   [
+    "Mustard, Yellow (Prepared)",
+    10,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "50/50 salt + KCl blend (v.2.7.2)",
+  "items": [
+   [
+    "Salt",
+    5,
+    "g"
+   ],
+   [
+    "Potassium Chloride",
+    5,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "lemonade by volume, 1 cup sugar (v.2.7.2)",
+  "items": [
+   [
+    "Lemon",
+    0.75,
+    "cup"
+   ],
+   [
+    "Sugar",
+    1,
+    "cup"
+   ],
+   [
+    "Water",
+    4,
+    "cup"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "black coffee (v.2.8.0)",
+  "items": [
+   [
+    "Coffee, Brewed",
+    240,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "coffee with sugar (v.2.8.0)",
+  "items": [
+   [
+    "Coffee, Brewed",
+    240,
+    "g"
+   ],
+   [
+    "Sugar",
+    8,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "1.5% KCl in water (v.2.8.0)",
+  "items": [
+   [
+    "Potassium Chloride",
+    15,
+    "g"
+   ],
+   [
+    "Water",
+    1000,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "dark chocolate + cocoa drink (v.2.8.0)",
+  "items": [
+   [
+    "Chocolate, Dark (70-85%)",
+    30,
+    "g"
+   ],
+   [
+    "Cocoa Powder (Unsweetened)",
+    10,
+    "g"
+   ],
+   [
+    "Milk, Cow",
+    240,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "stevia Reb A 97% in water, 1.5 g/L (v.2.8.2)",
+  "items": [
+   [
+    "Water",
+    1000,
+    "g"
+   ],
+   [
+    "Stevia Extract (Reb A 97%)",
+    1.5,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "chocolate milk, whole (v.2.8.2)",
+  "items": [
+   [
+    "Milk, Chocolate (Whole)",
+    240,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "milk chocolate + water, 1:4 (v.2.8.2)",
+  "items": [
+   [
+    "Chocolate, Milk",
+    20,
+    "g"
+   ],
+   [
+    "Water",
+    80,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "saccharin soda: 0.02% sodium saccharin + citric acid (v.2.9.0)",
+  "items": [
+   [
+    "Water",
+    1000,
+    "g"
+   ],
+   [
+    "Saccharin (Sodium)",
+    0.2,
+    "g"
+   ],
+   [
+    "Lemon",
+    15,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "steamed spinach + carrot, Horie cooked GMP (v.2.9.0)",
+  "items": [
+   [
+    "Spinach",
+    150,
+    "g"
+   ],
+   [
+    "Carrot",
+    100,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ],
+   [
+    "Salt",
+    2,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 10,
+   "cook_temp_c": 95
+  }
+ }
 ]

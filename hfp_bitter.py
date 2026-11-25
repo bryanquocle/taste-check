@@ -4,7 +4,7 @@ v.2.8.0 was caffeine + KCl; v.2.8.2 added theobromine and Reb A; v.2.8.3 adds th
 theobromine solubility cap, Reb A re-sourced to Schiffman 1995 and acesulfame K.
 
 Bitterants: caffeine, potassium chloride, theobromine, rebaudioside A, acesulfame K.
-Not modelled (reasons in the project notes, Nov 24/25, 2026): tea catechins (Xu 2018 has only a one-point caffeine tie and
+Not modelled (reasons in SESSION_NOTES, Nov 24/25): tea catechins (Xu 2018 has only a one-point caffeine tie and
 strong non-additive interactions), chlorogenic-acid lactones, hop acids, naringin, diketopiperazines and
 flavan-3-ols in cocoa, saccharin (no DB column), sucralose and aspartame (at the sucrose noise floor at use
 levels, Schiffman 1995 Table 1), peptides (protein hydrolysates get a warning only).
@@ -159,7 +159,7 @@ ACEK_TABLE = [(0.007, 0.54), (0.01, 0.80), (0.015, 0.63), (0.018, 0.53), (0.025,
               (0.08, 1.35), (0.11, 1.81), (0.156, 2.41)]
 SACC_TABLE = [(0.0035, 0.35), (0.00616, 0.65), (0.009, 0.43), (0.0154, 1.01), (0.02, 1.08), (0.022, 0.83),
               (0.03, 1.32), (0.0385, 1.48), (0.04, 0.76), (0.05, 1.80), (0.055, 1.10), (0.06, 2.03),
-              (0.09625, 2.32)]                                               # not wired (no DB column)
+              (0.09625, 2.32)]                                               # wired in v.2.9.0
 
 
 def _fit_power(table, floor):
@@ -174,7 +174,8 @@ def _fit_power(table, floor):
 
 REBA_A, REBA_B = _fit_power(REBA_TABLE, SCH_FLOOR)      # 9.928, 0.6769
 ACEK_A, ACEK_B = _fit_power(ACEK_TABLE, SCH_FLOOR)      # 5.893, 0.5499
-REBA_MAX_PCT, ACEK_MAX_PCT = REBA_TABLE[-1][0], ACEK_TABLE[-1][0]
+SACC_A, SACC_B = _fit_power(SACC_TABLE, SCH_FLOOR)      # 8.574, 0.6133 (v.2.9.0)
+REBA_MAX_PCT, ACEK_MAX_PCT, SACC_MAX_PCT = REBA_TABLE[-1][0], ACEK_TABLE[-1][0], SACC_TABLE[-1][0]
 
 # Sugar suppression (Calvino 1990 Table I, exact Hill fit)
 SUG_SMAX, SUG_H, SUG_X50 = 0.7288, 3.8033, 7.6277
@@ -234,8 +235,13 @@ def sugar_suppression(sucrose_eq_pct):
     return SUG_SMAX * x ** SUG_H / (x ** SUG_H + SUG_X50 ** SUG_H)
 
 
+def sacc_caffeine_eq_pct(sacc_pct):
+    """Iso-bitter caffeine % for sodium saccharin at sacc_pct (g per 100 g food). v.2.9.0."""
+    return schiffman_caffeine_pct(SACC_A * sacc_pct ** SACC_B) if sacc_pct > 0 else 0.0
+
+
 def bitterness(caf_pct, kcl_pct, na_m, sucrose_eq_pct, tb_pct=0.0, reba_pct=0.0, acek_pct=0.0,
-               sucrose_eq_pct_reba=None, sucrose_eq_pct_acek=None):
+               sucrose_eq_pct_reba=None, sucrose_eq_pct_acek=None, sacc_pct=0.0, sucrose_eq_pct_sacc=None):
     """Returns (intensity on the Spectrum scale, details dict, warnings list).
     All concentrations are g per 100 g FOOD (whole-food basis, v.2.8.3); na_m is mol per kg food.
     sucrose_eq_pct_reba / _acek: sucrose-eq % w/w excluding that sweetener's own sweetness; None = same."""
@@ -244,6 +250,8 @@ def bitterness(caf_pct, kcl_pct, na_m, sucrose_eq_pct, tb_pct=0.0, reba_pct=0.0,
         sucrose_eq_pct_reba = sucrose_eq_pct
     if sucrose_eq_pct_acek is None:
         sucrose_eq_pct_acek = sucrose_eq_pct
+    if sucrose_eq_pct_sacc is None:
+        sucrose_eq_pct_sacc = sucrose_eq_pct
     s_na_c, s_na_k = na_suppression_caffeine(na_m), na_suppression_kcl(na_m)
     s_sug = sugar_suppression(sucrose_eq_pct)
     s_sug_r, s_sug_a = sugar_suppression(sucrose_eq_pct_reba), sugar_suppression(sucrose_eq_pct_acek)
@@ -254,7 +262,11 @@ def bitterness(caf_pct, kcl_pct, na_m, sucrose_eq_pct, tb_pct=0.0, reba_pct=0.0,
     b_k = kcl_intensity(kcl_pct) * (1 - s_na_k) * (1 - s_sug)
     b_r = caffeine_intensity(c_reba) * (1 - s_na_c) * (1 - s_sug_r)
     b_a = caffeine_intensity(c_acek) * (1 - s_na_c) * (1 - s_sug_a)
-    ceq = caffeine_equivalent(b_x) + caffeine_equivalent(b_k) + caffeine_equivalent(b_r) + caffeine_equivalent(b_a)
+    s_sug_s = sugar_suppression(sucrose_eq_pct_sacc)
+    c_sacc = sacc_caffeine_eq_pct(sacc_pct)
+    b_s = caffeine_intensity(c_sacc) * (1 - s_na_c) * (1 - s_sug_s)
+    ceq = (caffeine_equivalent(b_x) + caffeine_equivalent(b_k) + caffeine_equivalent(b_r) + caffeine_equivalent(b_a)
+           + caffeine_equivalent(b_s))
     b_final = CAF_K * ceq ** CAF_N if ceq > 0 else 0.0
     if c_xan > CAF_FIT_MAX:
         warn.append(f"Caffeine-equivalent {c_xan:.3f}% is above the measured range (0.15%); bitterness is extrapolated.")
@@ -276,7 +288,10 @@ def bitterness(caf_pct, kcl_pct, na_m, sucrose_eq_pct, tb_pct=0.0, reba_pct=0.0,
     if acek_pct > ACEK_MAX_PCT:
         warn.append(f"Acesulfame K {acek_pct:.3f}% is above the tested range (0.156%, Schiffman 1995); "
                     f"its bitterness is extrapolated.")
-    if b_final > 0 and max(sucrose_eq_pct, sucrose_eq_pct_reba, sucrose_eq_pct_acek) > SUG_FIT_MAX_PCT:
+    if sacc_pct > SACC_MAX_PCT:
+        warn.append(f"Saccharin {sacc_pct:.3f}% is above the tested range (0.096%, Schiffman 1995); "
+                    f"its bitterness is extrapolated.")
+    if b_final > 0 and max(sucrose_eq_pct, sucrose_eq_pct_reba, sucrose_eq_pct_acek, sucrose_eq_pct_sacc) > SUG_FIT_MAX_PCT:
         warn.append("Sugar is above the tested range for bitterness masking (19% sucrose, Calvino 1990); "
                     "suppression is near its plateau.")
     return b_final, {"basis": "g per 100 g food", "caffeine_pct": caf_pct, "theobromine_pct": tb_pct,
@@ -284,6 +299,7 @@ def bitterness(caf_pct, kcl_pct, na_m, sucrose_eq_pct, tb_pct=0.0, reba_pct=0.0,
                      "reba_pct": reba_pct, "reba_caffeine_eq_pct": c_reba,
                      "acek_pct": acek_pct, "acek_caffeine_eq_pct": c_acek, "kcl_pct": kcl_pct,
                      "bitter_xanthines": b_x, "bitter_kcl": b_k, "bitter_reba": b_r, "bitter_acek": b_a,
+                     "sacc_pct": sacc_pct, "sacc_caffeine_eq_pct": c_sacc, "bitter_saccharin": b_s,
                      "caffeine_eq_pct": ceq, "sucrose_eq_pct": sucrose_eq_pct, "sugar_suppression": s_sug,
                      "sugar_suppression_reba": s_sug_r, "sugar_suppression_acek": s_sug_a,
                      "na_molal_food": na_m, "na_suppression_caffeine": s_na_c, "na_suppression_kcl": s_na_k}, warn

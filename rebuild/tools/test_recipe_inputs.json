@@ -1227,11 +1227,65 @@
  {
   "id": "P02",
   "name": "Mixed lines: skips, refusals, cans, ranges",
-  "paste": "Ingredients:\n2 tbsp soy sauce\n1-2 cups chopped onion\nsalt to taste\n1 (14.5 oz) can diced tomatoes\n2 cups cooked rice\n1 cup ice cream\n3 cloves garlic\n1 can chicken broth\n\u00bd lb ground beef (or ground turkey)"
+  "paste": "Ingredients:\n2 tbsp soy sauce\n1-2 cups chopped onion\nsalt to taste\n1 (14.5 oz) can diced tomatoes\n2 cups cooked rice\n1 cup ice cream\n3 cloves garlic\n1 can chicken broth\n½ lb ground beef (or ground turkey)"
  },
  {
   "id": "P03",
   "name": "Sweeteners and salted/unsalted variants",
-  "paste": "1/2 cup Splenda\n2 tsp stevia\n1 tbsp honey\n\u00bd cup unsalted peanut butter\n1 scoop pure stevia\n1 oz potato chips\n2 shots espresso\n1 inch ginger"
+  "paste": "1/2 cup Splenda\n2 tsp stevia\n1 tbsp honey\n½ cup unsalted peanut butter\n1 scoop pure stevia\n1 oz potato chips\n2 shots espresso\n1 inch ginger"
+ },
+ {
+  "id": "G39",
+  "name": "saccharin soda: 0.02% sodium saccharin + citric acid (v.2.9.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Water",
+    1000,
+    "g"
+   ],
+   [
+    "Saccharin (Sodium)",
+    0.2,
+    "g"
+   ],
+   [
+    "Lemon",
+    15,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "id": "G40",
+  "name": "steamed spinach + carrot, Horie cooked GMP (v.2.9.0)",
+  "origin": "project golden recipe",
+  "items": [
+   [
+    "Spinach",
+    150,
+    "g"
+   ],
+   [
+    "Carrot",
+    100,
+    "g"
+   ],
+   [
+    "Water",
+    100,
+    "g"
+   ],
+   [
+    "Salt",
+    2,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 10,
+   "cook_temp_c": 95
+  }
  }
 ]

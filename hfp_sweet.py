@@ -53,6 +53,7 @@ SUGAR_COLUMNS = {
     "allulose": "Allulose (mg/100g)", "maltitol": "Maltitol (mg/100g)",
     "reb_a": "Rebaudioside A (mg/100g)", "mogroside_v": "Mogroside V (mg/100g)",
     "sucralose": "Sucralose (mg/100g)", "aspartame": "Aspartame (mg/100g)", "ace_k": "Acesulfame K (mg/100g)",
+    "saccharin": "Saccharin (mg/100g)",            # v.2.9.0; anhydrous sodium saccharin
 }
 
 # --- High-intensity sweeteners (v.2.7.0, Python and web only; not in the workbook) ----------------------
@@ -76,7 +77,15 @@ HIGH_INTENSITY = {
     "sucralose": ("Sucralose", 1.0, 0.65, [0.0096, 0.0387, 0.0748]),
     "aspartame": ("Aspartame", 1.0, 0.84, [0.0290, 0.0827, 0.134]),
     "ace_k": ("Acesulfame K", 1.0, 0.68, [0.0293, 0.0832, 0.170]),
+    # v.2.9.0 saccharin (anhydrous sodium saccharin). Not in Wee 2018: Schiffman et al. 1995 (Brain Res Bull 36:505,
+    # n = 16 trained, same panel as the Reb A / ace-K bitterness) Table 2 equi-sweet points 0.00392 / 0.01126 /
+    # 0.0405 % at 2 / 5 / 10 % sucrose (own levels, HIS_LEVELS). Below 0.00392 % the slope of the first segment
+    # (0.868, entered as n = 0.868 x 1.31). Sweetness is capped at 9 % sucrose-eq (HIS_CAP): Schiffman's Table 1 rows
+    # from 0.04 to 0.096 % read only 7.97-9.04 % sucrose-eq (plateau). Cross-study offset vs Wee-based sweeteners ~25 %.
+    "saccharin": ("Saccharin", 1.0, 0.868 * 1.31, [0.00392, 0.01126, 0.0405]),
 }
+HIS_LEVELS = {"saccharin": [2.0, 5.0, 10.0]}       # sucrose levels of the equi-sweet points (default WEE_SUCROSE_LEVELS)
+HIS_CAP = {"saccharin": 9.0}                       # % sucrose-eq ceiling (default: the top level, held and flagged)
 
 
 def his_sucrose_eq(key, g_per_100g_water):
@@ -86,16 +95,22 @@ def his_sucrose_eq(key, g_per_100g_water):
     c = g_per_100g_water / purity                   # concentration of Wee's material giving the same active
     if c <= 0:
         return 0.0, False
-    ys = WEE_SUCROSE_LEVELS
+    ys = HIS_LEVELS.get(key, WEE_SUCROSE_LEVELS)
+    cap = HIS_CAP.get(key)
     if c < xs[0]:
-        return ys[0] * (c / xs[0]) ** (n / WEE_SUCROSE_N), False
-    if c > xs[-1]:
-        return ys[-1], True
-    for x0, x1, y0, y1 in zip(xs, xs[1:], ys, ys[1:]):
-        if c <= x1:
-            t = (math.log(c) - math.log(x0)) / (math.log(x1) - math.log(x0))
-            return math.exp(math.log(y0) + t * (math.log(y1) - math.log(y0))), False
-    return ys[-1], False
+        v, high = ys[0] * (c / xs[0]) ** (n / WEE_SUCROSE_N), False
+    elif c > xs[-1]:
+        v, high = ys[-1], True
+    else:
+        v, high = ys[-1], False
+        for x0, x1, y0, y1 in zip(xs, xs[1:], ys, ys[1:]):
+            if c <= x1:
+                t = (math.log(c) - math.log(x0)) / (math.log(x1) - math.log(x0))
+                v = math.exp(math.log(y0) + t * (math.log(y1) - math.log(y0)))
+                break
+    if cap is not None and v >= cap:
+        return cap, True
+    return v, high
 
 
 def his_above_range(sugar_g_per_100g_water):

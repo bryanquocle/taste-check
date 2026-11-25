@@ -2,9 +2,9 @@
 
 **Taste Check** (https://tools.mendocinofoodconsulting.com/taste-check/) predicts how salty, savory (umami), sweet, sour, bitter and rich (kokumi) a recipe should taste from its chemistry. This document is a complete specification of the model as it runs on the live page, written so that you, or you and your AI, can rebuild it from scratch and check that your version gives the same numbers.
 
-- **Model version:** 2.8.5 (whole-food tasted basis for every taste, Nov 25, 2026; synergy cap 63× from 2.8.4; bitterness v.2.8.3). **Ingredient data:** the database embedded in the same page (431 research ingredients: workbook data release v.2.6.9 plus the theobromine column and three chocolate rows added with the bitterness upgrade).
+- **Model version:** 2.9.0 (sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin, data fixes; Nov 25, 2026; whole-food tasted basis from 2.8.5; synergy cap 63× from 2.8.4; bitterness v.2.8.3). **Ingredient data:** the database embedded in the same page (432 research ingredients: workbook data release v.2.6.9 plus the theobromine and saccharin columns, three chocolate rows and the sodium saccharin row).
 - **Source of truth:** the JavaScript embedded in the live page between the markers `/*HFP_DB:BEGIN*/ … /*HFP_DB:END*/` (database), `/*HFP_MODEL:BEGIN*/ … /*HFP_MODEL:END*/` (model) and `/*HFP_PASTE:BEGIN*/ … /*HFP_PASTE:END*/` (recipe paste parser). Where this document and that code disagree, the code wins, and that is a bug in this document.
-- **Date:** November 24, 2026. **Author of the model:** Dr. Bryan Quoc Le, Mendocino Food Consulting (Human Flavorome Project).
+- **Date:** November 25, 2026. **Author of the model:** Dr. Bryan Quoc Le, Mendocino Food Consulting (Human Flavorome Project).
 
 Plain-language promise: every equation below is written in the units the code uses, every constant is listed in the register (section 12) with where it comes from, and every place where the model rests on an assumption, a fit made by the author, or a number with no known source is flagged. Nothing here is hidden behind "see the code": even the recipe paste parser's text-matching tables are published, in `paste_rules.csv`.
 
@@ -34,7 +34,7 @@ The six raw scales come from different studies and are **not commensurable**: a 
 | File | What it is |
 |---|---|
 | `REBUILD.md` | This specification. |
-| `hfp_ingredients_v2.8.3.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `aeb91a3892b75ace5dbe0fef1d54ecb21c6cc87fc869f14d561b83328814b5cd` |
+| `hfp_ingredients_v2.9.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `19f6f9baf9ded985cd496245ccfe3d23fde08e12bdd5ff995b659f404f66fe62` |
 | `hfp_ingredient_provenance.csv` | Where ingredient values came from, where that was recorded: data-quality tier and basis per field, pH source and organic-acid source (section 13.4). |
 | `test_recipes.json` | 53 recipes (38 project golden recipes + 15 added for this package) and 3 paste-parser cases, with expected outputs computed by executing the live page's JavaScript, plus tolerances (section 15). |
 | `paste_rules.csv` | Every rule table and message of the recipe paste parser, exported programmatically from the live page (section 5.5). |
@@ -50,7 +50,7 @@ To get the live page: `curl -L -o index.html https://tools.mendocinofoodconsulti
 
 ## 3. How to rebuild and verify (short version)
 
-1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.8.3.csv` plus the two helper rows in section 5.2.
+1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.9.0.csv` plus the two helper rows in section 5.2.
 2. Run every recipe in `test_recipes.json` through your implementation and compare with `expected` using the tolerances in the file (raw outputs within 1e-6 relative, scores within 0.05, pH within 1e-4).
 3. Two derived constants must come out the same as the reference: the Miranda logistic fit (S50 = 29.4 mM, Hill = 0.9; section 7.4) and the score references (section 10). They are printed in `test_recipes.json` under `derived_constants`. If yours differ, check the grid search and bisection details first.
 4. Optional: `node tools/oracle.js index.html tools/test_recipe_inputs.json test_recipes.json` regenerates the expected values from a fresh copy of the live page; `python check_spec.py index.html` checks this document against that page.
@@ -108,7 +108,7 @@ If an ingredient has density 0, a volume amount counts as 0 g and a note says so
 
 ### 5.3 Cooking
 
-- **Cooked nucleotides** (Nguyen et al. 1988): for the 11 ingredients in the COOKED_NUC table (section 12.3), when the item's cooking time > 0 and the cooking temperature is unknown or ≥ 65 °C (nuclease activity), the raw AMP and GMP values are replaced by the cooked values (mg per 100 g of ingredient). Only AMP and GMP are replaced; IMP is not touched.
+- **Cooked nucleotides** (Nguyen et al. 1988; Horie 2012 from v.2.9.0): for the 16 ingredients in the COOKED_NUC table (section 12.3), when the item's cooking time > 0 and the cooking temperature is unknown or ≥ 65 °C (nuclease activity), the raw AMP and GMP values are replaced by the cooked values (mg per 100 g of ingredient). Only AMP and GMP are replaced; IMP is not touched. A null cooked AMP (the five Horie rows: Horie measured GMP only) keeps the raw AMP.
 - **Thermal loss of cysteine sulfoxides** (Chen et al. 2017, alliin kinetics, first order): fraction remaining `f = (1 − cut) × exp(−k × t)`, with `k = 4.38e17 × exp(−142494 / (8.314 × (T + 273.15)))` per minute, T in °C, t = item cooking minutes. If t = 0 or T is not given, the thermal factor is 1. Chen fitted 60–89 °C; outside that range a note says the loss is extrapolated. ASSUMPTION: alliin kinetics are applied to all cysteine sulfoxides (isoalliin, methiin), in pure solution, not tissue.
 - The item cooking time is the item's own `cook_min` if present, otherwise the recipe `cook_min`.
 
@@ -234,7 +234,7 @@ Concentrations below are g/100 mL on the water basis, free acids as stored in th
 
 1. **Glutamate threshold lowered by nucleotides.** IMP-equivalents in mM: `IMPeq = 1e4 × (imp/348.21 + 0.18 × amp/347.22 + 2.3 × gmp/363.22)`. Divisor `D = min(63.16, 1 + (63.16 − 1) × IMPeq / 5)`, with 63.16 = 0.012/0.00019 (Yamaguchi & Ninomiya 2000 Table 3: MSG threshold 0.012% in water, 0.00019% in 5 mM IMP). Thresholds: glutamate `0.01 / D`, aspartate `0.0166 / D`.
 2. Glutamate u = conc.glu if above its threshold, else 0; aspartate v likewise.
-3. **Nucleotide thresholds** depend on u: if u > 0.0735: AMP 0.00305, IMP 0.00051, GMP 0.00028; else if u > 0.0037: AMP 0.0061, IMP 0.001, GMP 0.00056; else AMP 0.061, IMP 0.011, GMP 0.0056. Each nucleotide counts only above its threshold (w = AMP, x = IMP, y = GMP). UNSOURCED (section 14).
+3. **Nucleotide thresholds** (v.2.9.0, NUC_THRESHOLD_MODE "kuninaka"): if u > 0 (glutamate above its own, nucleotide-lowered threshold) every nucleotide threshold is 0, because synergy is already gated by step 1 and IMP may have no intrinsic umami of its own (Yamaguchi & Ninomiya 2000 p. 923S). Otherwise (nucleotide-alone path) IMP `NUC_THR_IMP = 0.387 × 348.21 / 1e4`, GMP `NUC_THR_GMP = 0.206 × 363.22 / 1e4` (Kuninaka 1980 Table I, mM in distilled water), AMP `NUC_THR_IMP / 0.18` (ASSUMPTION: no human AMP threshold found). Each nucleotide counts only above its threshold (w = AMP, x = IMP, y = GMP). Before v.2.9.0 three unsourced tiers were used (section 14, item 2).
 4. **Salt-form conversion** (Yamaguchi's constants are for the sodium salts): glu × 187.13/147.13 (MSG·H₂O), asp × 173.10/133.10, IMP × 527.28/348.21 (Na₂IMP·7.5H₂O), GMP × 533.29/363.22 (Na₂GMP·7H₂O), AMP × 391.18/347.22 (Na₂AMP).
 5. **Umami equivalents** (Yamaguchi 1967 synergy equation y = u + γuv, written as a fold): `U = SF_glu·u + 0.077 × SF_asp·v`; `syn = 219·SF_amp·w + 1218·SF_imp·x + 2800·SF_gmp·y`; `fold = min(1 + syn × pHfactor, 63)`; nucleotide-alone term `fold_IG = min(1 + (1218·SF_imp·x + 2800·SF_gmp·y) × pHfactor, 63)`; `umami_eq = U × fold + (0.05/15) × (fold_IG − 1)` in g/dL MSG·H₂O-equivalent. The last term lets IMP/GMP alone taste of umami as if acting on a fixed background glutamate of 0.05/15 g/dL (calibrated so 0.05 g/dL IMP alone ≈ 0.05 g/dL MSG; AMP excluded).
 6. **Salt shift** (shape from dog chorda tympani, Ugawa & Kurihara 1994): `x = Na(M) + 0.81 × K(M)` (the Na and K molarities of 8.2, after thresholds); `R = max(0, −37.089x² + 9.9621x − 0.038)` if x < 0.1, else `max(0, −0.6351x + 0.6414)`; `shift = 1 + (2.0 − 1) × min(1, R / 0.5828)`. ASSUMPTION/PLACEHOLDER: the maximum shift of ×2 on concentration is not human-calibrated.
@@ -261,6 +261,7 @@ Reported `salt_pct_water = Na(M) × 58.44 / 10` (NaCl-equivalent %, sodium only)
 1. **Sucrose equivalents** (g per 100 g water): for each sugar s with g > 0:
    - bulk sugars with a relative sweetness RS (Moskowitz 1970 Table 3, % w/w, exponent 1.3): `RS^(1/1.3) × g`. RS: sucrose 1.00, fructose 0.91, glucose 0.45, galactose 0.42, glycerol 0.50, arabinose 0.39, xylose 0.26, maltose 0.31, lactose 0.22. Polyols and allulose use Wee et al. 2018 potencies p at 10% sucrose, stored as `RS = p^1.3` so that the factor equals p: sorbitol 0.72, mannitol 0.68, erythritol 0.75, xylitol 1.01, allulose 0.75, maltitol 0.89.
    - high-intensity sweeteners (Wee 2018 Tables 3–4). Units: Wee's concentrations are % w/v; the model uses them unchanged as g per 100 g water (and, for bitterness masking in 8.6, g per 100 g food). `c = g / purity` (purity of Wee's material: Reb A extract 0.680, mogroside V extract 0.506, others 1.0). Equi-sweet points xs (% w/v) for sucrose ys = 5, 10, 15: Reb A [0.0144, 0.0395, 0.0828], mogroside V [0.0191, 0.0694, 0.141], sucralose [0.0096, 0.0387, 0.0748], aspartame [0.0290, 0.0827, 0.134], acesulfame K [0.0293, 0.0832, 0.170]. If c < xs₀: `5 × (c/xs₀)^(n/1.31)` with exponents n = 0.71, 0.70, 0.65, 0.84, 0.68 respectively (sucrose 1.31); between points (xs₀ ≤ c ≤ xs₂): log-log interpolation; above xs₂ (strictly c > xs₂): held at 15 and the sweetener is listed in the `his_high` note.
+   - **saccharin** (v.2.9.0; field = anhydrous sodium saccharin): Wee 2018 did not test it, so it uses its own equi-sweet points from Schiffman et al. 1995 Table 2 p. 512 at HIS_LEVELS 2, 5, 10% sucrose: [0.00392, 0.01126, 0.0405] % w/v, purity 1.0, low-end exponent n = 0.868 × 1.31 (so `2 × (c/0.00392)^0.868` below the first point), log-log interpolation between points, and a cap HIS_CAP = 9.0% sucrose-eq (Schiffman Table 1 reads 7.97–9.04% from 0.04 to 0.096%: a plateau). Above the cap the value is held at 9.0 and listed in the `his_high` note. ASSUMPTION: cross-study offset vs the Wee-based sweeteners about ±25%.
    - maltotriose, mannose and uronic acids have no sweetness value: not counted; a note lists them if ≥ 1% of total sugar.
    - Mixtures add sucrose-equivalents (equivalent-concentration additivity, ASSUMPTION).
 2. **Sugar lowers sourness** (Schifferstein & Frijters 1990, 10 mM citric column): `sour_remaining(x)` piecewise-linear through (0, 1) and SOUR_PTS, held beyond the last point, x = sucrose-eq g/100 g water. From v.2.8.5 (food basis) `x = 100 × sucF / (100 − min(sucF, 99))`, the sugar-water equivalent of the food-basis sucrose-eq (identical for plain sugar solutions, bounded for low-water foods); with fb = 1 x is the water-basis sucrose-eq. SOUR_PTS (x, factor) = (4.4, 0.4828), (9.06, 0.3534), (19.2, 0.2586), (43.6, 0.1685), each computed as `invert(SF_SOUR_MIX10[i], SF_CIT, SF_SOUR_UNMIXED) / 10`.
@@ -278,6 +279,8 @@ Reported `salt_pct_water = Na(M) × 58.44 / 10` (NaCl-equivalent %, sodium only)
 
 Glutathione-equivalents (g/100 mL): `GSH_eq = 1.0 × gsh + 12.8 × evg + 1.0 × cys` (γ-Glu-Val-Gly potency 12.8 by weight, Ohsu 2010 Table 2; cysteine sulfoxides 1.0, Ueda 1990, qualitative). mM: `C = GSH_eq / 307.33 × 10 × 1000`. Hill curve: `kokumi % = 100 × C^1.456 / (0.9122^1.456 + C^1.456)`. EC50 0.9122 mM and n 1.456: see section 14 (no primary source; conflicts with published receptor EC50s).
 
+**Detection floor (v.2.9.0, KOK_THR_PTS):** the glutathione threshold falls as umami rises (Ueda et al. 1997, Biosci Biotechnol Biochem 61:1977, Table II, triangle tests, pH 7): 0.04% w/v in water and in 0.05% MSG, 0.02% in 0.8% MSG, 0.01% in 3.1% MSG (and in 0.05% MSG + 0.05% IMP). With x = the recipe's umami MSG-equivalent `umamiEq` (g/dL, after synergy, before the salt shift; x = 0.05 when umamiEq ≤ 0), the threshold % is log-log interpolated through KOK_THR_PTS = (0.05, 0.04), (0.8, 0.02), (3.1, 0.01) and held at the end points; `thr_mM = thr% × 10 / 307.33 × 1000`. Then `kokumi = max(0, (Hill(C) − Hill(thr_mM)) / (100 − Hill(thr_mM)) × 100)`: zero below threshold, the same 100% ceiling above. ASSUMPTION: Ueda's MSG contexts stand for any umami of equal MSG-equivalent.
+
 Kokumi boosts umami and saltiness by `× (1 + 0.41 × kokumi/100)`, gain 0.41 derived from Goto et al. 2016 (×1.38 overall intensity at 5.26 mM glutathione, which is 92.8% on this curve: 0.38/0.928 = 0.41).
 
 ### 8.6 Bitterness (v.2.8.3)
@@ -292,13 +295,13 @@ Kokumi boosts umami and saltiness by `× (1 + 0.41 × kokumi/100)`, gain 0.41 de
 
 **Theobromine:** concentration-added to caffeine at `TB_CAF_EQ = 578.86 / 685.08 × 194.19 / 180.16` (≈ 0.9108, display only; use the formula) g caffeine per g (threshold ratio at 25 °C, Xing et al. 2024 Table S2; ASSUMPTION equal dose-over-threshold = equal bitterness), capped at its solubility `TB_SOL_MAX = 8 × 800e-6 × 180.16 / 10` g/100 g (= 0.1153024; use the formula) (Stark 2006: saturated at 8× its 800 µmol/kg threshold; ASSUMPTION: room-temperature limit used for hot drinks too).
 
-**Reb A and acesulfame K** (Schiffman et al. 1995, Brain Res Bull 36:505, Table 1; caffeine-anchored line scale 0.05% = 2, 0.08% = 5): net rating `r = a × c^b` (Reb A a = 9.928380940042402, b = 0.6768788634937082; acesulfame K a = 5.8931225453905265, b = 0.5499448249760767; least-squares log-log fits to Table 1 after subtracting the mean sucrose bitterness floor 0.117; see section 12.6 for the data). Rating → caffeine % by a log-log line through the two anchors with rating 0 at caffeine 0: `c_caf = 0.05 × (r/2)^(1/n_a)`, `n_a = ln(5/2)/ln(0.08/0.05) = 1.9495`. Tested up to 0.15% (Reb A) and 0.156% (ace-K); notes flag higher.
+**Reb A and acesulfame K** (Schiffman et al. 1995, Brain Res Bull 36:505, Table 1; caffeine-anchored line scale 0.05% = 2, 0.08% = 5): net rating `r = a × c^b` (Reb A a = 9.928380940042402, b = 0.6768788634937082; acesulfame K a = 5.8931225453905265, b = 0.5499448249760767; least-squares log-log fits to Table 1 after subtracting the mean sucrose bitterness floor 0.117; see section 12.6 for the data). Rating → caffeine % by a log-log line through the two anchors with rating 0 at caffeine 0: `c_caf = 0.05 × (r/2)^(1/n_a)`, `n_a = ln(5/2)/ln(0.08/0.05) = 1.9495`. Tested up to 0.15% (Reb A) and 0.156% (ace-K); notes flag higher. **Saccharin** (v.2.9.0): same method on Schiffman 1995 Table 1 sodium saccharin rows, `r = SACC_A × c^SACC_B` with SACC_A = 8.573335360776412, SACC_B = 0.6132138096664971 (rows in section 12.6), tested to SACC_MAX = 0.09625%; note `bitter_sacc_extrap` above that.
 
 **Combination:**
 `c_xan = caf% + TB_CAF_EQ × min(tb%, TB_SOL_MAX)`;
 `b_X = B_caf(c_xan) (1 − S_C)(1 − S_all)`; `b_K = B_KCl(kcl%) (1 − S_K)(1 − S_all)`;
-`b_R = B_caf(c_caf(RebA%)) (1 − S_C)(1 − S_noRebA)`; `b_A = B_caf(c_caf(AceK%)) (1 − S_C)(1 − S_noAceK)`;
-`bitterness = 52.5 × (ceq(b_X) + ceq(b_K) + ceq(b_R) + ceq(b_A))^0.87` (0 if the sum is 0). Concentration addition of bitter compounds (Breslin & Beauchamp 1995; Keast et al. 2003). Notes: see the table in section 11.1 (bitter_* keys). Protein hydrolysate/isolate rows (names matching `hydroly[sz]|isolate|protein powder|whey protein|pea protein|soy protein|casein`, case-insensitive, ≥ 1% of mass) get a note, not a score.
+`b_R = B_caf(c_caf(RebA%)) (1 − S_C)(1 − S_noRebA)`; `b_A = B_caf(c_caf(AceK%)) (1 − S_C)(1 − S_noAceK)`; `b_S = B_caf(c_caf(Sacc%)) (1 − S_C)(1 − S_noSacc)` (S_noSacc: saccharin set to 0);
+`bitterness = 52.5 × (ceq(b_X) + ceq(b_K) + ceq(b_R) + ceq(b_A) + ceq(b_S))^0.87` (0 if the sum is 0). Concentration addition of bitter compounds (Breslin & Beauchamp 1995; Keast et al. 2003). Notes: see the table in section 11.1 (bitter_* keys). Protein hydrolysate/isolate rows (names matching `hydroly[sz]|isolate|protein powder|whey protein|pea protein|soy protein|casein`, case-insensitive, ≥ 1% of mass) get a note, not a score.
 
 ## 9. Interactions at a glance
 
@@ -382,7 +385,7 @@ The page shows `missing` as "may read low" (glutamate and nucleotides → umami,
 | Test | Rule (as coded) |
 |---|---|
 | glutamate, aspartate, AMP, IMP, GMP above threshold | strictly greater (`conc > thr`) |
-| nucleotide threshold tier | `u > 0.0735` → tier 1; else `u > 0.0037` → tier 2; else tier 3 |
+| nucleotide thresholds (v.2.9.0) | `u > 0` → all 0; else Kuninaka values |
 | Na, K count for saltiness | `conc ≥ thr` (zero only if `conc < thr`) |
 | K curve branch | K ≤ 0 → 0; K ≤ 0.112 → quadratic; else scaled log |
 | dog response branch | x < 0.1 → quadratic; else linear |
@@ -457,7 +460,9 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 | GLU_THR_DROP_MAX | 0.012/0.00019 = 63.16 | fold | Yamaguchi & Ninomiya 2000 Table 3 p. 923S (MSG threshold 0.00019% in 0.25% = 5 mM IMP) | DERIVED; linear scaling between 0 and 5 mM is ASSUMPTION |
 | GLU_THR_AT_IMP | 5.0 | mM IMP-equivalent | Same table | VERIFIED |
 | NUC_W | AMP 0.18, GMP 2.3 (relative to IMP) | g/g | Yamaguchi et al. 1971 Table 5 p. 848 (AMP 0.18 ± 0.03, GMP·7H₂O 2.3 ± 0.07) | VERIFIED |
-| Nucleotide thresholds | glu > 0.0735: AMP 0.00305, IMP 0.00051, GMP 0.00028; glu > 0.0037: 0.0061, 0.001, 0.00056; else 0.061, 0.011, 0.0056 | g/100 mL | Inherited from the original spreadsheet; not in Yamaguchi 1967/1971/1979/2000. AMP base = IMP base / 0.18; 0.0037 equals the NaCl threshold (possible copy error) | UNSOURCED |
+| NUC_THR_IMP, NUC_THR_GMP | 0.387 × 348.21/1e4 = 0.013476, 0.206 × 363.22/1e4 = 0.0074823 | g/100 mL free acid | Kuninaka et al. 1980 Agric Biol Chem 44:1437, Table I (threshold 0.387 and 0.206 mM, distilled water, disodium salts, n = 18, Harris method); used only when glutamate is below its threshold (v.2.9.0) | VERIFIED (page image checked) |
+| AMP threshold (alone) | NUC_THR_IMP / 0.18 | g/100 mL | No human AMP threshold in water found; derived from the AMP synergy weight 0.18 | ASSUMPTION |
+| Nucleotide threshold with glutamate | 0 when u > 0 | g/100 mL | Yamaguchi & Ninomiya 2000 p. 923S ("IMP itself may not have intrinsic umami taste"); synergy already gated by the glutamate threshold. Replaces the three unsourced tiers (v.2.9.0) | ASSUMPTION (sourced reasoning) |
 | SALT_FORM | glu 187.13/147.13; asp 173.10/133.10; IMP 527.28/348.21; GMP 533.29/363.22; AMP 391.18/347.22 | g salt per g free acid | Yamaguchi et al. 1971 p. 846 and Table 5 (MSG·H₂O, Na aspartate·H₂O, Na₂IMP·7.5H₂O, Na₂GMP·7H₂O, Na₂AMP); molecular weights | VERIFIED (forms) / STANDARD (MW) |
 | Aspartate relative umami | 0.077 | g/g vs MSG | Yamaguchi et al. 1971 Table 3 p. 848 | VERIFIED |
 | Synergy γ IMP | 1218 | (g/dL)⁻¹ | Yamaguchi 1967 eq. 9 p. 478 (1.218 × 10³) | VERIFIED |
@@ -472,7 +477,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 | Dog response R(x) | −37.089x² + 9.9621x − 0.038 (x < 0.1); −0.6351x + 0.6414 (x ≥ 0.1) | relative response | Author's fit to Ugawa & Kurihara 1994 Fig. 4A p. R947 (200 mM MSG + NaCl) | FIT (good) |
 | DOG_R_PEAK | 0.5828 | relative response | Peak of the fit at 100 mM | FIT |
 | K weight | 0.81 | Na-equivalents per K | Ugawa & Kurihara 1994 Fig. 7A p. R948 (KCl/NaCl response at 100 mM) | DERIVED (one concentration) |
-| COOKED_NUC | Asparagus (Fresh) 0.972, 0.436; Green Pepper 2.049, 1.562; Broccoli 1.493, 1.271; Cabbage 0.451, 0.0; Cauliflower 0.833, 3.015; Mushroom, Button 11.736, 4.431; Mushroom, Champignon 11.736, 4.431; Sweet Potato 4.41, 1.126; Potato 1.042, 0.799; Radish 0.764, 0.182; Mushroom, Shiitake (Fresh) 8.214, 14.019 | mg/100 g (AMP, GMP) | Nguyen et al. 1988 Table II p. 278, nmol/g × MW/10⁴; shiitake from DRIED values × 0.1132 dry-matter factor (fresh moisture not from Nguyen) | DERIVED (all rows checked) |
+| COOKED_NUC | Asparagus (Fresh) 0.972, 0.436; Green Pepper 2.049, 1.562; Broccoli 1.493, 1.271; Cabbage 0.451, 0.0; Cauliflower 0.833, 3.015; Mushroom, Button 11.736, 4.431; Mushroom, Champignon 11.736, 4.431; Sweet Potato 4.41, 1.126; Potato 1.042, 0.799; Radish 0.764, 0.182; Mushroom, Shiitake (Fresh) 8.214, 14.019; v.2.9.0 GMP only (AMP null = keep raw): Eggplant 1.70, Carrot 0.34, Daikon 0.14, Onion, Welsh 0.21, Spinach 0.76 | mg/100 g (AMP, GMP) | Nguyen et al. 1988 Table II p. 278, nmol/g × MW/10⁴; shiitake from DRIED values × 0.1132 dry-matter factor (fresh moisture not from Nguyen). Horie 2012 (J Cookery Sci Jpn 45:346) Tables 1–2, steamed 100 °C 15 min (spinach 87 °C 10 min), mg/100 g fresh, n = 4, treated as free acid (salt form not stated) | DERIVED (all rows checked) |
 | Nuclease temperature | 65 | °C | Nguyen et al. 1988 (nuclease optimum 65–75 °C) | VERIFIED |
 | Cooked-nucleotide rule | applied when cook minutes > 0 and T unknown or ≥ 65 | — | Author's rule | ASSUMPTION |
 
@@ -501,10 +506,13 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 | K_SUCROSE | 0.54 | Moskowitz scale | Moskowitz 1970 Table 3 | VERIFIED |
 | RS (Moskowitz) | sucrose 1.00, fructose 0.91, glucose 0.45, galactose 0.42, glycerol 0.50, arabinose 0.39, xylose 0.26, maltose 0.31, lactose 0.22 | relative k | Moskowitz 1970 Table 3 p. 317 | VERIFIED |
 | RS (Wee) | sorbitol 0.72^1.3, mannitol 0.68^1.3, erythritol 0.75^1.3, xylitol 1.01^1.3, allulose 0.75^1.3, maltitol 0.89^1.3 | potency^1.3 | Wee et al. 2018 Table 4 p. 9 (potency at 10% sucrose) | VERIFIED |
-| SUGARS | sucrose, glucose, fructose, lactose, galactose, maltose, maltotriose, uronic, arabinose, xylose, mannose, glycerol, sorbitol, erythritol, xylitol, mannitol, allulose, maltitol, reb_a, mogroside_v, sucralose, aspartame, ace_k | fields | Database sugar columns | IMPLEMENTATION |
+| SUGARS | sucrose, glucose, fructose, lactose, galactose, maltose, maltotriose, uronic, arabinose, xylose, mannose, glycerol, sorbitol, erythritol, xylitol, mannitol, allulose, maltitol, reb_a, mogroside_v, sucralose, aspartame, ace_k, saccharin | fields | Database sugar columns (saccharin added v.2.9.0) | IMPLEMENTATION |
 | WEE_LEVELS | 5.0, 10.0, 15.0 | % sucrose | Wee 2018 Table 4 | VERIFIED |
 | WEE_SUC_N | 1.31 | — | Wee 2018 Table 3 p. 8 (sucrose exponent) | VERIFIED |
 | HIS | Stevia (rebaudioside A) purity 0.680, n 0.71, [0.0144, 0.0395, 0.0828]; Monk fruit (mogroside V) 0.506, 0.70, [0.0191, 0.0694, 0.141]; Sucralose 1.0, 0.65, [0.0096, 0.0387, 0.0748]; Aspartame 1.0, 0.84, [0.0290, 0.0827, 0.134]; Acesulfame K 1.0, 0.68, [0.0293, 0.0832, 0.170] | purity; exponent; % w/v | Wee 2018 p. 3 (extract purities 68.0% Reb A, 50.6% mogroside V), Table 3 (n), Table 4 (equi-sweet points) | VERIFIED; treating a grade as Wee's material at equal active content is ASSUMPTION |
+| HIS (saccharin) | Saccharin purity 1.0, n 0.868 × 1.31, [0.00392, 0.01126, 0.0405] | purity; exponent; % w/v | Schiffman et al. 1995 Brain Res Bull 36:505, Table 2 p. 512 (potency 510/444/247 at 2/5/10% sucrose); n from the first-segment slope 0.868 | VERIFIED (points); cross-study offset ±25% is ASSUMPTION |
+| HIS_LEVELS | saccharin: 2.0, 5.0, 10.0 | % sucrose | Schiffman 1995 Table 2 sucrose levels (others use WEE_LEVELS) | VERIFIED |
+| HIS_CAP | saccharin: 9.0 | % sucrose-eq | Schiffman 1995 Table 1: 0.04–0.096% sodium saccharin rated 7.97–9.04% sucrose-eq (plateau) | DERIVED |
 | SUCROSE_THR | 0.086 | g/100 mL | Yamaguchi 1979 Table III p. 35 | VERIFIED |
 | MOSK_MAX | 32.0 | % w/w | Upper end of Moskowitz's data used for the note (Table 3 footnote: sucrose fitted on 2–16% only) | ASSUMPTION (note threshold) |
 | SF_SUC_M | 0.125, 0.25, 0.5, 1.0 | M sucrose | Schifferstein & Frijters 1990 p. 89 | VERIFIED |
@@ -529,6 +537,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 | KOKUMI_POT | gsh 1.0, evg 12.8, cys 1.0 | g/g glutathione-eq | evg: Ohsu et al. 2010 Table 2 p. 1020 (0.01% γ-EVG = 0.128% GSH, n = 17) VERIFIED; cys: Ueda et al. 1990 Table IV p. 168 (alliin about as strong as GSH at 0.2%, qualitative; methiin and cycloalliin rated weaker) | VERIFIED / ASSUMPTION |
 | Glutathione MW | 307.33 | g/mol | Molecular formula | STANDARD |
 | KOK_EC50 | 0.9122 | mM GSH-eq | Not a receptor value. Most likely the author's Hill fit to the GSH CaSR curve of the Koku book Fig. 8.1 (Maruyama & Kuroda; EC50 0.71 µM, axis labelled mM), read as mM; Ohsu 2010 Fig. 3 gives 76.5 nM. Kept as a sensory curve on mouth concentration, checked against human points: 0.33 mM (Ueda 1997 threshold in umami) 18%, 0.65 mM (Ueda 1997 significant effects) 38%, 2.6 mM (Ohsu 2010 Fig. 1) 82%, 5.26 mM (Goto 2016) 93%. No human GSH dose-response curve has been published | ASSUMPTION (sensory curve, calibrated only by human thresholds and single doses) |
+| KOK_THR_PTS | (0.05, 0.04), (0.8, 0.02), (3.1, 0.01) | (MSG-eq g/dL, GSH % w/v) | Ueda et al. 1997 Biosci Biotechnol Biochem 61:1977, Table II (triangle tests, pH 7; 0.04% also in water) | VERIFIED (points); log-log interpolation and use of MSG-eq for any umami are ASSUMPTION |
 | KOK_N | 1.456 | Hill exponent | Same fit | UNSOURCED |
 | KOK_UMAMI_GAIN, KOK_SALT_GAIN | 0.41, 0.41 | fraction at kokumi 100% | Goto et al. 2016 (6.73/4.89 = 1.38 overall intensity at 5.26 mM GSH, n = 26) ÷ 0.928 on this curve | DERIVED (inherits the EC50 assumption; Goto rated the mixture, not umami and saltiness separately) |
 | Chen kinetics | A 4.38e17 per min, Ea 142494 J/mol, R 8.314, T + 273.15 | — | Chen et al. 2017 abstract p. 25, §3.1.1 p. 27 (fitted at 60, 80, 89 °C; reproduces printed k 2e-5, 3.6e-4, 1.24e-3) | VERIFIED |
@@ -550,6 +559,8 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 | REBA_A, REBA_B | 9.928380940042402, 0.6768788634937082 | rating, exponent | Least-squares log-log fit to Schiffman 1995 Table 1 Reb A rows (0.007: 0.58, 0.01: 0.49, 0.0175: 0.77, 0.025: 0.69, 0.04375: 1.60, 0.0525: 1.10, 0.0625: 1.55, 0.075: 2.12, 0.08125: 2.42, 0.1: 2.15, 0.12: 2.75, 0.15: 2.60) minus the sucrose floor 0.117 (mean of 23 sucrose rows) | FIT (R² 0.91) |
 | ACEK_A, ACEK_B | 5.8931225453905265, 0.5499448249760767 | rating, exponent | Same method, Schiffman 1995 Table 1 acesulfame K rows with printed concentrations 0.18–0.8 read as 0.018–0.08 (misprint correction checked against Schiffman's Table 2 potencies) | FIT (R² 0.83); misprint correction is ASSUMPTION |
 | REBA_MAX, ACEK_MAX | 0.15, 0.156 | % w/v | Highest tested concentrations, Schiffman 1995 Table 1 | VERIFIED |
+| SACC_A, SACC_B | 8.573335360776412, 0.6132138096664971 | rating, exponent | Same method as REBA, Schiffman 1995 Table 1 sodium saccharin rows (0.0035: 0.35, 0.00616: 0.65, 0.009: 0.43, 0.0154: 1.01, 0.02: 1.08, 0.022: 0.83, 0.03: 1.32, 0.0385: 1.48, 0.04: 0.76, 0.05: 1.80, 0.055: 1.10, 0.06: 2.03, 0.09625: 2.32) minus the sucrose floor 0.117 | FIT (R² 0.785, n = 13) |
+| SACC_MAX | 0.09625 | % w/v | Highest tested sodium saccharin, Schiffman 1995 Table 1 | VERIFIED |
 | PROTEIN_BITTER_RE | hydroly[sz], isolate, protein powder, whey/pea/soy protein, casein | name pattern | Note only, after Sun et al. 2022 (Front Nutr 9:1022257) on bitter peptides | ASSUMPTION |
 | SCORE_REF | see section 10 | raw units | Author's anchors | ASSUMPTION |
 
@@ -557,7 +568,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 
 ### 13.1 Structure
 
-`hfp_ingredients_v2.8.3.csv` has one row per ingredient (431 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
+`hfp_ingredients_v2.9.0.csv` has one row per ingredient (432 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
 
 | Column | Units | Meaning |
 |---|---|---|
@@ -606,10 +617,11 @@ USDA data are public domain (CC0). Values transcribed from papers are facts with
 **Findings from checking constants against the primary papers for this package** (these are documented, not fixed; the live model is unchanged):
 
 1. **Synergy cap 16×.** Yamaguchi's "16 times" (1979 p. 37; 1967 Fig. 6) compares a 1:1 MSG+IMP mixture with the same total concentration of MSG, not the fold over the glutamate alone that the model caps. At Yamaguchi's own 1:1 point the model's fold would be about 31; he also writes that the amplification "becomes higher with increasing concentration". Zhang 2008's EC50 shift (3.2 → 0.2 mM with 1 mM IMP) was measured on a chimeric receptor (human T1R1 extracellular domain, T1R2 transmembrane domain, rat T1R3), not human T1R1/T1R3. The cap is a modelling choice, not a measured ceiling. *(Resolved in v.2.8.4, Nov 25, 2026: the cap is now 63×, from Yamaguchi & Kimizuka 1979's measured 63× threshold drop at 5 mM IMP.)*
-2. **Nucleotide detection thresholds (three tiers) and the aspartate threshold 0.0166** have no source in any paper on file. The middle-tier glutamate breakpoint 0.0037 equals the NaCl threshold in the same Yamaguchi table, a possible copy error.
-3. **Kokumi EC50 0.9122 mM** has no recorded source and is about 1,000–10,000× higher than published glutathione EC50s at the calcium-sensing receptor (Ohsu 2010: 76.5 nM; Koku book: 0.71 µM). The kokumi gain 0.41 depends on it. *(Relabelled in v.2.8.4, Nov 25, 2026: most likely the Koku book's 0.71 µM curve read as mM. A receptor EC50 does not transfer to the mouth, and the true µM value would saturate every food, so the curve is kept and documented as an ASSUMPTION calibrated to human thresholds.)*
+2. **Nucleotide detection thresholds (three tiers) and the aspartate threshold 0.0166** have no source in any paper on file. The middle-tier glutamate breakpoint 0.0037 equals the NaCl threshold in the same Yamaguchi table, a possible copy error. *(Nucleotides resolved in v.2.9.0, Nov 25, 2026: the tiers are gone; Kuninaka 1980 thresholds apply only when glutamate is below its own threshold. The aspartate threshold is still unsourced; Kirimura 1969 is the next paper to check.)*
+3. **Kokumi EC50 0.9122 mM** has no recorded source and is about 1,000–10,000× higher than published glutathione EC50s at the calcium-sensing receptor (Ohsu 2010: 76.5 nM; Koku book: 0.71 µM). The kokumi gain 0.41 depends on it. *(Relabelled in v.2.8.4, Nov 25, 2026: most likely the Koku book's 0.71 µM curve read as mM. A receptor EC50 does not transfer to the mouth, and the true µM value would saturate every food, so the curve is kept and documented as an ASSUMPTION calibrated to human thresholds. v.2.9.0 adds the Ueda 1997 detection floor (section 8.5), so foods below the human glutathione threshold now read kokumi 0.)*
 4. **Na suppression of caffeine bitterness** fit gives 26/46/54% at 0.1/0.3/0.5 M vs 15/43/54% read from Breslin & Beauchamp 1995 (11 points high at 0.1 M).
 5. **Neta citation:** *(Fixed on the live page Nov 25, 2026.)* the page lists "Neta E. et al. (2007) The chemistry of sour taste. J Food Sci 72:S33". The paper that makes the sour-stimulus claim is Da Conceicao Neta et al. 2007, J Food Sci 72(6):S352–S359 (doi 10.1111/j.1750-3841.2007.00400.x).
+6. **Salt shift on umami (SALT_SHIFT_MAX 2.0, held).** A Nov 25, 2026 source search found no human evidence that NaCl raises umami (Schiffman 1991, Kemp & Beauchamp 1994 and Wang 2022 report no potentiation, or suppression). Setting it to 1.0 is proposed and held until those papers are read in full.
 6. **Price 2020 accuracy wording:** *(Fixed on the live page Nov 25, 2026.)* the page says the pH model "was off by about 0.14 pH units on average". Price reports a root-mean-squared error of 0.138 from a regression of observed vs predicted pH (69 buffer solutions). "RMSE about 0.14 pH units" is the accurate wording.
 7. **Ohsu Fig. 1 "×1.74":** cited in the Python notes as an alternative kokumi gain; the number is from Goto 2016's citation of Ohsu, not printed in Ohsu 2010. Not used by the live model.
 8. **Mixed threshold methods:** the Na threshold (Yamaguchi, 0.00063 M NaCl) and K threshold (Schiffman, 0.00242 M KCl) come from different methods; Schiffman's own NaCl threshold is 3.8× Yamaguchi's.
@@ -679,7 +691,7 @@ How the open-access check was done: DOIs were resolved on Crossref; open-access 
 
 **License.** The text of this specification, the test recipes, the paste rules, the tools and the ingredient database (CSV and provenance file) are licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)**, https://creativecommons.org/licenses/by/4.0/. © Bryan Quoc Le, Mendocino Food Consulting. Hosted third-party papers in `papers/` keep their own licenses (all CC BY 4.0; credit their authors). The Mars et al. SVT dataset is CC BY-SA 4.0: anything you derive from it must stay CC BY-SA.
 
-**Cite this as:** Le, B. Q. (2026). *Taste Check model, version 2.8.5: rebuild specification, ingredient database and test recipes.* Mendocino Food Consulting, Human Flavorome Project. https://tools.mendocinofoodconsulting.com/taste-check/rebuild/REBUILD.md
+**Cite this as:** Le, B. Q. (2026). *Taste Check model, version 2.8.5: rebuild specification, ingredient database and test recipes.* Mendocino Food Consulting, Human Flavorome Project. https://tools.mendocinofoodconsulting.com/taste-check/rebuild/REBUILD.md Archived on Zenodo: https://doi.org/10.5281/zenodo.24540783 (all versions; v2.8.5 is https://doi.org/10.5281/zenodo.24540784). Source code: https://github.com/bryanquocle/taste-check
 
 ## 18. Changelog (model)
 
@@ -700,5 +712,6 @@ How the open-access check was done: DOIs were resolved on Crossref; open-access 
 | 2.8.3 | Nov 24 | Bitterness on a whole-food basis (Stark 2006), theobromine solubility cap, Reb A re-sourced and acesulfame K added (Schiffman 1995). Live Nov 24, 2026 |
 | 2.8.4 | Nov 25 | Synergy cap 16× → 63× (Yamaguchi & Kimizuka 1979); kokumi EC50 relabelled as an assumption; model header comment fixed |
 | 2.8.5 | Nov 25 | Whole-food tasted basis for salt, sweet, umami, sour and kokumi (pH stays water-phase); validated on a pre-registered SVT hold-out |
+| 2.9.0 | Nov 25 | Nucleotide thresholds from Kuninaka 1980 (alone only); kokumi detection floor (Ueda 1997); Horie 2012 cooked GMP for 5 vegetables; saccharin sweetness and bitterness (Schiffman 1995); data fixes (3 tomato glutamates, celery and parsley acids, green tea K/Na/water, mint density, 5 raw GMP fills) |
 
 Data: v.2.6.9 (Nov 24, 2026) corrected the database flags found with the SVT validation (sugars and acids for several foods, salted/unsalted chips and peanut butter rows); v.2.8.2 added the theobromine column and three chocolate rows.
