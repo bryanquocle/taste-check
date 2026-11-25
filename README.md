@@ -1,5 +1,7 @@
 # Taste Check model (Human Flavorome Project)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24540783.svg)](https://doi.org/10.5281/zenodo.24540783)
+
 The model behind [Taste Check](https://tools.mendocinofoodconsulting.com/taste-check/). It predicts how salty, savory (umami), sweet, sour, bitter and rich (kokumi) a recipe should taste from its chemistry, using published dose-response curves and a sourced ingredient database.
 
 Built by Dr. Bryan Quoc Le, food scientist, [Mendocino Food Consulting](https://www.mendocinofoodconsulting.com/).
@@ -48,4 +50,6 @@ Rank agreement (Spearman rho) with the 81-food SVT panel: umami 0.73, saltiness 
 
 ## Cite
 
-Le, B. Q. (2026). *Taste Check model, version 2.8.5.* Mendocino Food Consulting. See [`CITATION.cff`](CITATION.cff).
+Le, B. Q. (2026). *Taste Check model (Human Flavorome Project)* (Version 2.8.5). Mendocino Food Consulting. https://doi.org/10.5281/zenodo.24540783
+
+That DOI always resolves to the latest version; v2.8.5 itself is https://doi.org/10.5281/zenodo.24540784. See [`CITATION.cff`](CITATION.cff).

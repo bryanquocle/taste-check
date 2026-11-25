@@ -7,6 +7,14 @@ authors:
   - family-names: "Le"
     given-names: "Bryan Quoc"
     affiliation: "Mendocino Food Consulting LLC"
+doi: "10.5281/zenodo.24540783"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24540783"
+    description: "Concept DOI (all versions, resolves to the latest)"
+  - type: doi
+    value: "10.5281/zenodo.24540784"
+    description: "Version 2.8.5"
 repository-code: "https://github.com/bryanquocle/taste-check"
 url: "https://tools.mendocinofoodconsulting.com/taste-check/"
 license: MIT
