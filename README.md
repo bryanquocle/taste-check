@@ -53,4 +53,4 @@ Rank agreement (Spearman rho) with the 81-food SVT panel: umami 0.73, saltiness 
 
 Le, B. Q. (2026). *Taste Check model (Human Flavorome Project)* (Version 2.9.0). Mendocino Food Consulting. https://doi.org/10.5281/zenodo.24540783
 
-That DOI always resolves to the latest version; v2.8.5 itself is https://doi.org/10.5281/zenodo.24540784. See [`CITATION.cff`](CITATION.cff).
+That DOI always resolves to the latest version; v2.9.0 itself is https://doi.org/10.5281/zenodo.24543209. See [`CITATION.cff`](CITATION.cff).
