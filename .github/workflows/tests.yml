@@ -1,0 +1,37 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12"]
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # Each step runs under bash -e, so a non-zero exit from any script fails the job.
+      - name: Golden recipes and panel sets
+        run: python tests/run_tests.py
+      - name: SVT panel
+        run: python tests/svt_panel_test.py
+      - name: Uncertainty ranges
+        run: python tests/ranges_test.py
+      - name: Reformulation helper
+        run: python tests/formulate_test.py
+      - name: Python / JavaScript parity
+        run: python tests/web_parity.py
