@@ -1,6 +1,7 @@
 # Taste Check model (Human Flavorome Project)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24540783.svg)](https://doi.org/10.5281/zenodo.24540783)
+[![tests](https://github.com/bryanquocle/taste-check/actions/workflows/tests.yml/badge.svg)](https://github.com/bryanquocle/taste-check/actions/workflows/tests.yml)
 
 The model behind [Taste Check](https://tools.mendocinofoodconsulting.com/taste-check/). It predicts how salty, savory (umami), sweet, sour, bitter and rich (kokumi) a recipe should taste from its chemistry, using published dose-response curves and a sourced ingredient database.
 
