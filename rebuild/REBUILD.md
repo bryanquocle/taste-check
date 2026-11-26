@@ -2,7 +2,7 @@
 
 **Taste Check** (https://tools.mendocinofoodconsulting.com/taste-check/) predicts how salty, savory (umami), sweet, sour, bitter and rich (kokumi) a recipe should taste from its chemistry. This document is a complete specification of the model as it runs on the live page, written so that you, or you and your AI, can rebuild it from scratch and check that your version gives the same numbers.
 
-- **Model version:** 2.11.0 (Nov 25, 2026: salt no longer raises umami, SALT_SHIFT_MAX 1.0; aspartate threshold sourced; cooking estimator lid factors fade at a boil). 2.10.0 (taste equations unchanged from 2.9.0; Nov 25, 2026: 824 ingredients, recipe-paste coverage of the 1,000 most common missing recipe ingredients, and a pot-based cooking water-loss estimator on the page). 2.9.0: sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin. **Ingredient data:** the database embedded in the same page (824 research ingredients: workbook data release v.2.6.9, the bitterness and saccharin additions, and 392 composition rows from USDA FoodData Central SR Legacy 2018-04 added in v.2.10.0; section 13).
+- **Model version:** 2.12.0 (Nov 25, 2026: data only: organic acids for soy sauce, miso, doenjang, kimchi and 9 cheese/dairy rows; miso and doenjang sugars; pH for miso and kimchi; kokumi γ-EVG fixes for Manchego, Kashkaval and fish sauce; equations unchanged). 2.11.0 (Nov 25, 2026: salt no longer raises umami, SALT_SHIFT_MAX 1.0; aspartate threshold sourced; cooking estimator lid factors fade at a boil). 2.10.0 (taste equations unchanged from 2.9.0; Nov 25, 2026: 824 ingredients, recipe-paste coverage of the 1,000 most common missing recipe ingredients, and a pot-based cooking water-loss estimator on the page). 2.9.0: sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin. **Ingredient data:** the database embedded in the same page (824 research ingredients: workbook data release v.2.6.9, the bitterness and saccharin additions, and 392 composition rows from USDA FoodData Central SR Legacy 2018-04 added in v.2.10.0; section 13).
 - **Source of truth:** the JavaScript embedded in the live page between the markers `/*HFP_DB:BEGIN*/ … /*HFP_DB:END*/` (database), `/*HFP_MODEL:BEGIN*/ … /*HFP_MODEL:END*/` (model) and `/*HFP_PASTE:BEGIN*/ … /*HFP_PASTE:END*/` (recipe paste parser). Where this document and that code disagree, the code wins, and that is a bug in this document.
 - **Date:** November 25, 2026. **Author of the model:** Dr. Bryan Quoc Le, Mendocino Food Consulting (Human Flavorome Project).
 
@@ -34,7 +34,7 @@ The six raw scales come from different studies and are **not commensurable**: a 
 | File | What it is |
 |---|---|
 | `REBUILD.md` | This specification. |
-| `hfp_ingredients_v2.10.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `c34dcac3ceced3336c6476d57f4a751d36d28652fb62bd1a4b4f38cfb3211d16` |
+| `hfp_ingredients_v2.12.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `822ded55335b3818b9b8b5457df85999758876b0f3c285268ffc0a8fd781e548` |
 | `hfp_ingredient_provenance.csv` | Where ingredient values came from, where that was recorded: data-quality tier and basis per field, pH source and organic-acid source (section 13.4). |
 | `test_recipes.json` | 53 recipes (38 project golden recipes + 15 added for this package) and 3 paste-parser cases, with expected outputs computed by executing the live page's JavaScript, plus tolerances (section 15). |
 | `paste_rules.csv` | Every rule table and message of the recipe paste parser, exported programmatically from the live page (section 5.5). |
@@ -50,7 +50,7 @@ To get the live page: `curl -L -o index.html https://tools.mendocinofoodconsulti
 
 ## 3. How to rebuild and verify (short version)
 
-1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.10.0.csv` plus the two helper rows in section 5.2.
+1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.12.0.csv` plus the two helper rows in section 5.2.
 2. Run every recipe in `test_recipes.json` through your implementation and compare with `expected` using the tolerances in the file (raw outputs within 1e-6 relative, scores within 0.05, pH within 1e-4).
 3. Two derived constants must come out the same as the reference: the Miranda logistic fit (S50 = 29.4 mM, Hill = 0.9; section 7.4) and the score references (section 10). They are printed in `test_recipes.json` under `derived_constants`. If yours differ, check the grid search and bisection details first.
 4. Optional: `node tools/oracle.js index.html tools/test_recipe_inputs.json test_recipes.json` regenerates the expected values from a fresh copy of the live page; `python check_spec.py index.html` checks this document against that page.
@@ -584,7 +584,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 
 ### 13.1 Structure
 
-`hfp_ingredients_v2.10.0.csv` has one row per ingredient (824 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
+`hfp_ingredients_v2.12.0.csv` has one row per ingredient (824 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
 
 | Column | Units | Meaning |
 |---|---|---|
@@ -733,5 +733,9 @@ How the open-access check was done: DOIs were resolved on Crossref; open-access 
 | 2.9.0 | Nov 25 | Nucleotide thresholds from Kuninaka 1980 (alone only); kokumi detection floor (Ueda 1997); Horie 2012 cooked GMP for 5 vegetables; saccharin sweetness and bitterness (Schiffman 1995); data fixes (3 tomato glutamates, celery and parsley acids, green tea K/Na/water, mint density, 5 raw GMP fills) |
 | 2.10.0 | Nov 25 | 824 ingredients (392 USDA SR Legacy composition rows); paste parser covers the 1,000 most common missing recipe ingredients plus fixes; page: paste-first layout and pot-based cooking water-loss estimator. Taste equations unchanged |
 | 2.11.0 | Nov 25 | Salt no longer raises umami (SALT_SHIFT_MAX 2.0 → 1.0; umami 10/10 reference recomputes 29.61 → 26.02); aspartate threshold sourced (Yamaguchi 1991); cooking estimator: lid factors fade toward 0.85 (on) and 0.9 (ajar) at a boil (Snitkjær 2017) |
+| 2.12.0 | Nov 25 | Data only: organic acids (Kaneko 1994, Jeong 2013, Shukla 2010, Ahmed 2023, Bevilacqua & Califano 1989) for soy sauce, miso, doenjang, kimchi, Parmesan, Mozzarella, Emmental, Cheddar, Provolone, blue cheeses, yogurt and milk (lactic only); Miso sugars and Doenjang sucrose corrected (Kaneko 1994); pH for miso and kimchi; γ-EVG unit fixes (Manchego 5.9 → 0.059, Kashkaval 3.5 → 0.035) and fish sauce density correction (0.43 → 0.189). SVT sourness rho 0.724 → 0.736 |
 
 Data: v.2.6.9 (Nov 24, 2026) corrected the database flags found with the SVT validation (sugars and acids for several foods, salted/unsalted chips and peanut butter rows); v.2.8.2 added the theobromine column and three chocolate rows.
+
+
+**Known limit found in v.2.12.0 (not fixed):** the sour stimulus (section 7.4) counts every species that is not fully deprotonated, so near-neutral foods with polyprotic acids (citrate at pH 6.6 in milk) read as sour. Milk's measured citric acid (161 mg/100 g) is therefore left out of the database until the stimulus definition is revisited.

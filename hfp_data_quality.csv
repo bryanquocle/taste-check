@@ -469,3 +469,8 @@ Kumquat,sugars,3,USDA SR Legacy 168154 total sugar 9.36 g/100 g counted as sucro
 "Candy, Gumdrops",sugars,3,USDA SR Legacy 167989 total sugar 58.97 g/100 g counted as sucrose (no split published). v.2.10.0
 "Soup, Cream of Onion",sugars,3,USDA SR Legacy 171552 total sugar 3.64 g/100 g counted as sucrose (no split published). v.2.10.0
 Bologna,sugars,3,USDA SR Legacy 172013 total sugar 4.42 g/100 g counted as sucrose (no split published). v.2.10.0
+Miso,sugars,1,"Kaneko et al. 1994 Nippon Shokuhin Kogyo Gakkaishi 41:148 Table 4 (5 rice misos): glucose 7719, fructose 1021, maltose 1677 mg/100 g; replaced 0/6000/200 (looked swapped). v.2.12.0"
+Doenjang,sugars,2,"Kaneko et al. 1994 Nippon Shokuhin Kogyo Gakkaishi 41:148 Table 1/4: homemade doenjang total sugar 0.9%, individual sugars trace; sucrose 8000 -> 0. v.2.12.0"
+"Cheese, Manchego",kokumi,1,"Kuroda et al. 2020 J Dairy Sci 103:7801 Table 2: Manchego 0.59 ug/g = 0.059 mg/100 g (was 5.9, unit slip). v.2.12.0"
+"Cheese, Kashkaval",kokumi,3,"No direct source; 3.5 matched Ossau Iraty 0.35 ug/g x10 slip, corrected to 0.035 assuming ewe's-milk Kashkaval. v.2.12.0"
+"Sauce, Fish",kokumi,2,"Kuroda et al. 2012 J Agric Food Chem 60:7291 Table 2: Thai median 0.23 mg/dL / density 1.22 = 0.189 mg/100 g (was 0.43, not density-corrected). v.2.12.0"

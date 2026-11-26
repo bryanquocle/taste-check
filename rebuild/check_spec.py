@@ -26,7 +26,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TRIVIAL = {0.0, 1.0}          # loop starts, "1 -" complements and boolean-like flags
-CSV_NAME = "hfp_ingredients_v2.10.0.csv"
+CSV_NAME = "hfp_ingredients_v2.12.0.csv"
 
 
 def block(text, tag):

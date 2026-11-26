@@ -7,7 +7,7 @@ The model behind [Taste Check](https://tools.mendocinofoodconsulting.com/taste-c
 
 Built by Dr. Bryan Quoc Le, food scientist, [Mendocino Food Consulting](https://www.mendocinofoodconsulting.com/).
 
-**Version 2.11.0** (November 25, 2026). The full specification, with every constant, its source and its verification status, is in [`rebuild/REBUILD.md`](rebuild/REBUILD.md).
+**Version 2.12.0** (November 25, 2026). The full specification, with every constant, its source and its verification status, is in [`rebuild/REBUILD.md`](rebuild/REBUILD.md).
 
 ## What's here
 
@@ -51,6 +51,6 @@ Rank agreement (Spearman rho) with the 81-food SVT panel: umami 0.73, saltiness 
 
 ## Cite
 
-Le, B. Q. (2026). *Taste Check model (Human Flavorome Project)* (Version 2.11.0). Mendocino Food Consulting. https://doi.org/10.5281/zenodo.24540783
+Le, B. Q. (2026). *Taste Check model (Human Flavorome Project)* (Version 2.12.0). Mendocino Food Consulting. https://doi.org/10.5281/zenodo.24540783
 
 That DOI always resolves to the latest version; v2.11.0 itself is https://doi.org/10.5281/zenodo.24545805. See [`CITATION.cff`](CITATION.cff).

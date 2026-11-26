@@ -3,8 +3,8 @@
  "model_version": "2.8.3",
  "source_page": "https://tools.mendocinofoodconsulting.com/taste-check/",
  "block_sha256": {
-  "HFP_DB": "2f833db8c04ca64656813ea342b836187f4eaee676318824cede2df59288c9fe",
-  "HFP_MODEL": "62302abbf7d4827f2ac8ff3c62fd27d442e8681907fba69a8bfe4035e19573a0",
+  "HFP_DB": "e601513f48fcd466a8c5860a7461829aa28405a71bed0b978b908e11a375eb1d",
+  "HFP_MODEL": "a104b9084ed75e849d52fda3ca3bbcccfbd7f2e6e49b3dbb794cf4df94489a5c",
   "HFP_PASTE": "8fdc06e620b0f5db5e9cd6dc4c5ab9554234787ec72126391fd0947c1971119d",
   "helpers": "9f63101394fef850ad5e064aa6ed6dfacd488765df0c8eaa846f93fbe0d66ca5"
  },
@@ -161,31 +161,31 @@
    "opt": {},
    "expected": {
     "raw": {
-     "umami_intensity": 7.90391350040507,
+     "umami_intensity": 7.572876015346458,
      "saltiness_intensity": 7.588152090898447,
      "sweetness_intensity": 0.8053327520121766,
-     "sourness_intensity": 94.8938668105889,
+     "sourness_intensity": 97.25954390822271,
      "kokumi_intensity_pct": 0,
      "bitterness_intensity": 0
     },
     "score": {
-     "umami": 3.733388655616178,
+     "umami": 3.6189068731173504,
      "saltiness": 7.739028985610477,
      "sweetness": 1.6727041568840346,
-     "sourness": 6.708986417994052,
+     "sourness": 6.851309824908311,
      "kokumi": 1,
      "bitterness": 1
     },
-    "pH": 4.224781839602134,
+    "pH": 4.278160192018868,
     "intermediate": {
      "total_mass_g": 318.243,
      "total_water_g": 291.789016,
      "salt_pct_water": 1.0966424277100804,
      "sucrose_eq_pct": 2.0855248983797834,
      "umami_eq_msg_pct": 1.5446456171396294,
-     "sour_stimulus_mM": 30.190859695575654,
-     "citric_equiv_mM": 30.118167287076552,
-     "umami_remaining": 0.5586010495794704,
+     "sour_stimulus_mM": 33.530765711386735,
+     "citric_equiv_mM": 33.43698436304739,
+     "umami_remaining": 0.5352053119370467,
      "synergy_pH_factor": 1
     },
     "note_keys": [
@@ -665,31 +665,31 @@
    "opt": {},
    "expected": {
     "raw": {
-     "umami_intensity": 7.301469216366964,
+     "umami_intensity": 6.688638271032105,
      "saltiness_intensity": 3.3129752230014002,
      "sweetness_intensity": 0,
-     "sourness_intensity": 0,
+     "sourness_intensity": 39.54947155782948,
      "kokumi_intensity_pct": 0,
      "bitterness_intensity": 0
     },
     "score": {
-     "umami": 3.5250470066917337,
+     "umami": 3.313113367273363,
      "saltiness": 3.9422494157958177,
      "sweetness": 1,
-     "sourness": 1,
+     "sourness": 3.3793676404099875,
      "kokumi": 1,
      "bitterness": 1
     },
-    "pH": 5.250391793806411,
+    "pH": 5.250305401099569,
     "intermediate": {
      "total_mass_g": 230,
      "total_water_g": 208.748,
      "salt_pct_water": 0.21310162570888463,
      "sucrose_eq_pct": 0,
      "umami_eq_msg_pct": 0.2388900676420439,
-     "sour_stimulus_mM": 0.0050992075999042276,
-     "citric_equiv_mM": 0.01871998073033152,
-     "umami_remaining": 0.999587844790958,
+     "sour_stimulus_mM": 2.0767396907241924,
+     "citric_equiv_mM": 2.200806356589477,
+     "umami_remaining": 0.9156898859397007,
      "synergy_pH_factor": 1
     },
     "note_keys": [],
@@ -697,8 +697,7 @@
      {
       "name": "Cheese, Parmigiano Regianno",
       "fields": [
-       "nucleotides",
-       "organic acids"
+       "nucleotides"
       ]
      }
     ],
@@ -737,7 +736,7 @@
      "umami_intensity": 0,
      "saltiness_intensity": 7.873558168835815,
      "sweetness_intensity": 0.5113294471776867,
-     "sourness_intensity": 113.70461486421453,
+     "sourness_intensity": 116.73404060670384,
      "kokumi_intensity_pct": 0,
      "bitterness_intensity": 0
     },
@@ -745,20 +744,20 @@
      "umami": 1,
      "saltiness": 7.992497789193932,
      "sweetness": 1.4271196518385787,
-     "sourness": 7.840674995558407,
+     "sourness": 8.022930719763579,
      "kokumi": 1,
      "bitterness": 1
     },
-    "pH": 3.9247456648107955,
+    "pH": 3.94011068102912,
     "intermediate": {
      "total_mass_g": 172,
      "total_water_g": 148.12800000000001,
      "salt_pct_water": 1.2664018907987866,
      "sucrose_eq_pct": 1.470502338470514,
      "umami_eq_msg_pct": 0,
-     "sour_stimulus_mM": 63.72327559214667,
-     "citric_equiv_mM": 63.37811560875619,
-     "umami_remaining": 0.3722491816769833,
+     "sour_stimulus_mM": 73.10100878723065,
+     "citric_equiv_mM": 72.66154479498482,
+     "umami_remaining": 0.34385925665726125,
      "synergy_pH_factor": 1
     },
     "note_keys": [
@@ -855,35 +854,34 @@
    "opt": {},
    "expected": {
     "raw": {
-     "umami_intensity": 1.871904999795235,
-     "saltiness_intensity": 6.9072566137652895,
-     "sweetness_intensity": 0.2275672333724351,
-     "sourness_intensity": 0,
+     "umami_intensity": 1.7212198840637982,
+     "saltiness_intensity": 6.901294230022686,
+     "sweetness_intensity": 0.18194102157986058,
+     "sourness_intensity": 38.26678066999582,
      "kokumi_intensity_pct": 0,
      "bitterness_intensity": 0
     },
     "score": {
-     "umami": 1.6473557549142301,
-     "saltiness": 7.134326509750095,
-     "sweetness": 1.1900896535969043,
-     "sourness": 1,
+     "umami": 1.5952447360006992,
+     "saltiness": 7.129031323730705,
+     "sweetness": 1.1519775288148837,
+     "sourness": 3.3021986398912944,
      "kokumi": 1,
      "bitterness": 1
     },
-    "pH": 6.000484544860107,
+    "pH": 4.971385725238742,
     "intermediate": {
      "total_mass_g": 440,
      "total_water_g": 416.6,
      "salt_pct_water": 0.861585770750988,
-     "sucrose_eq_pct": 0.5146703621591127,
+     "sucrose_eq_pct": 0.5278941819612122,
      "umami_eq_msg_pct": 0.05430690100236414,
-     "sour_stimulus_mM": 0.0009457624003881477,
-     "citric_equiv_mM": 0.003672346092955213,
-     "umami_remaining": 0.9999144677044011,
+     "sour_stimulus_mM": 2.0967184881885865,
+     "citric_equiv_mM": 2.2206358942202113,
+     "umami_remaining": 0.919423082028281,
      "synergy_pH_factor": 1
     },
     "note_keys": [
-     "ph_default",
      "salt_extrap"
     ],
     "missing": [
@@ -970,19 +968,19 @@
    },
    "expected": {
     "raw": {
-     "umami_intensity": 18.39116063775286,
-     "saltiness_intensity": 8.25092353302435,
+     "umami_intensity": 18.386564444982966,
+     "saltiness_intensity": 8.248861518786402,
      "sweetness_intensity": 1.186072810686196,
      "sourness_intensity": 47.98656090916981,
-     "kokumi_intensity_pct": 50.27274749571039,
+     "kokumi_intensity_pct": 50.199229250070665,
      "bitterness_intensity": 0
     },
     "score": {
-     "umami": 7.360164474000399,
-     "saltiness": 8.327635527205572,
+     "umami": 7.358574985302728,
+     "saltiness": 8.325804254775628,
      "sweetness": 1.9907409181138966,
      "sourness": 3.8869581742676442,
-     "kokumi": 5.524547274613935,
+     "kokumi": 5.51793063250636,
      "bitterness": 1
     },
     "pH": 5.394927898107898,
@@ -1771,31 +1769,31 @@
    "opt": {},
    "expected": {
     "raw": {
-     "umami_intensity": 6.39367350118081,
+     "umami_intensity": 6.039517092715421,
      "saltiness_intensity": 11.984779926690972,
-     "sweetness_intensity": 10.27497180476314,
-     "sourness_intensity": 8.860267134028865,
+     "sweetness_intensity": 8.55116754285232,
+     "sourness_intensity": 38.36681873316038,
      "kokumi_intensity_pct": 36.9880546507149,
      "bitterness_intensity": 0
     },
     "score": {
-     "umami": 3.2111065126086897,
+     "umami": 3.088629576447451,
      "saltiness": 10,
-     "sweetness": 9.582807824045766,
-     "sourness": 1.5330496735783292,
+     "sweetness": 8.142893341809122,
+     "sourness": 3.3082171104530316,
      "kokumi": 4.328924918564342,
      "bitterness": 1
     },
-    "pH": 4.545511329603411,
+    "pH": 4.616421597581111,
     "intermediate": {
      "total_mass_g": 141,
      "total_water_g": 100.73279999999998,
      "salt_pct_water": 3.231986086956522,
      "sucrose_eq_pct": 11.670459161588623,
      "umami_eq_msg_pct": 0.154471142381689,
-     "sour_stimulus_mM": 1.7385810662217724,
-     "citric_equiv_mM": 1.8648793851739853,
-     "umami_remaining": 0.9730354118475758,
+     "sour_stimulus_mM": 6.275411171467547,
+     "citric_equiv_mM": 6.360401039860405,
+     "umami_remaining": 0.9191373317053955,
      "synergy_pH_factor": 1
     },
     "note_keys": [
@@ -2930,31 +2928,31 @@
    "opt": {},
    "expected": {
     "raw": {
-     "umami_intensity": 7.828258195440795,
+     "umami_intensity": 7.610206353215774,
      "saltiness_intensity": 4.701545762753767,
      "sweetness_intensity": 0.7833967638333256,
-     "sourness_intensity": 94.54984392174275,
+     "sourness_intensity": 96.13858173008974,
      "kokumi_intensity_pct": 0,
      "bitterness_intensity": 0
     },
     "score": {
-     "umami": 3.7072249896909457,
+     "umami": 3.6318167211359396,
      "saltiness": 5.175437286025766,
      "sweetness": 1.6543807614969699,
-     "sourness": 6.688289379650973,
+     "sourness": 6.783870715668302,
      "kokumi": 1,
      "bitterness": 1
     },
-    "pH": 4.313761693620018,
+    "pH": 4.362270038836561,
     "intermediate": {
      "total_mass_g": 731.94,
      "total_water_g": 663.77632,
      "salt_pct_water": 0.3561563259283548,
      "sucrose_eq_pct": 2.041688778139927,
      "umami_eq_msg_pct": 1.4548369321551766,
-     "sour_stimulus_mM": 29.522830340844806,
-     "citric_equiv_mM": 29.454238505306492,
-     "umami_remaining": 0.5619787957199428,
+     "sour_stimulus_mM": 31.67625412548747,
+     "citric_equiv_mM": 31.594312151079002,
+     "umami_remaining": 0.5463251843240514,
      "synergy_pH_factor": 1
     },
     "note_keys": [],
@@ -2962,8 +2960,7 @@
      {
       "name": "Cheese, Parmigiano Regianno",
       "fields": [
-       "nucleotides",
-       "organic acids"
+       "nucleotides"
       ]
      }
     ],
