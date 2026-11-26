@@ -13,8 +13,8 @@ identifiers:
     value: "10.5281/zenodo.24540783"
     description: "Concept DOI (all versions, resolves to the latest)"
   - type: doi
-    value: "10.5281/zenodo.24547683"
-    description: "Version 2.14.0"
+    value: "10.5281/zenodo.24548959"
+    description: "Version 2.15.0"
 repository-code: "https://github.com/bryanquocle/taste-check"
 url: "https://tools.mendocinofoodconsulting.com/taste-check/"
 license: MIT
