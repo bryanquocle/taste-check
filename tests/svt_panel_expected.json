@@ -3,19 +3,19 @@
  "sets": {
   "all foods: umami (score)": {
    "n": 82,
-   "spearman": 0.7317074727935355
+   "spearman": 0.714301293693026
   },
   "all foods: umami (raw)": {
    "n": 82,
-   "spearman": 0.7317074727935355
+   "spearman": 0.714301293693026
   },
   "all foods: saltiness (score)": {
    "n": 80,
-   "spearman": 0.8279600469358024
+   "spearman": 0.8279545590138105
   },
   "all foods: saltiness (raw)": {
    "n": 80,
-   "spearman": 0.8280884035017295
+   "spearman": 0.8280829150199909
   },
   "all foods: sweetness (score)": {
    "n": 79,
@@ -75,19 +75,19 @@
   },
   "group Vegetables: umami (score)": {
    "n": 24,
-   "spearman": 0.4419822918432729
+   "spearman": 0.4314327393775956
   },
   "group Vegetables: umami (raw)": {
    "n": 24,
-   "spearman": 0.4419822918432729
+   "spearman": 0.4314327393775956
   },
   "group Vegetables: saltiness (score)": {
    "n": 24,
-   "spearman": 0.25658609852173186
+   "spearman": 0.25797957573760893
   },
   "group Vegetables: saltiness (raw)": {
    "n": 24,
-   "spearman": 0.25658609852173186
+   "spearman": 0.25797957573760893
   },
   "group Vegetables: sweetness (score)": {
    "n": 24,

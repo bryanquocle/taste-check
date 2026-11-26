@@ -75,6 +75,10 @@ BOIL_THROTTLE = {"low": 0.5, "mid": 0.75, "high": 1.0}   # ASSUMPTION
 KITCHEN_K = {"low": 1.0, "mid": 1.3, "high": 1.5}          # ASSUMPTION (calibrated, n=2 sources)
 PAN_MAX_L = 1.5   # auto mode: skillets/saute/wok only considered up to 1.5 L (ASSUMPTION)
 
+# v.2.11.0: at a boil steam pushes out past a lid. Snitkjaer et al. 2017 Food Chem (Fig. 3b): a lidded pot at a boil
+# lost ~85% as much as an open one. Lid factors blend from LID (below 210 F) to LID_BOIL (212 F) with the boil weight.
+# Ajar at a boil = ASSUMPTION (between on and off).
+LID_BOIL = {"off": (1.0, 1.0, 1.0), "ajar": (0.9, 0.7, 1.0), "on": (0.85, 0.6, 1.0)}
 LID = {"off": (1.0, 1.0, 1.0), "ajar": (0.4, 0.25, 0.6),   # ajar = ASSUMPTION
        "on": (0.01, 0.003, 0.08)}                         # on: Opadokun/Brundrett; high = Berick 92%
 
@@ -162,7 +166,10 @@ def rate_g_per_min(p, vol_L, tF, throttle="mid"):
     boil = max(boil, shah_flux(100.0) * A * 1000 / 60.0)
     return (1 - w) * surf + w * boil
 
-def loss_in_pot(p, mass_g, minutes, tF, lid_f, throttle="mid"):
+def loss_in_pot(p, mass_g, minutes, tF, lid_f, throttle="mid", lid_boil_f=None):
+    if lid_boil_f is not None:                       # v.2.11.0: lid matters less at a boil
+        w = boil_weight(tF)
+        lid_f = (1 - w) * lid_f + w * lid_boil_f
     m = mass_g
     t = 0.0
     dt = 0.5
@@ -183,11 +190,12 @@ def estimate(mass_g, minutes, tF, pot_type=None, lid="off", water_g=None, cap_fr
     vol_L = mass_g / 1000.0       # ASSUMPTION ~1 g/mL
     pots = candidates(vol_L, pot_type)
     lf_mid, lf_lo, lf_hi = LID[lid]
+    lb_mid, lb_lo, lb_hi = LID_BOIL[lid]
     mids, lows, highs, detail = [], [], [], []
     for p in pots:
-        mid = loss_in_pot(p, mass_g, minutes, tF, lf_mid, "mid")
-        lo = loss_in_pot(p, mass_g, minutes, tF, lf_lo, "low")
-        hi = loss_in_pot(p, mass_g, minutes, tF, lf_hi, "high")
+        mid = loss_in_pot(p, mass_g, minutes, tF, lf_mid, "mid", lb_mid)
+        lo = loss_in_pot(p, mass_g, minutes, tF, lf_lo, "low", lb_lo)
+        hi = loss_in_pot(p, mass_g, minutes, tF, lf_hi, "high", lb_hi)
         mids.append(mid); lows.append(lo); highs.append(hi)
         detail.append((p[0], round(vol_L / pot_capacity_L(p) * 100), round(surface_area_m2(p, vol_L) * 1e4), round(mid)))
     central = sum(mids) / len(mids)

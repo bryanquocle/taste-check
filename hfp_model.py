@@ -196,7 +196,12 @@ def cys_thermal_fraction(minutes, temp_c):
 #            SALT_SHIFT_MAX = 2 is a PLACEHOLDER (Bryan, Sept 2026) until human umami data exist.
 #   "enhancement" (v.2.2.2): intensity x (1 + R).   "multiplier" (v.2.2.1): intensity x R.
 SODIUM_UMAMI_MODE = "shift"
-SALT_SHIFT_MAX = 2.0
+# v.2.11.0 (Bryan, Nov 25 2026): 2.0 -> 1.0 (no salt effect on umami). Human data: Wang et al. 2022 Food Qual Pref
+# 98:104503 Fig. 1 (0.05-0.08 M NaCl lowered umami to x0.70-0.73, n = 12); Yamaguchi 1991 Physiol Behav 49:833
+# p. 833 (umami 'nor is it enhanced by' the basic tastes) and Table 4 (MSG threshold unchanged in 150 and 370 mM
+# NaCl); Schiffman 1991 Physiol Behav 49:843 Table 4a. No human evidence of enhancement. See
+# validation/papers_review_2026-11-25/REPORT.md. The shift formula is kept so a sensitivity value can be set.
+SALT_SHIFT_MAX = 1.0
 
 # --- Stage 4 fixes (Nov 20, 2026), each a switch; OFF values reproduce v.2.7.1 exactly -----------------------
 # KCl/NaCl mixing. "sum" (Excel, v.2.2-2.7) adds the two compressed intensities, which over-predicts blends
@@ -531,7 +536,7 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
                        + GLU_THR_NUC_WEIGHT["gmp"] * conc["gmp"] / NUC_MW["gmp"])
     glu_thr_div = min(GLU_THR_DROP_MAX, 1 + (GLU_THR_DROP_MAX - 1) * imp_eq_mM / GLU_THR_DROP_AT_IMP_mM)
     thr = {"glu": 0.01 / glu_thr_div * z37,                          # U19
-           "asp": 0.0166 / glu_thr_div * z37}                        # V19
+           "asp": 0.0166 / glu_thr_div * z37}                        # V19; Yamaguchi 1991 Table 1: 1.25 mM Na-Asp = 0.01664 g/100 mL Asp
     u16 = conc["glu"] if conc["glu"] > thr["glu"] else 0.0
     v16 = conc["asp"] if conc["asp"] > thr["asp"] else 0.0
     # Nucleotide thresholds (v.2.9.0, Bryan, Nov 25 2026). With glutamate above its own threshold, nucleotides count

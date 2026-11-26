@@ -14,7 +14,7 @@ the inputs the model is unsure about are redrawn. Three things are redrawn:
    ingredient's category (hfp_categories.csv; database median if the category has fewer than 3 values).
    Reference pH moves by +/-0.15 (tier 1), 0.25 (tier 2) or 0.40 (tier 3).
 2. PLACEHOLDER CONSTANTS, each drawn from a triangle that peaks at the value the model uses:
-     salt effect on umami (SALT_SHIFT_MAX)   1.0 to 5.5, peak 2.0   (off ... Ugawa 1992 human sweet amino acids)
+     salt effect on umami (SALT_SHIFT_MAX)   0.5 to 1.3, peak 1.0   (Wang 2022 suppression ... none; v.2.11.0, was 1.0-5.5 peak 2.0)
      kokumi gain on umami and on saltiness   0 to 0.90, peak 0.41   (Ueda 1997 none ... Ohsu 2010 Fig. 1)
      synergy cap (SYNERGY_MAX_FOLD)          31.5 to 126, peak 63   (half and double; v.2.8.4, was 8-32 peak 16)
      kokumi EC50                             x0.5 to x2
@@ -52,7 +52,7 @@ PH_SPREAD = {1: 0.15, 2: 0.25, 3: 0.40}      # 80% additive spread on reference 
 Z80 = 1.2815515655446004                     # normal quantile for the 80% interval
 BLANK_FILL_FIELDS = ("glu", "amp", "imp", "gmp")
 CONSTANTS = {                                # name: (low, high, mode or None = the model's value)
-    "SALT_SHIFT_MAX": (1.0, 5.5, None),
+    "SALT_SHIFT_MAX": (0.5, 1.3, None),   # v.2.11.0: peak 1.0; 0.5-0.7 = Wang 2022 suppression scenario
     "KOKUMI_UMAMI_GAIN": (0.0, 0.90, None),
     "KOKUMI_SALT_GAIN": (0.0, 0.90, None),
     "SYNERGY_MAX_FOLD": (31.5, 126.0, None),

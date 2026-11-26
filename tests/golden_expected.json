@@ -1,13 +1,13 @@
 {
  "golden": {
   "canned tomato": {
-   "raw.umami_intensity": 8.1921348101235,
+   "raw.umami_intensity": 7.161025856513758,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 4.370133565865298,
    "raw.sweetness_intensity": 0.8614275353780647,
    "raw.sourness_intensity": 96.03052884907733,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 3.4901244085554355,
+   "score.umami": 3.4764778660299966,
    "score.saltiness": 4.881110502078582,
    "score.sweetness": 1.719560805710819,
    "score.kokumi": 1.0,
@@ -16,13 +16,13 @@
    "ph": 4.100698992458149
   },
   "canned tomato + salt": {
-   "raw.umami_intensity": 9.114137069879702,
+   "raw.umami_intensity": 7.953089882899754,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 7.813080137197594,
    "raw.sweetness_intensity": 1.4453654138505834,
    "raw.sourness_intensity": 100.46694260012144,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 3.7703810675309457,
+   "score.umami": 3.7503951886492537,
    "score.saltiness": 7.938787320120508,
    "score.sweetness": 2.207331155580519,
    "score.kokumi": 1.0,
@@ -31,13 +31,13 @@
    "ph": 4.099811560839841
   },
   "soy + tomato": {
-   "raw.umami_intensity": 9.214496252020325,
+   "raw.umami_intensity": 7.90391350040507,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 7.588152090898447,
    "raw.sweetness_intensity": 0.8053327520121766,
    "raw.sourness_intensity": 94.89386681058892,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 3.8008867726814763,
+   "score.umami": 3.733388655616178,
    "score.saltiness": 7.739028985610477,
    "score.sweetness": 1.6727041568840346,
    "score.kokumi": 1.0,
@@ -61,13 +61,13 @@
    "ph": 5.801739443232011
   },
   "reduced sauce": {
-   "raw.umami_intensity": 12.31429282115281,
+   "raw.umami_intensity": 10.826017075218441,
    "raw.kokumi_intensity_pct": 62.061189217878045,
    "raw.saltiness_intensity": 9.85979690716592,
    "raw.sweetness_intensity": 1.9679687410453925,
    "raw.sourness_intensity": 99.17834966729521,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 4.7431172507266535,
+   "score.umami": 4.743931693760638,
    "score.saltiness": 9.756474086664813,
    "score.sweetness": 2.64386801531581,
    "score.kokumi": 6.585507029609024,
@@ -76,13 +76,13 @@
    "ph": 4.16550326930491
   },
   "mushroom broth": {
-   "raw.umami_intensity": 9.315713100351685,
+   "raw.umami_intensity": 6.776516420567162,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 5.954127095349178,
    "raw.sweetness_intensity": 0.07875365569144338,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 3.8316531785608707,
+   "score.umami": 3.3435040259013142,
    "score.saltiness": 6.287853300633563,
    "score.sweetness": 1.0657838780567153,
    "score.kokumi": 1.0,
@@ -91,13 +91,13 @@
    "ph": 6.350249699477827
   },
   "dashi": {
-   "raw.umami_intensity": 11.159776739234962,
+   "raw.umami_intensity": 10.974759276469618,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 0.0,
    "raw.sweetness_intensity": 0.0,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 4.392184466746981,
+   "score.umami": 4.79537079990603,
    "score.saltiness": 1.0,
    "score.sweetness": 1.0,
    "score.kokumi": 1.0,
@@ -136,13 +136,13 @@
    "ph": 2.9963591142429813
   },
   "chicken broth + chicken": {
-   "raw.umami_intensity": 18.253294980439943,
+   "raw.umami_intensity": 15.812372574483076,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 6.820358225608535,
    "raw.sweetness_intensity": 0.13923059706102936,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 6.548367601469034,
+   "score.umami": 6.46834929446702,
    "score.saltiness": 7.057152152992854,
    "score.sweetness": 1.1163009962954846,
    "score.kokumi": 1.0,
@@ -151,13 +151,13 @@
    "ph": 5.885640727131712
   },
   "parmesan water": {
-   "raw.umami_intensity": 8.722418489425975,
+   "raw.umami_intensity": 7.301469216366964,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 3.3129752230014002,
    "raw.sweetness_intensity": 0.0,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 3.6513122263703828,
+   "score.umami": 3.5250470066917337,
    "score.saltiness": 3.9422494157958177,
    "score.sweetness": 1.0,
    "score.kokumi": 1.0,
@@ -196,14 +196,14 @@
    "ph": 7.0
   },
   "miso soup (tofu left out: not in the database)": {
-   "raw.umami_intensity": 4.3016946196249375,
+   "raw.umami_intensity": 1.871904999795235,
    "raw.kokumi_intensity_pct": 0.0,
-   "raw.saltiness_intensity": 6.981678814129511,
+   "raw.saltiness_intensity": 6.9072566137652895,
    "raw.sweetness_intensity": 0.2275672333724351,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 2.3075657345436387,
-   "score.saltiness": 7.200420778739374,
+   "score.umami": 1.6473557549142301,
+   "score.saltiness": 7.134326509750095,
    "score.sweetness": 1.1900896535969043,
    "score.kokumi": 1.0,
    "score.sourness": 1.0,
@@ -211,13 +211,13 @@
    "ph": 6.000484544860107
   },
   "bo kho (Nov 15, 2026)": {
-   "raw.umami_intensity": 21.010001448110216,
+   "raw.umami_intensity": 18.39116063775286,
    "raw.kokumi_intensity_pct": 50.27274749571039,
    "raw.saltiness_intensity": 8.25092353302435,
    "raw.sweetness_intensity": 1.186072810686196,
    "raw.sourness_intensity": 47.98656090916981,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 7.3863106067386095,
+   "score.umami": 7.360164474000399,
    "score.saltiness": 8.327635527205572,
    "score.sweetness": 1.9907409181138966,
    "score.kokumi": 5.524547274613935,
@@ -256,13 +256,13 @@
    "ph": 7.0
   },
   "kitchen test C: 6 g/L salt + 2 g/L MSG": {
-   "raw.umami_intensity": 9.493825056218157,
+   "raw.umami_intensity": 6.994777330775225,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 6.332934209994942,
    "raw.sweetness_intensity": 0.0,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 3.885793025992405,
+   "score.umami": 3.4189845958615757,
    "score.saltiness": 6.624271455537865,
    "score.sweetness": 1.0,
    "score.kokumi": 1.0,
@@ -406,13 +406,13 @@
    "ph": 4.489963074935451
   },
   "hoisin glaze (v.2.7.1)": {
-   "raw.umami_intensity": 8.054090448336783,
+   "raw.umami_intensity": 6.39367350118081,
    "raw.kokumi_intensity_pct": 36.9880546507149,
    "raw.saltiness_intensity": 11.984779926690972,
    "raw.sweetness_intensity": 10.27497180476314,
    "raw.sourness_intensity": 8.860267134028865,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 3.4481637178788405,
+   "score.umami": 3.2111065126086897,
    "score.saltiness": 10.0,
    "score.sweetness": 9.582807824045766,
    "score.kokumi": 4.328924918564342,
@@ -586,14 +586,14 @@
    "ph": 2.953958821327035
   },
   "steamed spinach + carrot, Horie cooked GMP (v.2.9.0)": {
-   "raw.umami_intensity": 5.145972790841395,
+   "raw.umami_intensity": 2.7202240535980624,
    "raw.kokumi_intensity_pct": 0.0,
-   "raw.saltiness_intensity": 6.480973275057195,
+   "raw.saltiness_intensity": 6.418007976958947,
    "raw.sweetness_intensity": 0.7335493362627301,
    "raw.sourness_intensity": 5.84216027992815,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 2.564196970538271,
-   "score.saltiness": 6.7557447758543905,
+   "score.umami": 1.9407275988607589,
+   "score.saltiness": 6.699825368350598,
    "score.sweetness": 1.612742604284399,
    "score.kokumi": 1.0,
    "score.sourness": 1.3514749141420002,
@@ -648,9 +648,9 @@
    "n": 3,
    "spearman": 0.9999999999999998,
    "model_scores": [
-    1.6054425837400765,
-    2.4157836799094987,
-    3.285554466647736
+    1.6888239165566026,
+    2.5672319911103845,
+    3.4449981461556836
    ],
    "measured": [
     2.61,
@@ -854,12 +854,12 @@
    "n": 6,
    "spearman": 0.08571428571428572,
    "model_scores": [
-    1.5892082016204796,
-    3.058596762627035,
-    3.0585967848289375,
-    2.398033009335526,
-    3.0585965544514755,
-    3.0585965661447405
+    1.6703537412256617,
+    3.342105961367701,
+    3.3421059866272422,
+    2.54877110882501,
+    3.34210572452228,
+    3.342105737825937
    ],
    "measured": [
     2.7,
@@ -874,8 +874,8 @@
    "n": 5,
    "spearman": 0.7826237921249264,
    "model_scores": [
-    3.058596538944718,
-    3.0585965468478897,
+    3.342105706879937,
+    3.342105715871531,
     1.0,
     1.0,
     1.0
@@ -948,11 +948,11 @@
    "n": 5,
    "spearman": 0.6999999999999998,
    "model_scores": [
-    3.9112136789644834,
-    3.9211969761861885,
-    3.9271188779271844,
-    4.266169565001867,
-    4.508211334074644
+    3.719217499911965,
+    3.7192175049204654,
+    3.7202982826985584,
+    4.104134226291134,
+    4.377789291400132
    ],
    "measured": [
     19.63,
@@ -1018,9 +1018,9 @@
   }
  },
  "model": {
-  "umami_ref": 29.608646474769145,
+  "umami_ref": 26.024554304594446,
   "synergy_max_fold": 63,
-  "salt_shift_max": 2.0,
+  "salt_shift_max": 1.0,
   "kokumi_umami_gain": 0.41
  }
 }

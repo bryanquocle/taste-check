@@ -33,3 +33,9 @@ Expect about ±30% in real kitchens. The cook's heat setting is the bigger unkno
 1. K = 1.3 vs 1.0 and lid ajar 0.4: a 30-minute home test (weigh a pot of water held at a probe-checked 200 °F, lid off, then ajar) would settle both.
 2. Not modeled: skins on thick sauces, lower water activity, splatter, solids above the liquid.
 3. Unread lead for a blind validation: Snitkjær et al. 2017, Food Chem 230:234 (volume over time in simmering pots; paywalled).
+
+## Verified against the papers (Nov 25, 2026, Claude)
+
+- **Shah 2014** (preprint, ASHRAE SE-14-001; Papers folder): p. 2 gives E0 as the larger of Eqs. 1–2 with C = 35 and b = 0.00005 (SI). Independent check of our code against all of Table 12 (p. 11; water 35–90 °C, air 30–50 °C, RH 30/70%): 113 cells, mean deviation 0.09%, max 1.1%. Table 1 (p. 3) confirms the Boelter et al. 1946 data: 0.073 m² pan, water 24.0–94.2 °C, evaporation up to 21.07 kg/m²·h.
+- **Opadokun 2019** Table 4.1 (p. 47): lid off 833.6 / 896.8 / 994.6 g; lid on 9.2 / 7.9 / 3.0 g at 25 / 50 / 75% full. Matches what the model uses.
+- **Frontier Energy 2019** p. 11: efficiencies 30.6, 31.9, 70.3, 79.3% as cited; p. 19: simmer defined as 205–210 °F.

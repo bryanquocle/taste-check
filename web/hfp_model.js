@@ -1,4 +1,4 @@
-/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.10.0).
+/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.11.0).
    Same equations, constants and defaults as the Python model (acidity on, chloride-only K, shift mode,
    synergy capped at 63x, v.2.8.4). hfp_model.py is the source of truth: change it first, then mirror the change here.
    Parity-tested against Python with tests/web_parity.py (Node), raw values and 1-10 scores. Needs window.HFP_DB. */
@@ -251,7 +251,7 @@
   const TASTE_BASIS = "food"; // v.2.8.5
   const KOK_THR_PTS = [[0.05, 0.04], [0.8, 0.02], [3.1, 0.01]]; // Ueda 1997 Table II (v.2.9.0 kokumi floor)
   const NUC_THR_IMP = 0.387 * 348.21 / 1e4, NUC_THR_GMP = 0.206 * 363.22 / 1e4; // Kuninaka 1980 Table I (v.2.9.0)
-  const SYNERGY_MAX_FOLD = 63, SALT_SHIFT_MAX = 2.0, DOG_R_PEAK = 0.5828;
+  const SYNERGY_MAX_FOLD = 63, SALT_SHIFT_MAX = 1.0,  /* v.2.11.0: no salt effect on umami (Wang 2022; Yamaguchi 1991) */ DOG_R_PEAK = 0.5828;
   const KOKUMI_POT = { gsh: 1.0, evg: 12.8, cys: 1.0 }, KOK_EC50 = 0.9122, KOK_N = 1.456; // ASSUMPTION: sensory curve on mouth mM, not a receptor EC50 (hfp_model.py)
   const KOK_UMAMI_GAIN = 0.41, KOK_SALT_GAIN = 0.41;
   const UMAMI_SALT_EMAX = 0.10, UMAMI_SALT_S_FULL = 2.4, UMAMI_SALT_FADE_MM = [75, 260]; // Sun 2022 (v.2.8.1)
@@ -404,7 +404,7 @@
     const kForSalt = kSource === "chloride" ? conc.k_cl : conc.k;
     const impEq = 1e4 * (conc.imp / 348.21 + NUC_W.amp * conc.amp / 347.22 + NUC_W.gmp * conc.gmp / 363.22);
     const div = Math.min(GLU_THR_DROP_MAX, 1 + (GLU_THR_DROP_MAX - 1) * impEq / GLU_THR_AT_IMP);
-    const thr = { glu: 0.01 / div, asp: 0.0166 / div };
+    const thr = { glu: 0.01 / div, asp: 0.0166 / div }; // asp: Yamaguchi 1991 Table 1 (1.25 mM)
     const u16 = conc.glu > thr.glu ? conc.glu : 0, v16 = conc.asp > thr.asp ? conc.asp : 0;
     // v.2.9.0 (hfp_model.py NUC_THRESHOLD_MODE "kuninaka"): no nucleotide threshold when glutamate is above its own;
     // nucleotide-alone thresholds from Kuninaka 1980 (IMP 0.387 mM, GMP 0.206 mM); AMP = IMP / 0.18 (assumption)

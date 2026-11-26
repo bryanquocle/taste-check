@@ -12,6 +12,8 @@
   const BOIL_THROTTLE = { low: 0.5, mid: 0.75, high: 1.0 };
   const KITCHEN_K = { low: 1.0, mid: 1.3, high: 1.5 };
   const PAN_MAX_L = 1.5, CAP_FRAC = 0.6, STEP_MIN = 0.5;
+  // v.2.11.0: at a boil steam pushes past a lid (Snitkjaer et al. 2017 Fig. 3b: lidded ~85% of open); ajar at a boil = ASSUMPTION
+  const LID_BOIL = { off: { mid: 1.0, low: 1.0, high: 1.0 }, ajar: { mid: 0.9, low: 0.7, high: 1.0 }, on: { mid: 0.85, low: 0.6, high: 1.0 } };
   const LID = { off: { mid: 1.0, low: 1.0, high: 1.0 }, ajar: { mid: 0.4, low: 0.25, high: 0.6 }, on: { mid: 0.01, low: 0.003, high: 0.08 } };
   const IN = 2.54, QT = 0.946353;
   // [name, type, capacity L (null = from geometry), top diameter cm, bottom diameter cm, depth cm]
@@ -83,7 +85,8 @@
     const boil = Math.max(BOIL_THROTTLE[s] * full, shahFlux(100) * A * 1000 / 60);
     return (1 - w) * surf + w * boil;
   }
-  function lossInPot(p, massG, minutes, tF, lidF, s) {
+  function lossInPot(p, massG, minutes, tF, lidF, s, lidBoilF) {
+    if (lidBoilF != null) { const w = boilWeight(tF); lidF = (1 - w) * lidF + w * lidBoilF; }
     let m = massG, t = 0, lost = 0;
     while (t < minutes - 1e-9) {
       const step = Math.min(STEP_MIN, minutes - t), d = rate(p, m / 1000, tF, s) * lidF * step;
@@ -98,9 +101,9 @@
     const volL = massG / 1000, pots = candidates(volL, potType || null);
     const mids = [], lows = [], highs = [];
     for (const p of pots) {
-      mids.push(lossInPot(p, massG, minutes, tF, LID[lid].mid, "mid"));
-      lows.push(lossInPot(p, massG, minutes, tF, LID[lid].low, "low"));
-      highs.push(lossInPot(p, massG, minutes, tF, LID[lid].high, "high"));
+      mids.push(lossInPot(p, massG, minutes, tF, LID[lid].mid, "mid", LID_BOIL[lid].mid));
+      lows.push(lossInPot(p, massG, minutes, tF, LID[lid].low, "low", LID_BOIL[lid].low));
+      highs.push(lossInPot(p, massG, minutes, tF, LID[lid].high, "high", LID_BOIL[lid].high));
     }
     const central = mids.reduce((a, b) => a + b, 0) / mids.length;
     const cap = CAP_FRAC * (waterG != null ? waterG : massG), cl = x => Math.min(x, cap);
