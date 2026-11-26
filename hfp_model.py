@@ -815,8 +815,8 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
         warnings.append(f"Sucrose-equivalent {c_eq_pct:.1f}% w/w is above Moskowitz's range (32%); "
                         f"sweetness is extrapolated.")
     if acidity and sweet_raw > 0 and acid["citric_equiv_mM"] > sw.SWEET_Q[-1][0]:
-        warnings.append(f"Acid level {acid['citric_equiv_mM']:.1f} mM citric-eq is above Schifferstein & "
-                        f"Frijters' range (10 mM); sweetness suppression held at its 10 mM value.")
+        warnings.append(f"Acid level {acid['citric_equiv_mM']:.1f} mM citric-eq is above the measured "
+                        f"range (95 mM, McBride & Johnson 1987); sweetness suppression held at its 95 mM value.")
     if acidity and SUGAR_SOUR_ON_UMAMI and sucrose_eq_g > sw.SF_SUCROSE_G_PER_100G_WATER[-1]:
         warnings.append("Sugar level is above Schifferstein & Frijters' range; sour suppression held at "
                         "its 1 M sucrose value.")

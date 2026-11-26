@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this model or its data, please cite it as below."
 title: "Taste Check model (Human Flavorome Project)"
-version: "2.15.0"
+version: "2.16.0"
 date-released: "2026-11-25"
 authors:
   - family-names: "Le"

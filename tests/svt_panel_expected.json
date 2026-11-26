@@ -19,11 +19,11 @@
   },
   "all foods: sweetness (score)": {
    "n": 79,
-   "spearman": 0.8097147876719963
+   "spearman": 0.8105479846856136
   },
   "all foods: sweetness (raw)": {
    "n": 79,
-   "spearman": 0.8102282560478907
+   "spearman": 0.8106942921294743
   },
   "all foods: sourness (score)": {
    "n": 81,
@@ -59,11 +59,11 @@
   },
   "group (non) alcoholic beverages: sweetness (score)": {
    "n": 15,
-   "spearman": 0.947786210755728
+   "spearman": 0.9585974603080747
   },
   "group (non) alcoholic beverages: sweetness (raw)": {
    "n": 15,
-   "spearman": 0.947786210755728
+   "spearman": 0.9585974603080747
   },
   "group (non) alcoholic beverages: sourness (score)": {
    "n": 15,

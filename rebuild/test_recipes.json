@@ -3,8 +3,8 @@
  "model_version": "2.8.3",
  "source_page": "https://tools.mendocinofoodconsulting.com/taste-check/",
  "block_sha256": {
-  "HFP_DB": "77bbcdc827759ed0f46eba85688a137f5e1811f1d228d7d759c022d63f542438",
-  "HFP_MODEL": "e3a575d1706a77c8dc4525241066e4d5fd9fef4a302f67963d95033135a5d263",
+  "HFP_DB": "c5cc2df7409a667346ce2d307ea90907023d349d3f3b6048610c4f1ba6a7b11b",
+  "HFP_MODEL": "a69b21226d4964716e35bf439f4dda68d2268d44f9199f658cad203411b252ca",
   "HFP_PASTE": "c1905890dd1f463a6dcf29423b4b3921a65302537802af641116f1dc36684fe9",
   "helpers": "9f63101394fef850ad5e064aa6ed6dfacd488765df0c8eaa846f93fbe0d66ca5"
  },
@@ -544,7 +544,7 @@
     "raw": {
      "umami_intensity": 0,
      "saltiness_intensity": 6.385375897778,
-     "sweetness_intensity": 1.3257908483225338,
+     "sweetness_intensity": 0.9152889295977111,
      "sourness_intensity": 134.05340137614886,
      "kokumi_intensity_pct": 0,
      "bitterness_intensity": 0
@@ -552,7 +552,7 @@
     "score": {
      "umami": 1,
      "saltiness": 6.6708448570447025,
-     "sweetness": 2.107449079398542,
+     "sweetness": 1.7645518776579068,
      "sourness": 9.064967956696396,
      "kokumi": 1,
      "bitterness": 1
@@ -734,7 +734,7 @@
     "raw": {
      "umami_intensity": 0,
      "saltiness_intensity": 7.873558168835815,
-     "sweetness_intensity": 0.5113294471776867,
+     "sweetness_intensity": 0.4513182539809391,
      "sourness_intensity": 115.87564443126658,
      "kokumi_intensity_pct": 0,
      "bitterness_intensity": 0
@@ -742,7 +742,7 @@
     "score": {
      "umami": 1,
      "saltiness": 7.992497789193932,
-     "sweetness": 1.4271196518385787,
+     "sweetness": 1.3769915786636626,
      "sourness": 7.9713513398846505,
      "kokumi": 1,
      "bitterness": 1

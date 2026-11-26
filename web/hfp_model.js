@@ -1,4 +1,4 @@
-/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.15.0).
+/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.16.0).
    Same equations, constants and defaults as the Python model (acidity on, chloride-only K, shift mode,
    synergy capped at 63x, v.2.8.4). hfp_model.py is the source of truth: change it first, then mirror the change here.
    Parity-tested against Python with tests/web_parity.py (Node), raw values and 1-10 scores. Needs window.HFP_DB. */
@@ -225,6 +225,9 @@
     let s = 0; SF_SWEET_MIX[c].forEach((v, i) => (s += invert(v, SF_SUC_M, SF_SWEET_UNMIXED) / SF_SUC_M[i]));
     return [c, s / 4];
   }));
+  // v.2.16.0: McBride & Johnson 1987 Fig. 3: flat 10-58 mM, one step x0.752 at 95 mM, held above (see hfp_sweet.py)
+  const MJ1987_STEP_95 = 0.752;
+  SWEET_Q.push([58.0, SWEET_Q[SWEET_Q.length - 1][1]], [95.0, SWEET_Q[SWEET_Q.length - 1][1] * MJ1987_STEP_95]);
   const SOUR_PTS = SF_SUC_G.map((x, i) => [x, invert(SF_SOUR_MIX10[i], SF_CIT, SF_SOUR_UNMIXED) / 10]);
   function sucroseEquivalent(sug) {
     let eq = 0; const uns = [];

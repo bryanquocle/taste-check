@@ -144,6 +144,12 @@ def _invert(y, xs, ys):
 SWEET_Q = [(0.0, 1.0)] + [
     (c, sum(_invert(v, SF_SUCROSE_M, SF_SWEET_UNMIXED) / m for v, m in zip(SF_SWEET_MIX[c], SF_SUCROSE_M)) / 4)
     for c in SF_CITRIC_mM]
+# v.2.16.0 (Bryan, Nov 25 2026): McBride & Johnson 1987 (Int J Food Sci Technol 22:399, Fig. 3; lemon drink, citric
+# 23-95 mM x sucrose 2-16%, n = 16): no graded suppression 23-58 mM, one further step at 95 mM (equal-sweetness ratio
+# vs 23 mM, mean of the 4/8/16% rows, digitized +/-0.05). ASSUMPTIONS: S&F's 10 mM state = McBride's 23 mM state;
+# other acids enter via citric-equivalent; held at the 95 mM value above 95 mM (no data at ketchup-level acidity).
+MJ1987_STEP_95 = 0.752
+SWEET_Q = SWEET_Q + [(58.0, SWEET_Q[-1][1]), (95.0, SWEET_Q[-1][1] * MJ1987_STEP_95)]
 SOUR_EFFECTIVE_POINTS = [(x, _invert(v, SF_CITRIC_mM, SF_SOUR_UNMIXED) / 10.0)
                          for x, v in zip(SF_SUCROSE_G_PER_100G_WATER, SF_SOUR_MIX_10mM)]
 

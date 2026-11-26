@@ -1,0 +1,7 @@
+ingredient,column,current,proposed,tier,recommendation,basis
+"Soup Mix, Onion (Dry)",Glutamate (mg/100g),blank,2972,3,APPLY,"Rhodes et al. 1991 Food Addit Contam 8:663 Table 1: dehydrated/powdered soups mean 3.78% MSG (n=17, range 0.87-7.75), MSG-declared products; MSG.H2O x147.13/187.13 (form assumed per AOAC 970.37). US onion soup mixes declare MSG/yeast extract. Blank currently = zero umami."
+"Soup, * (Condensed) [10 rows]",Glutamate (mg/100g),blank,259,3,OPTIONAL,"Rhodes Table 1 canned soups mean 0.33% (n=18, range 0.07-1.74). UK 1991 canned soups were mostly ready-to-serve, so for condensed this is a conservative floor (true value likely ~2x). Better than blank = zero."
+"Potato Chips, Salted/Unsalted",Glutamate (mg/100g),198,no change,-,HOLD,"Rhodes 0.91% (715 mg) is flavoured crisps that declare MSG; plain chips don't. Possible future row 'Potato Chips, Flavored (with MSG)'."
+"Sausage, Italian (Pork)",Glutamate (mg/100g),blank,no change,-,HOLD,"Rhodes uncooked pork sausage 0.20% (157 mg) is UK MSG-declared; US Italian sausage usually has none. Use a Pork sibling fill instead (next data round)."
+"Pasta, Ramen",Glutamate (mg/100g),blank,no change,-,HOLD,"Rhodes cereal convenience 2.06% includes seasoning; the noodle block itself carries none."
+"Yeast Extract",Glutamate (mg/100g),5000,no change,-,CHECK PASSED,"Rhodes meat and yeast extracts mean 8.70% MSG = 6,840 mg Glu (n=7, range 350-14,900). Our 5,000 sits inside the range."

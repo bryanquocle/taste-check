@@ -498,3 +498,5 @@ Ground Veal,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 
 Veal Cutlet,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.237. Hamburger Meat glutamate 60.7 (no source) replaced too.
 Pork Spareribs,nucleotides,2,Sibling fill v.2.15.0: Pork row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 0.915. Hamburger Meat glutamate 60.7 (no source) replaced too.
 Cornish Hen,nucleotides,2,Sibling fill v.2.15.0: Chicken row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 0.762. Hamburger Meat glutamate 60.7 (no source) replaced too.
+"Soup Mix, Onion (Dry)",glutamate,3,"Rhodes et al. 1991 Food Addit Contam 8:663 Table 1: UK dehydrated soups that declare MSG, mean 3.78% (n = 17); total free Glu by AOAC titration, MSG.H2O form assumed (x147.13/187.13). Applies to mixes with MSG/yeast extract. v.2.16.0"
+Apple Butter,acids,3,"Malic 370 derived (K tracer, range 324-409); pH 3.35 FDA applesauce proxy. v.2.16.0"
