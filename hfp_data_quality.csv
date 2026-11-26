@@ -477,3 +477,24 @@ Doenjang,sugars,2,"Kaneko et al. 1994 Nippon Shokuhin Kogyo Gakkaishi 41:148 Tab
 Hamburger Meat,protein,2,"USDA FDC SR Legacy 168652 (ground beef 70/30, raw): protein 14.35 g/100 g (water 54.3 vs DB 55). v.2.14.0"
 "Cheese, Camembert",protein,1,USDA FDC SR Legacy 172178: protein 19.8 g/100 g. v.2.14.0
 "Sauce, Oyster",protein,2,USDA FDC SR Legacy 174529 (ready-to-serve): protein 1.35 g/100 g. v.2.14.0
+"Rice, White, Cooked (No Salt)",sugars,3,USDA SR Legacy 168878 total sugar 0.05 g/100 g counted as sucrose (no split published). v.2.15.0
+"Rice, White, Cooked (Salted Water)",sugars,3,USDA SR Legacy 169753 total sugar 0.05 g/100 g counted as sucrose (no split published). v.2.15.0
+Bouillon,glutamate,2,"Median of 16 measured cubes/powders (Soyseven 2021, 11; Martinez-Tome 2015, 4; Krishna 2010, 1), MSG.H2O x147.13/187.13. Was 6827 copied without source. v.2.15.0"
+Beef Stock Cube,glutamate,2,"Median of 6 meat cubes (Soyseven 2021; Martinez-Tome 2015), MSG.H2O -> free acid. Was 6827 without source. v.2.15.0"
+Yeast Extract,glutamate,2,Tome 2021 review: food yeast extracts ~5% w/w free glutamate. Was 1020 without source. v.2.15.0
+Bouillon,nucleotides,3,"Acebal et al. 2008 Food Chem 106:811 Table 2 (7 commercial stocks): median IMP/MSG 0.0063 and GMP/MSG 0.0024 applied to this row's MSG; salts (Na2IMP.7.5H2O, Na2GMP.7H2O) -> free acid. v.2.15.0"
+Beef Stock Cube,nucleotides,3,"Acebal et al. 2008 Food Chem 106:811 Table 2 (7 commercial stocks): median IMP/MSG 0.0063 and GMP/MSG 0.0024 applied to this row's MSG; salts (Na2IMP.7.5H2O, Na2GMP.7H2O) -> free acid. v.2.15.0"
+"Yeast Extract (Spread, e.g. Marmite)",glutamate,2,"FSANZ 2003 MSG Technical Report 20, Table 2 (Marmite 1960, Vegemite 1431 mg/100 g); 1700 = rounded mean. v.2.15.0"
+"Olives, Black",glutamate,1,"Casado et al. 2008 J Agric Food Chem 56:2021 Table 4: free Glu 4.4, Asp 3.1 umol/kg fresh weight (9 commercial-process samples) -> 0.065, 0.041 mg/100 g. Casado 2007 J Agric Food Chem 55:3503 Table 3 (lab-processed) ~3 mg/100 g as an upper bound. v.2.15.0"
+Hamburger Meat,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 0.834. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Stew Meat,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.265. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Sirloin,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.180. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Ground Sirloin,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.163. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Brisket,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.205. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Rump Roast,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.290. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Short Rib,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 0.837. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Veal,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.125. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Ground Veal,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.080. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Veal Cutlet,nucleotides,2,Sibling fill v.2.15.0: Beef row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 1.237. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Pork Spareribs,nucleotides,2,Sibling fill v.2.15.0: Pork row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 0.915. Hamburger Meat glutamate 60.7 (no source) replaced too.
+Cornish Hen,nucleotides,2,Sibling fill v.2.15.0: Chicken row (Yamaguchi & Ninomiya 2000 Table 2 values) x protein ratio 0.762. Hamburger Meat glutamate 60.7 (no source) replaced too.

@@ -3,35 +3,35 @@
  "sets": {
   "all foods: umami (score)": {
    "n": 82,
-   "spearman": 0.7059027372203418
+   "spearman": 0.7075522462371069
   },
   "all foods: umami (raw)": {
    "n": 82,
-   "spearman": 0.7059027372203418
+   "spearman": 0.7075522462371069
   },
   "all foods: saltiness (score)": {
    "n": 80,
-   "spearman": 0.8279545590138105
+   "spearman": 0.8280297143077853
   },
   "all foods: saltiness (raw)": {
    "n": 80,
-   "spearman": 0.8280829150199909
+   "spearman": 0.8281580683214607
   },
   "all foods: sweetness (score)": {
    "n": 79,
-   "spearman": 0.8096166627261299
+   "spearman": 0.8097147876719963
   },
   "all foods: sweetness (raw)": {
    "n": 79,
-   "spearman": 0.81013014318861
+   "spearman": 0.8102282560478907
   },
   "all foods: sourness (score)": {
    "n": 81,
-   "spearman": 0.7360911390905162
+   "spearman": 0.7358301069215434
   },
   "all foods: sourness (raw)": {
    "n": 81,
-   "spearman": 0.7360911390905162
+   "spearman": 0.7358301069215434
   },
   "all foods: bitterness (score) [bitterant foods only]": {
    "n": 10,

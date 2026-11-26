@@ -569,6 +569,10 @@
     ["\\bhot[\\s\\-]+dogs?\\b", "Hot Dog (Frankfurter)"],
     /*AUTO_PHRASES:END*/
     // v.2.10.0 fixes from the RecipeNLG coverage check (validation/missing_ingredients/REPORT.md)
+    // v.2.15.0: pasta or rice cooked in salted water (USDA SR "with added salt": drained pasta keeps only absorbed salt)
+    ["(spaghetti|pasta|penne|macaroni|noodles?|linguine|fettuccine|rigatoni|ziti).*salted|salted.*(spaghetti|pasta|penne|macaroni|noodles?)", "Pasta, Cooked (Salted Water)"],
+    ["\\brice\\b.*salted|salted.*\\brice\\b", "Rice, White, Cooked (Salted Water)"],
+    ["salted water|(boiling|cooking|pasta) water|water (for|to) (boil|cook)", "!cooking water that gets drained isn't eaten; for pasta or rice boiled in salted water, enter it as cooked pasta or rice (\"cooked in salted water\")"],
     ["baking soda|bicarbonate of soda|sodium bicarbonate|^soda$", "Baking Soda"], ["baking powder", "Baking Powder"],
     ["white wine vinegar|champagne vinegar|sherry vinegar", "Vinegar, Red Wine*"],
     ["(roasted |sweet )?red (bell )?peppers?(?! flakes)|red capsicum", "Red Sweet Pepper|spice-if-spoon"],
@@ -856,6 +860,9 @@
     ["^(?:(?:fresh|freshly|chopped|minced|diced|sliced|grated|shredded|large|medium|small|finely|roughly|ground|crushed|peeled|packed|dried|whole|ripe|frozen|canned|cold|hot|warm|softened|melted|toasted|plain|pure|good|quality|organic|light|dark|extra|cubed|halved|mashed|cooked|uncooked|raw|thawed|drained|rinsed|firmly|lightly|sifted|unsifted|of|the|a|some)\\s+)*oats?(?:\\s*,.*)?$", "Oats, Rolled"],
     /*AUTO_SINGLE:END*/
     // v.2.10.0 catch-alls for staples that used to be skipped (they now count for weight, water and salt)
+    // v.2.15.0: cooked starches (USDA SR Legacy cooked rows). Plain 'cooked' = no salt; 'salted water' = USDA with-salt rows
+    ["(cooked|boiled|leftover)\\s+(spaghetti|pasta|penne|macaroni|linguine|fettuccine|rigatoni|ziti|rotini|farfalle|orzo|shells)|(spaghetti|pasta|penne|macaroni),?\\s+(cooked|boiled)", "Pasta, Cooked (No Salt)"],
+    ["(cooked|boiled|steamed|leftover|day-old)\\s+(white\\s+|jasmine\\s+|basmati\\s+|long-grain\\s+)?rice|(white\\s+)?rice,?\\s+(cooked|steamed|boiled)", "Rice, White, Cooked (No Salt)"],
     ["spaghetti|penne|linguine|fettuccine|rigatoni|macaroni|ziti|rotini|farfalle|orzo|\\bpasta\\b|\\bshells\\b", "Pasta, Dry (Generic)"],
     ["\\bnoodles?\\b", "Pasta, Egg Noodle*"], ["\\brice\\b(?! vinegar| wine| milk| flour| krispies| paper)", "Rice, White"],
     ["bread ?crumbs?|panko", "Bread Crumbs, Dry (Plain)"], ["\\bbread\\b|\\bbuns?\\b|\\brolls?\\b", "Bread, White*"],

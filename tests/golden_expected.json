@@ -599,6 +599,51 @@
    "score.sourness": 1.3257543436120776,
    "score.bitterness": 1.0,
    "ph": 6.145232991974268
+  },
+  "grapefruit juice: bitter_gap note, naringin (v.2.15.0)": {
+   "raw.umami_intensity": 0.16627301235252623,
+   "raw.kokumi_intensity_pct": 0.0,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 3.646069828534134,
+   "raw.sourness_intensity": 113.36458056038964,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0575017383067555,
+   "score.saltiness": 1.0,
+   "score.sweetness": 4.045606084958143,
+   "score.kokumi": 1.0,
+   "score.sourness": 7.820279830710369,
+   "score.bitterness": 1.0,
+   "ph": 3.0791242813401967
+  },
+  "onion cooked 10 min: no bitter_gap note (v.2.15.0)": {
+   "raw.umami_intensity": 1.3863118326742172,
+   "raw.kokumi_intensity_pct": 89.02266484647858,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 1.7508173886274863,
+   "raw.sourness_intensity": 21.81102878803412,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.4794244061987745,
+   "score.saltiness": 1.0,
+   "score.sweetness": 2.4624788726545574,
+   "score.kokumi": 9.012039836183071,
+   "score.sourness": 2.312202797335177,
+   "score.bitterness": 1.0,
+   "ph": 5.459931456125462
+  },
+  "raw Brussels sprouts 50% + water: bitter_gap note, glucosinolates (v.2.15.0)": {
+   "raw.umami_intensity": 0.0,
+   "raw.kokumi_intensity_pct": 80.39251167224808,
+   "raw.saltiness_intensity": 0.0,
+   "raw.sweetness_intensity": 0.4284780252126488,
+   "raw.sourness_intensity": 0.0,
+   "raw.bitterness_intensity": 0.0,
+   "score.umami": 1.0,
+   "score.saltiness": 1.0,
+   "score.sweetness": 1.3579128602106736,
+   "score.kokumi": 8.235326050502326,
+   "score.sourness": 1.0,
+   "score.bitterness": 1.0,
+   "ph": 6.150125410515464
   }
  },
  "panels": {

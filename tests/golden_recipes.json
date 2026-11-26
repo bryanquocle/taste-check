@@ -845,5 +845,46 @@
    "cook_min": 10,
    "cook_temp_c": 95
   }
+ },
+ {
+  "name": "grapefruit juice: bitter_gap note, naringin (v.2.15.0)",
+  "items": [
+   [
+    "Juice, Grapefruit",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {}
+ },
+ {
+  "name": "onion cooked 10 min: no bitter_gap note (v.2.15.0)",
+  "items": [
+   [
+    "Onion",
+    100,
+    "g"
+   ]
+  ],
+  "opt": {
+   "cook_min": 10,
+   "cook_temp_c": 95
+  }
+ },
+ {
+  "name": "raw Brussels sprouts 50% + water: bitter_gap note, glucosinolates (v.2.15.0)",
+  "items": [
+   [
+    "Brussel Sprouts",
+    50,
+    "g"
+   ],
+   [
+    "Water",
+    50,
+    "g"
+   ]
+  ],
+  "opt": {}
  }
 ]

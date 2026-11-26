@@ -3,9 +3,9 @@
  "model_version": "2.8.3",
  "source_page": "https://tools.mendocinofoodconsulting.com/taste-check/",
  "block_sha256": {
-  "HFP_DB": "92e4b27d617658c06d72cfa2e0739bd85329eaa920ea8ebe8a251935c5553901",
-  "HFP_MODEL": "bbbce60fb2dfd2a2f029dbaa0d3f7bea21feae26714081d1461a03d7bfcc4a67",
-  "HFP_PASTE": "8fdc06e620b0f5db5e9cd6dc4c5ab9554234787ec72126391fd0947c1971119d",
+  "HFP_DB": "77bbcdc827759ed0f46eba85688a137f5e1811f1d228d7d759c022d63f542438",
+  "HFP_MODEL": "e3a575d1706a77c8dc4525241066e4d5fd9fef4a302f67963d95033135a5d263",
+  "HFP_PASTE": "c1905890dd1f463a6dcf29423b4b3921a65302537802af641116f1dc36684fe9",
   "helpers": "9f63101394fef850ad5e064aa6ed6dfacd488765df0c8eaa846f93fbe0d66ca5"
  },
  "derived_constants": {
@@ -2071,6 +2071,7 @@
      "synergy_pH_factor": 1
     },
     "note_keys": [
+     "bitter_gap",
      "bitter_scope",
      "ph_default"
     ],
@@ -2132,6 +2133,7 @@
      "synergy_pH_factor": 1
     },
     "note_keys": [
+     "bitter_gap",
      "bitter_scope",
      "ph_default"
     ],
@@ -3627,7 +3629,7 @@
      "line": "2 cups cooked rice",
      "status": "ok",
      "item": [
-      "Rice, White",
+      "Rice, White, Cooked (No Salt)",
       2,
       "cup"
      ],

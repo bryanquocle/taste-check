@@ -1,4 +1,4 @@
-/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.14.0).
+/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.15.0).
    Same equations, constants and defaults as the Python model (acidity on, chloride-only K, shift mode,
    synergy capped at 63x, v.2.8.4). hfp_model.py is the source of truth: change it first, then mirror the change here.
    Parity-tested against Python with tests/web_parity.py (Node), raw values and 1-10 scores. Needs window.HFP_DB. */
@@ -307,6 +307,119 @@
   const acekCafEq = pct => (pct > 0 ? schCaf(ACEK_A * POW(pct, ACEK_B)) : 0);
   const saccCafEq = pct => (pct > 0 ? schCaf(SACC_A * POW(pct, SACC_B)) : 0);
   const PROTEIN_BITTER_RE = /hydroly[sz]|isolate|protein powder|whey protein|pea protein|soy protein|casein/i;
+  // Bitterness coverage note `bitter_gap` (v.2.15.0; note only, no score change). Mirror of hfp_model.py BITTER_GAP
+  // (frozen design: validation/bitter_flags_2026-11-25/). dose = sum(share x k x cook) per class; fires once at dose >= 1.
+  // Rows: ingredient -> [[class, basis, ref_value, cook_rule, loss]].
+  const BITTER_GAP_TARGET_B = 10.0, BITTER_GAP_EXPONENT = 0.87, BITTER_GAP_DEFAULT_B = 20.0;
+  const BITTER_GAP_GSL_MIN = 65.0, BITTER_GAP_ETOH_MIN = 2.5, BITTER_GAP_COOK_MIN_TEMP_C = 60.0;
+  const BITTER_GAP_ETOH_RETENTION = [[0.0, 0.85], [15.0, 0.40], [30.0, 0.35], [60.0, 0.25], [90.0, 0.20], [120.0, 0.10], [150.0, 0.05]];
+  const BITTER_GAP = {
+    "Beer": [["hop_acids", "anchor", 57.0, "none", 0.0], ["ethanol", "etoh", 3.9, "etoh_retention", 0.0]],
+    "Wine, Generic": [["ethanol", "etoh", 10.4, "etoh_retention", 0.0]],
+    "Wine, Claret": [["ethanol", "etoh", 10.2, "etoh_retention", 0.0], ["wine_flavanols", "anchor", 36.5, "none", 0.0]],
+    "Wine, Dry Red": [["ethanol", "etoh", 10.6, "etoh_retention", 0.0], ["wine_flavanols", "anchor", 36.5, "none", 0.0]],
+    "Wine, Champagne": [["ethanol", "etoh", 10.4, "etoh_retention", 0.0]],
+    "Wine, Moselle": [["ethanol", "etoh", 9.5, "etoh_retention", 0.0]],
+    "Wine, Riesling": [["ethanol", "etoh", 9.5, "etoh_retention", 0.0]],
+    "Wine, Port": [["ethanol", "etoh", 15.3, "etoh_retention", 0.0], ["wine_flavanols", "anchor", 36.5, "none", 0.0]],
+    "Wine, Sake": [["ethanol", "etoh", 16.1, "etoh_retention", 0.0]],
+    "Wine, Cooking": [["ethanol", "etoh", 3.3, "etoh_retention", 0.0]],
+    "Spirit, Rum": [["ethanol", "etoh", 33.4, "etoh_retention", 0.0]],
+    "Spirit, Vodka": [["ethanol", "etoh", 33.4, "etoh_retention", 0.0]],
+    "Spirit, Gin": [["ethanol", "etoh", 33.4, "etoh_retention", 0.0]],
+    "Spirit, Brandy": [["ethanol", "etoh", 33.4, "etoh_retention", 0.0]],
+    "Spirit, Tequila": [["ethanol", "etoh", 33.4, "etoh_retention", 0.0]],
+    "Spirit, Whiskey": [["ethanol", "etoh", 36.0, "etoh_retention", 0.0]],
+    "Liqueur, Coffee": [["ethanol", "etoh", 21.7, "etoh_retention", 0.0]],
+    "Extract, Vanilla": [["ethanol", "etoh", 34.4, "etoh_retention", 0.0]],
+    "Mirin": [["ethanol", "etoh", 9.4, "etoh_retention", 0.0]],
+    "Juice, Grapefruit": [["citrus_flavanones", "anchor", 57.0, "none", 0.0]],
+    "Grapefruit": [["citrus_flavanones", "anchor", 57.0, "none", 0.0]],
+    "Jam, Orange Marmalade": [["citrus_flavanones", "default", null, "none", 0.0]],
+    "Brussel Sprouts": [["glucosinolates", "gsl", 236.6, "gsl_loss", 0.427]],
+    "Broccoli": [["glucosinolates", "gsl", 61.7, "gsl_loss", 0.391]],
+    "Cauliflower": [["glucosinolates", "gsl", 43.2, "gsl_loss", 0.323]],
+    "Cabbage": [["glucosinolates", "gsl", 58.9, "gsl_loss", 0.278]],
+    "Kale": [["glucosinolates", "gsl", 100.7, "gsl_loss", 0.227]],
+    "Collard Greens": [["glucosinolates", "gsl", 200.7, "gsl_loss", 0.36]],
+    "Mustard Greens": [["glucosinolates", "gsl", 281.5, "gsl_loss", 0.36]],
+    "Radish": [["glucosinolates", "gsl", 92.5, "gsl_loss", 0.36]],
+    "Daikon": [["glucosinolates", "gsl", 123.4, "gsl_loss", 0.36]],
+    "Watercress": [["glucosinolates", "gsl", 95.0, "gsl_loss", 0.36]],
+    "Horseradish": [["glucosinolates", "gsl", 160.1, "gsl_loss", 0.36]],
+    "Bok Choy": [["glucosinolates", "gsl", 54.1, "gsl_loss", 0.36]],
+    "Cabbage (Chinese)": [["glucosinolates", "gsl", 20.6, "gsl_loss", 0.36]],
+    "Mix, Coleslaw": [["glucosinolates", "gsl", 42.2, "gsl_loss", 0.36]],
+    "Onion": [["raw_allium", "anchor", 52.5, "raw_only", 0.0]],
+    "Onion, Welsh": [["raw_allium", "anchor", 52.5, "raw_only", 0.0]],
+    "Leek": [["raw_allium", "anchor", 52.5, "raw_only", 0.0]],
+    "Shallot": [["raw_allium", "anchor", 52.5, "raw_only", 0.0]],
+    "Garlic": [["raw_allium", "anchor", 52.5, "raw_only", 0.0]],
+    "Green Onion": [["raw_allium", "anchor", 52.5, "raw_only", 0.0]],
+    "Chive": [["raw_allium", "anchor", 52.5, "raw_only", 0.0]],
+    "Tea, Black (Brewed)": [["tea_flavanols", "default", null, "none", 0.0]],
+    "Tea, Green (Brewed)": [["tea_flavanols", "default", null, "none", 0.0]],
+    "Coffee, Brewed": [["coffee_bitters", "anchor", 58.5, "none", 0.0]],
+    "Espresso": [["coffee_bitters", "anchor", 58.5, "none", 0.0]],
+    "Cocoa Powder (Unsweetened)": [["cocoa_flavanols", "default", null, "none", 0.0]],
+    "Cacao Nib": [["cocoa_flavanols", "default", null, "none", 0.0]],
+    "Chocolate, Baking (Unsweetened)": [["cocoa_flavanols", "default", null, "none", 0.0]],
+    "Chocolate, Dark (70-85%)": [["cocoa_flavanols", "default", null, "none", 0.0]],
+    "Chocolate, Dark (45-59%)": [["cocoa_flavanols", "default", null, "none", 0.0]],
+    "Chocolate, Bittersweet Chip": [["cocoa_flavanols", "default", null, "none", 0.0]],
+    "Radicchio": [["sesquiterpene_lactones", "default", null, "none", 0.0]],
+    "Endive": [["sesquiterpene_lactones", "default", null, "none", 0.0]],
+    "Olives, Green": [["olive_secoiridoids", "default", null, "none", 0.0]],
+    "Oil, Olive (Extra Virgin)": [["olive_secoiridoids", "default", null, "none", 0.0]],
+    "Bitter Melon": [["cucurbitanes", "default", null, "none", 0.0]],
+  };
+  const BITTER_GAP_CLASSES = [
+    ["hop_acids", "hop acids"], ["ethanol", "alcohol"], ["wine_flavanols", "tannins and catechins"],
+    ["citrus_flavanones", "naringin and limonin"], ["glucosinolates", "glucosinolates"],
+    ["raw_allium", "raw-onion sulfur compounds"], ["tea_flavanols", "catechins beyond its caffeine"],
+    ["coffee_bitters", "roast bitters beyond its caffeine"],
+    ["cocoa_flavanols", "catechins and roast bitters beyond its theobromine and caffeine"],
+    ["sesquiterpene_lactones", "lactucin-type bitters"], ["olive_secoiridoids", "oleuropein-type bitters"],
+    ["cucurbitanes", "momordicine-type bitters"]];
+  function bitterGapK(basis, ref) {
+    if (basis === "anchor") return POW(ref / BITTER_GAP_TARGET_B, 1.0 / BITTER_GAP_EXPONENT);
+    if (basis === "default") return POW(BITTER_GAP_DEFAULT_B / BITTER_GAP_TARGET_B, 1.0 / BITTER_GAP_EXPONENT);
+    if (basis === "gsl") return ref / BITTER_GAP_GSL_MIN;
+    return ref / BITTER_GAP_ETOH_MIN;
+  }
+  function bitterGapCook(rule, loss, minutes) {
+    if (minutes <= 0 || rule === "none") return 1.0;
+    if (rule === "raw_only") return 0.0;
+    if (rule === "gsl_loss") return 1.0 - loss;
+    const pts = BITTER_GAP_ETOH_RETENTION;
+    if (minutes >= pts[pts.length - 1][0]) return pts[pts.length - 1][1];
+    for (let i = 0; i < pts.length - 1; i++) {
+      const [t0, r0] = pts[i], [t1, r1] = pts[i + 1];
+      if (minutes <= t1) return r0 + (r1 - r0) * (minutes - t0) / (t1 - t0);
+    }
+    return pts[pts.length - 1][1];
+  }
+  // items: [[ingredient, mass_g, item_cook_min]] -> {fired: [{class, dose, names}], text: string|null}
+  function bitterGap(items, totalMass, cookTemp) {
+    if (totalMass <= 0) return { fired: [], text: null };
+    const hot = cookTemp == null || cookTemp >= BITTER_GAP_COOK_MIN_TEMP_C;
+    const dose = {}, names = {};
+    for (const [name, mass, minutes] of items) {
+      for (const [cls, basis, ref, rule, loss] of (BITTER_GAP[name] || [])) {
+        const d = mass / totalMass * bitterGapK(basis, ref) * bitterGapCook(rule, loss, hot ? minutes : 0.0);
+        if (d > 0) { dose[cls] = (dose[cls] || 0) + d; (names[cls] = names[cls] || new Set()).add(name); }
+      }
+    }
+    const fired = BITTER_GAP_CLASSES.filter(([c]) => (dose[c] || 0) >= 1.0 - 1e-12)
+      .map(([c]) => ({ class: c, dose: dose[c], names: [...names[c]].sort() }));
+    if (!fired.length) return { fired, text: null };
+    const label = Object.fromEntries(BITTER_GAP_CLASSES), parts = new Map();
+    for (const f of fired) for (const n of f.names) { if (!parts.has(n)) parts.set(n, []); parts.get(n).push(label[f.class]); }
+    let text = "Bitterness may read low: " + [...parts].map(([n, v]) => `${n} (${v.join(", ")})`).join("; ")
+      + (parts.size === 1 ? " adds" : " add") + " bitterness Taste Check doesn't score yet. This is a note, not a score change.";
+    if (fired.some(f => f.class === "raw_allium")) text += " Onion-family items count only when eaten raw; enter a cooking time if they're cooked.";
+    return { fired, text };
+  }
 
   function compute(recipe, opt) {
     opt = opt || {};
@@ -367,7 +480,7 @@
       if (tot.mass <= 0 || r.mass_g / tot.mass < MIN_SHARE) continue;
       const d = DB[r.ingredient], b = d._blank, blank = [];
       if (b.has("glu")) blank.push("glutamate");
-      if (b.has("amp") && b.has("imp") && b.has("gmp") && d.glu >= NUC_FLAG_GLU) blank.push("nucleotides");
+      if (b.has("amp") && b.has("imp") && b.has("gmp") && (d.glu >= NUC_FLAG_GLU || MUSCLE_FOODS.has(r.ingredient))) blank.push("nucleotides");   // v.2.15.0
       if (b.has("acids") && d.ph_ref != null && d.ph_ref < ACIDS_BELOW_PH) blank.push("organic acids");
       if (blank.length) missing.push({ name: r.ingredient, fields: blank });
       const est = Object.keys(d._tier).filter(f => d._tier[f] === 3);
@@ -510,6 +623,9 @@
     if (cafPct > 0 || tbPct > 0) note("bitter_scope", "Bitterness counts caffeine, theobromine, potassium chloride, stevia (Reb A) and acesulfame K only. Coffee, tea and cocoa also get bitterness from other compounds, so their bitterness may read low.");
     const protFlag = rows.filter(r => PROTEIN_BITTER_RE.test(r.ingredient) && tot.mass > 0 && r.mass_g / tot.mass >= MIN_SHARE).map(r => r.ingredient);
     if (protFlag.length) note("bitter_protein", `Protein hydrolysates and isolates (${protFlag.join(", ")}) can taste bitter from small peptides. This is not scored.`, { names: protFlag });
+    // Bitterness coverage note (v.2.15.0): rows and recipe items are 1:1, in order; tot.mass is after evaporation.
+    const gap = bitterGap(rows.map((r, i) => [r.ingredient, r.mass_g, +("cook_min" in recipe[i] ? recipe[i].cook_min : cookMin) || 0]), tot.mass, cookTemp);
+    if (gap.text) note("bitter_gap", gap.text, { classes: gap.fired.map(f => f.class), names: [...new Set(gap.fired.flatMap(f => f.names))] });
     const m100b = tot.mass / 100, tbShare = tbPct > 0 ? tbEff / tbPct : 0;
     rows.forEach(r => {
       const d = DB[r.ingredient];
@@ -526,7 +642,7 @@
       scores: { umami: toScore(umamiFinal, "umami"), saltiness: toScore(saltFinal, "salt"), sweetness: toScore(sweetFinal, "sweet"),
         kokumi: toScore(kokumi, "kokumi"), sourness: sourFinal == null ? null : toScore(sourFinal, "sour"),
         bitterness: toScore(bitterFinal, "bitter") },
-      acidity: acid, conc, thr, rows, notes, missing, estimated,
+      acidity: acid, conc, thr, rows, notes, missing, estimated, bitter_gap: gap.fired,
       totals: { mass_g: tot.mass, water_g: tot.water, salt_pct_water: naM * 58.44 / 10, sucrose_eq_pct: cEq,
         umami_eq_msg_pct: umamiEq * shift },
     };
