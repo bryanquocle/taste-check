@@ -53,6 +53,16 @@ PROTEIN_GROUPS = [(-1, 1.00, 4.2),   # Asp/Glu side chains + C-termini (acidic)
 CHLORIDE_SALTS = {"Salt", "Kosher Salt", "Sea Salt", "Table Salt", "Canning Salt", "Pickling Salt",
                   "Iodized Salt", "Celtic Salt", "Himalayan Salt", "Pink Salt", "Sodium Chloride",
                   "Potassium Chloride", "Salt Substitute"}
+# v.2.14.0 (Bryan, Nov 25 2026): non-protein muscle buffers (carnosine, anserine, inorganic phosphate). Okuma & Abe
+# 1992 (Comp Biochem Physiol 102A:37): low-molecular-weight components give 48-96% of muscle buffering, proteins
+# under 50%. Puolanne & Kivikari 2000 (Meat Sci 56:1): post-rigor beef longissimus 51 mmol H+/(pH kg) over pH 5.5-7.0
+# (pork 52, broiler breast 58, leg 41). The generic protein groups alone give 27.3 for lean muscle (22 g protein,
+# 75 g water per 100 g); one group of pKa MUSCLE_BUF_PKA (between carnosine 6.83, anserine 7.04 and phosphate 6.8)
+# at MUSCLE_BUF_MMOL_G per g protein adds the remaining 23.75. ASSUMPTIONS: the 22 g / 75 g lean-muscle composition,
+# the single pKa, and scaling by protein for every meat and fish (including cured and dried).
+MUSCLE_BUF_PKA = 6.9
+MUSCLE_BUF_MMOL_G = 0.3120
+MUSCLE_FOODS = {"Beef", "Boar", "Chicken", "Chicken, Barbecued", "Deer", "Bonito Flakes", "Fish, Anchovy (Canned)", "Fish, Anchovy (Dried)", "Fish, Anchovy (Fresh)", "Fish, Angler", "Fish, Black Scraper", "Fish, Bonito", "Fish, Butter", "Fish, Cod", "Fish, Eel", "Fish, Fatty Tuna", "Fish, Flounder", "Fish, Flying (Dried)", "Fish, Flying (Dried, Grilled)", "Fish, Flying (Fresh)", "Fish, Fugu", "Fish, Horse Mackerel", "Fish, Mackerel", "Fish, Rock", "Fish, Salmon (Fresh)", "Fish, Salmon (Canned)", "Fish, Sardine (Fresh)", "Fish, Sardine (Dried)", "Fish, Sardine (Canned)", "Fish, Seabream (Dried)", "Fish, Seabream (Fresh)", "Fish, Spanish Mackerel", "Fish, Tuna (Dried)", "Fish, Tuna (Fresh)", "Fish, Yellowtail", "Fish, Whitebait (Dried)", "Ham, Dry-Cured", "Hamburger Meat", "Lamb", "Pork", "Pork, Iberian", "Bacon", "Sausage, Italian (Pork)", "Hot Dog (Frankfurter)", "Corned Beef", "Tilapia Fillet", "Stew Meat", "Veal", "Trout", "Red Snapper", "Meatballs", "Sirloin", "Ground Sirloin", "Ground Veal", "Cornish Hen", "Bass", "Catfish Fillet", "Brisket", "Haddock", "Rabbit", "Pork Spareribs", "Veal Cutlet", "Rump Roast", "Duck Breast", "Short Rib", "Ground Venison", "Swordfish", "Duck", "Bologna"}
 DEFAULT_PH = 6.0               # for water-containing ingredients with no reference pH (flagged)
 
 
@@ -82,6 +92,9 @@ def charge_mol_per_L(sp, h):
     nuc = sp.get("nuc", 0)
     if nuc:
         q -= nuc * (1 + _fractions([NUCLEOTIDE_PKA2], h)[1])
+    mbuf = sp.get("mbuf", 0)
+    if mbuf:                                              # carnosine/anserine/phosphate: +1 when protonated
+        q += mbuf * (1 - _fractions([MUSCLE_BUF_PKA], h)[1])
     prot = sp.get("protein_g", 0)
     if prot:
         for z, mmol_g, pka in PROTEIN_GROUPS:
@@ -144,6 +157,8 @@ def species_from_composition(d, mass_g, name=None):
     if name in CHLORIDE_SALTS:
         sp["cl"] = sp["na"] + sp["k"]
     sp["protein_g"] = d.get("protein", 0.0) * f
+    if name in MUSCLE_FOODS:                               # v.2.14.0 non-protein muscle buffer (mmol)
+        sp["mbuf"] = sp["protein_g"] * MUSCLE_BUF_MMOL_G
     return sp
 
 

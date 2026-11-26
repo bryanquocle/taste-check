@@ -1,4 +1,4 @@
-/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.13.0).
+/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.14.0).
    Same equations, constants and defaults as the Python model (acidity on, chloride-only K, shift mode,
    synergy capped at 63x, v.2.8.4). hfp_model.py is the source of truth: change it first, then mirror the change here.
    Parity-tested against Python with tests/web_parity.py (Node), raw values and 1-10 scores. Needs window.HFP_DB. */
@@ -43,6 +43,9 @@
   const PROTEIN_GROUPS = [[-1, 1.00, 4.2], [+1, 0.20, 6.3], [+1, 0.90, 10.5]];
   const CHLORIDE_SALTS = new Set(["Salt", "Kosher Salt", "Sea Salt", "Table Salt", "Canning Salt", "Pickling Salt",
     "Iodized Salt", "Celtic Salt", "Himalayan Salt", "Pink Salt", "Sodium Chloride", "Potassium Chloride", "Salt Substitute"]);
+  // v.2.14.0 non-protein muscle buffer (carnosine, anserine, phosphate); hfp_acidbase.py MUSCLE_* (Puolanne & Kivikari 2000; Okuma & Abe 1992)
+  const MUSCLE_BUF_PKA = 6.9, MUSCLE_BUF_MMOL_G = 0.3120;
+  const MUSCLE_FOODS = new Set(["Beef", "Boar", "Chicken", "Chicken, Barbecued", "Deer", "Bonito Flakes", "Fish, Anchovy (Canned)", "Fish, Anchovy (Dried)", "Fish, Anchovy (Fresh)", "Fish, Angler", "Fish, Black Scraper", "Fish, Bonito", "Fish, Butter", "Fish, Cod", "Fish, Eel", "Fish, Fatty Tuna", "Fish, Flounder", "Fish, Flying (Dried)", "Fish, Flying (Dried, Grilled)", "Fish, Flying (Fresh)", "Fish, Fugu", "Fish, Horse Mackerel", "Fish, Mackerel", "Fish, Rock", "Fish, Salmon (Fresh)", "Fish, Salmon (Canned)", "Fish, Sardine (Fresh)", "Fish, Sardine (Dried)", "Fish, Sardine (Canned)", "Fish, Seabream (Dried)", "Fish, Seabream (Fresh)", "Fish, Spanish Mackerel", "Fish, Tuna (Dried)", "Fish, Tuna (Fresh)", "Fish, Yellowtail", "Fish, Whitebait (Dried)", "Ham, Dry-Cured", "Hamburger Meat", "Lamb", "Pork", "Pork, Iberian", "Bacon", "Sausage, Italian (Pork)", "Hot Dog (Frankfurter)", "Corned Beef", "Tilapia Fillet", "Stew Meat", "Veal", "Trout", "Red Snapper", "Meatballs", "Sirloin", "Ground Sirloin", "Ground Veal", "Cornish Hen", "Bass", "Catfish Fillet", "Brisket", "Haddock", "Rabbit", "Pork Spareribs", "Veal Cutlet", "Rump Roast", "Duck Breast", "Short Rib", "Ground Venison", "Swordfish", "Duck", "Bologna"]);
   const DEFAULT_PH = 6.0;
 
   function fractions(pkas, h) {
@@ -63,6 +66,8 @@
     }
     const nuc = sp.nuc || 0;
     if (nuc) q -= nuc * (1 + fractions([NUCLEOTIDE_PKA2], h)[1]);
+    const mbuf = sp.mbuf || 0;
+    if (mbuf) q += mbuf * (1 - fractions([MUSCLE_BUF_PKA], h)[1]);
     const prot = sp.protein_g || 0;
     if (prot) for (const [z, mmolG, pka] of PROTEIN_GROUPS) {
       const de = fractions([pka], h)[1], c = prot * mmolG / 1000;
@@ -96,6 +101,7 @@
     sp.k = (d.k || 0) * f / 39.0983;
     if (CHLORIDE_SALTS.has(name)) sp.cl = sp.na + sp.k;
     sp.protein_g = (d.protein || 0) * f;
+    if (MUSCLE_FOODS.has(name)) sp.mbuf = sp.protein_g * MUSCLE_BUF_MMOL_G;   // v.2.14.0
     return sp;
   }
   function toMolar(spMmol, waterL) {

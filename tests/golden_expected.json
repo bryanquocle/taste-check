@@ -91,19 +91,19 @@
    "ph": 6.350249699477827
   },
   "dashi": {
-   "raw.umami_intensity": 10.767428434652484,
+   "raw.umami_intensity": 10.766510528596054,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 0.0,
    "raw.sweetness_intensity": 0.0,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 4.72367014541971,
+   "score.umami": 4.723352708494137,
    "score.saltiness": 1.0,
    "score.sweetness": 1.0,
    "score.kokumi": 1.0,
    "score.sourness": 1.0,
    "score.bitterness": 1.0,
-   "ph": 5.7622491013910455
+   "ph": 5.759736500781273
   },
   "lemonade": {
    "raw.umami_intensity": 0.0,
@@ -136,19 +136,19 @@
    "ph": 2.9963591142429813
   },
   "chicken broth + chicken": {
-   "raw.umami_intensity": 15.546156598184211,
+   "raw.umami_intensity": 15.547785006835374,
    "raw.kokumi_intensity_pct": 0.0,
    "raw.saltiness_intensity": 6.820358225608535,
-   "raw.sweetness_intensity": 0.12591541045217045,
+   "raw.sweetness_intensity": 0.1259863579965424,
    "raw.sourness_intensity": 0.0,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 6.376284555964782,
+   "score.umami": 6.376847704047509,
    "score.saltiness": 7.057152152992854,
-   "score.sweetness": 1.1051786603926097,
+   "score.sweetness": 1.1052379237317704,
    "score.kokumi": 1.0,
    "score.sourness": 1.0,
    "score.bitterness": 1.0,
-   "ph": 5.885640727131712
+   "ph": 5.8891502898271
   },
   "parmesan water": {
    "raw.umami_intensity": 6.172442260088331,
@@ -211,19 +211,19 @@
    "ph": 4.971385725238742
   },
   "bo kho (Nov 15, 2026)": {
-   "raw.umami_intensity": 17.52061394579202,
+   "raw.umami_intensity": 17.568945498746068,
    "raw.kokumi_intensity_pct": 50.199229250070665,
    "raw.saltiness_intensity": 8.248861518786402,
-   "raw.sweetness_intensity": 1.116488029126959,
-   "raw.sourness_intensity": 35.49955626663031,
+   "raw.sweetness_intensity": 1.1201050923190814,
+   "raw.sourness_intensity": 34.84561122157688,
    "raw.bitterness_intensity": 0.0,
-   "score.umami": 7.059105707116373,
+   "score.umami": 7.075820075074238,
    "score.saltiness": 8.325804254775628,
-   "score.sweetness": 1.9326159111601766,
+   "score.sweetness": 1.9356372876520345,
    "score.kokumi": 5.51793063250636,
-   "score.sourness": 3.135736809571577,
+   "score.sourness": 3.0963939374053013,
    "score.bitterness": 1.0,
-   "ph": 5.394927898107898
+   "ph": 5.411526096098722
   },
   "kitchen test A: 8 g/L salt": {
    "raw.umami_intensity": 0.0,
