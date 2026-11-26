@@ -2,7 +2,7 @@
 
 **Taste Check** (https://tools.mendocinofoodconsulting.com/taste-check/) predicts how salty, savory (umami), sweet, sour, bitter and rich (kokumi) a recipe should taste from its chemistry. This document is a complete specification of the model as it runs on the live page, written so that you, or you and your AI, can rebuild it from scratch and check that your version gives the same numbers.
 
-- **Model version:** 2.12.0 (Nov 25, 2026: data only: organic acids for soy sauce, miso, doenjang, kimchi and 9 cheese/dairy rows; miso and doenjang sugars; pH for miso and kimchi; kokumi γ-EVG fixes for Manchego, Kashkaval and fish sauce; equations unchanged). 2.11.0 (Nov 25, 2026: salt no longer raises umami, SALT_SHIFT_MAX 1.0; aspartate threshold sourced; cooking estimator lid factors fade at a boil). 2.10.0 (taste equations unchanged from 2.9.0; Nov 25, 2026: 824 ingredients, recipe-paste coverage of the 1,000 most common missing recipe ingredients, and a pot-based cooking water-loss estimator on the page). 2.9.0: sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin. **Ingredient data:** the database embedded in the same page (824 research ingredients: workbook data release v.2.6.9, the bitterness and saccharin additions, and 392 composition rows from USDA FoodData Central SR Legacy 2018-04 added in v.2.10.0; section 13).
+- **Model version:** 2.13.0 (Nov 25, 2026: acid groups with pKa ≥ 6.0 no longer count toward the sour stimulus, so citrate's third carboxyl stops making neutral foods like milk read sour; milk citric acid restored). 2.12.0 (Nov 25, 2026: data only: organic acids for soy sauce, miso, doenjang, kimchi and 9 cheese/dairy rows; miso and doenjang sugars; pH for miso and kimchi; kokumi γ-EVG fixes for Manchego, Kashkaval and fish sauce; equations unchanged). 2.11.0 (Nov 25, 2026: salt no longer raises umami, SALT_SHIFT_MAX 1.0; aspartate threshold sourced; cooking estimator lid factors fade at a boil). 2.10.0 (taste equations unchanged from 2.9.0; Nov 25, 2026: 824 ingredients, recipe-paste coverage of the 1,000 most common missing recipe ingredients, and a pot-based cooking water-loss estimator on the page). 2.9.0: sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin. **Ingredient data:** the database embedded in the same page (824 research ingredients: workbook data release v.2.6.9, the bitterness and saccharin additions, and 392 composition rows from USDA FoodData Central SR Legacy 2018-04 added in v.2.10.0; section 13).
 - **Source of truth:** the JavaScript embedded in the live page between the markers `/*HFP_DB:BEGIN*/ … /*HFP_DB:END*/` (database), `/*HFP_MODEL:BEGIN*/ … /*HFP_MODEL:END*/` (model) and `/*HFP_PASTE:BEGIN*/ … /*HFP_PASTE:END*/` (recipe paste parser). Where this document and that code disagree, the code wins, and that is a bug in this document.
 - **Date:** November 25, 2026. **Author of the model:** Dr. Bryan Quoc Le, Mendocino Food Consulting (Human Flavorome Project).
 
@@ -34,7 +34,7 @@ The six raw scales come from different studies and are **not commensurable**: a 
 | File | What it is |
 |---|---|
 | `REBUILD.md` | This specification. |
-| `hfp_ingredients_v2.12.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `822ded55335b3818b9b8b5457df85999758876b0f3c285268ffc0a8fd781e548` |
+| `hfp_ingredients_v2.13.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `2d3f5e4b23b841467b7ee9878e31b56fc93f003c70f1e77e931efa3b40af8d16` |
 | `hfp_ingredient_provenance.csv` | Where ingredient values came from, where that was recorded: data-quality tier and basis per field, pH source and organic-acid source (section 13.4). |
 | `test_recipes.json` | 53 recipes (38 project golden recipes + 15 added for this package) and 3 paste-parser cases, with expected outputs computed by executing the live page's JavaScript, plus tolerances (section 15). |
 | `paste_rules.csv` | Every rule table and message of the recipe paste parser, exported programmatically from the live page (section 5.5). |
@@ -50,7 +50,7 @@ To get the live page: `curl -L -o index.html https://tools.mendocinofoodconsulti
 
 ## 3. How to rebuild and verify (short version)
 
-1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.12.0.csv` plus the two helper rows in section 5.2.
+1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.13.0.csv` plus the two helper rows in section 5.2.
 2. Run every recipe in `test_recipes.json` through your implementation and compare with `expected` using the tolerances in the file (raw outputs within 1e-6 relative, scores within 0.05, pH within 1e-4).
 3. Two derived constants must come out the same as the reference: the Miranda logistic fit (S50 = 29.4 mM, Hill = 0.9; section 7.4) and the score references (section 10). They are printed in `test_recipes.json` under `derived_constants`. If yours differ, check the grid search and bisection details first.
 4. Optional: `node tools/oracle.js index.html tools/test_recipe_inputs.json test_recipes.json` regenerates the expected values from a fresh copy of the live page; `python check_spec.py index.html` checks this document against that page.
@@ -230,7 +230,7 @@ This follows the spirit of Price et al. 2020 and Longtin et al. 2020 (charge bal
 
 ### 7.4 Sour stimulus, citric equivalents and acid suppression of umami
 
-**Sour stimulus** (Neta et al. 2007, restated in Neta 2009), computed from the water-phase species and pH and then multiplied by `fb` (v.2.8.5) to give the tasted stimulus S used everywhere below: `S (mM) = fb × (1000 × [H⁺] + Σ_acids 1000 × c_a × (1 − α_last))`, where α_last is the fully deprotonated fraction computed with the sourness pKa list (so ascorbic counts only its first pKa). All protonated acid molecules and H⁺ count equally.
+**Sour stimulus** (Neta et al. 2007, restated in Neta 2009), computed from the water-phase species and pH and then multiplied by `fb` (v.2.8.5) to give the tasted stimulus S used everywhere below: `S (mM) = fb × (1000 × [H⁺] + Σ_acids 1000 × c_a × (1 − α_last))`, where α_last is the fully deprotonated fraction computed with the sourness pKa list, keeping only pKa values below SOUR_PKA_MAX = 6.0 (v.2.13.0; ascorbic already counted only its first pKa). In practice this drops citrate's third carboxyl (pKa 6.40), which made near-neutral foods (milk, pH 6.6) read sour; acidic foods change by under 0.25 points. All protonated acid molecules and H⁺ count equally.
 
 **Miranda calibration** (Miranda et al. 2021, n = 734, gVAS 0–100): a solution of 50 mM glutamate + 50 mM Na + citric acid at 0, 1.25, 6.25, 31.25 mM gives umami remaining `1, 1 − 2.886/39.756, 1 − 7.211/39.756, 1 − 20.654/39.756` (92.7, 81.9, 48.0%; 39.756 is the mixed-model intercept and the others are the citric-acid coefficients of their Table 1). For each point the model solves the pH of that solution (7.2, Z = 0) and its sour stimulus, giving S ≈ 0.00011, 1.122, 6.164, 31.33 mM. A logistic `R(S) = 1 / (1 + (S/S50)^H)` is fitted by **grid search**: S50 = x/10 for integer x from 5 to 399, H = y/50 for integer y from 10 to 199 (x outer loop, y inner), minimizing the sum of squared errors over the three acid points; the first strict minimum wins. Result: **S50 = 29.4 mM, H = 0.9**. `umami_remaining(S) = 1` if S ≤ 0. The largest calibrated stimulus (31.33 mM) is MIRANDA_S_MAX; above it a note says the effect is extrapolated.
 
@@ -466,6 +466,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 | MIR_PTS, MIRANDA_S_MAX | stimuli of the 4 Miranda solutions; max 31.33 mM | mM | Computed from the above | DERIVED |
 | Sour stimulus rule | [H⁺] + protonated organic acids, equal weight | mM | Neta et al. 2007 (J Food Sci 72:S352), restated Neta 2009 pp. S165–S166 | VERIFIED (via Neta 2009; 2007 paper not on file) |
 | SYN | (6.5, 1.0), (7.5, 0.535), (8.5, 0.341), (9.5, 0.070) | pH, relative synergy | Yamaguchi 1979 Table VII, p. 42: (y − 0.072)/(0.33 − 0.072) from y = 0.21, 0.16, 0.09 | DERIVED (pH 6.5 computes to 1.19, set to 1.0) |
+| SOUR_PKA_MAX | 6.0 | pKa | v.2.13.0 (Bryan, Nov 25 2026). Acid groups with pKa ≥ 6.0 are not counted in the Neta sour stimulus (extends the existing ascorbic rule). Neta 2007's sour data are for acidic solutions; at pH 6.6, ~40% of citrate is HCit2-, which made milk read 3.7/10 sour. Cutoff chosen below salivary pH (~6.8) | ASSUMPTION |
 
 ### 12.3 Umami (section 8.1)
 
@@ -584,7 +585,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 
 ### 13.1 Structure
 
-`hfp_ingredients_v2.12.0.csv` has one row per ingredient (824 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
+`hfp_ingredients_v2.13.0.csv` has one row per ingredient (824 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
 
 | Column | Units | Meaning |
 |---|---|---|
@@ -734,8 +735,9 @@ How the open-access check was done: DOIs were resolved on Crossref; open-access 
 | 2.10.0 | Nov 25 | 824 ingredients (392 USDA SR Legacy composition rows); paste parser covers the 1,000 most common missing recipe ingredients plus fixes; page: paste-first layout and pot-based cooking water-loss estimator. Taste equations unchanged |
 | 2.11.0 | Nov 25 | Salt no longer raises umami (SALT_SHIFT_MAX 2.0 → 1.0; umami 10/10 reference recomputes 29.61 → 26.02); aspartate threshold sourced (Yamaguchi 1991); cooking estimator: lid factors fade toward 0.85 (on) and 0.9 (ajar) at a boil (Snitkjær 2017) |
 | 2.12.0 | Nov 25 | Data only: organic acids (Kaneko 1994, Jeong 2013, Shukla 2010, Ahmed 2023, Bevilacqua & Califano 1989) for soy sauce, miso, doenjang, kimchi, Parmesan, Mozzarella, Emmental, Cheddar, Provolone, blue cheeses, yogurt and milk (lactic only); Miso sugars and Doenjang sucrose corrected (Kaneko 1994); pH for miso and kimchi; γ-EVG unit fixes (Manchego 5.9 → 0.059, Kashkaval 3.5 → 0.035) and fish sauce density correction (0.43 → 0.189). SVT sourness rho 0.724 → 0.736 |
+| 2.13.0 | Nov 25 | Sour stimulus ignores acid groups with pKa ≥ 6.0 (SOUR_PKA_MAX; citrate's third carboxyl), fixing milk reading sour 3.7; milk citric acid 161 mg/100 g restored (Bevilacqua & Califano 1989). SVT sourness rho 0.736 unchanged |
 
 Data: v.2.6.9 (Nov 24, 2026) corrected the database flags found with the SVT validation (sugars and acids for several foods, salted/unsalted chips and peanut butter rows); v.2.8.2 added the theobromine column and three chocolate rows.
 
 
-**Known limit found in v.2.12.0 (not fixed):** the sour stimulus (section 7.4) counts every species that is not fully deprotonated, so near-neutral foods with polyprotic acids (citrate at pH 6.6 in milk) read as sour. Milk's measured citric acid (161 mg/100 g) is therefore left out of the database until the stimulus definition is revisited.
+**Known limit found in v.2.12.0 (fixed in v.2.13.0):** the sour stimulus counted citrate's third carboxyl (pKa 6.40), so near-neutral foods read sour. v.2.13.0 excludes acid groups with pKa ≥ 6.0 (SOUR_PKA_MAX) and restores milk citric acid (161 mg/100 g).

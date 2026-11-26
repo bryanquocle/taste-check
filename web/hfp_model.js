@@ -1,4 +1,4 @@
-/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.12.0).
+/* HFP taste model, browser port of hfp_model.py + hfp_acidbase.py + hfp_sweet.py (v.2.13.0).
    Same equations, constants and defaults as the Python model (acidity on, chloride-only K, shift mode,
    synergy capped at 63x, v.2.8.4). hfp_model.py is the source of truth: change it first, then mirror the change here.
    Parity-tested against Python with tests/web_parity.py (Node), raw values and 1-10 scores. Needs window.HFP_DB. */
@@ -76,11 +76,13 @@
     for (let i = 0; i < 80; i++) { const mid = (lo + hi) / 2; if (f(mid) > 0) lo = mid; else hi = mid; }
     return (lo + hi) / 2;
   }
+  const SOUR_PKA_MAX = 6.0;   // v.2.13.0, hfp_acidbase.py
   function sourStimulus_mM(sp, ph) {
     const h = POW(10, -ph); let s = h * 1000;
     for (const name in ORGANIC_ACIDS) {
       const c = sp[name] || 0;
-      if (c) { const a = fractions(ORGANIC_ACIDS[name][2], h); s += c * (1 - a[a.length - 1]) * 1000; }
+      // v.2.13.0: groups with pKa >= SOUR_PKA_MAX not counted (hfp_acidbase.py SOUR_PKA_MAX)
+      if (c) { const pk = ORGANIC_ACIDS[name][2].filter(p => p < SOUR_PKA_MAX); if (pk.length) { const a = fractions(pk, h); s += c * (1 - a[a.length - 1]) * 1000; } }
     }
     return s;
   }

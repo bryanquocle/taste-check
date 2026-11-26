@@ -104,14 +104,23 @@ def solve_ph(sp, z=0.0):
     return (lo + hi) / 2
 
 
+# v.2.13.0 (Bryan, Nov 25 2026): acid groups with pKa >= SOUR_PKA_MAX are not counted for sourness, the same rule
+# already applied to ascorbic acid (only its first pKa counts). In practice this drops citrate's third carboxyl
+# (pKa 6.40): at near-neutral pH (milk, pH 6.6) ~40% of citrate is HCit2-, which Neta's count scored as sour
+# (milk read 3.7/10). Neta's sour data are for acidic solutions, where HCit2- is a few percent at most, so acidic
+# foods barely change. ASSUMPTION: the cutoff (6.0, below salivary pH ~6.8) is the author's, not Neta's.
+SOUR_PKA_MAX = 6.0
+
+
 def sour_stimulus_mM(sp, ph):
-    """Neta: [H+] + organic-acid molecules with >= 1 protonated carboxyl (mM)."""
+    """Neta: [H+] + organic-acid molecules with >= 1 protonated carboxyl of pKa < SOUR_PKA_MAX (mM)."""
     h = 10 ** -ph
     s = h * 1000
     for name, (_, _, _, sour_pkas) in ORGANIC_ACIDS.items():
         c = sp.get(name, 0)
         if c:
-            fully_deprot = _fractions(sour_pkas, h)[-1]
+            pk = [p for p in sour_pkas if p < SOUR_PKA_MAX]
+            fully_deprot = _fractions(pk, h)[-1] if pk else 1.0
             s += c * (1 - fully_deprot) * 1000
     return s
 
