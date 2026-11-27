@@ -13,7 +13,7 @@ identifiers:
     value: "10.5281/zenodo.24540783"
     description: "Concept DOI (all versions, resolves to the latest)"
   - type: doi
-    value: "10.5281/zenodo.24551815"
+    value: "10.5281/zenodo.24573789"
     description: "Version 2.16.0"
 repository-code: "https://github.com/bryanquocle/taste-check"
 url: "https://tools.mendocinofoodconsulting.com/taste-check/"
