@@ -234,6 +234,7 @@ Espresso,theobromine,1,"USDA FDC SR Legacy 171891, nutrient 1058 theobromine [va
 "Fish, Whitebait (Dried)",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
 "Fish, Yellowtail",ph,3,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5) [value 6.13],Data Quality sheet
 "Fish, Yellowtail",ph_ref,,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),raw-data pH Source column
+"Flour, Wheat",density,,"USDA SR Legacy 20081 portion weight: 1 cup = 125 g; 125 / 236.59 mL = 0.528 g/mL (v.2.16.1; was 0.762)",v.2.16.1 data change
 Garlic,organic acids,,"Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1) | Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1); n.d. = 0",raw-data Organic Acid Source column
 Garlic,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Garlic' (5.8-5.8), midpoint",raw-data pH Source column
 Ginger,ph_ref,,"FDA/USDA Approximate pH of Foods: 'Ginger' (5.6-5.9), midpoint",raw-data pH Source column

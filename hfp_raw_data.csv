@@ -135,7 +135,7 @@ Evaporated Cane Juice,0,0,0,0,0,0.81,0.6,0,160,99400,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 "Fish, Yellowtail",7,0,,260,,1.07,74.5,39,420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23.1,2.52,,0.013,,2.8,,,,,,,,,,6.13,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),,,,,,,,,,,,,
 "Fish, Whitebait (Dried)",40,,,240,,0.96,20.6,200,1080,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,62.4,,,,,0,,,,,,,,,,6.13,Category estimate (tier 3): median pH of 8 FDA-referenced Fish (range 5.67-6.5),,,,,,,,,,,,,
 Fleur de Sel,0,0,0,0,0,0.81,6.5,35679,0,0,0,0,0,0,0,0,,,,,0,0,0,0,0,0,,,,0,0,0,0,0,0,,,,,,,,,,,,,,,,,,,,
-"Flour, Wheat",23.5,,,,,0.762,12.4,3,394,0,1020,0,0,0,0,0,0,0,,0,,,,,,9.61,0.77,,,,0,,,,,,,,,,6.19,"Metrohm Application Note AN-T-219 (white flour, n = 6; vendor data, low confidence). v.2.16.0",,,,,,,,,,,,,
+"Flour, Wheat",23.5,,,,,0.528,12.4,3,394,0,1020,0,0,0,0,0,0,0,,0,,,,,,9.61,0.77,,,,0,,,,,,,,,,6.19,"Metrohm Application Note AN-T-219 (white flour, n = 6; vendor data, low confidence). v.2.16.0",,,,,,,,,,,,,
 Fructose,0,0,0,0,0,0.56,0,0,0,0,0,100000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,0,0,0,0,0,0,,,,,,,,,,,,,,,,,,,,
 Galactose,0,0,0,0,0,0.6,0,0,0,0,0,0,0,100000,0,0,0,0,0,0,0,0,0,0,0,0,,,,0,0,0,0,0,0,,,,,,,,,,,,,,,,,,,,
 Garlic,100,90,,,,0.522,58.58,17,401,1000,0,0,0,0,0,0,0,0,0,0,,,,,,6.36,0.24,1175,,,31.2,77.37,,0,218.77,289.13,563.43,44.88,1.73,184.77,5.8,"FDA/USDA Approximate pH of Foods: 'Garlic' (5.8-5.8), midpoint","Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1) | Priecina & Karklina 2015 (CBU Conf. Proc.), Table 2 fresh, HPLC; mg/100 g DW x dry matter (Table 1); n.d. = 0",,,,,,,,,,,,
