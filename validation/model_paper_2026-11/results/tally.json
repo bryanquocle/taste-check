@@ -1,0 +1,213 @@
+{
+ "n": 141,
+ "by_class": {
+  "Standard constant": 14,
+  "Assumption": 25,
+  "Implementation": 10,
+  "Verified in source": 53,
+  "Fitted or digitized": 20,
+  "Derived from source": 18,
+  "Unsourced": 1
+ },
+ "by_section": {
+  "General, units and numerics": {
+   "Standard constant": 3,
+   "Assumption": 5,
+   "Implementation": 8
+  },
+  "Acid\u2013base (section 7)": {
+   "Verified in source": 6,
+   "Standard constant": 8,
+   "Assumption": 5,
+   "Fitted or digitized": 1,
+   "Derived from source": 3
+  },
+  "Umami (section 8.1)": {
+   "Derived from source": 6,
+   "Verified in source": 11,
+   "Assumption": 4,
+   "Implementation": 1,
+   "Fitted or digitized": 3
+  },
+  "Saltiness (section 8.2)": {
+   "Verified in source": 3,
+   "Fitted or digitized": 6,
+   "Assumption": 2,
+   "Derived from source": 1
+  },
+  "Sweetness and sourness (sections 8.3, 8.4)": {
+   "Verified in source": 15,
+   "Implementation": 1,
+   "Derived from source": 3,
+   "Assumption": 3,
+   "Fitted or digitized": 5,
+   "Standard constant": 1
+  },
+  "Kokumi and bitterness (sections 8.5, 8.6)": {
+   "Verified in source": 18,
+   "Standard constant": 2,
+   "Assumption": 6,
+   "Unsourced": 1,
+   "Derived from source": 5,
+   "Fitted or digitized": 5
+  }
+ },
+ "assumptions_and_unsourced": [
+  {
+   "section": "General, units and numerics",
+   "constant": "DEFAULT_PH",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "General, units and numerics",
+   "constant": "MIN_SHARE",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "General, units and numerics",
+   "constant": "ACIDS_BELOW_PH",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "General, units and numerics",
+   "constant": "NUC_FLAG_GLU",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "General, units and numerics",
+   "constant": "Score scaling",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Acid\u2013base (section 7)",
+   "constant": "PROTEIN_GROUPS",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Acid\u2013base (section 7)",
+   "constant": "CHLORIDE_SALTS",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Acid\u2013base (section 7)",
+   "constant": "Calibration slurry",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Acid\u2013base (section 7)",
+   "constant": "SOUR_PKA_MAX",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Acid\u2013base (section 7)",
+   "constant": "MUSCLE_FOODS",
+   "status": "ASSUMPTION (author's list)",
+   "class": "Assumption"
+  },
+  {
+   "section": "Umami (section 8.1)",
+   "constant": "AMP threshold (alone)",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Umami (section 8.1)",
+   "constant": "Nucleotide threshold with glutamate",
+   "status": "ASSUMPTION (sourced reasoning)",
+   "class": "Assumption"
+  },
+  {
+   "section": "Umami (section 8.1)",
+   "constant": "SYNERGY_MAX_FOLD",
+   "status": "ASSUMPTION (sourced; threshold data applied above threshold)",
+   "class": "Assumption"
+  },
+  {
+   "section": "Umami (section 8.1)",
+   "constant": "Cooked-nucleotide rule",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Saltiness (section 8.2)",
+   "constant": "Na/K mixing",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Saltiness (section 8.2)",
+   "constant": "CHLORIDE_K",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Sweetness and sourness (sections 8.3, 8.4)",
+   "constant": "MOSK_MAX",
+   "status": "ASSUMPTION (note threshold)",
+   "class": "Assumption"
+  },
+  {
+   "section": "Sweetness and sourness (sections 8.3, 8.4)",
+   "constant": "Acid-on-sweetness hold",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Sweetness and sourness (sections 8.3, 8.4)",
+   "constant": "Sour reference",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Kokumi and bitterness (sections 8.5, 8.6)",
+   "constant": "KOK_EC50",
+   "status": "ASSUMPTION (sensory curve, calibrated only by human thresholds and single doses)",
+   "class": "Assumption"
+  },
+  {
+   "section": "Kokumi and bitterness (sections 8.5, 8.6)",
+   "constant": "KOK_N",
+   "status": "UNSOURCED",
+   "class": "Unsourced"
+  },
+  {
+   "section": "Kokumi and bitterness (sections 8.5, 8.6)",
+   "constant": "BITTER_GAP_TARGET_B, BITTER_GAP_EXPONENT",
+   "status": "ASSUMPTION / VERIFIED",
+   "class": "Assumption"
+  },
+  {
+   "section": "Kokumi and bitterness (sections 8.5, 8.6)",
+   "constant": "BITTER_GAP_DEFAULT_B",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Kokumi and bitterness (sections 8.5, 8.6)",
+   "constant": "BITTER_GAP_COOK_MIN_TEMP_C",
+   "status": "ASSUMPTION (sourced reasoning)",
+   "class": "Assumption"
+  },
+  {
+   "section": "Kokumi and bitterness (sections 8.5, 8.6)",
+   "constant": "PROTEIN_BITTER_RE",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  },
+  {
+   "section": "Kokumi and bitterness (sections 8.5, 8.6)",
+   "constant": "SCORE_REF",
+   "status": "ASSUMPTION",
+   "class": "Assumption"
+  }
+ ]
+}
