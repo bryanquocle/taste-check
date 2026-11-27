@@ -96,13 +96,46 @@ SALT_THRESHOLD_RULE = False
 # potency shift. Excel Calculations!AF34 still holds 16 (workbook not updated; harness pins 16). None = uncapped.
 SYNERGY_MAX_FOLD = 63
 
+# Sodium saltiness curve (Nov 26, 2026). "murphy_log" = Murphy et al. 1981 log fit everywhere (default, matches
+# Excel and the web page). "human_splice" (Python only, NOT adopted; Bryan's call) keeps Murphy up to 0.108 M and
+# above it follows the human gLMS data found Nov 26 (validation/salt_literature_2026-11-26/NOTES.md): local power
+# exponent 0.8 from 0.108 to 0.3 M (Webb et al. 2015, PMC4475569) and 0.35 above 0.3 M (Rawal et al. 2015,
+# PMC5100746), anchored to Murphy's value at 0.108 M. The 10-point reference stays 0.5 M NaCl.
+SALT_HIGH_CURVE = "murphy_log"
+_NA_A, _NA_B, _NA_KNEE, _NA_KNEE2, _NA_E1, _NA_E2 = 2.7036, 12.008, 0.108, 0.3, 0.8, 0.35
+
+
+def na_curve(m):
+    """Saltiness intensity of sodium at molarity m (Murphy 1981 scale)."""
+    if m <= 0:
+        return 0.0
+    if SALT_HIGH_CURVE != "human_splice" or m <= _NA_KNEE:
+        return max(0.0, _NA_A * math.log(m) + _NA_B)
+    s0 = _NA_A * math.log(_NA_KNEE) + _NA_B
+    if m <= _NA_KNEE2:
+        return s0 * (m / _NA_KNEE) ** _NA_E1
+    return s0 * (_NA_KNEE2 / _NA_KNEE) ** _NA_E1 * (m / _NA_KNEE2) ** _NA_E2
+
+
+def na_inverse(s):
+    """Sodium molarity whose saltiness is s (inverse of na_curve)."""
+    if SALT_HIGH_CURVE == "human_splice":
+        s0 = _NA_A * math.log(_NA_KNEE) + _NA_B
+        s1 = s0 * (_NA_KNEE2 / _NA_KNEE) ** _NA_E1
+        if s > s1:
+            return _NA_KNEE2 * (s / s1) ** (1 / _NA_E2)
+        if s > s0:
+            return _NA_KNEE * (s / s0) ** (1 / _NA_E1)
+    return math.exp((s - _NA_B) / _NA_A)
+
+
 # 1-10 output scores (v.2.5.0, Bryan, Sept 2026): score = 1 + 9 * min(1, raw / reference), where 1 = at or
 # below threshold and 10 = a "very strong" reference, roughly the most intense a person would still eat.
 # Linear in each output's own intensity scale, so rank and spacing are kept; scales stay not strictly
 # commensurable across tastes.
 SCORE_REF = {
     "umami": 3.6672 * math.log(5.0) + 12.555,   # 5 g/dL MSG.H2O-equivalent on Yamaguchi's curve (= 18.46)
-    "salt": 2.7036 * math.log(0.5) + 12.008,    # 0.5 M NaCl (~3%, seawater) on the Murphy 1981 fit (= 10.13)
+    "salt": na_curve(0.5),                      # 0.5 M NaCl (~3%, seawater) on the Murphy 1981 fit (= 10.13)
     "sweet": 0.54 * 10.0 ** 1.3,                # 10% w/w sucrose on Moskowitz 1970 (= 10.77); was 20% (Bryan, Sept 2026)
     "kokumi": 100.0,                            # 100% of the GSH-equivalent CaSR response
     "bitter": bt.BITTER_REF,                    # Spectrum 10 ~ 0.15% caffeine in water (v.2.8.0, hfp_bitter.py)
@@ -728,7 +761,7 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
     thr["k"] = 0.00242 * 39.0983 / 10                                # AC19
     na_m = 0.0 if conc["na"] < thr["na"] else conc["na"] * 10 / 23          # Z22
     k_m = 0.0 if k_for_salt < thr["k"] else k_for_salt * 10 / 39.0983      # AB22
-    na_salt = max(0.0, 2.7036 * math.log(na_m) + 12.008) if na_m > 0 else 0.0   # AA22
+    na_salt = na_curve(na_m)                                         # AA22
     if na_m > 0.108:
         warnings.append(f"[Na] = {na_m:.3f} M is above the measured NaCl range (Murphy 1981, max "
                         f"0.108 M); sodium saltiness is extrapolated from a log fit.")
@@ -738,13 +771,13 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
         k_salt = max(0.0, 404.88 * k_m**2 + 6.7462 * k_m - 0.1344)
     else:  # beyond measured KCl range: scale the NaCl curve to meet the KCl fit at 0.112 M
         k_salt = ((404.88 * 0.112**2 + 6.7462 * 0.112 - 0.1344)
-                  / (2.7036 * math.log(0.112) + 12.008)) * (2.7036 * math.log(k_m) + 12.008)
+                  / na_curve(0.112)) * na_curve(k_m)
         warnings.append(f"[K] = {k_m:.3f} M is above the measured KCl range (0.112 M); "
                         f"potassium saltiness is extrapolated.")
     def mix(na_int, na_mol):
         if SALT_MIX == "concentration" and k_salt > 0:
-            na_eq_k = math.exp((k_salt - 12.008) / 2.7036)       # NaCl molarity iso-salty to the K
-            return max(0.0, 2.7036 * math.log(na_mol + na_eq_k) + 12.008)
+            na_eq_k = na_inverse(k_salt)                         # NaCl molarity iso-salty to the K
+            return na_curve(na_mol + na_eq_k)
         return na_int + k_salt                                       # Z25
     salt_total = mix(na_salt, na_m)
 
@@ -841,7 +874,7 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
         umami_salt_e = UMAMI_SALT_EMAX * s_um * f_na
         if umami_salt_e > 0:
             na_eff = na_m * (1 + umami_salt_e)
-            salt_total = mix(max(0.0, 2.7036 * math.log(na_eff) + 12.008), na_eff)
+            salt_total = mix(na_curve(na_eff), na_eff)
     salt_final = salt_total + salt_total * KOKUMI_SALT_GAIN * (kokumi / 100)  # AA25
 
     # Bitterness (v.2.8.3, Python and web only): caffeine + theobromine, KCl, Reb A, acesulfame K; suppressed by
@@ -897,7 +930,9 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
                        "gsh_eq_share_evg_pct": k_evg,
                        "na_molar": na_m, "k_molar": k_m},
         "acidity": acid,
-        "totals": {"mass_g": tot["mass"], "water_g": tot["water"], "protein_g": tot["protein"]},
+        "totals": {"mass_g": tot["mass"], "water_g": tot["water"], "protein_g": tot["protein"],
+                   # v.2.16.2: sodium in label units (whole recipe and per 100 g of the finished recipe)
+                   "sodium_mg": tot["na"], "sodium_mg_per_100g": tot["na"] / tot["mass"] * 100 if tot["mass"] > 0 else 0.0},
         "conc_g_per_100g_water": conc,
         "thresholds": thr,
         "above_threshold": {"glu": u16, "asp": v16, "amp": w16, "imp": x16, "gmp": y16},
@@ -914,6 +949,7 @@ def report(res, detail=False):
         out.append(f"  - {row['ingredient']}: {row['mass_g']:.2f} g (water {row['water_g']:.2f} g)")
     t = res["totals"]
     out.append(f"Total mass {t['mass_g']:.2f} g | total water {t['water_g']:.2f} g")
+    out.append(f"Sodium {t['sodium_mg']:.0f} mg in the recipe | {t['sodium_mg_per_100g']:.0f} mg per 100 g")
     out.append("")
     sc = res["scores"]
     sw_ = res.get("sweetness") or {}

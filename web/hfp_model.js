@@ -647,7 +647,9 @@
         bitterness: toScore(bitterFinal, "bitter") },
       acidity: acid, conc, thr, rows, notes, missing, estimated, bitter_gap: gap.fired,
       totals: { mass_g: tot.mass, water_g: tot.water, salt_pct_water: naM * 58.44 / 10, sucrose_eq_pct: cEq,
-        umami_eq_msg_pct: umamiEq * shift },
+        umami_eq_msg_pct: umamiEq * shift,
+        // v.2.16.2: sodium in label units (hfp_model.py totals.sodium_mg / sodium_mg_per_100g)
+        sodium_mg: tot.na, sodium_mg_per_100g: tot.mass > 0 ? tot.na / tot.mass * 100 : 0 },
     };
   }
 

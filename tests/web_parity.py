@@ -51,6 +51,8 @@ def main():
         pairs = [("raw." + k, v, j["results"].get(k)) for k, v in p["results"].items()]
         pairs += [("score." + k, v, j["scores"].get(k)) for k, v in p["scores"].items()]
         pairs.append(("pH", (p.get("acidity") or {}).get("pH"), j.get("pH")))
+        for k in ("sodium_mg", "sodium_mg_per_100g"):  # v.2.16.2 label-unit sodium
+            pairs.append(("totals." + k, p["totals"][k], (j.get("totals") or {}).get(k)))
         for k, a, b in pairs:
             if isinstance(a, bool) or isinstance(b, bool) or not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
                 diffs[k] = 0.0 if a == b else float("inf")
