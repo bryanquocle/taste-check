@@ -1,37 +1,37 @@
 {
- "units": 86,
+ "units": 87,
  "sets": {
   "all foods: umami (score)": {
-   "n": 82,
-   "spearman": 0.7075522462371069
+   "n": 83,
+   "spearman": 0.703286042297613
   },
   "all foods: umami (raw)": {
-   "n": 82,
-   "spearman": 0.7075522462371069
+   "n": 83,
+   "spearman": 0.703286042297613
   },
   "all foods: saltiness (score)": {
-   "n": 80,
-   "spearman": 0.8280297143077853
+   "n": 81,
+   "spearman": 0.8518603374781764
   },
   "all foods: saltiness (raw)": {
-   "n": 80,
-   "spearman": 0.8281580683214607
+   "n": 81,
+   "spearman": 0.8519773150402769
   },
   "all foods: sweetness (score)": {
-   "n": 79,
-   "spearman": 0.8105479846856136
+   "n": 80,
+   "spearman": 0.8052294034390489
   },
   "all foods: sweetness (raw)": {
-   "n": 79,
-   "spearman": 0.8106942921294743
+   "n": 80,
+   "spearman": 0.805370575867955
   },
   "all foods: sourness (score)": {
-   "n": 81,
-   "spearman": 0.7358301069215434
+   "n": 82,
+   "spearman": 0.7306752941271281
   },
   "all foods: sourness (raw)": {
-   "n": 81,
-   "spearman": 0.7358301069215434
+   "n": 82,
+   "spearman": 0.7306752941271281
   },
   "all foods: bitterness (score) [bitterant foods only]": {
    "n": 10,
@@ -51,11 +51,11 @@
   },
   "group (non) alcoholic beverages: saltiness (score)": {
    "n": 15,
-   "spearman": null
+   "spearman": -0.006162906329636473
   },
   "group (non) alcoholic beverages: saltiness (raw)": {
    "n": 15,
-   "spearman": null
+   "spearman": -0.006162906329636473
   },
   "group (non) alcoholic beverages: sweetness (score)": {
    "n": 15,
@@ -74,36 +74,36 @@
    "spearman": 0.8132657695446743
   },
   "group Vegetables: umami (score)": {
-   "n": 24,
-   "spearman": 0.4314327393775956
+   "n": 25,
+   "spearman": 0.403055293838856
   },
   "group Vegetables: umami (raw)": {
-   "n": 24,
-   "spearman": 0.4314327393775956
+   "n": 25,
+   "spearman": 0.403055293838856
   },
   "group Vegetables: saltiness (score)": {
-   "n": 24,
-   "spearman": 0.25797957573760893
+   "n": 25,
+   "spearman": 0.3133395588063955
   },
   "group Vegetables: saltiness (raw)": {
-   "n": 24,
-   "spearman": 0.25797957573760893
+   "n": 25,
+   "spearman": 0.3133395588063955
   },
   "group Vegetables: sweetness (score)": {
-   "n": 24,
-   "spearman": 0.4781354654436347
+   "n": 25,
+   "spearman": 0.44769426721110145
   },
   "group Vegetables: sweetness (raw)": {
-   "n": 24,
-   "spearman": 0.4781354654436347
+   "n": 25,
+   "spearman": 0.44769426721110145
   },
   "group Vegetables: sourness (score)": {
-   "n": 25,
-   "spearman": 0.47409437866952814
+   "n": 26,
+   "spearman": 0.49506821309103294
   },
   "group Vegetables: sourness (raw)": {
-   "n": 25,
-   "spearman": 0.47409437866952814
+   "n": 26,
+   "spearman": 0.49506821309103294
   }
  }
 }

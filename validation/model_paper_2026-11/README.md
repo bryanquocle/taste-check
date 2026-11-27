@@ -1,6 +1,6 @@
 # Model-description paper analyses (November 2026)
 
-Analyses behind *Taste Check: Predicting Six Taste Intensities from Food Composition* (technical report, `report/technical-report.pdf`; also at https://tools.mendocinofoodconsulting.com/taste-check/technical-report.pdf). Model version 2.16.2.
+Analyses behind *Taste Check: Predicting Six Taste Intensities from Food Composition* (technical report, `report/technical-report.pdf`; also at https://tools.mendocinofoodconsulting.com/taste-check/technical-report.pdf). Model version 2.17.0 (report revised November 27, 2026; first edition described v2.16.2).
 
 | Script | What it does | Output |
 |---|---|---|

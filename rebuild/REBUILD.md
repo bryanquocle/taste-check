@@ -2,7 +2,7 @@
 
 **Taste Check** (https://tools.mendocinofoodconsulting.com/taste-check/) predicts how salty, savory (umami), sweet, sour, bitter and rich (kokumi) a recipe should taste from its chemistry. This document is a complete specification of the model as it runs on the live page, written so that you, or you and your AI, can rebuild it from scratch and check that your version gives the same numbers.
 
-- **Model version:** 2.16.2 (Nov 26, 2026: density audit, 15 volume densities corrected to USDA SR Legacy portion weights; paste-parser fixes for powdered sugar, dried herbs and four common vegetables/grains; sodium reported in mg). 2.16.1 (Nov 26, 2026: data fix, wheat flour density 0.762 → 0.528 g/mL, USDA 125 g per cup). 2.16.0 (Nov 25, 2026: acid keeps lowering sweetness up to 95 mM citric-eq, McBride & Johnson 1987; onion soup mix glutamate, apple butter acid and pH, cooked pasta and flour pH). 2.15.0 (Nov 25, 2026: bitterness coverage note `bitter_gap`; cooked pasta and rice rows; stock cube, bouillon and yeast-extract glutamate and nucleotides; meat nucleotide sibling fills; data-audit fixes; missing-nucleotide flag always on for meat and fish). 2.14.0 (Nov 25, 2026: non-protein muscle buffer for meat and fish, calibrated to measured meat buffering; protein filled for ground beef, Camembert and oyster sauce). 2.13.0 (Nov 25, 2026: acid groups with pKa ≥ 6.0 no longer count toward the sour stimulus, so citrate's third carboxyl stops making neutral foods like milk read sour; milk citric acid restored). 2.12.0 (Nov 25, 2026: data only: organic acids for soy sauce, miso, doenjang, kimchi and 9 cheese/dairy rows; miso and doenjang sugars; pH for miso and kimchi; kokumi γ-EVG fixes for Manchego, Kashkaval and fish sauce; equations unchanged). 2.11.0 (Nov 25, 2026: salt no longer raises umami, SALT_SHIFT_MAX 1.0; aspartate threshold sourced; cooking estimator lid factors fade at a boil). 2.10.0 (taste equations unchanged from 2.9.0; Nov 25, 2026: 824 ingredients, recipe-paste coverage of the 1,000 most common missing recipe ingredients, and a pot-based cooking water-loss estimator on the page). 2.9.0: sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin. **Ingredient data:** the database embedded in the same page (824 research ingredients: workbook data release v.2.6.9, the bitterness and saccharin additions, and 392 composition rows from USDA FoodData Central SR Legacy 2018-04 added in v.2.10.0; section 13).
+- **Model version:** 2.17.0 (Nov 27, 2026: sodium saltiness curve replaced with one human panel, Feeney & Hayes 2014 Fig. 4, gLMS, 0.01–1 M NaCl, n = 193; SVT saltiness rho 0.828 → 0.852 on 81 food units). 2.16.2 (Nov 26, 2026: density audit, 15 volume densities corrected to USDA SR Legacy portion weights; paste-parser fixes for powdered sugar, dried herbs and four common vegetables/grains; sodium reported in mg). 2.16.1 (Nov 26, 2026: data fix, wheat flour density 0.762 → 0.528 g/mL, USDA 125 g per cup). 2.16.0 (Nov 25, 2026: acid keeps lowering sweetness up to 95 mM citric-eq, McBride & Johnson 1987; onion soup mix glutamate, apple butter acid and pH, cooked pasta and flour pH). 2.15.0 (Nov 25, 2026: bitterness coverage note `bitter_gap`; cooked pasta and rice rows; stock cube, bouillon and yeast-extract glutamate and nucleotides; meat nucleotide sibling fills; data-audit fixes; missing-nucleotide flag always on for meat and fish). 2.14.0 (Nov 25, 2026: non-protein muscle buffer for meat and fish, calibrated to measured meat buffering; protein filled for ground beef, Camembert and oyster sauce). 2.13.0 (Nov 25, 2026: acid groups with pKa ≥ 6.0 no longer count toward the sour stimulus, so citrate's third carboxyl stops making neutral foods like milk read sour; milk citric acid restored). 2.12.0 (Nov 25, 2026: data only: organic acids for soy sauce, miso, doenjang, kimchi and 9 cheese/dairy rows; miso and doenjang sugars; pH for miso and kimchi; kokumi γ-EVG fixes for Manchego, Kashkaval and fish sauce; equations unchanged). 2.11.0 (Nov 25, 2026: salt no longer raises umami, SALT_SHIFT_MAX 1.0; aspartate threshold sourced; cooking estimator lid factors fade at a boil). 2.10.0 (taste equations unchanged from 2.9.0; Nov 25, 2026: 824 ingredients, recipe-paste coverage of the 1,000 most common missing recipe ingredients, and a pot-based cooking water-loss estimator on the page). 2.9.0: sourced nucleotide thresholds, kokumi detection floor, Horie cooked GMP, saccharin. **Ingredient data:** the database embedded in the same page (824 research ingredients: workbook data release v.2.6.9, the bitterness and saccharin additions, and 392 composition rows from USDA FoodData Central SR Legacy 2018-04 added in v.2.10.0; section 13).
 - **Source of truth:** the JavaScript embedded in the live page between the markers `/*HFP_DB:BEGIN*/ … /*HFP_DB:END*/` (database), `/*HFP_MODEL:BEGIN*/ … /*HFP_MODEL:END*/` (model) and `/*HFP_PASTE:BEGIN*/ … /*HFP_PASTE:END*/` (recipe paste parser). Where this document and that code disagree, the code wins, and that is a bug in this document.
 - **Date:** November 26, 2026. **Author of the model:** Dr. Bryan Quoc Le, Mendocino Food Consulting (Human Flavorome Project).
 
@@ -17,7 +17,7 @@ The model takes a recipe (ingredients and amounts, optional cooking) and returns
 | Output | Raw scale | 10/10 reference |
 |---|---|---|
 | Umami | Yamaguchi's interval scale for MSG (1967) | 5 g/dL MSG-equivalent with the salt and kokumi boosts at their maximum (raw 26.0246 from v.2.11.0, when the salt boost became ×1; 29.61 in v.2.6.2–2.10.0) |
-| Saltiness | Murphy et al. 1981 magnitude scale | 0.5 M NaCl, about 3% (seawater) (raw 10.13) |
+| Saltiness | Feeney & Hayes 2014 gLMS (from v.2.17.0; Murphy et al. 1981 magnitude scale before) | 0.5 M NaCl, about 3% (seawater) (raw 31.33; 10.13 before v.2.17.0) |
 | Sweetness | Moskowitz 1970 ratio scale | 10% w/w sucrose (raw 10.77) |
 | Sourness | Yamaguchi 1979 tartaric-acid scale | 5% w/v citric acid in water, about straight lemon juice (raw 149.6) |
 | Kokumi | % of the maximum response of the kokumi (calcium-sensing) receptor curve | 100% |
@@ -34,7 +34,7 @@ The six raw scales come from different studies and are **not commensurable**: a 
 | File | What it is |
 |---|---|
 | `REBUILD.md` | This specification. |
-| `hfp_ingredients_v2.16.2.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `b814206043df70dc24cf2fdf1146b0cd465b50f1423b818fb1251c47977c7a6d` |
+| `hfp_ingredients_v2.17.0.csv` | The live ingredient database, exported from the page's HFP_DB block (section 13). SHA-256 (LF line endings, UTF-8): `b814206043df70dc24cf2fdf1146b0cd465b50f1423b818fb1251c47977c7a6d` |
 | `hfp_ingredient_provenance.csv` | Where ingredient values came from, where that was recorded: data-quality tier and basis per field, pH source and organic-acid source (section 13.4). |
 | `test_recipes.json` | 53 recipes (38 project golden recipes + 15 added for this package) and 3 paste-parser cases, with expected outputs computed by executing the live page's JavaScript, plus tolerances (section 15). |
 | `paste_rules.csv` | Every rule table and message of the recipe paste parser, exported programmatically from the live page (section 5.5). |
@@ -50,7 +50,7 @@ To get the live page: `curl -L -o index.html https://tools.mendocinofoodconsulti
 
 ## 3. How to rebuild and verify (short version)
 
-1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.16.2.csv` plus the two helper rows in section 5.2.
+1. Read sections 4–11 and implement `compute(recipe, options)` in any language. Load ingredients from `hfp_ingredients_v2.17.0.csv` plus the two helper rows in section 5.2.
 2. Run every recipe in `test_recipes.json` through your implementation and compare with `expected` using the tolerances in the file (raw outputs within 1e-6 relative, scores within 0.05, pH within 1e-4).
 3. Two derived constants must come out the same as the reference: the Miranda logistic fit (S50 = 24.8 mM, Hill = 0.64; section 7.4) and the score references (section 10). They are printed in `test_recipes.json` under `derived_constants`. If yours differ, check the grid search and bisection details first.
 4. Optional: `node tools/oracle.js index.html tools/test_recipe_inputs.json test_recipes.json` regenerates the expected values from a fresh copy of the live page; `python check_spec.py index.html` checks this document against that page.
@@ -264,9 +264,9 @@ Reported total `umami_eq_msg_pct = umami_eq × shift`.
 
 1. **Detection thresholds** as the cation (g/100 mL): Na `0.0037 × 22.99/58.44` (NaCl 0.0037 g/100 mL, Yamaguchi 1979 Table III); K `0.00242 × 39.0983/10` (KCl 0.00242 M, Schiffman et al. 1995). Below threshold the molarity is 0.
 2. **Molarity:** `Na(M) = conc.na × 10 / 23` (note: 23, not 22.99, in this step); `K(M) = conc_K × 10 / 39.0983`, where conc_K = chloride potassium (default) or all potassium (`k_source = "total"`).
-3. **Sodium curve** (Murphy et al. 1981, fit): `I_Na = max(0, 2.7036 × ln(Na) + 12.008)`. Measured range 0.004–0.108 M; a note flags Na > 0.108 M as extrapolated.
-4. **Potassium curve:** for K ≤ 0.112 M, `I_K = max(0, 404.88K² + 6.7462K − 0.1344)`; above, the Na curve scaled to meet the KCl fit at 0.112 M: `I_K = [I_K(0.112) / (2.7036 ln 0.112 + 12.008)] × (2.7036 ln K + 12.008)`, with a note.
-5. **Mixing Na and K** (concentration addition, after Bartoshuk 1975): if I_K > 0, convert it to the iso-salty NaCl molarity `exp((I_K − 12.008)/2.7036)`, add to Na and read the Na curve once: `I = max(0, 2.7036 ln(Na + exp((I_K − 12.008)/2.7036)) + 12.008)`; otherwise I = I_Na.
+3. **Sodium curve** (v.2.17.0; Feeney & Hayes 2014 Fig. 4, gLMS, n = 193): `I_Na = NA_CURVE(Na)`, log-log interpolation between the points FEENEY_PTS (M, gLMS) = (0.01, 2.1618), (0.032, 4.2689), (0.1, 12.7824), (0.32, 25.5113), (1.0, 43.1228): for the segment (c0, v0)–(c1, v1) containing Na, `I = v0 × (Na/c0)^e` with `e = ln(v1/v0)/ln(c1/c0)`. Below 0.01 M the first segment's exponent (0.585) is used, above 1 M the last (0.461). Na = 0 gives 0. Measured range 0.01–1 M; a note flags Na > 1 M as extrapolated. Before v.2.17.0 this step was Murphy et al. 1981, `max(0, 2.7036 × ln(Na) + 12.008)`, which reads 0 below 0.0118 M.
+4. **Potassium curve** (on Murphy's scale, unchanged in v.2.17.0): `MURPHY(M) = max(0, 2.7036 ln M + 12.008)`. For K ≤ 0.112 M, `I_K = max(0, 404.88K² + 6.7462K − 0.1344)`; above, Murphy's Na fit scaled to meet the KCl fit at 0.112 M: `I_K = [I_K(0.112) / MURPHY(0.112)] × MURPHY(K)`, with a note.
+5. **Mixing Na and K** (concentration addition, after Bartoshuk 1975): if I_K > 0, convert it to the iso-salty NaCl molarity on Murphy's scale `exp((I_K − 12.008)/2.7036)`, add to Na and read the sodium curve (step 3) once: `I = NA_CURVE(Na + exp((I_K − 12.008)/2.7036))`; otherwise I = I_Na.
 6. **Umami raises saltiness** (Sun et al. 2022, fit by the author to their Table 2): if Na > 0: `s = clamp((umami score − 1)/(2.4 − 1), 0, 1)` using the final umami score (section 10); `f = 1` if Na ≤ 75 mM, else `max(0, (260 − Na_mM)/(260 − 75))`; `E = 0.10 × s × f`; if E > 0 the effective sodium is `Na × (1 + E)` and step 5 is repeated with it.
 7. **Kokumi boost:** `saltiness = I × (1 + 0.41 × kokumi/100)`.
 
@@ -346,7 +346,7 @@ Kokumi boosts umami and saltiness by `× (1 + 0.41 × kokumi/100)`, gain 0.41 de
 | Output | REF formula | REF value |
 |---|---|---|
 | umami | `(3.6672 × ln(5.0 × SALT_SHIFT_MAX) + 12.555) × (1 + 0.41)`, SALT_SHIFT_MAX = 1.0 | 26.024554304594446 |
-| saltiness | `2.7036 × ln(0.5) + 12.008` | 10.13400728263813 |
+| saltiness | `NA_CURVE(0.5)` = `25.5113 × (0.5/0.32)^(ln(43.1228/25.5113)/ln(1/0.32))` (v.2.17.0; was `2.7036 × ln(0.5) + 12.008` = 10.13400728263813) | 31.334609308532226 |
 | sweetness | `0.54 × 10^1.3` | 10.77441650083195 |
 | sourness | `sourness_intensity(stimulus of 50/192.12 × 1000 mM citric acid alone in water)` | 149.59521461999 |
 | kokumi | 100 | 100 |
@@ -370,7 +370,7 @@ Notes are returned in order as `{key, text}`. The test file checks the **set of 
 | sour_top | acidity on AND raw sourness > 100 | once |
 | ph_default | acidity on AND at least one item was calibrated at the default pH 6.0 | once |
 | sour_umami_extrap | acidity on AND S_eff > MIRANDA_S_MAX (27.08 mM) | once |
-| salt_extrap | Na(M) > 0.108 | once |
+| salt_extrap | Na(M) > 1.0 (v.2.17.0; was 0.108) | once |
 | k_extrap | K(M) > 0.112 | once |
 | sweet_extrap | C_eq (sucrose_eq_pct) > 32 | once |
 | unscored_sugar | some unscored sugar (maltotriose, mannose, uronic) has g ≥ 0.01 × max(total sugar, 1e-9) (water basis) | once |
@@ -510,8 +510,9 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 |---|---|---|---|---|
 | NaCl threshold | 0.0037 × 22.99/58.44 | g Na/100 mL | Yamaguchi 1979 Table III p. 35 (NaCl 0.0037 g/100 mL; NaCl MW 58.44) | VERIFIED |
 | KCl threshold | 0.00242 × 39.0983/10 | g K/100 mL | Schiffman, Manning, Warwick & Crumbliss 1995 Table 1 p. 624 (KCl 0.00242 M) | VERIFIED (different method from the Na threshold) |
-| Na curve | 2.7036 × ln(M) + 12.008 | Murphy scale | Author's fit to Murphy et al. 1981 Fig. 7–8 p. 1088 (n = 10; 0.004, 0.012, 0.036, 0.108 M) | FIT (plausible; negative at 0.004 M, floored) |
-| Na measured top | 0.108 | M | Murphy et al. 1981 methods p. 1084 | VERIFIED |
+| FEENEY_PTS, NA_CURVE (Na curve, v.2.17.0; log-log interpolation, end exponents held) | (0.01, 2.1618), (0.032, 4.2689), (0.1, 12.7824), (0.32, 25.5113), (1.0, 43.1228) | M, gLMS | Feeney & Hayes 2014 Physiol Behav 128:148, Fig. 4 (doi:10.1016/j.physbeh.2014.02.013): mean NaCl intensity by CA6 genotype, n = 55/107/31, vector-digitized from the PDF and pooled by n | MEASURED (digitized; human panel, n = 193) |
+| Na measured top | 1.0 (0.108 before v.2.17.0, Murphy et al. 1981 methods p. 1084) | M | Feeney & Hayes 2014 methods (0.01–1 M NaCl) | VERIFIED |
+| MURPHY (K conversion only) | 2.7036 × ln(M) + 12.008 | Murphy scale | Author's fit to Murphy et al. 1981 Fig. 7–8 p. 1088 (n = 10; 0.004, 0.012, 0.036, 0.108 M); the Na curve until v.2.17.0 | FIT (plausible; negative below 0.0118 M, floored) |
 | K curve | 404.88M² + 6.7462M − 0.1344 for M ≤ 0.112 | Murphy scale | Author's fit to Murphy et al. 1981 KCl panel | FIT (plausible) |
 | K curve top | 0.112 | M | End of the KCl fit | FIT |
 | Na/K mixing | iso-salty NaCl molarity exp((I_K − 12.008)/2.7036) | M | Concentration addition (Bartoshuk 1975), adopted v.2.7.2 | ASSUMPTION |
@@ -600,7 +601,7 @@ Every numeric literal and every upper-case constant in the live HFP_MODEL block 
 
 ### 13.1 Structure
 
-`hfp_ingredients_v2.16.2.csv` has one row per ingredient (829 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
+`hfp_ingredients_v2.17.0.csv` has one row per ingredient (829 rows), exported by `tools/export_db.py` from the page's HFP_DB block. Blank values in the source are exported as 0, exactly as the model reads them. All amounts are per 100 g of the ingredient as sold or as listed (e.g. "Juice, Lime", "Broth, Chicken").
 
 | Column | Units | Meaning |
 |---|---|---|
@@ -763,6 +764,7 @@ How the open-access check was done: DOIs were resolved on Crossref; open-access 
 | 2.13.0 | Nov 25 | Sour stimulus ignores acid groups with pKa ≥ 6.0 (SOUR_PKA_MAX; citrate's third carboxyl), fixing milk reading sour 3.7; milk citric acid 161 mg/100 g restored (Bevilacqua & Califano 1989). SVT sourness rho 0.736 unchanged |
 | 2.14.0 | Nov 25 | Non-protein muscle buffer for meat and fish (MUSCLE_BUF_PKA 6.9, MUSCLE_BUF_MMOL_G 0.312 per g protein, calibrated to Puolanne & Kivikari 2000), so vinegar or mustard in meat dishes no longer drives pH (and sourness) too low; protein filled for Hamburger Meat 14.35, Camembert 19.8, oyster sauce 1.35 (USDA SR Legacy). Steak tartare pH 5.0 → 5.4. SVT single-food results unchanged |
 | 2.15.0 | Nov 25 | `bitter_gap` coverage note (12 unmodeled bitter classes; note only, pre-registered SVT test passed); cooked pasta/rice rows and drained-cooking-water handling in the paste parser; stock cube, bouillon and yeast-extract glutamate/nucleotides; black olive glutamate; meat nucleotide sibling fills; 7 data-audit fixes; missing-nucleotide flag always on for meat/fish |
+| 2.17.0 | Nov 27 | Sodium saltiness on Feeney & Hayes 2014 Fig. 4 (one human gLMS panel, 0.01–1 M, n = 193) instead of the Murphy 1981 log fit (n = 10, 0.004–0.108 M, so most salted food was extrapolated). KCl still converted on Murphy's scale. Salt reference 0.5 M NaCl unchanged (raw 31.33). SVT saltiness rho 0.828 → 0.852 (81 food units); foods scored at the floor 41 → 6. Typical seasoned food reads lower: 0.6% NaCl in water 6.6 → 5.1. Other outputs unchanged |
 | 2.16.2 | Nov 26 | Density audit: 15 volume densities to USDA SR Legacy portion weights; paste-parser fixes (powdered sugar, dried herbs, broccoli, corn, almonds, barley); `sodium_mg` and `sodium_mg_per_100g` outputs; specification text corrected to the code (Miranda fit 24.8 mM / 0.64 and its stimulus points, umami 10/10 formula, interactions table), found while writing the model-description paper |
 | 2.16.1 | Nov 26 | Data fix: wheat flour density 0.762 → 0.528 g/mL (USDA 125 g per cup) |
 | 2.16.0 | Nov 25 | Acid lowers sweetness up to 95 mM citric-eq (McBride & Johnson 1987; ketchup 10.0 → 7.5); onion soup mix glutamate (Rhodes 1991); apple butter malic acid and pH; cooked pasta and flour pH; limits note on salty solids |

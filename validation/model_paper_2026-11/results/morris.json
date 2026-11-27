@@ -5,7 +5,7 @@
  "n_units": 89,
  "base_rho_test": {
   "umami": 0.721248804309386,
-  "saltiness": 0.8446353149278725,
+  "saltiness": 0.8589616547023843,
   "sweetness": 0.6949716145146646,
   "sourness": 0.7221254589575585
  },
@@ -78,14 +78,14 @@
    "low": 0.85,
    "high": 1.15,
    "log": false,
-   "range_source": "Murphy 1981 log-fit slope +/-15%"
+   "range_source": "Feeney & Hayes 2014 curve exponents +/-15% (pivot 0.1 M)"
   },
   {
    "name": "SALT_HIGH_CURVE",
    "low": 0.0,
    "high": 1.0,
    "log": false,
-   "range_source": "Murphy log extrapolation (0) vs human gLMS splice (1) above 0.108 M"
+   "range_source": "Feeney & Hayes 2014 gLMS curve (0, v2.17.0) vs Murphy 1981 log fit (1, before v2.17.0)"
   },
   {
    "name": "SUPPRESS_S50",
@@ -105,7 +105,7 @@
  "mu_star_score": {
   "SYNERGY_MAX_FOLD": {
    "umami": 0.3047283221232925,
-   "saltiness": 0.007430487951500395,
+   "saltiness": 0.009983213851406133,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.07540385048107442,
@@ -121,7 +121,7 @@
   },
   "NUC_ALONE_U0": {
    "umami": 0.03773226449720753,
-   "saltiness": 0.0009013571991479847,
+   "saltiness": 0.0010367827341347655,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.005567551494568568,
@@ -129,7 +129,7 @@
   },
   "KOKUMI_EC50_MM": {
    "umami": 0.03447263904449146,
-   "saltiness": 0.008228369349414023,
+   "saltiness": 0.013596445864756314,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.22718248576754238,
@@ -137,7 +137,7 @@
   },
   "KOKUMI_HILL_N": {
    "umami": 0.020547614716658332,
-   "saltiness": 0.0040560690967996705,
+   "saltiness": 0.007705409906958045,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.22577176260365778,
@@ -145,7 +145,7 @@
   },
   "KOKUMI_UMAMI_GAIN": {
    "umami": 0.39815120489740297,
-   "saltiness": 0.002162007238533463,
+   "saltiness": 0.0018646115828688705,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -153,7 +153,7 @@
   },
   "KOKUMI_SALT_GAIN": {
    "umami": 0.0,
-   "saltiness": 0.02074993739088843,
+   "saltiness": 0.03200262090772803,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -161,7 +161,7 @@
   },
   "KOK_THR_SCALE": {
    "umami": 0.028080292339912688,
-   "saltiness": 0.01025321248958564,
+   "saltiness": 0.013766795731858978,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.2711716395158687,
@@ -169,7 +169,7 @@
   },
   "UMAMI_SALT_EMAX": {
    "umami": 0.0,
-   "saltiness": 0.07297546920802074,
+   "saltiness": 0.061899314744337186,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -177,7 +177,7 @@
   },
   "NA_SLOPE_SCALE": {
    "umami": 0.0,
-   "saltiness": 0.627550672794699,
+   "saltiness": 0.2433137314249371,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -185,7 +185,7 @@
   },
   "SALT_HIGH_CURVE": {
    "umami": 0.0,
-   "saltiness": 0.5036286085632173,
+   "saltiness": 0.8300462281961056,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -193,7 +193,7 @@
   },
   "SUPPRESS_S50": {
    "umami": 0.06655530127190469,
-   "saltiness": 0.00024410666001714818,
+   "saltiness": 0.0002580831671337268,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -201,7 +201,7 @@
   },
   "SWEET_EXPONENT": {
    "umami": 0.0005405150214966201,
-   "saltiness": 7.441139897728899e-07,
+   "saltiness": 8.974174757024627e-07,
    "sweetness": 0.28835230130964556,
    "sourness": 0.01103913677881518,
    "kokumi": 0.0,
@@ -211,7 +211,7 @@
  "mu_star_rho": {
   "SYNERGY_MAX_FOLD": {
    "umami": 0.006706681677218681,
-   "saltiness": 0.0036731881975393594,
+   "saltiness": 0.004621047268712325,
    "sweetness": 0.0,
    "sourness": 0.0
   },
@@ -223,61 +223,61 @@
   },
   "NUC_ALONE_U0": {
    "umami": 0.0028937130402671486,
-   "saltiness": 0.0002982496615820118,
+   "saltiness": 0.00020572984666713813,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_EC50_MM": {
    "umami": 0.0015536714310158766,
-   "saltiness": 0.003306884437704491,
+   "saltiness": 0.0036218287438764237,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_HILL_N": {
    "umami": 0.0010681491088234325,
-   "saltiness": 0.0006154959069692628,
+   "saltiness": 0.0015005684055248742,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_UMAMI_GAIN": {
    "umami": 0.0041819656018178,
-   "saltiness": 0.0031476588466588713,
+   "saltiness": 0.0033736281260995232,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_SALT_GAIN": {
    "umami": 0.0,
-   "saltiness": 0.003232283409310377,
+   "saltiness": 0.006199615263216959,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOK_THR_SCALE": {
    "umami": 0.003651127862887407,
-   "saltiness": 0.004056054923207333,
+   "saltiness": 0.003135613669519413,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "UMAMI_SALT_EMAX": {
    "umami": 0.0,
-   "saltiness": 0.02287439249041291,
+   "saltiness": 0.008116844167217816,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "NA_SLOPE_SCALE": {
    "umami": 0.0,
-   "saltiness": 0.023778083173488628,
+   "saltiness": 0.0009450419324871451,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "SALT_HIGH_CURVE": {
    "umami": 0.0,
-   "saltiness": 0.0,
+   "saltiness": 0.011125904395491054,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "SUPPRESS_S50": {
    "umami": 0.007146888582673203,
-   "saltiness": 0.00026384449036109814,
+   "saltiness": 0.0002674488006672887,
    "sweetness": 0.0,
    "sourness": 0.0
   },
@@ -291,7 +291,7 @@
  "mu_rho": {
   "SYNERGY_MAX_FOLD": {
    "umami": -0.002628294170801923,
-   "saltiness": 0.003489258217166516,
+   "saltiness": 0.0042959306897417,
    "sweetness": 0.0,
    "sourness": 0.0
   },
@@ -303,61 +303,61 @@
   },
   "NUC_ALONE_U0": {
    "umami": -0.0028548712544917477,
-   "saltiness": 0.00021675080592103435,
+   "saltiness": 0.00020572984666713813,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_EC50_MM": {
    "umami": 0.0007250466678074303,
-   "saltiness": -0.003222582755465267,
+   "saltiness": -0.003044308935614773,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_HILL_N": {
    "umami": -0.0009645710134223911,
-   "saltiness": 0.0005317484994929761,
+   "saltiness": -0.00018586741569990572,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_UMAMI_GAIN": {
    "umami": -0.0041301765541172705,
-   "saltiness": 0.0031476588466588713,
+   "saltiness": 0.0033736281260995232,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOKUMI_SALT_GAIN": {
    "umami": 0.0,
-   "saltiness": 0.0009605611034729456,
+   "saltiness": -0.0035936451215188873,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "KOK_THR_SCALE": {
    "umami": 0.00336628810053449,
-   "saltiness": -0.003442316134290338,
+   "saltiness": -0.0014085942455090567,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "UMAMI_SALT_EMAX": {
    "umami": 0.0,
-   "saltiness": 0.018530449844883952,
+   "saltiness": 0.005111234094728853,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "NA_SLOPE_SCALE": {
    "umami": 0.0,
-   "saltiness": -0.0016265033272173657,
+   "saltiness": 0.0006694132131970287,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "SALT_HIGH_CURVE": {
    "umami": 0.0,
-   "saltiness": 0.0,
+   "saltiness": -0.009578545397900906,
    "sweetness": 0.0,
    "sourness": 0.0
   },
   "SUPPRESS_S50": {
    "umami": 0.007082152273047529,
-   "saltiness": -0.00026384449036109814,
+   "saltiness": -0.0002674488006672887,
    "sweetness": 0.0,
    "sourness": 0.0
   },
@@ -371,7 +371,7 @@
  "sigma_score": {
   "SYNERGY_MAX_FOLD": {
    "umami": 0.037645952138795034,
-   "saltiness": 0.007613294304210871,
+   "saltiness": 0.011184505783345327,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.05004220624838346,
@@ -387,7 +387,7 @@
   },
   "NUC_ALONE_U0": {
    "umami": 0.009357747385637098,
-   "saltiness": 0.0004902452044800454,
+   "saltiness": 0.000751421369917459,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.005119315617045888,
@@ -395,7 +395,7 @@
   },
   "KOKUMI_EC50_MM": {
    "umami": 0.017616299681189943,
-   "saltiness": 0.007279563176312322,
+   "saltiness": 0.009922625088359402,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.07773998885215581,
@@ -403,7 +403,7 @@
   },
   "KOKUMI_HILL_N": {
    "umami": 0.008403820930549012,
-   "saltiness": 0.0053499832240274355,
+   "saltiness": 0.0037192441405951918,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.05234050645978052,
@@ -411,7 +411,7 @@
   },
   "KOKUMI_UMAMI_GAIN": {
    "umami": 0.07013978036622759,
-   "saltiness": 0.0022362815117020467,
+   "saltiness": 0.0021426677738494294,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -419,7 +419,7 @@
   },
   "KOKUMI_SALT_GAIN": {
    "umami": 0.0,
-   "saltiness": 0.024146440473729845,
+   "saltiness": 0.014210589251823384,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -427,7 +427,7 @@
   },
   "KOK_THR_SCALE": {
    "umami": 0.016439098151834124,
-   "saltiness": 0.009881595101570185,
+   "saltiness": 0.009595483831541239,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.09445096976173585,
@@ -435,7 +435,7 @@
   },
   "UMAMI_SALT_EMAX": {
    "umami": 0.0,
-   "saltiness": 0.013963575878663776,
+   "saltiness": 0.029951156955484393,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -443,7 +443,7 @@
   },
   "NA_SLOPE_SCALE": {
    "umami": 0.0,
-   "saltiness": 0.24257872208159398,
+   "saltiness": 0.2282423573333622,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -451,7 +451,7 @@
   },
   "SALT_HIGH_CURVE": {
    "umami": 0.0,
-   "saltiness": 0.26973430602856374,
+   "saltiness": 0.06712488880742914,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -459,7 +459,7 @@
   },
   "SUPPRESS_S50": {
    "umami": 0.008864862334314612,
-   "saltiness": 0.0003012780293394792,
+   "saltiness": 0.00039853358794408997,
    "sweetness": 0.0,
    "sourness": 0.0,
    "kokumi": 0.0,
@@ -467,7 +467,7 @@
   },
   "SWEET_EXPONENT": {
    "umami": 0.0001392222234419654,
-   "saltiness": 6.206800681346581e-07,
+   "saltiness": 8.041968716722042e-07,
    "sweetness": 0.02711480767900476,
    "sourness": 0.0007767193851668634,
    "kokumi": 0.0,

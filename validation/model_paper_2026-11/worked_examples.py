@@ -7,7 +7,12 @@ HERE = os.path.dirname(os.path.abspath(__file__)); CM = os.path.dirname(os.path.
 SALT_NA, SALT_W = 39356, 0.1
 MSG_GLU, MSG_NA, MSG_W = 87000, 13594, 0.0
 SUGAR_SUC, SUGAR_W = 99940, 0.06
-REF_SALT = 2.7036 * math.log(0.5) + 12.008                      # 10.134
+FEENEY = [(0.01, 2.1618), (0.032, 4.2689), (0.1, 12.7824), (0.32, 25.5113), (1.0, 43.1228)]   # v2.17.0, Feeney & Hayes 2014 Fig. 4
+def feeney_hand(M):                                             # log-log interpolation on the segment containing M
+    for (c0, v0), (c1, v1) in zip(FEENEY, FEENEY[1:]):
+        if c0 <= M <= c1:
+            return v0 * (M / c0) ** (math.log(v1 / v0) / math.log(c1 / c0))
+REF_SALT = feeney_hand(0.5)                                     # 31.335
 REF_UMAMI = (3.6672 * math.log(5.0) + 12.555) * 1.41            # salt shift x1 since v2.11.0
 REF_SWEET = 0.54 * 10 ** 1.3
 score = lambda raw, ref: 1 + 9 * min(1.0, max(0.0, raw) / ref)
@@ -18,7 +23,7 @@ M = 100.0; W = 99 + 1 * SALT_W / 100
 na_g = 1 * SALT_NA / 1e5                                        # g Na
 c_food = na_g / (W / 100) * (W / M)                              # g/100 g food
 na_M = c_food * 10 / 23
-I = 2.7036 * math.log(na_M) + 12.008
+I = feeney_hand(na_M)
 hand["salt_water"] = {"Na_M": na_M, "raw": I, "score": score(I, REF_SALT)}
 
 # 2) 0.2 g MSG in 99.8 g water: umami (no nucleotides, near-neutral pH so acid factor ~1, kokumi 0)

@@ -183,8 +183,8 @@ FACTORS = [  # name, low, high, log-scale, source of the range
     ("KOKUMI_SALT_GAIN", 0.20, 0.90, False, "same as umami gain"),
     ("KOK_THR_SCALE", 0.5, 2.0, True, "Ueda 1997 glutathione thresholds halved or doubled"),
     ("UMAMI_SALT_EMAX", 0.0, 0.20, False, "0 (no effect) to twice the Sun 2022 fit (0.10)"),
-    ("NA_SLOPE_SCALE", 0.85, 1.15, False, "Murphy 1981 log-fit slope +/-15%"),
-    ("SALT_HIGH_CURVE", 0.0, 1.0, False, "Murphy log extrapolation (0) vs human gLMS splice (1) above 0.108 M"),
+    ("NA_SLOPE_SCALE", 0.85, 1.15, False, "Feeney & Hayes 2014 curve exponents +/-15% (pivot 0.1 M)"),
+    ("SALT_HIGH_CURVE", 0.0, 1.0, False, "Feeney & Hayes 2014 gLMS curve (0, v2.17.0) vs Murphy 1981 log fit (1, before v2.17.0)"),
     ("SUPPRESS_S50", 14.7, 58.8, True, "Miranda 2021 logistic S50 29.4 mM halved or doubled"),
     ("SWEET_EXPONENT", 1.1, 1.5, False, "Moskowitz 1970 exponent 1.3 +/-0.2"),
 ]
@@ -192,7 +192,8 @@ BASE = {"SYNERGY_MAX_FOLD": m.SYNERGY_MAX_FOLD, "GLU_THR_DROP_MAX": m.GLU_THR_DR
         "KOKUMI_EC50_MM": m.KOKUMI_EC50_MM, "KOKUMI_HILL_N": m.KOKUMI_HILL_N, "KOKUMI_UMAMI_GAIN": m.KOKUMI_UMAMI_GAIN,
         "KOKUMI_SALT_GAIN": m.KOKUMI_SALT_GAIN, "KOK_THR_SCALE": 1.0, "UMAMI_SALT_EMAX": m.UMAMI_SALT_EMAX,
         "NA_SLOPE_SCALE": 1.0, "SALT_HIGH_CURVE": 0.0, "SUPPRESS_S50": ab.SUPPRESS_S50, "SWEET_EXPONENT": sw.EXPONENT}
-_THR0, _NA_A0 = list(m.KOKUMI_THR_POINTS), m._NA_A
+_THR0, _FEENEY0 = list(m.KOKUMI_THR_POINTS), m._feeney
+_PIVOT = _FEENEY0(0.1)
 
 
 def apply(p):
@@ -200,8 +201,9 @@ def apply(p):
     m.KOKUMI_EC50_MM = p["KOKUMI_EC50_MM"]; m.KOKUMI_HILL_N = p["KOKUMI_HILL_N"]
     m.KOKUMI_UMAMI_GAIN = p["KOKUMI_UMAMI_GAIN"]; m.KOKUMI_SALT_GAIN = p["KOKUMI_SALT_GAIN"]
     m.KOKUMI_THR_POINTS[:] = [(a, b * p["KOK_THR_SCALE"]) for a, b in _THR0]
-    m.UMAMI_SALT_EMAX = p["UMAMI_SALT_EMAX"]; m._NA_A = _NA_A0 * p["NA_SLOPE_SCALE"]
-    m.SALT_HIGH_CURVE = "human_splice" if p["SALT_HIGH_CURVE"] >= 0.5 else "murphy_log"
+    m.UMAMI_SALT_EMAX = p["UMAMI_SALT_EMAX"]; e = p["NA_SLOPE_SCALE"]
+    m._feeney = (lambda c: _PIVOT * (_FEENEY0(c) / _PIVOT) ** e if c > 0 else 0.0) if e != 1.0 else _FEENEY0
+    m.SALT_HIGH_CURVE = "murphy_log" if p["SALT_HIGH_CURVE"] >= 0.5 else "feeney2014"
     ab.SUPPRESS_S50 = p["SUPPRESS_S50"]; sw.EXPONENT = p["SWEET_EXPONENT"]
     m.SCORE_REF["salt"] = m.na_curve(0.5)
     m.SCORE_REF["umami"] = (3.6672 * math.log(5.0 * m.SALT_SHIFT_MAX) + 12.555) * (1 + m.KOKUMI_UMAMI_GAIN)

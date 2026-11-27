@@ -275,7 +275,24 @@
   const MIN_SHARE = 0.01, ACIDS_BELOW_PH = 5.5, NUC_FLAG_GLU = 100;
   // Umami 10/10 (Nov 15, 2026, Bryan): 5 g/dL MSG-eq with the salt shift and kokumi gain at their maximum
   // (= 29.61; was the bare curve at 5 g/dL, 18.46). Mirrors UMAMI_REF_WITH_BOOSTS in hfp_model.py.
-  const SCORE_REF = { bitter: 10, umami: (3.6672 * LN(5.0 * SALT_SHIFT_MAX) + 12.555) * (1 + KOK_UMAMI_GAIN), salt: 2.7036 * LN(0.5) + 12.008, sweet: 0.54 * POW(10, 1.3),
+  // v.2.17.0 (Nov 27, 2026): sodium saltiness on Feeney & Hayes 2014 Fig. 4 (gLMS, 0.01-1 M NaCl, n = 193), log-log
+  // interpolation, end exponents held beyond the points (hfp_model.py SALT_HIGH_CURVE = "feeney2014"). KCl is still
+  // converted to iso-salty NaCl molarity on Murphy 1981's scale (MURPHY), then put through this curve.
+  const FEENEY_PTS = [[0.01, 2.1618], [0.032, 4.2689], [0.1, 12.7824], [0.32, 25.5113], [1.0, 43.1228]];
+  const MURPHY = m => m > 0 ? Math.max(0, 2.7036 * LN(m) + 12.008) : 0;
+  const NA_CURVE = m => {
+    if (!(m > 0)) return 0;
+    const P = FEENEY_PTS;
+    for (let i = 0; i < P.length - 1; i++) {
+      const [c0, v0] = P[i], [c1, v1] = P[i + 1];
+      if (m <= c1 || i === P.length - 2) {
+        if (m < c0 && i !== 0) continue;
+        return v0 * POW(m / c0, LN(v1 / v0) / LN(c1 / c0));
+      }
+    }
+    return P[0][1];
+  };
+  const SCORE_REF = { bitter: 10, umami: (3.6672 * LN(5.0 * SALT_SHIFT_MAX) + 12.555) * (1 + KOK_UMAMI_GAIN), salt: NA_CURVE(0.5), sweet: 0.54 * POW(10, 1.3),
     kokumi: 100, sour: sournessIntensity(acidInWaterStimulus("citric", 50.0 / 192.12 * 1000)) };
   const toScore = (raw, key) => 1 + 9 * Math.min(1, Math.max(0, raw) / SCORE_REF[key]);
   function cysThermalFraction(min, temp) {
@@ -544,14 +561,14 @@
     thr.na = 0.0037 * 22.99 / 58.44; thr.k = 0.00242 * 39.0983 / 10;
     const naM = conc.na < thr.na ? 0 : conc.na * 10 / 23;
     const kM = kForSalt < thr.k ? 0 : kForSalt * 10 / 39.0983;
-    const naSalt = naM > 0 ? Math.max(0, 2.7036 * LN(naM) + 12.008) : 0;
-    if (naM > 0.108) note("salt_extrap", "Salt is above the measured range (about 0.6% in the water), so saltiness is extrapolated.");
+    const naSalt = NA_CURVE(naM);
+    if (naM > 1.0) note("salt_extrap", "Salt is above the measured range (about 5.8% in the water), so saltiness is extrapolated.");
     let kSalt;
     if (kM <= 0) kSalt = 0;
     else if (kM <= 0.112) kSalt = Math.max(0, 404.88 * kM * kM + 6.7462 * kM - 0.1344);
-    else { kSalt = ((404.88 * 0.112 ** 2 + 6.7462 * 0.112 - 0.1344) / (2.7036 * LN(0.112) + 12.008)) * (2.7036 * LN(kM) + 12.008); note("k_extrap", "Potassium chloride is above the measured range, so its saltiness is extrapolated."); }
+    else { kSalt = ((404.88 * 0.112 ** 2 + 6.7462 * 0.112 - 0.1344) / MURPHY(0.112)) * MURPHY(kM); note("k_extrap", "Potassium chloride is above the measured range, so its saltiness is extrapolated."); }
     // v.2.7.2: KCl/NaCl by concentration addition (K saltiness -> iso-salty NaCl molarity on the Murphy curve; hfp_model.py SALT_MIX)
-    const saltTotal = kSalt > 0 ? Math.max(0, 2.7036 * LN(naM + Math.exp((kSalt - 12.008) / 2.7036)) + 12.008) : naSalt;
+    const saltTotal = kSalt > 0 ? NA_CURVE(naM + Math.exp((kSalt - 12.008) / 2.7036)) : naSalt;
     const x = naM + 0.81 * kM;
     const effect = x < 0.1 ? Math.max(0, -37.089 * x * x + 9.9621 * x - 0.038) : Math.max(0, -0.6351 * x + 0.6414);
     const shift = 1 + (SALT_SHIFT_MAX - 1) * Math.min(1, effect / DOG_R_PEAK);
@@ -594,8 +611,7 @@
       const eUm = UMAMI_SALT_EMAX * sUm * fNa;
       if (eUm > 0) {
         const naEff = naM * (1 + eUm);
-        const naS = Math.max(0, 2.7036 * LN(naEff) + 12.008);
-        saltUm = kSalt > 0 ? Math.max(0, 2.7036 * LN(naEff + Math.exp((kSalt - 12.008) / 2.7036)) + 12.008) : naS;
+        saltUm = kSalt > 0 ? NA_CURVE(naEff + Math.exp((kSalt - 12.008) / 2.7036)) : NA_CURVE(naEff);
       }
     }
     const saltFinal = saltUm + saltUm * KOK_SALT_GAIN * (kokumi / 100);

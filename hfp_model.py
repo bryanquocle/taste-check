@@ -101,14 +101,44 @@ SYNERGY_MAX_FOLD = 63
 # above it follows the human gLMS data found Nov 26 (validation/salt_literature_2026-11-26/NOTES.md): local power
 # exponent 0.8 from 0.108 to 0.3 M (Webb et al. 2015, PMC4475569) and 0.35 above 0.3 M (Rawal et al. 2015,
 # PMC5100746), anchored to Murphy's value at 0.108 M. The 10-point reference stays 0.5 M NaCl.
-SALT_HIGH_CURVE = "murphy_log"
+# v.2.17.0 (Bryan, Nov 27 2026: "Adopt Feeney"): default is now "feeney2014" (one human gLMS panel, 0.01-1 M,
+# n = 193). SVT saltiness rho 0.831 -> 0.856 on all 83 foods; 41 -> 6 foods scored at the floor. "murphy_log" is
+# kept for the Excel workbook parity harness (tests/excel_parity sets it explicitly). Potassium conversion stays on
+# Murphy's scale (_murphy): KCl -> iso-salty NaCl molarity, then this curve.
+SALT_HIGH_CURVE = "feeney2014"
 _NA_A, _NA_B, _NA_KNEE, _NA_KNEE2, _NA_E1, _NA_E2 = 2.7036, 12.008, 0.108, 0.3, 0.8, 0.35
+
+
+# "feeney2014" (Python only, NOT adopted): one human panel over the whole range, Feeney & Hayes 2014 Physiol Behav
+# 128:148 Fig. 4 (n = 193 genotyped of 243, gLMS, 0.01-1 M NaCl; vector-digitized, groups pooled by n;
+# validation/salt_literature_2026-11-26/feeney2014/fig4_digitized.json). Log-log interpolation between points,
+# end exponents held beyond them. Raw values are on the gLMS, so only score ratios (I / I(0.5 M)) are comparable.
+_FEENEY_PTS = [(0.01, 2.1618), (0.032, 4.2689), (0.1, 12.7824), (0.32, 25.5113), (1.0, 43.1228)]
+
+
+def _murphy(m):
+    return max(0.0, _NA_A * math.log(m) + _NA_B) if m > 0 else 0.0
+
+
+def _feeney(m):
+    P = _FEENEY_PTS
+    if m <= 0:
+        return 0.0
+    for (c0, v0), (c1, v1) in zip(P, P[1:]):
+        if m <= c1 or (c1, v1) == P[-1]:
+            if m < c0 and (c0, v0) != P[0]:
+                continue
+            e = math.log(v1 / v0) / math.log(c1 / c0)
+            return v0 * (m / c0) ** e
+    return P[0][1]
 
 
 def na_curve(m):
     """Saltiness intensity of sodium at molarity m (Murphy 1981 scale)."""
     if m <= 0:
         return 0.0
+    if SALT_HIGH_CURVE == "feeney2014":
+        return _feeney(m)
     if SALT_HIGH_CURVE != "human_splice" or m <= _NA_KNEE:
         return max(0.0, _NA_A * math.log(m) + _NA_B)
     s0 = _NA_A * math.log(_NA_KNEE) + _NA_B
@@ -119,6 +149,16 @@ def na_curve(m):
 
 def na_inverse(s):
     """Sodium molarity whose saltiness is s (inverse of na_curve)."""
+    if SALT_HIGH_CURVE == "feeney2014":
+        if s <= 0:
+            return 0.0
+        P = _FEENEY_PTS
+        for (c0, v0), (c1, v1) in zip(P, P[1:]):
+            if s <= v1 or (c1, v1) == P[-1]:
+                if s < v0 and (c0, v0) != P[0]:
+                    continue
+                e = math.log(v1 / v0) / math.log(c1 / c0)
+                return c0 * (s / v0) ** (1 / e)
     if SALT_HIGH_CURVE == "human_splice":
         s0 = _NA_A * math.log(_NA_KNEE) + _NA_B
         s1 = s0 * (_NA_KNEE2 / _NA_KNEE) ** _NA_E1
@@ -135,7 +175,7 @@ def na_inverse(s):
 # commensurable across tastes.
 SCORE_REF = {
     "umami": 3.6672 * math.log(5.0) + 12.555,   # 5 g/dL MSG.H2O-equivalent on Yamaguchi's curve (= 18.46)
-    "salt": na_curve(0.5),                      # 0.5 M NaCl (~3%, seawater) on the Murphy 1981 fit (= 10.13)
+    "salt": na_curve(0.5),                      # 0.5 M NaCl (~3%, seawater) on the active curve (Feeney 2014 gLMS = 31.3; Murphy fit = 10.13)
     "sweet": 0.54 * 10.0 ** 1.3,                # 10% w/w sucrose on Moskowitz 1970 (= 10.77); was 20% (Bryan, Sept 2026)
     "kokumi": 100.0,                            # 100% of the GSH-equivalent CaSR response
     "bitter": bt.BITTER_REF,                    # Spectrum 10 ~ 0.15% caffeine in water (v.2.8.0, hfp_bitter.py)
@@ -762,7 +802,11 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
     na_m = 0.0 if conc["na"] < thr["na"] else conc["na"] * 10 / 23          # Z22
     k_m = 0.0 if k_for_salt < thr["k"] else k_for_salt * 10 / 39.0983      # AB22
     na_salt = na_curve(na_m)                                         # AA22
-    if na_m > 0.108:
+    if SALT_HIGH_CURVE == "feeney2014":
+        if na_m > 1.0:
+            warnings.append(f"[Na] = {na_m:.3f} M is above the measured NaCl range (Feeney & Hayes 2014, max "
+                            f"1 M); sodium saltiness is extrapolated.")
+    elif na_m > 0.108:
         warnings.append(f"[Na] = {na_m:.3f} M is above the measured NaCl range (Murphy 1981, max "
                         f"0.108 M); sodium saltiness is extrapolated from a log fit.")
     if k_m <= 0:
@@ -771,12 +815,12 @@ def compute(recipe, db=None, mode=None, water_loss_g=0.0, k_source=None,
         k_salt = max(0.0, 404.88 * k_m**2 + 6.7462 * k_m - 0.1344)
     else:  # beyond measured KCl range: scale the NaCl curve to meet the KCl fit at 0.112 M
         k_salt = ((404.88 * 0.112**2 + 6.7462 * 0.112 - 0.1344)
-                  / na_curve(0.112)) * na_curve(k_m)
+                  / _murphy(0.112)) * _murphy(k_m)
         warnings.append(f"[K] = {k_m:.3f} M is above the measured KCl range (0.112 M); "
                         f"potassium saltiness is extrapolated.")
     def mix(na_int, na_mol):
         if SALT_MIX == "concentration" and k_salt > 0:
-            na_eq_k = na_inverse(k_salt)                         # NaCl molarity iso-salty to the K
+            na_eq_k = math.exp((k_salt - _NA_B) / _NA_A)        # NaCl molarity iso-salty to the K (Murphy scale)
             return na_curve(na_mol + na_eq_k)
         return na_int + k_salt                                       # Z25
     salt_total = mix(na_salt, na_m)

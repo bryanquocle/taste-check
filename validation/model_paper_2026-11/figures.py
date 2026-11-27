@@ -16,7 +16,7 @@ for ax, t in zip(axes, ("saltiness", "umami", "sourness", "sweetness")):
 fig.suptitle("Held-out foods: model scores rank foods the way a trained panel did (SVT test half, n = 40–42)", x=.01, ha="left", color=NAVY, fontweight="bold", fontsize=10.5)
 fig.tight_layout(); fig.savefig(os.path.join(F, "fig_validation.png"), bbox_inches="tight"); plt.close(fig)
 m = json.load(open(os.path.join(R, "morris.json"))); ms = m["mu_star_score"]
-LAB = {"NA_SLOPE_SCALE": "Murphy saltiness slope", "SALT_HIGH_CURVE": "Saltiness above 0.108 M", "KOKUMI_UMAMI_GAIN": "Kokumi gain on umami",
+LAB = {"NA_SLOPE_SCALE": "Feeney curve exponents", "SALT_HIGH_CURVE": "Feeney vs Murphy curve", "KOKUMI_UMAMI_GAIN": "Kokumi gain on umami",
        "SYNERGY_MAX_FOLD": "Synergy cap", "SWEET_EXPONENT": "Sweetness exponent", "KOK_THR_SCALE": "Kokumi detection floor", "KOKUMI_EC50_MM": "Kokumi EC50",
        "KOKUMI_HILL_N": "Kokumi Hill exponent", "UMAMI_SALT_EMAX": "Umami lift of saltiness", "SUPPRESS_S50": "Acid suppression S50",
        "NUC_ALONE_U0": "Nucleotide-alone term", "KOKUMI_SALT_GAIN": "Kokumi gain on saltiness", "GLU_THR_DROP_MAX": "Glutamate threshold drop"}
@@ -26,6 +26,6 @@ y = range(len(rows)); ax.barh(list(y), [r[1] for r in rows], color=[BLUE if r[1]
 ax.set_yticks(list(y)); ax.set_yticklabels([f"{r[0]}  ({r[2]})" for r in rows])
 for i, r in enumerate(rows): ax.text(r[1] + .01, i, f"{r[1]:.2f}", va="center", color=NAVY, fontsize=8)
 ax.set_xlabel("μ*: mean absolute score change across the constant's range (1–10 points)")
-ax.set_title("Eight constants move scores by 0.2 points or more; none moves rank agreement by more than 0.025 on average", loc="left", fontsize=10)
+ax.set_title("Eight constants move scores by 0.2 points or more; none moves rank agreement by more than 0.011 on average", loc="left", fontsize=10)
 fig.tight_layout(); fig.savefig(os.path.join(F, "fig_sensitivity.png"), bbox_inches="tight"); plt.close(fig)
 print("ok")
