@@ -1,11 +1,11 @@
 {
- "n": 141,
+ "n": 142,
  "by_class": {
   "Standard constant": 14,
   "Assumption": 25,
   "Implementation": 10,
   "Verified in source": 53,
-  "Fitted or digitized": 20,
+  "Fitted or digitized": 21,
   "Derived from source": 18,
   "Unsourced": 1
  },
@@ -31,7 +31,7 @@
   },
   "Saltiness (section 8.2)": {
    "Verified in source": 3,
-   "Fitted or digitized": 6,
+   "Fitted or digitized": 7,
    "Assumption": 2,
    "Derived from source": 1
   },

@@ -40,19 +40,20 @@ figcaption{font-size:8.5pt;color:var(--muted);margin-top:4pt}
 <body>
 <p class="eyebrow">Mendocino Food Consulting · Human Flavorome Project · Technical report</p>
 <h1>Taste Check: Predicting Six Taste Intensities from Food Composition</h1>
-<p class="byline">Bryan Quoc Le, PhD · Mendocino Food Consulting, Mendocino, CA · November 2026 · Model version 2.16.2 (<a href="https://doi.org/10.5281/zenodo.24577507">doi:10.5281/zenodo.24577507</a>)</p>
+<p class="byline">Bryan Quoc Le, PhD · Mendocino Food Consulting, Mendocino, CA · November 2026 · Model version 2.17.0 (<a href="https://doi.org/10.5281/zenodo.24603243">doi:10.5281/zenodo.24603243</a>)</p>
+<p class="byline">Revised November 27, 2026 for v2.17.0: sodium saltiness now follows Feeney &amp; Hayes (2014) instead of Murphy et al. (1981). Sections 1, 3, 4 and 7 to 12 were updated, and section 12 now covers AI and autonomous laboratories; the first edition (v2.16.2) is archived with that release.</p>
 
 <div class="abstract">
 <h2>Abstract</h2>
 <p>Taste Check predicts the intensity of six tastes (umami, saltiness, sweetness, sourness, kokumi, bitterness) from a food's composition. It chains published human dose-response curves with documented interaction terms and computes pH by charge balance. No parameter is fitted to the validation panel.</p>
-<p>This report describes version 2.16.2: its equations, the evidence behind each of 141 constants, its 829-ingredient database, verification, held-out validation, a sensitivity analysis and a roadmap.</p>
+<p>This report describes version 2.17.0: its equations, the evidence behind each of 142 constants, its 829-ingredient database, verification, held-out validation, a sensitivity analysis and a roadmap.</p>
 <ul>
-<li><b>Constants:</b> 61% of the 117 taste constants are taken from, or computed directly from, a primary source; 17% are fits to published figures; 21% are modelling assumptions; one is unsourced.</li>
-<li><b>Validation:</b> On 43 foods held out from development, model scores ranked foods as a trained panel did (Spearman ρ: saltiness 0.84, umami 0.72, sourness 0.72, sweetness 0.69), though the most umami-intense foods (soy sauce, Parmesan) were scored far too low.</li>
-<li><b>Sensitivity:</b> A Morris screening of 13 uncertain constants changed scores by up to 0.6 points but changed held-out rank agreement by 0.025 or less.</li>
+<li><b>Constants:</b> 60% of the 118 taste constants are taken from, or computed directly from, a primary source; 18% are fits to published figures; 21% are modelling assumptions; one is unsourced.</li>
+<li><b>Validation:</b> On 43 foods held out from development, model scores ranked foods as a trained panel did (Spearman ρ: saltiness 0.86, umami 0.72, sourness 0.72, sweetness 0.69), though the most umami-intense foods (soy sauce, Parmesan) were scored far too low.</li>
+<li><b>Sensitivity:</b> A Morris screening of 13 uncertain constants and choices changed scores by up to 0.83 points (the choice of saltiness curve) but changed held-out rank agreement by 0.011 or less.</li>
 <li><b>Data gaps:</b> In real recipes, the median dish has 12% of its mass in ingredients with no glutamate value.</li>
 </ul>
-<p>Accuracy is therefore limited mainly by ingredient composition data and by single-food validation. What a score means rests on a few constants: the 1981 saltiness slope and its extrapolation, and the kokumi curve and gain. We rank eight human and machine data additions by the uncertainty each would remove; the top three are filling glutamate and acid data for the most common missing ingredients, a recipe-level panel, and a single-panel saltiness curve up to 0.5 M.</p>
+<p>Accuracy is therefore limited mainly by ingredient composition data and by single-food validation. What a score means rests on a few choices: which human saltiness curve is used (Feeney &amp; Hayes 2014 from v2.17.0; Murphy et al. 1981 before), and the kokumi curve and gain. We rank eight additions from human panels, AI and autonomous laboratories by the uncertainty each would remove, and describe a closed loop in which AI chooses the next measurement and an automated laboratory makes it; the top three are filling glutamate and acid data for the most common missing ingredients, a recipe-level panel, and a human glutathione dose-response.</p>
 </div>
 
 <h2>1. Purpose and scope</h2>
@@ -61,7 +62,7 @@ figcaption{font-size:8.5pt;color:var(--muted);margin-top:4pt}
 <table>
 <tr><th>Output</th><th>Raw scale (human source)</th><th>10/10 reference</th></tr>
 <tr><td>Umami</td><td>Yamaguchi 1967 interval scale for MSG</td><td>5 g/dL MSG-equivalent, with the kokumi boost at maximum</td></tr>
-<tr><td>Saltiness</td><td>Murphy et al. 1981 magnitude estimates</td><td>0.5 M NaCl (about 3%, seawater)</td></tr>
+<tr><td>Saltiness</td><td>Feeney &amp; Hayes 2014 gLMS ratings (n = 193)</td><td>0.5 M NaCl (about 3%, seawater)</td></tr>
 <tr><td>Sweetness</td><td>Moskowitz 1970 ratio scale</td><td>10% w/w sucrose</td></tr>
 <tr><td>Sourness</td><td>Yamaguchi 1979 tartaric-acid scale</td><td>5% w/v citric acid (about straight lemon juice)</td></tr>
 <tr><td>Kokumi</td><td>% of a glutathione dose-response curve</td><td>100%</td></tr>
@@ -81,7 +82,7 @@ figcaption{font-size:8.5pt;color:var(--muted);margin-top:4pt}
 <rect x="24" y="244" width="712" height="56" rx="8" fill="none" stroke="#5B6272" stroke-width="1.25"/><text x="40" y="267" font-weight="700" fill="#15223B">pH and sour stimulus</text><text x="40" y="286" font-size="11.5" fill="#5B6272">Charge balance over 13 acids and protein buffers, calibrated per ingredient to FDA pH; H+ plus protonated acid</text>
 <g font-size="11.5" text-anchor="middle">
 <rect x="24" y="324" width="112" height="104" rx="8" fill="#1D4A86" fill-opacity="0.12" stroke="#1D4A86" stroke-width="2"/><text x="80" y="348" font-size="13" font-weight="700" fill="#15223B">Umami</text><text x="80" y="370" fill="#5B6272">Yamaguchi</text><text x="80" y="386" fill="#5B6272">1967 curve,</text><text x="80" y="402" fill="#5B6272">synergy 63x</text>
-<rect x="144" y="324" width="112" height="104" rx="8" fill="#1D4A86" fill-opacity="0.12" stroke="#1D4A86" stroke-width="2"/><text x="200" y="348" font-size="13" font-weight="700" fill="#15223B">Saltiness</text><text x="200" y="370" fill="#5B6272">Murphy 1981,</text><text x="200" y="386" fill="#5B6272">Na + KCl</text><text x="200" y="402" fill="#5B6272">conc. addition</text>
+<rect x="144" y="324" width="112" height="104" rx="8" fill="#1D4A86" fill-opacity="0.12" stroke="#1D4A86" stroke-width="2"/><text x="200" y="348" font-size="13" font-weight="700" fill="#15223B">Saltiness</text><text x="200" y="370" fill="#5B6272">Feeney 2014,</text><text x="200" y="386" fill="#5B6272">Na + KCl</text><text x="200" y="402" fill="#5B6272">conc. addition</text>
 <rect x="264" y="324" width="112" height="104" rx="8" fill="#1D4A86" fill-opacity="0.12" stroke="#1D4A86" stroke-width="2"/><text x="320" y="348" font-size="13" font-weight="700" fill="#15223B">Sweetness</text><text x="320" y="370" fill="#5B6272">Moskowitz 1970,</text><text x="320" y="386" fill="#5B6272">Wee 2018</text><text x="320" y="402" fill="#5B6272">sweeteners</text>
 <rect x="384" y="324" width="112" height="104" rx="8" fill="#1D4A86" fill-opacity="0.12" stroke="#1D4A86" stroke-width="2"/><text x="440" y="348" font-size="13" font-weight="700" fill="#15223B">Sourness</text><text x="440" y="370" fill="#5B6272">Yamaguchi 1979</text><text x="440" y="386" fill="#5B6272">tartaric</text><text x="440" y="402" fill="#5B6272">equivalent</text>
 <rect x="504" y="324" width="112" height="104" rx="8" fill="#1D4A86" fill-opacity="0.12" stroke="#1D4A86" stroke-width="2"/><text x="560" y="348" font-size="13" font-weight="700" fill="#15223B">Kokumi</text><text x="560" y="370" fill="#5B6272">GSH Hill curve,</text><text x="560" y="386" fill="#5B6272">Ueda 1997</text><text x="560" y="402" fill="#5B6272">floor</text>
@@ -91,7 +92,7 @@ figcaption{font-size:8.5pt;color:var(--muted);margin-top:4pt}
 <rect x="24" y="548" width="712" height="48" rx="8" fill="none" stroke="#5B6272" stroke-width="1.25"/><text x="40" y="569" font-weight="700" fill="#15223B">Outputs</text><text x="40" y="587" font-size="11.5" fill="#5B6272">Six raw intensities, six 1-10 scores, pH, sodium in mg, and data-gap and extrapolation notes</text>
 <g fill="none" stroke="#5B6272" stroke-width="1.25"><path d="M380 132V158" marker-end="url(#a)"/><path d="M380 216V242" marker-end="url(#a)"/><path d="M380 300V322" marker-end="url(#a)"/><path d="M380 428V450" marker-end="url(#a)"/><path d="M380 524V546" marker-end="url(#a)"/></g>
 </svg>
-<figcaption>Figure 1. Computation order of Taste Check v2.16.2 (<code>compute()</code> in <code>hfp_model.py</code>).</figcaption>
+<figcaption>Figure 1. Computation order of Taste Check v2.17.0 (<code>compute()</code> in <code>hfp_model.py</code>).</figcaption>
 </figure>
 <p>Composition is summed and diluted, the pH and sour stimulus are solved once, each taste is read on its own human curve, and documented interaction terms couple the tastes before scoring.</p>
 
@@ -107,11 +108,12 @@ figcaption{font-size:8.5pt;color:var(--muted);margin-top:4pt}
 <h3>3.3 Umami</h3>
 <p>Glutamate u and aspartate v count above thresholds that nucleotides lower up to 63-fold (Yamaguchi &amp; Ninomiya 2000). Yamaguchi's synergy equation is applied as a fold, capped at 63, and scaled down above pH 6.5 (Yamaguchi 1979):</p>
 <div class="eq">U = u + 0.077·v      F = min( 1 + (219·w + 1218·x + 2800·y)·f_pH , 63 )      E = U·F + (0.05/15)·(F_IG − 1)</div>
-<p>with w, x, y the AMP, IMP and GMP concentrations (sodium-salt forms, g/dL). Intensity follows Yamaguchi (1967) Fig. 2, is reduced by acid through a logistic fitted at start-up to Miranda et al. (2021) (S50 24.8 mM, Hill 0.64 in v2.16.2) and is raised by kokumi k (%):</p>
+<p>with w, x, y the AMP, IMP and GMP concentrations (sodium-salt forms, g/dL). Intensity follows Yamaguchi (1967) Fig. 2, is reduced by acid through a logistic fitted at start-up to Miranda et al. (2021) (S50 24.8 mM, Hill 0.64 in v2.17.0) and is raised by kokumi k (%):</p>
 <div class="eq">I_umami = max(0, 3.6672·ln E + 12.555) · R(S_eff) · (1 + 0.41·k/100)</div>
 <h3>3.4 Saltiness</h3>
-<p>Sodium molarity above its detection threshold is read on a log fit to Murphy et al. (1981) (measured 0.004–0.108 M; extrapolated above). Chloride potassium is converted to the iso-salty NaCl molarity and added (concentration addition). Umami lifts effective sodium by up to 10% at low sodium (Sun et al. 2022), and kokumi raises the result:</p>
-<div class="eq">I_salt = max( 0, 2.7036·ln(Na_eff + Na_K) + 12.008 ) · (1 + 0.41·k/100)</div>
+<p>Sodium molarity above its detection threshold is read on the mean NaCl intensity curve of Feeney &amp; Hayes (2014) Fig. 4 (193 genotyped adults, gLMS, 0.01–1 M; five points digitized from the figure's vector paths and pooled across CA6 genotypes by n), interpolated linearly in log-log space, with the end slopes held outside the measured range. Until v2.17.0 this step used a log fit to Murphy et al. (1981) (10 people, 0.004–0.108 M), which read zero below 0.0118 M and was extrapolated for most salted food. Chloride potassium is still converted to the iso-salty NaCl molarity on Murphy's scale and added (concentration addition). Umami lifts effective sodium by up to 10% at low sodium (Sun et al. 2022), and kokumi raises the result:</p>
+<div class="eq">I_salt = v₀·((Na_eff + Na_K)/c₀)^e · (1 + 0.41·k/100),  e = ln(v₁/v₀) / ln(c₁/c₀)</div>
+<p>where (c₀, v₀)–(c₁, v₁) is the segment of (0.01, 2.16), (0.032, 4.27), (0.1, 12.78), (0.32, 25.51), (1.0, 43.12) (M, gLMS) that contains the concentration. The 10/10 anchor stays 0.5 M NaCl (raw 31.33).</p>
 <h3>3.5 Sweetness</h3>
 <p>Sugars and sweeteners are converted to sucrose equivalents (Moskowitz 1970 relative sweetness; Wee et al. 2018 and Schiffman et al. 1995 for polyols and high-intensity sweeteners), lowered by acid through a citric-equivalent factor q (Schifferstein &amp; Frijters 1990; McBride &amp; Johnson 1987), and read on Moskowitz's power function:</p>
 <div class="eq">I_sweet = 0.54 · (C_eq · q)^1.3        C_eq in % w/w sucrose-equivalent per 100 g food</div>
@@ -129,12 +131,12 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <p>Each raw intensity maps linearly to a score, 1 + 9 × min(1, raw / REF), with REF the 10/10 anchors in section 1. The mapping is the author's choice and keeps rank and spacing within each taste. The complete specification, including the cooking, evaporation and data-gap rules, is <code>rebuild/REBUILD.md</code> in the repository.</p>
 
 <h2>4. How well each constant is sourced</h2>
-<p>Of the 117 constants that carry taste meaning, 71 (61%) are printed in, or computed directly from, a primary source; 20 (17%) are the author's fits to published figures; 25 (21%) are modelling assumptions; one is unsourced. The full register, with page numbers, is section 12 of <code>rebuild/REBUILD.md</code>; <code>check_spec.py</code> fails a release if any constant in the code is missing from it.</p>
+<p>Of the 118 constants that carry taste meaning, 71 (60%) are printed in, or computed directly from, a primary source; 21 (18%) are fits to published figures; 25 (21%) are modelling assumptions; one is unsourced. The full register, with page numbers, is section 12 of <code>rebuild/REBUILD.md</code>; <code>check_spec.py</code> fails a release if any constant in the code is missing from it.</p>
 <table>
 <tr><th>Evidence level</th><th>Constants</th><th>What it means</th></tr>
 <tr><td>Verified in source</td><td class="n">53</td><td>Number printed in the cited paper and checked against it</td></tr>
 <tr><td>Derived from source</td><td class="n">18</td><td>Computed from printed numbers; arithmetic given</td></tr>
-<tr><td>Fitted or digitized</td><td class="n">20</td><td>The author's curve fit to, or reading of, a published figure</td></tr>
+<tr><td>Fitted or digitized</td><td class="n">21</td><td>A curve fit to, or reading of, a published figure</td></tr>
 <tr><td>Assumption</td><td class="n">25</td><td>A modelling choice; reasoning documented</td></tr>
 <tr><td>Unsourced</td><td class="n">1</td><td>Kokumi Hill exponent (1.456)</td></tr>
 <tr><td>Standard or implementation</td><td class="n">24</td><td>Handbook constants, units, solver settings</td></tr>
@@ -144,7 +146,7 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <li><b>Kokumi curve.</b> EC50 0.9122 mM and Hill 1.456 have no primary source; the EC50 is most likely a receptor curve read in the wrong units. It is kept because it matches four human anchors (Ueda 1997 thresholds, Ohsu 2010, Goto 2016), and no human glutathione dose-response curve has been published.</li>
 <li><b>Kokumi gain 0.41.</b> Derived from one study (Goto 2016) that rated overall intensity, not umami and saltiness separately; it inherits the EC50 assumption.</li>
 <li><b>Synergy cap 63×.</b> A threshold shift (Yamaguchi &amp; Kimizuka 1979) applied to suprathreshold intensity.</li>
-<li><b>Saltiness above 0.108 M.</b> Murphy's log fit is extrapolated; 34% of soups and 43% of tomato sauces in a 12,186-recipe corpus sit above it.</li>
+<li><b>One saltiness panel.</b> The sodium curve is one study's group means (Feeney &amp; Hayes 2014), pooled across CA6 genotypes whose curves differ; potassium chloride still rests on Murphy et al. (1981), 10 people.</li>
 <li><b>Concentration addition</b> of Na and KCl, of bitter compounds, and of sugars.</li>
 <li><b>The 1–10 score anchors</b>, chosen by the author to mark "very strong" real solutions.</li>
 </ul>
@@ -184,11 +186,11 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 </table>
 
 <h2>7. Validation against human panels</h2>
-<p>On 43 foods held out from development, model scores ranked the foods the way a trained panel did, with Spearman ρ 0.69 to 0.84 across four tastes. Saltiness agreed best; sweetness and sourness have the widest intervals.</p>
+<p>On 43 foods held out from development, model scores ranked the foods the way a trained panel did, with Spearman ρ 0.69 to 0.86 across four tastes. Saltiness agreed best; sweetness and sourness have the widest intervals.</p>
 <p><b>Panel.</b> The Dutch taste database (Mars et al. 2020, SVT v004, DANS doi:10.17026/dans-xst-ughm, CC BY-SA 4.0): 15 trained panellists, modified Spectrum method, 0–100 scales anchored with sucrose, NaCl, citric acid, caffeine and MSG, triplicate means. 89 foods map exactly or closely to a single database ingredient (or a two-ingredient preparation SVT states). A seeded split on November 25, 2026 put 43 in a test half; the split was not used to tune any model parameter since.</p>
 <table>
 <tr><th>Taste</th><th>Test half n</th><th>Spearman ρ</th><th>95% bootstrap CI</th><th>Dev half ρ</th></tr>
-<tr><td>Saltiness</td><td class="n">41</td><td class="n">0.84</td><td class="n">0.71–0.91</td><td class="n">0.80</td></tr>
+<tr><td>Saltiness</td><td class="n">41</td><td class="n">0.86</td><td class="n">0.74–0.92</td><td class="n">0.85</td></tr>
 <tr><td>Umami</td><td class="n">42</td><td class="n">0.72</td><td class="n">0.58–0.80</td><td class="n">0.66</td></tr>
 <tr><td>Sourness</td><td class="n">40</td><td class="n">0.72</td><td class="n">0.47–0.85</td><td class="n">0.74</td></tr>
 <tr><td>Sweetness</td><td class="n">40</td><td class="n">0.69</td><td class="n">0.44–0.87</td><td class="n">0.87</td></tr>
@@ -199,37 +201,37 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <p><b>Caveats.</b> The SVT foods are single foods, not recipes. The full SVT panel was viewed during earlier development (v2.8, before the split), so the test half is held out from tuning, not unseen. The two most umami-intense test foods sit far off the line: soy sauce (panel 86 of 100, model 3.3) and Parmesan (panel 69, model 4.1); the model compresses the top of the umami range for salty, acidic, glutamate-rich foods. Rank agreement also does not show that the 1–10 scale is calibrated: a food scored 6 is not guaranteed to taste "moderate" to a panel.</p>
 
 <h2>8. Sensitivity analysis</h2>
-<p>The uncertain constants change how strong the scores read, but barely change how foods rank: moving any one constant across its plausible range changed held-out panel agreement by 0.025 in ρ or less on average. Ranking is driven by composition; calibration is driven by a handful of constants.</p>
+<p>The uncertain constants change how strong the scores read, but barely change how foods rank: moving any one constant across its plausible range changed held-out panel agreement by 0.011 in ρ or less on average. Ranking is driven by composition; calibration is driven by a handful of constants.</p>
 <p><b>Method.</b> Morris elementary-effects screening (r = 20 trajectories, 4 levels, 281 model runs) over 13 constants that are fitted, assumed or unsourced, each across a range taken from the sources themselves (for example, the kokumi gain from 0.20 to 0.90, spanning Goto 2016 and Ohsu 2010; the synergy cap from 16 to 305). Outputs: the mean absolute score change across the 89 SVT foods (μ*), and the mean absolute change in test-half Spearman ρ.</p>
 <table>
 <tr><th>Constant (range tested)</th><th>Score most affected</th><th>μ* (points)</th><th>Mean |Δρ|</th></tr>
-<tr><td>Murphy saltiness slope (±15%)</td><td>Saltiness</td><td class="n">0.63</td><td class="n">0.024</td></tr>
-<tr><td>Saltiness above 0.108 M (log fit vs human gLMS splice)</td><td>Saltiness</td><td class="n">0.50</td><td class="n">0.000</td></tr>
+<tr><td>Saltiness curve (Feeney 2014 vs Murphy 1981 log fit)</td><td>Saltiness</td><td class="n">0.83</td><td class="n">0.011</td></tr>
 <tr><td>Kokumi gain on umami (0.20–0.90)</td><td>Umami</td><td class="n">0.40</td><td class="n">0.004</td></tr>
-<tr><td>Synergy cap (16–305×)</td><td>Umami</td><td class="n">0.31</td><td class="n">0.007</td></tr>
+<tr><td>Synergy cap (16–305×)</td><td>Umami</td><td class="n">0.30</td><td class="n">0.007</td></tr>
 <tr><td>Moskowitz sweetness exponent (1.1–1.5)</td><td>Sweetness</td><td class="n">0.29</td><td class="n">0.005</td></tr>
 <tr><td>Kokumi detection floor (½–2× Ueda 1997)</td><td>Kokumi</td><td class="n">0.27</td><td class="n">0.004</td></tr>
-<tr><td>Kokumi EC50 (0.30–2.74 mM)</td><td>Kokumi</td><td class="n">0.23</td><td class="n">0.003</td></tr>
-<tr><td>Kokumi Hill exponent (1.0–2.0)</td><td>Kokumi</td><td class="n">0.23</td><td class="n">0.001</td></tr>
-<tr><td>Umami lift of saltiness (0–0.20)</td><td>Saltiness</td><td class="n">0.07</td><td class="n">0.023</td></tr>
+<tr><td>Feeney curve exponents (±15%)</td><td>Saltiness</td><td class="n">0.24</td><td class="n">0.001</td></tr>
+<tr><td>Kokumi EC50 (0.30–2.74 mM)</td><td>Kokumi</td><td class="n">0.23</td><td class="n">0.004</td></tr>
+<tr><td>Kokumi Hill exponent (1.0–2.0)</td><td>Kokumi</td><td class="n">0.23</td><td class="n">0.002</td></tr>
 <tr><td>Acid suppression S50 (14.7–58.8 mM)</td><td>Umami</td><td class="n">0.07</td><td class="n">0.007</td></tr>
+<tr><td>Umami lift of saltiness (0–0.20)</td><td>Saltiness</td><td class="n">0.06</td><td class="n">0.008</td></tr>
 <tr><td>Nucleotide-alone term (½–2×)</td><td>Umami</td><td class="n">0.04</td><td class="n">0.003</td></tr>
-<tr><td>Kokumi gain on saltiness (0.20–0.90)</td><td>Saltiness</td><td class="n">0.02</td><td class="n">0.003</td></tr>
+<tr><td>Kokumi gain on saltiness (0.20–0.90)</td><td>Saltiness</td><td class="n">0.03</td><td class="n">0.006</td></tr>
 <tr><td>Glutamate threshold drop (32–126×)</td><td>none</td><td class="n">0.00</td><td class="n">0.000</td></tr>
 </table>
 <figure><img src="../figures/fig_sensitivity.png" alt="Morris mu-star by constant"><figcaption>Figure 3. μ* is the mean absolute change in score (1–10 scale) as the constant moves across its range, averaged over all 89 foods; many foods contain none of the relevant compound, so the effect on foods that do is larger.</figcaption></figure>
 <ul>
 <li>The kokumi construct matters more than its weak sourcing suggests: its gain is the largest single lever on umami scores, and its three curve constants each move kokumi by a quarter point on average.</li>
-<li>Saltiness calibration hinges on one 1981 study of 10 people and on how it is extrapolated above 0.108 M.</li>
+<li>Saltiness calibration hinges mostly on which human curve is used. Switching between Feeney &amp; Hayes (2014) and the earlier Murphy et al. (1981) fit moves saltiness scores 0.83 points on average but barely changes rank (|Δρ| 0.011); within Feeney's curve, ±15% on its exponents moves scores 0.24 points. The Feeney curve also raised held-out saltiness ρ from 0.845 to 0.859 (section 7).</li>
 <li>The glutamate-threshold drop had no effect on these foods, because none sits near the glutamate threshold with nucleotides present; it matters only for very dilute broths.</li>
-<li>Because ranks barely move, the 0.69–0.84 agreement in section 7 is limited by composition data and by tastes the model does not cover, not by these constants.</li>
+<li>Because ranks barely move, the 0.69–0.86 agreement in section 7 is limited by composition data and by tastes the model does not cover, not by these constants.</li>
 </ul>
 
 <h2>9. Worked examples checked by hand</h2>
 <p>Three recipes were computed from the equations in section 3 alone, with composition typed from the database, and matched the released model to six decimal places.</p>
 <table>
 <tr><th>Recipe</th><th>Hand calculation</th><th>Model</th><th>Score</th></tr>
-<tr><td>1 g salt + 99 g water</td><td>Na 0.1711 M; 2.7036·ln(0.1711) + 12.008 = 7.2350</td><td class="n">7.2350</td><td class="n">7.43</td></tr>
+<tr><td>1 g salt + 99 g water</td><td>Na 0.1711 M; 12.7824 × (0.1711/0.1)^0.5941 = 17.5878</td><td class="n">17.5878</td><td class="n">6.05</td></tr>
 <tr><td>0.2 g MSG + 99.8 g water</td><td>MSG·H₂O-eq 0.2213 g/dL; (3.6672·ln 0.2213 + 12.555) × 0.99965 = 7.0216</td><td class="n">7.0216</td><td class="n">3.43</td></tr>
 <tr><td>10 g sugar + 90 g water</td><td>9.994% sucrose; 0.54 × 9.994^1.3 = 10.766</td><td class="n">10.766</td><td class="n">9.99</td></tr>
 </table>
@@ -238,12 +240,12 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <h2>10. Model card</h2>
 <p class="note">Format after Mitchell et al. (2019), "Model Cards for Model Reporting."</p>
 <table>
-<tr><td><b>Model</b></td><td>Taste Check (Human Flavorome Project) v2.16.2, mechanistic composition-to-taste model; Python reference and browser JavaScript</td></tr>
+<tr><td><b>Model</b></td><td>Taste Check (Human Flavorome Project) v2.17.0, mechanistic composition-to-taste model; Python reference and browser JavaScript</td></tr>
 <tr><td><b>Developer</b></td><td>Bryan Quoc Le, PhD, Mendocino Food Consulting, 2023–2026</td></tr>
 <tr><td><b>Intended use</b></td><td>Ranking and comparing formulations by expected taste intensity before bench work; finding which ingredient drives a taste; teaching taste chemistry</td></tr>
 <tr><td><b>Intended users</b></td><td>Food scientists, product developers, students, researchers</td></tr>
 <tr><td><b>Out of scope</b></td><td>Predicting liking or purchase; replacing a sensory panel; food-safety or labeling decisions (the predicted pH must not be used for acidified-food compliance); aroma, flavor, texture, heat, fat taste</td></tr>
-<tr><td><b>Performance</b></td><td>Held-out trained-panel rank agreement ρ 0.69–0.84 for umami, saltiness, sweetness and sourness (section 7)</td></tr>
+<tr><td><b>Performance</b></td><td>Held-out trained-panel rank agreement ρ 0.69–0.86 for umami, saltiness, sweetness and sourness (section 7)</td></tr>
 <tr><td><b>Known failure modes</b></td><td>Ingredients with missing glutamate, nucleotide or acid data read too low; salty solids (bread, cheese, chips) read saltier than they taste; the most umami-intense foods read too low; bitterness from unmodeled compounds is missed; kokumi and its boosts rest on an unsourced curve</td></tr>
 <tr><td><b>Practical notes</b></td><td>Scores look precise; they are estimates from composition tables, not measurements. Recipes are scored as written</td></tr>
 <tr><td><b>License</b></td><td>Code MIT; database, test data and documentation CC BY 4.0; SVT-derived panel files CC BY-SA 4.0</td></tr>
@@ -252,9 +254,9 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <h2>11. Limitations</h2>
 <p>The model's main weakness is that each module rests on one or two small human studies in water, applied to whole foods.</p>
 <ul>
-<li><b>Small source panels.</b> Murphy et al. (1981) had 10 panellists; Calvino et al. (1990), 14; Goto et al. (2016), 26. Their curves carry their own sampling error, which the model does not propagate.</li>
+<li><b>Small source panels.</b> Murphy et al. (1981), now used only for potassium chloride, had 10 panellists; Calvino et al. (1990), 14; Goto et al. (2016), 26. Their curves carry their own sampling error, which the model does not propagate.</li>
 <li><b>Water data, food predictions.</b> Every dose-response curve was measured in solution. The whole-food basis improved held-out agreement, but solids still release salt and sugar incompletely: on SVT, bread tastes like 7–12% of its sodium, soups like 39–54%. A release factor was tested and rejected because it hurt meat and fish.</li>
-<li><b>Extrapolation.</b> Saltiness above 0.108 M NaCl, sweetness above Moskowitz's 2–16% sucrose, acid suppression above Miranda's 27 mM stimulus, and synergy from a threshold shift are all outside the measured data. Notes flag the first three when they occur.</li>
+<li><b>Extrapolation.</b> Saltiness outside Feeney's 0.01–1 M NaCl, sweetness above Moskowitz's 2–16% sucrose, acid suppression above Miranda's 27 mM stimulus, and synergy from a threshold shift are all outside the measured data. Notes flag the first three when they occur.</li>
 <li><b>Interactions assumed additive.</b> Na with KCl, bitter compounds with each other, and sugars with each other add by concentration; interactions not listed in section 3 are ignored.</li>
 <li><b>Kokumi.</b> The curve, the gain and therefore part of umami and saltiness rest on an unsourced EC50 and Hill exponent; no human glutathione dose-response exists.</li>
 <li><b>Database gaps.</b> Half the ingredients have no glutamate value and most have no nucleotide, acid or glutathione data; blanks count as zero (section 5).</li>
@@ -264,24 +266,45 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <li><b>Single developer, not yet peer reviewed.</b> Design choices are documented, but no outside sensory scientist has reviewed them.</li>
 </ul>
 
-<h2>12. Improvement roadmap: human and machine data</h2>
+<h2>12. Improvement roadmap: human panels, AI and autonomous laboratories</h2>
 <p>The sensitivity results reorder the obvious wish list. Rank agreement is limited by composition data, so better ingredient data comes first. Calibration (what a score of 6 means) is limited by a few constants, which targeted human panels can pin down.</p>
 <table>
 <tr><th>#</th><th>Data to add</th><th>Type</th><th>What it fixes</th><th>Evidence it matters</th></tr>
-<tr><td>1</td><td>Glutamate, nucleotides and organic acids for the 20 ingredients carrying the most missing mass (vegetable broth, sausage, canned beans, cream, rice first)</td><td>Machine / lab</td><td>Umami and sourness ranking in real recipes</td><td>12% of the median recipe's mass has no glutamate value</td></tr>
+<tr><td>1</td><td>Glutamate, nucleotides and organic acids for the 20 ingredients carrying the most missing mass (vegetable broth, sausage, canned beans, cream, rice first)</td><td>Autonomous lab; AI until measured</td><td>Umami and sourness ranking in real recipes</td><td>12% of the median recipe's mass has no glutamate value</td></tr>
 <tr><td>2</td><td>A recipe-level panel: 20–30 dishes spanning salt, umami and acid, rated on the SVT scales</td><td>Human</td><td>Mixture validity; what each score means</td><td>Validation so far is single foods only</td></tr>
-<tr><td>3</td><td>One saltiness magnitude curve from 0.004 to 0.5 M NaCl in a single panel (or digitizing Feeney &amp; Hayes 2014, n = 243)</td><td>Human</td><td>The two largest saltiness levers</td><td>μ* 0.63 (slope) and 0.50 (extrapolation)</td></tr>
-<tr><td>4</td><td>A glutathione dose-response in an umami-salt base, rating umami and saltiness separately</td><td>Human</td><td>Kokumi EC50, Hill, floor and both gains</td><td>Kokumi gain is the largest umami lever (μ* 0.40)</td></tr>
+<tr><td>3</td><td>A glutathione dose-response in an umami-salt base, rating umami and saltiness separately</td><td>Human</td><td>Kokumi EC50, Hill, floor and both gains</td><td>Kokumi gain is the largest umami lever (μ* 0.40)</td></tr>
+<tr><td>4</td><td>Potassium chloride and NaCl/KCl blends rated with the Feeney &amp; Hayes gLMS design, so both cations share one human scale</td><td>Human</td><td>KCl saltiness, still converted on Murphy et al. (1981), 10 people</td><td>The curve choice is the largest single lever on any score (μ* 0.83)</td></tr>
 <tr><td>5</td><td>Equal-saltiness matching of breads, cheeses and chips against NaCl solutions</td><td>Human</td><td>The salty-solids overestimate</td><td>Bread tastes like 7–12% of its sodium</td></tr>
-<tr><td>6</td><td>Map more of the SVT database and other open panels to the model</td><td>Machine</td><td>Larger held-out set; per-category error</td><td>43 test foods give wide CIs</td></tr>
-<tr><td>7</td><td>Large rated-recipe corpora analysed in physical units</td><td>Machine</td><td>Real-world direction of effects; liking context</td><td>Companion analysis: bread liking peaks at 1.69% salt on flour</td></tr>
-<tr><td>8</td><td>Compound data for unmodelled bitters (catechins, naringin, hop acids, glucosinolates)</td><td>Machine / lab</td><td>Bitterness coverage</td><td>12 bitter classes are notes only</td></tr>
+<tr><td>6</td><td>Map more of the SVT database and other open panels to the model</td><td>AI</td><td>Larger held-out set; per-category error</td><td>43 test foods give wide CIs</td></tr>
+<tr><td>7</td><td>Large rated-recipe corpora analysed in physical units</td><td>AI</td><td>Real-world direction of effects; liking context</td><td>Companion analysis: bread liking peaks at 1.69% salt on flour</td></tr>
+<tr><td>8</td><td>Compound data for unmodelled bitters (catechins, naringin, hop acids, glucosinolates)</td><td>AI, then autonomous lab</td><td>Bitterness coverage</td><td>12 bitter classes are notes only</td></tr>
 </table>
-<p><b>Where machine learning fits.</b> Two uses look sound: imputing missing glutamate and acid values from composition and food category (flagged as tier-3 estimates), and a small residual model that learns the gap between mechanistic scores and panel ratings. Both need the recipe-level panel (item 2) to check that they help rather than overfit 89 foods. Replacing the mechanistic chain with a black-box predictor would give up the property that makes the model useful: every score can be traced to a compound and a published curve.</p>
+<h3>12.1 What AI can add</h3>
+<p>AI here means software that reads, reasons over and acts on data at a scale one person cannot: language models that extract values from papers, statistical learners that fill or correct numbers, and agents that plan and run analyses. Four uses fit a model whose value is that every score traces to a compound and a published curve:</p>
+<ul>
+<li><b>Literature extraction.</b> Most constants in this model came from reading papers by hand, and section 4 shows how uneven that sourcing is. AI agents can search the taste literature, pull dose-response points from tables and figures (for v2.17.0, AI digitized Feeney &amp; Hayes 2014 Fig. 4 from the figure's vector paths), and record the page each value came from. Every extracted value enters the same provenance register and is checked against the source before it is used.</li>
+<li><b>Filling composition gaps.</b> Until a value is measured, AI can estimate missing glutamate, nucleotide and organic-acid content from a food's other composition, its category and its processing. These estimates are labelled tier 3, raise the same data-gap notes as blanks do now, and are replaced as soon as a measurement exists.</li>
+<li><b>Correcting what the equations miss.</b> A small learned model can be fitted to the gap between mechanistic scores and panel ratings, for example the low umami of soy sauce and Parmesan in section 7. It is reported beside the mechanistic score, never in place of it, so a user can see how much of a prediction comes from chemistry and how much from correction.</li>
+<li><b>Choosing the next experiment.</b> The sensitivity analysis (section 8) and the coverage audit (section 5) already say which numbers matter most. AI can turn them into a ranked queue: the ingredient whose measurement would move the most recipes, or the panel design that would narrow a constant fastest (Bayesian experimental design).</li>
+</ul>
+<p>Replacing the mechanistic chain with a black-box predictor would give up the property that makes the model useful. With 89 rated foods, it would also overfit. Every AI use above therefore feeds the existing structure rather than standing in for it, and each must pass a held-out test registered before it is run, as the whole-food basis did (section 7).</p>
+
+<h3>12.2 Autonomous laboratories</h3>
+<p>An autonomous (self-driving) laboratory pairs robotic sample preparation and analysis with software that decides what to run next. For this model it would close a loop that is now done by hand over months:</p>
+<ol>
+<li>The model predicts scores and flags where its inputs are thin.</li>
+<li>AI picks the samples that would remove the most uncertainty.</li>
+<li>Robots prepare the foods, solutions or recipes and measure them: free amino acids and nucleotides by HPLC, organic acids, pH, sodium and potassium.</li>
+<li>Results flow into the ingredient database with their method and provenance.</li>
+<li>The tests in section 6 and the held-out panels in section 7 are re-run, and the next round is chosen.</li>
+</ol>
+<p>This attacks the model's main limit directly. Items 1 and 8 in the table are measurement problems, and an automated lab could measure hundreds of ingredients, in raw and cooked forms, at a cost and speed no hand-run lab can match. The same equipment can prepare the exact factorial mixtures that human panels need (items 2 to 5), so panel time is spent rating samples, not making them.</p>
+<p>Automated labs can also run fast proxies for taste: receptor assays in cultured cells (T1R1/T1R3 for umami, CaSR for kokumi) and electronic tongues. These can screen thousands of mixtures, but they are proxies. The kokumi curve in this model is the warning: it comes from CaSR activation in cultured cells and has never been tied to a human dose-response (section 4). A proxy becomes useful only once it is calibrated against human ratings on the same samples.</p>
+<p><b>What does not change.</b> Perceived intensity is measured only in people. The aim of AI and autonomous labs is to make human panels fewer, smaller and better aimed, by arriving with the composition already measured, the mixtures already made and the question already narrowed to the constant that matters.</p>
 
 <h2>13. Code, data and reproducibility</h2>
 <ul>
-<li><b>Model and package:</b> <a href="https://github.com/bryanquocle/taste-check">github.com/bryanquocle/taste-check</a>, release v2.16.2, archived at <a href="https://doi.org/10.5281/zenodo.24577507">doi:10.5281/zenodo.24577507</a> (all versions: doi:10.5281/zenodo.24540783). <code>rebuild/REBUILD.md</code> is the full specification; <code>rebuild/test_recipes.json</code> lets anyone check a re-implementation.</li>
+<li><b>Model and package:</b> <a href="https://github.com/bryanquocle/taste-check">github.com/bryanquocle/taste-check</a>, release v2.17.0, archived at <a href="https://doi.org/10.5281/zenodo.24603243">doi:10.5281/zenodo.24603243</a> (all versions: doi:10.5281/zenodo.24540783). <code>rebuild/REBUILD.md</code> is the full specification; <code>rebuild/test_recipes.json</code> lets anyone check a re-implementation.</li>
 <li><b>Live tool:</b> <a href="https://tools.mendocinofoodconsulting.com/taste-check/">tools.mendocinofoodconsulting.com/taste-check</a>.</li>
 <li><b>This report's analyses:</b> <code>validation/model_paper_2026-11/</code> in the repository (<code>analyses.py</code>: evidence tally, database coverage, SVT validation and Morris screening; <code>worked_examples.py</code>; <code>figures.py</code>; results in <code>results/</code>).</li>
 <li><b>Panel data:</b> SVT (Mars et al. 2020) is CC BY-SA 4.0. NEVO composition used for the low-water test is validation-only and not redistributed.</li>
@@ -292,6 +315,7 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <li>Breslin P.A.S., Beauchamp G.K. (1995). Suppression of bitterness by sodium: variation among bitter taste stimuli. Chemical Senses 20(6):609-623. <a href="https://doi.org/10.1093/chemse/20.6.609">doi:10.1093/chemse/20.6.609</a></li>
 <li>Calvino A.M., Garcia-Medina M.R., Cometto-Muniz J.E. (1990). Interactions in caffeine-sucrose and coffee-sucrose mixtures: evidence of taste and flavor suppression. Chemical Senses 15(5):505-519. <a href="https://doi.org/10.1093/chemse/15.5.505">doi:10.1093/chemse/15.5.505</a></li>
 <li>Da Conceicao Neta E.R., Johanningsmeier S.D., Drake M.A., McFeeters R.F. (2007). A chemical basis for sour taste perception of acid solutions and fresh-pack dill pickles. Journal of Food Science 72(6):S352-S359. <a href="https://doi.org/10.1111/j.1750-3841.2007.00400.x">doi:10.1111/j.1750-3841.2007.00400.x</a></li>
+<li>Feeney E.L., Hayes J.E. (2014). Exploring associations between taste perception, oral anatomy and polymorphisms in the carbonic anhydrase (gustin) gene CA6. Physiology &amp; Behavior 128:148-154. doi:10.1016/j.physbeh.2014.02.013</li>
 <li>Goto T.K., Yeung A.W.K., Tanabe H.C., Ito Y., Jung H.-S., Ninomiya Y. (2016). Enhancement of combined umami and salty taste by glutathione in the human tongue and brain. Chemical Senses (2016), article bjw066. <a href="https://doi.org/10.1093/chemse/bjw066">doi:10.1093/chemse/bjw066</a></li>
 <li>Mars M., de Graaf C., Teo P.S., van Langeveld A.W.B. (2020). Taste, Fat and Texture Database - taste values Dutch Foods. DANS Data Station Life Sciences (dataset). <a href="https://doi.org/10.17026/dans-xst-ughm">doi:10.17026/dans-xst-ughm</a></li>
 <li>McBride R.L., Johnson R.L. (1987). Perception of sugar-acid mixtures in lemon juice drink. Int J Food Sci Technol 22:399.</li>
@@ -312,6 +336,6 @@ H(C) = 100·C^1.456 / (0.9122^1.456 + C^1.456)</div>
 <li>Yamaguchi S. (1979). The umami taste. In: Boudreau J.C. (ed.), Food Taste Chemistry, ACS Symposium Series 115, pp. 33-51. <a href="https://doi.org/10.1021/bk-1979-0115.ch002">doi:10.1021/bk-1979-0115.ch002</a></li>
 <li>Yamaguchi S., Ninomiya K. (2000). Umami and food palatability. Journal of Nutrition 130(4):921S-926S. <a href="https://doi.org/10.1093/jn/130.4.921s">doi:10.1093/jn/130.4.921s</a></li>
 </ol>
-<p class="cover-meta">Cite as: Le, B. Q. (2026). <i>Taste Check: Predicting Six Taste Intensities from Food Composition.</i> Technical report, Mendocino Food Consulting. Model: Le, B. Q. (2026). Taste Check model (Human Flavorome Project), version 2.16.2, doi:10.5281/zenodo.24577507. Full constant register and references: rebuild/REBUILD.md and rebuild/references.csv.</p>
+<p class="cover-meta">Cite as: Le, B. Q. (2026). <i>Taste Check: Predicting Six Taste Intensities from Food Composition.</i> Technical report, Mendocino Food Consulting. Model: Le, B. Q. (2026). Taste Check model (Human Flavorome Project), version 2.17.0, doi:10.5281/zenodo.24603243. Full constant register and references: rebuild/REBUILD.md and rebuild/references.csv.</p>
 </body>
 </html>
